@@ -36,3 +36,12 @@ $ hexo deploy
 ```
 
 More info: [Deployment](https://hexo.io/docs/deployment.html)
+
+## Others
+
+### Create a new page
+``` bash
+$ hexo new page XXXX
+```
+
+More info: [Hexo-theme-next/wiki](https://github.com/iissnan/hexo-theme-next/wiki)
