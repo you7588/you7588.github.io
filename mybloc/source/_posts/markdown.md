@@ -1,7 +1,7 @@
 ---
 title: Markdown
 date: 2017-09-05 19:09:47
-tags: cheatsheet, markdown
+tags: [cheatsheet , markdown]
 ---
 ## Headers
 ``` markdown
@@ -26,6 +26,7 @@ Header 2
 ~~Strikethrough~~                           #  删除线
 ```
 
+<!--more-->
 ## Lists
 
 ``` markdown

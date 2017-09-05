@@ -3,7 +3,7 @@ title: Heroku 部署
 date: 2017-09-04 18:23:22
 categories: Heroku
 description: 常用的Heroku部署步骤
-tags: Heroku, 常用
+tags: [Heroku, 常用]
 ---
 
 
