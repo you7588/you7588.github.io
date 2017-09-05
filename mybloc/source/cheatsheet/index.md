@@ -9,7 +9,9 @@ description: 用的时候随时参考，直到所有视觉记忆全部变成肌�
 
 [Atom](http://d2wy8f7a9ursnm.cloudfront.net/atom-editor-cheat-sheet.pdf)
 
-[Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+[Markdown-Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+
+[writing-on-github](https://help.github.com/categories/writing-on-github/)
 
 [Rico's Cheatsheets](http://ricostacruz.com/cheatsheets/)
 
