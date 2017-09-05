@@ -12,3 +12,7 @@ description: 用的时候随时参考，直到所有视觉记忆全部变成肌�
 [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 
 [Rico's Cheatsheets](http://ricostacruz.com/cheatsheets/)
+
+[*How to ask questions the smart way*](http://www.catb.org/esr/faqs/smart-questions.html)
+
+[HBR 的文章](https://hbr.org/2009/05/real-leaders-ask.html)
