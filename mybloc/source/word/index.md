@@ -5,16 +5,6 @@ comments: false
 
 <blockquote class="blockquote-center">偷懒的唯一方式就是不偷懒</blockquote>
 
-## cheatsheet
-
-用的时候随时参考，直到所有视觉记忆全部变成肌肉记忆为止
-
-[terminal-mac](https://github.com/0nn0/terminal-mac-cheatsheet/tree/master/%E4%B8%AD%E6%96%87%E8%AF%B7%E5%8F%82%E8%80%83)
-[Atom](http://d2wy8f7a9ursnm.cloudfront.net/atom-editor-cheat-sheet.pdf)
-[Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
-[Rico's Cheatsheets](http://ricostacruz.com/cheatsheets/)
-
-
 ## Tool
 
 [Dash](https://kapeli.com/dash)
@@ -25,7 +15,10 @@ Terminal → [iTerm](https://www.iterm2.com/)
 Finder →[TotalFinder](http://totalfinder.binaryage.com)/[Path Finder](http://www.cocoatech.com/pathfinder)
 Spotlight →[QuickSilver](https://qsapp.com/)/[Alfred](https://www.alfredapp.com/)
 [html-markdown](http://tool.lu/markdown/)
+[visual studio code](https://code.visualstudio.com/Download)
+[sublime](http://www.sublimetext.com/)
 
+[nvm](https://github.com/xugy0926/getting-started-with-javascript/blob/master/topics/%E5%AE%89%E8%A3%85nvm.md)[官网](https://nodejs.org/zh-cn/)
 
 ## Atom package
 
@@ -46,9 +39,6 @@ A terminal package -- [platformio-ide-terminal](https://atom.io/packages/platfor
 [[Rails] 使用支援markdown編輯器 - via Pagedown-Bootstrap-Rails](http://georgiowan.logdown.com/notes/313366/rails-supports-markdown-editor-via-pagedown-bootstrap-rails)
 [wangEditor](http://www.wangeditor.com/)
 [markdownhere](http://qianpm.com/reference/markdown-here/)
-
-
-## 开发环境
 
 ## Ruby on Rail
 [Rails Guides](http://guides.rubyonrails.org/active_record_querying.html)
