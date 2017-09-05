@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="时间的朋友">
 <meta property="og:description" content="Xcode 苹果公司向开发人员提供的集成开发环境，用于开发macOS、iOS、WatchOS和tvOS的应用程序。  在app store中找到 Xcode 并点击安装在安装 xcode 请暂时关闭 VPN ，不然下载 xcode 会很慢 Command Line Tools 命令行工具的集合，可以用命令行执行编译、打包等操作。是一种可以编译程序的软件。 这是安装 Ruby 所需要的 Librar">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-05T09:38:16.000Z">
+<meta property="og:updated_time" content="2017-09-05T10:01:19.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ruby On Rails 环境建置（Mac OS）">
 <meta name="twitter:description" content="Xcode 苹果公司向开发人员提供的集成开发环境，用于开发macOS、iOS、WatchOS和tvOS的应用程序。  在app store中找到 Xcode 并点击安装在安装 xcode 请暂时关闭 VPN ，不然下载 xcode 会很慢 Command Line Tools 命令行工具的集合，可以用命令行执行编译、打包等操作。是一种可以编译程序的软件。 这是安装 Ruby 所需要的 Librar">
@@ -405,11 +405,11 @@
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ xcode-select --install</div><div class="line">$ xcode-select -p              #显示：/Applications/Xcode.app/Contents/Developer，即是成功安装！</div></pre></td></tr></table></figure>
 <h2 id="Homebrew"><a href="#Homebrew" class="headerlink" title="Homebrew"></a><a href="https://brew.sh/" target="_blank" rel="external">Homebrew</a></h2><blockquote>
-<p>一款自由及开放源代码的软件包管理系统，用以简化Mac OS X系统上的软件安装过程。<br>开发者社群专为 MacOSX 打造的第三方套件管理程式，比如安装 Ruby需要的一些编译工具或函式库，可以从 Homebrew 取得。</p>
+<p>一款自由及开放源代码的软件包管理系统，用以简化Mac OS X系统上的软件安装过程。<br>开发者社群专为 MacOSX 打造的第三方套件管理程式，比如安装 Ruby需要的一些编译工具或函式库，可以从 Homebrew 取得。<br>如：Git、MySQL，甚至是Memcached、Elasticsearch、Redis、MongoDB等等</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ /usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</div><div class="line">$ echo &apos;export PATH=&quot;/usr/local/bin:$PATH&quot;&apos; &gt;&gt; ~/.bash_profile</div></pre></td></tr></table></figure>
 <h2 id="git"><a href="#git" class="headerlink" title="git"></a><a href="https://git-scm.com/" target="_blank" rel="external">git</a></h2><blockquote>
-<p>Git是一个免费的开源分布式版本控制系统，旨在以高效和高效的方式处理从小到大的项目。你可以把 Git 想像是程式码的时光机。</p>
+<p>Git是一个免费的开源分布式版本控制系统（程式码的时光备份机器），旨在以高效和高效的方式处理从小到大的项目。</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ brew install git</div><div class="line">$ git --version               # 检测安装成功</div></pre></td></tr></table></figure>
 <h2 id="ImageMagick"><a href="#ImageMagick" class="headerlink" title="ImageMagick"></a><a href="https://www.imagemagick.org/script/index.php" target="_blank" rel="external">ImageMagick</a></h2><blockquote>
@@ -417,19 +417,22 @@
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ brew install imagemagick</div></pre></td></tr></table></figure>
 <h2 id="PostgreSQL"><a href="#PostgreSQL" class="headerlink" title="PostgreSQL"></a><a href="https://www.postgresql.org/" target="_blank" rel="external">PostgreSQL</a></h2><blockquote>
-<p>自由的对象-关系型数据库服务器（数据库管理系统），在灵活的BSD-风格许可证下发行。<br>它在其他开放源代码数据库系统（比如MySQL和Firebird），和专有系统比如Oracle、Sybase、IBM的DB2和Microsoft SQL Server之外，为用户又提供了一种选择。<br>是一套强大的资料库。许多网站开发预设使用 PostgreSQL 作为底层资料库。</p>
+<p>自由的对象-关系型数据库服务器（数据库管理系统），在灵活的BSD-风格许可证下发行。<br>是一套强大的资料库。许多网站开发预设使用 PostgreSQL 作为底层资料库。<br>Rails预设使用SQLite可以作为新手开发练习之用，正式上线环境则推荐使用MySQL或PostgreSQL。</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ brew install postgresql</div><div class="line">$ brew services start postgresql   # 会确保在你下次开机时，也一并启动资料库</div></pre></td></tr></table></figure>
 <h2 id="Ruby-Version-Manager-RVM"><a href="#Ruby-Version-Manager-RVM" class="headerlink" title="Ruby Version Manager (RVM)"></a><a href="https://rvm.io/" target="_blank" rel="external">Ruby Version Manager (RVM)</a></h2><blockquote>
-<p>在 Mac 开发 Ruby on Rails 程式时，因为 Ruby 版本更新很快，常常会遇到一些版本与权限上的问题。所以当在开发时，我们通常不会使用系统内建的 Ruby。而是会采用一套 Ruby Version Manager 去管理 Ruby 的安装与升级。</p>
+<p>在 Mac 开发 Ruby on Rails 程式时，因为 Ruby 版本更新很快，常常会遇到一些版本与权限上的问题。所以当在开发时，我们通常不会使用系统内建的 Ruby。而是会采用一套 Ruby Version Manager 去管理 Ruby 的安装与升级。<br>rvm 是 Ruby 的版本管理工具，其作用是在系统中安装若干个不同版本的 Ruby，且不让它们之间发生冲突。</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ \curl -sSL https://get.rvm.io | bash -s stable        # 完成以后，继续输入下一句</div><div class="line">$ source ~/.rvm/scripts/rvm                             # 让 rvm 生效</div><div class="line">$ brew install libxml2</div></pre></td></tr></table></figure>
 <h2 id="Ruby"><a href="#Ruby" class="headerlink" title="Ruby"></a><a href="https://www.ruby-lang.org/zh_cn/" target="_blank" rel="external">Ruby</a></h2><blockquote>
 <p>一种面向对象、命令式、函数式、动态的通用编程语言。<br>在20世纪90年代中期由日本计算机科学家松本行弘（Matz）设计并开发。<br>它经常和框架（Rails）结合，常用于快速开发。</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ rvm install 2.3.1</div><div class="line">$ rvm use 2.3.1 --default               # 使用 ruby 2.3.1 为预设版本 (可改自己需要的版本)安装完成后需要重开 Terminal</div><div class="line">$ rvm list                              # 列出目前已安装的 Ruby 版本</div></pre></td></tr></table></figure>
-<p>如果遇到连不太上 <a href="https://rubygems.org" target="_blank" rel="external">https://rubygems.org</a> 可以指定 RubyGems 来源</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/</div></pre></td></tr></table></figure>
+<p>如果遇到连不太上 <a href="https://rubygems.org" target="_blank" rel="external">https://rubygems.org</a> 可以指定 RubyGems 来源<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/</div></pre></td></tr></table></figure></p>
+<p>你可以安装很多个版本的 Ruby，比如，刚刚安装了 2.3.1，随后你还可以安装 1.9.2：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rvm install 1.9.2</div></pre></td></tr></table></figure></p>
+<p>需要使用 1.9.2 版本的 Ruby 的时候，就可以用这个命令：（也可以随时用这个命令切换回 2.3.1）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ rvm use 1.9.2</div></pre></td></tr></table></figure>
+<p>想要卸载哪个版本的 Ruby，你就用这样的命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ rvm uninstall 1.9.2</div></pre></td></tr></table></figure></p>
 <h2 id="Rails"><a href="#Rails" class="headerlink" title="Rails"></a><a href="http://rubyonrails.org/" target="_blank" rel="external">Rails</a></h2><blockquote>
 <p>Ruby on Rails（官方简称为Rails。也有人简称为RoR，该缩写目前仍于一些中文讨论中被使用）。<br>是一个使用Ruby语言写的开源Web应用框架，它是严格按照MVC结构开发的。<br>它努力使自身保持简单，来使实际的应用开发时的代码更少，使用最少的配置。</p>
 </blockquote>
@@ -439,7 +442,7 @@
 <h2 id="atom"><a href="#atom" class="headerlink" title="atom"></a><a href="https://atom.io/" target="_blank" rel="external">atom</a></h2><blockquote>
 <p>由GitHub开发的自由及开放源代码的文字与代码编辑器，支持OS X、Windows和Linux操作系统，支持Node.js所写的插件，并内置由Github提供的Git版本控制系统。<br>多数的延伸包皆为开放源代码授权，并由社区建置与维护。Atom基于Electron（最初以Atom Shell知名）和许可使用Chromium和Node.js的跨平台应用框架，并使用CoffeeScript和Less撰写。Atom也可当作IDE使用。被它的开发者称为“21 世纪的“黑客”文本编辑器”。</p>
 </blockquote>
-<p>点击上面链接，下载后，解压缩，将 atom 拖拉至 “应用程式”即可完成安装。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ brew cask install atom</div><div class="line">$ brew cask                          #具体说明点击此处：https://caskroom.github.io/</div></pre></td></tr></table></figure>
 
       
     </div>
