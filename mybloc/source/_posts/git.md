@@ -76,8 +76,7 @@ $ git commit -m 'initial project version'                        ***
 
  **检查当前文件状态**
 ```
-# 要确定哪些文件当前处于什么状态，仅列出了修改过的文件
-$ git status                      
+$ git status                        # 要确定哪些文件当前处于什么状态
 ```
 
 **查看具体修改了什么地方**
@@ -86,61 +85,78 @@ $ git status
 $ git diff                                           
 # 查看已暂存的更新（git add之后输入）
 $ git diff --cached                                  
-$ git diff --staged                                               # Git1.6.1及更高版本还允许使用，效果是相同的，但更好记些。
+$ git diff --staged                    # 效果是相同的，但更好记些。
 ```
 
 **跟踪新文件**
- 把当前所有修改添加到下次提交中：
+
 ```
-$ git add README             # 跟踪 README 文件，在 `git add` 后面可以指明要跟踪的文件或目录（该目录下的所有文件）
-$ git add .
-$ git add -p <file>    # 把对某个文件的修改添加到下次提交中：
+$ git add <file>           # <file>可以指明要跟踪的文件或目录（该目录下的所有文件）
+$ git add .                # 把当前所有修改添加到下次提交中
+$ git add -p <file>        # 把对某个文件的修改添加到下次提交中
 ```
 
-`git add` 是个多功能命令，根据目标文件的状态不同，此命令的效果也不同：
-1)可以用它开始跟踪新文件(未曾跟踪过的文件标记为需要跟踪)
-2)把已跟踪的文件放到暂存区,即把目标文件快照放入暂存区域(add file into staged area)
-3)用于合并时把有冲突的文件标记为已解决状态等
-
+>`git add` 是个多功能命令，根据目标文件的状态不同，此命令的效果也不同：
+> 1)可以用它开始跟踪新文件(未曾跟踪过的文件标记为需要跟踪)
+> 2)把已跟踪的文件放到暂存区,即把目标文件快照放入暂存区域(add file into staged area)
+> 3)用于合并时把有冲突的文件标记为已解决状态等
 
 **提交更新**
 ```
-$ git commit                          # 提交之前已标记的变化：
-$ git commit -a                       # 提交本地的所有修改：
-$ git commit -m 'message here'        # 附加消息提交
+$ git commit                          # 提交之前已标记的变化?????
+$ git commit -m 'xxx'                 # 附加消息提交
 ```
 
- 提交，并将提交时间设置为之前的某个日期:
-
+**跟踪+提交更新**
 ```
-git commit --date="`date --date='n day ago'`" -am "Commit Message"
+$ git commit -a       #自动把所有已经跟踪过的文件暂存+提交（跳过使用暂存区域）
 ```
 
 
-
- 修改上次提交
-
-*请勿修改已发布的提交记录!*
-
+**修改上次提交**
 ```
-$ git commit --amend
+$ git commit --amend          # 请勿修改已发布的提交记录!
 ```
 
 git commit -a -m 'added new benchmarks'
 
- 修改上次提交的committer date：
+
+
+**移除文件**
+从暂存区域移除：
+```
+$ rm grit.gemspec             # 只是简单地从工作目录中手工删除文件（变为未暂存）
+$ git rm <file>               # 记录此次移除文件的操作
 
 ```
-GIT_COMMITTER_DATE="date" git commit --amend
+
+若删除之前修改过并且已经放到暂存区域：
+```
+$ git rm  -f                  # 强制删除（防误删除文件后丢失修改的内容）
 ```
 
- 修改上次提交的author date：
+把文件从暂存区域移除，但仍然希望保留在当前工作目录中：
+```
+$ git rm --cached xxx        # 列出文件或者目录的名字
+$ git rm log/\*.log          # glob 模式，此命令删除所有log/目录下扩展名为 .log 的文件
+# 注意到星号 `*` 之前的反斜杠 `\`，因为 Git 有它自己的文件模式扩展匹配方式，所以我们不用 shell 来帮忙展开（译注：实际上不加反斜杠也可以运行，只不过按照 shell 扩展的话，仅仅删除指定目录下的文件而不会递归匹配。上面的例子本来就指定了目录，所以效果等同，但下面的例子就会用递归方式匹配，所以必须加反斜杠。）。
+$ git rm \*~                 # 会递归删除当前目录及其子目录中所有 `~` 结尾的文件。
 
 ```
-git commit --amend --date="date"
+
+**移动文件**
+要在 Git 中对文件改名
+
+```
+$ git mv <file> <new file name>
+# 运行 `git mv` 就相当于运行了下面三条命令：
+$ mv <file> <new file name>
+$ git rm <file>
+$ git add <new file name>
+
 ```
 
- 把当前分支中未提交的修改移动到其他分支：
+把当前分支中未提交的修改移动到其他分支：
 
 ```
 git stash
@@ -180,12 +196,14 @@ $ git grep "Hello" v2.5
 
 ------
 
-## 提交历史
-
- 从最新提交开始，显示所有的提交记录（显示hash， 作者信息，提交的标题和时间）：
+## 查看提交历史
 
 ```
-$ git log
+$ git log          # 显示所有的提交记录（hash， 作者信息，提交时间和说明）
+$ git log -p       # 显示每次提交的内容差异
+$ git log -p -2    # 仅显示最近的两次更新
+
+
 ```
 
  显示所有提交（仅显示提交的hash和message）：
