@@ -113,7 +113,7 @@ $ git commit -a       #自动把所有已经跟踪过的文件暂存+提交（�
 ```
 
 
-**修改上次提交**
+**修改最后一次提交**
 ```
 $ git commit --amend          # 请勿修改已发布的提交记录!
 ```
@@ -201,44 +201,6 @@ $ git grep "Hello" v2.5
 ```
 $ git log          # 显示所有的提交记录（hash， 作者信息，提交时间和说明）
 $ git log -p       # 显示每次提交的内容差异
-$ git log -p -2    # 仅显示最近的两次更新
-
-
-```
-
- 显示所有提交（仅显示提交的hash和message）：
-
-```
-$ git log --oneline
-
-```
-
- 显示某个用户的所有提交：
-
-```
-$ git log --author="username"
-
-```
-
- 显示某个文件的所有修改：
-
-```
-$ git log -p <file>
-
-```
-
- 仅显示远端<remote/master>分支与远端<origin/master>分支提交记录的差集：
-
-```
-$ git log --oneline <origin/master>..<remote/master> --left-right
-
-```
-
- 谁，在什么时间，修改了文件的什么内容：
-
-```
-$ git blame <file>
-
 ```
 
  显示reflog：
