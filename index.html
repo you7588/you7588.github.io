@@ -317,7 +317,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/05/symbol/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/08/terminal/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Katherine Chen">
@@ -336,7 +336,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/09/05/symbol/" itemprop="url">Symbol for Mac</a></h1>
+                <a class="post-title-link" href="/2017/09/08/terminal/" itemprop="url">Terminal Cheatsheet for Mac</a></h1>
         
 
         <div class="post-meta">
@@ -348,8 +348,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-05T23:17:44+08:00">
-                2017-09-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-08T20:20:50+08:00">
+                2017-09-08
               </time>
             
 
@@ -367,9 +367,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/09/05/symbol/#comments" itemprop="discussionUrl">
+                <a href="/2017/09/08/terminal/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/09/05/symbol/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/09/08/terminal/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -399,78 +399,622 @@
       
         
           
-            <h2 id="快捷键中常用符号"><a href="#快捷键中常用符号" class="headerlink" title="快捷键中常用符号"></a>快捷键中常用符号</h2><table>
+            <h2 id="Terminal-macOS-简介"><a href="#Terminal-macOS-简介" class="headerlink" title="Terminal(macOS)简介"></a>Terminal(macOS)简介</h2><p>终端（Terminal，文件名称 Terminal.app），透过这个程式来输入程序指令这里是输入所有指令的地方。在鼠标和图形操作系统诞生前，这种操作方式就存在了。<br>Terminal 是使用者直接跟「Mac 内核」用「文字沟通」的介面。以往平常作为一个一般用户，我们都是以图形化介面，指挥 Mac 应该要怎么做做事。而开发者，往往更直接高效的，使用文字指令可以复杂的与 Mac 用文字指令沟通更多事。</p>
+<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><blockquote>
+<p><a href="https://you7588.github.io/2017/09/05/markdown/" target="_blank" rel="external">符号具体详见此处</a></p>
+</blockquote>
+<table>
 <thead>
 <tr>
-<th>符号</th>
-<th>名称</th>
-<th>输入码(自己设置的)</th>
+<th>指令</th>
+<th>描述</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>⌘</td>
-<td>command</td>
-<td>cmd.</td>
+<td>⇥</td>
+<td>自动补全文件或文件夹的名称</td>
 </tr>
 <tr>
-<td>⌥</td>
-<td>option</td>
-<td>opt.</td>
+<td>⌃ P</td>
+<td>调出历史中的前一条（Previous）命令，相当于↑</td>
 </tr>
 <tr>
-<td>⇧</td>
-<td>shift</td>
-<td>sh.</td>
+<td>⌃ N</td>
+<td>调出历史中的下一条（Next）命令，相当于↓</td>
 </tr>
 <tr>
-<td>⇪</td>
-<td>caps lock</td>
-<td>caps.</td>
+<td>⌃ R</td>
+<td>检索使用过的命令</td>
 </tr>
 <tr>
-<td>⌃</td>
-<td>control</td>
-<td>col.</td>
+<td>⌃ A</td>
+<td>光标移动到行首（Ahead of line），相当于Home键</td>
 </tr>
 <tr>
-<td>↩</td>
-<td>return</td>
-<td>re.</td>
+<td>⌃ E</td>
+<td>移光标移动到行尾（End of line），相当于End键</td>
 </tr>
 <tr>
-<td>⎋</td>
-<td>esc</td>
-<td>esc.</td>
+<td>⌃ T</td>
+<td>将光标前的两个文字进行互换</td>
 </tr>
 <tr>
-<td>⌅</td>
-<td>enter</td>
+<td>⎋ T</td>
+<td>将光标前的两个单词进行互换  </td>
+</tr>
+<tr>
+<td>⌃ Y</td>
+<td>粘贴最后一次被删除的单词</td>
+</tr>
+<tr>
+<td>⌃ W</td>
+<td>删除光标之前的单词</td>
+</tr>
+<tr>
+<td>⌃ K</td>
+<td>删除光标后的所有文字</td>
+</tr>
+<tr>
+<td>⌃ U</td>
+<td>删除光标前的所有文字</td>
+</tr>
+<tr>
+<td>⌃ L    或 ⌘ K</td>
+<td>清屏，相当于执行<code>clear</code>命令</td>
+</tr>
+<tr>
+<td></td>
 <td></td>
 </tr>
 <tr>
-<td>↖</td>
-<td>home</td>
+<td>⌃ C</td>
+<td>终止当前执行</td>
+</tr>
+<tr>
+<td>⌃ D</td>
+<td>退出当前shell</td>
+</tr>
+<tr>
+<td>⌃ Z</td>
+<td>将执行中任何东西放入后台进程,<code>fg</code>可将其恢复</td>
+</tr>
+<tr>
+<td></td>
 <td></td>
 </tr>
 <tr>
-<td>↘</td>
-<td>end</td>
-<td></td>
+<td><del>⌃ F</del></td>
+<td><del>光标向前移动一个单词</del></td>
 </tr>
 <tr>
-<td>⇟</td>
-<td>pagedown</td>
-<td></td>
+<td><del>⌃ B</del></td>
+<td><del>光标向后移动一个单词</del></td>
 </tr>
 <tr>
-<td>⇞</td>
-<td>pageup</td>
-<td></td>
+<td><del>⌃ H</del></td>
+<td><del>与退格键相同</del></td>
 </tr>
 </tbody>
 </table>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>[Mac——如何输入⌘、⌥、⇧、⌃、⎋等特殊字符]   |   <a href="http://newping.cn/447" target="_blank" rel="external">http://newping.cn/447</a>)</p>
+<h2 id="核心命令"><a href="#核心命令" class="headerlink" title="核心命令"></a>核心命令</h2><table>
+<thead>
+<tr>
+<th>指令</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cd</code>或<code>cd ~</code></td>
+<td>切换到Home目录</td>
+</tr>
+<tr>
+<td><code>cd /</code></td>
+<td>切换到根目录</td>
+</tr>
+<tr>
+<td><code>cd [folder]</code></td>
+<td>切换目录</td>
+</tr>
+<tr>
+<td><code>ls</code></td>
+<td>列出当前目录下所有的档案</td>
+</tr>
+<tr>
+<td><code>ls -al</code></td>
+<td>详细列出当前目录下所有档案的信息  </td>
+</tr>
+<tr>
+<td><code>ls -l</code></td>
+<td>文件详细列表</td>
+</tr>
+<tr>
+<td><code>ls -lh</code></td>
+<td>文件详细列表中的文件大小以更友好的形式列出</td>
+</tr>
+<tr>
+<td><code>ls -a</code></td>
+<td>列出隐藏文件夹</td>
+</tr>
+<tr>
+<td><code>ls -R</code></td>
+<td>递归显示文件夹中的内容</td>
+</tr>
+<tr>
+<td><code>sudo [command]</code></td>
+<td>以超级用户身份执行命令</td>
+</tr>
+<tr>
+<td><code>open [file]</code></td>
+<td>打开文件 ( 相当于双击一个文件 )</td>
+</tr>
+<tr>
+<td><code>open.</code></td>
+<td>打开当前文件</td>
+</tr>
+<tr>
+<td><code>top</code></td>
+<td>显示运行中的进程，按q终止</td>
+</tr>
+<tr>
+<td><del><code>nano [file]</code>或<code>pico    [file]</code></del></td>
+<td><del>打开编辑</del></td>
+</tr>
+<tr>
+<td><code>q</code></td>
+<td>退出</td>
+</tr>
+<tr>
+<td><code>clear</code></td>
+<td>清屏</td>
+</tr>
+</tbody>
+</table>
+<h2 id="命令历史"><a href="#命令历史" class="headerlink" title="命令历史"></a>命令历史</h2><table>
+<thead>
+<tr>
+<th>指令</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>history n</code></td>
+<td>列出最近执行过的n条命令,n可以指任何数字</td>
+</tr>
+<tr>
+<td><code>![value]</code></td>
+<td>执行最近以’value’开始的命令</td>
+</tr>
+<tr>
+<td><code>!!</code></td>
+<td>执行最近执行过的命令</td>
+</tr>
+</tbody>
+</table>
+<h2 id="文件管理"><a href="#文件管理" class="headerlink" title="文件管理"></a>文件管理</h2><table>
+<thead>
+<tr>
+<th>指令</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>touch [file]</code></td>
+<td>创建一个新文件</td>
+</tr>
+<tr>
+<td><code>pwd</code></td>
+<td>显示当前工作目录</td>
+</tr>
+<tr>
+<td><code>..</code></td>
+<td>上级目录</td>
+</tr>
+<tr>
+<td><code>ls -l ..</code></td>
+<td>上级目录的文件详细列表</td>
+</tr>
+<tr>
+<td><code>cd ../../</code></td>
+<td>向上移动两个层级     </td>
+</tr>
+<tr>
+<td><del><code>cat</code></del></td>
+<td><del>连接?</del></td>
+</tr>
+<tr>
+<td><code>rm [file]</code></td>
+<td>移除文件/目录</td>
+</tr>
+<tr>
+<td><code>rm -i [file]</code></td>
+<td>移除时出现确认提示</td>
+</tr>
+<tr>
+<td><code>rm -r [dir]</code></td>
+<td>移除文件及内容</td>
+</tr>
+<tr>
+<td><code>rm -f [file]</code></td>
+<td>强制移除</td>
+</tr>
+<tr>
+<td><code>cp [file] [newfile]</code></td>
+<td>复制文件/目录</td>
+</tr>
+<tr>
+<td><code>cp [file] [dir]</code></td>
+<td>复制文件到指定目录</td>
+</tr>
+<tr>
+<td><code>mv [file] [new filename]</code></td>
+<td>移动/修改文件名或目录, 如<code>mv -v [file] [dir]</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="目录管理"><a href="#目录管理" class="headerlink" title="目录管理"></a>目录管理</h2><blockquote>
+<p>使用命令行工具，可以对系统下的文件（file）和目录（folder/dirctory/dir，这三个词在大多数情况下是一回事）</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mkdir [dir]</code></td>
+<td>创建新目录</td>
+</tr>
+<tr>
+<td><code>mkdir -p [dir]/[dir]</code></td>
+<td>创建子目录</td>
+</tr>
+<tr>
+<td><code>rmdir [dir]</code></td>
+<td>移除目录 ( 仅限目录下没有内容时 )</td>
+</tr>
+<tr>
+<td><code>rm -rf [dir]</code></td>
+<td>强制删除</td>
+</tr>
+<tr>
+<td><code>mvdir [dir1] [dir2]</code></td>
+<td>移动或重命名一个目录</td>
+</tr>
+<tr>
+<td><code>rm -R [dir]</code></td>
+<td>移除目录及内容</td>
+</tr>
+</tbody>
+</table>
+<h2 id="管道-连接多个带有输出的命令"><a href="#管道-连接多个带有输出的命令" class="headerlink" title="管道 - 连接多个带有输出的命令"></a>管道 - 连接多个带有输出的命令</h2><blockquote>
+<p>不太懂</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>more</td>
+<td>按当前窗口大小输出内容</td>
+</tr>
+<tr>
+<td>&gt; [file]</td>
+<td>输出至指定文件, 注意文件将会覆盖</td>
+</tr>
+<tr>
+<td>&gt;&gt; [file]</td>
+<td>在制定文件的末尾附加内容</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>从文件中读取内容</td>
+</tr>
+</tbody>
+</table>
+<h2 id="帮助"><a href="#帮助" class="headerlink" title="帮助"></a>帮助</h2><blockquote>
+<p>没试过</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[command] -h</td>
+<td>显示帮助信息</td>
+</tr>
+<tr>
+<td>[command] –help</td>
+<td>显示帮助信息</td>
+</tr>
+<tr>
+<td>[command] help</td>
+<td>显示帮助信息</td>
+</tr>
+<tr>
+<td>reset</td>
+<td>重置当前终端</td>
+</tr>
+<tr>
+<td>man [command]</td>
+<td>显示指定命令的帮助信息</td>
+</tr>
+<tr>
+<td>whatis [command]</td>
+<td>显示指定命令的简述</td>
+</tr>
+</tbody>
+</table>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://en.wikipedia.org/wiki/Terminal_(macOS" target="_blank" rel="external">wiki-Terminal_(macOS)</a>)<br><a href="https://github.com/0nn0/terminal-mac-cheatsheet/tree/master/%E4%B8%AD%E6%96%87%E8%AF%B7%E5%8F%82%E8%80%83" target="_blank" rel="external">Terminal Cheatsheet for Mac ( 基本 )</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/06/git/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Katherine Chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tKfTcly1fj5edaynjzj30hs0hsglv.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="时间的朋友">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/06/git/" itemprop="url">Git-Recipes</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-06T09:44:41+08:00">
+                2017-09-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/09/06/git/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/09/06/git/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><blockquote>
+<p> 三种方式</p>
+</blockquote>
+<p><strong>系统（System）配置：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git config --system --list                                 # 列出系统配置</div></pre></td></tr></table></figure>
+<p>文件路径：<code>/etc/gitconfig</code>（系统中对所有用户都普遍适用的配置）</p>
+<p><strong>全局（Global）配置：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.name xxx                           # 设置用户名</div><div class="line">$ git config --global user.email xxx@xxx.com                  # 设置用户邮箱</div><div class="line">$ git config --global --list                                  # 列出全局配置</div></pre></td></tr></table></figure>
+<p>文件路径：<code>~/.gitconfig</code>（用户目录下的配置文件只适用于该用户）</p>
+<p><strong>项目（Repository）配置：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git config user.name &quot;xxx&quot;                                  # 设置用户名</div><div class="line">$ git config user.email xxxx@xxx.com                          # 设置用户邮箱</div><div class="line">$ git config --local --list                                   # 列出项目配置</div></pre></td></tr></table></figure>
+<p>文件路径：<code>&lt;工作目录&gt;/.git/config</code>（这里的配置仅仅针对当前项目有效）</p>
+<p><strong>列出已有的配置：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git config --list</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h2><p> <strong>复制一个已创建的远程仓库:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"># 通过 SSH</div><div class="line">$ git clone ssh://user@domain.com/repo.git</div><div class="line">$ git clone user@domain.com:repo.git                # Git会默认使用SSH及用当前登录的用户名连接服务器。</div><div class="line"></div><div class="line"># 通过 HTTP</div><div class="line">$ git clone http://domain.com/user/repo.git</div></pre></td></tr></table></figure>
+<p>文件路径：<code>当前目录/repo/.git</code></p>
+<p> <strong>在工作目录中初始化（创建）新的本地仓库:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git init                                            # 确保在工作目录里输入</div></pre></td></tr></table></figure>
+<p>文件路径：<code>当前目录/.git</code></p>
+<hr>
+<h2 id="本地修改"><a href="#本地修改" class="headerlink" title="本地修改"></a>本地修改</h2><p> <strong>检查当前文件状态</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git status                                          # 要确定哪些文件当前处于什么状态</div></pre></td></tr></table></figure>
+<p><strong>查看具体修改了什么地方</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># 查看未暂存的更新（git add之前输入）</div><div class="line">$ git diff                                            # q 退出                      </div><div class="line"># 查看已暂存的更新（git add之后输入）                                </div><div class="line">$ git diff --staged</div></pre></td></tr></table></figure>
+<p><strong>跟踪新文件</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ git add xxx                      # 可以指明要跟踪的文件或目录（该目录下的所有文件）</div><div class="line">$ git add .                        # 把所有新档案和改过的档案加进追踪修订，但“保留”删掉的档案。</div><div class="line">$ git add -A                       # 全部加进追踪修订，包括删掉的档案。</div><div class="line">$ git add -p xxx                   #### 把对某个文件的修改添加到下次提交中</div></pre></td></tr></table></figure>
+<blockquote>
+<p> <code>git add</code> 是个多功能命令，根据目标文件的状态不同，此命令的效果也不同：<br> 1)可以用它开始跟踪新文件(未曾跟踪过的文件标记为需要跟踪)<br> 2)把已跟踪的文件放到暂存区,即把目标文件快照放入暂存区域(add file into staged area)<br> 3)用于合并时把有冲突的文件标记为已解决状态等</p>
+</blockquote>
+<p><strong>提交更新</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git commit -m &apos;xxx&apos;                      # 附加消息提交</div></pre></td></tr></table></figure>
+<p><strong>跟踪+提交更新</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git commit -a -m &apos;xxx&apos;                   # 直接跳过使用暂存区域</div></pre></td></tr></table></figure>
+<p><strong>修改最后一次提交</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git commit --amend                      ####  请勿修改已发布的提交记录!</div></pre></td></tr></table></figure>
+<p><strong>移除文件</strong></p>
+<p>从暂存区域移除：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ rm grit.gemspec                         #### 只是简单地从工作目录中手工删除文件（变为未暂存）</div><div class="line">$ git rm &lt;file&gt;                           #### 记录此次移除文件的操作</div></pre></td></tr></table></figure></p>
+<p>若删除之前修改过并且已经放到暂存区域：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git rm  -f                              #### 强制删除（防误删除文件后丢失修改的内容）</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rm -rf .git                               #### cd到需要删除git的目录，并运行命令</div></pre></td></tr></table></figure>
+<p>把文件从暂存区域移除，但仍然希望保留在当前工作目录中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ git rm --cached xxx        # 列出文件或者目录的名字</div><div class="line">$ git rm log/\*.log          # glob 模式，此命令删除所有log/目录下扩展名为 .log 的文件</div><div class="line"># 注意到星号 `*` 之前的反斜杠 `\`，因为 Git 有它自己的文件模式扩展匹配方式，所以我们不用 shell 来帮忙展开（译注：实际上不加反斜杠也可以运行，只不过按照 shell 扩展的话，仅仅删除指定目录下的文件而不会递归匹配。上面的例子本来就指定了目录，所以效果等同，但下面的例子就会用递归方式匹配，所以必须加反斜杠。）。</div><div class="line">$ git rm \*~                 # 会递归删除当前目录及其子目录中所有 `~` 结尾的文件。</div></pre></td></tr></table></figure></p>
+<p><strong>移动文件</strong></p>
+<p>要在 Git 中对文件改名<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ git mv &lt;file&gt; &lt;new file name&gt;</div><div class="line"># 上面相当于运行了下面三条命令：</div><div class="line">$ mv &lt;file&gt; &lt;new file name&gt;</div><div class="line">$ git rm &lt;file&gt;</div><div class="line">$ git add &lt;new file name&gt;</div></pre></td></tr></table></figure></p>
+<p>把当前分支中未提交的修改移动到其他分支：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git stash</div><div class="line">git checkout branch2</div><div class="line">git stash pop</div></pre></td></tr></table></figure></p>
+<p> 将 stashed changes 应用到当前分支：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git stash apply</div></pre></td></tr></table></figure></p>
+<p> 删除最新一次的 stashed changes：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git stash drop</div></pre></td></tr></table></figure></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fja82ao6cxj30dw08tgmw.jpg" alt=""></p>
+<hr>
+<h2 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h2><p> 从当前目录的所有文件中查找文本内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git grep &quot;Hello&quot;</div></pre></td></tr></table></figure>
+<p> 在某一版本中搜索文本：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git grep &quot;Hello&quot; v2.5</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="查看提交历史"><a href="#查看提交历史" class="headerlink" title="查看提交历史"></a>查看提交历史</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git log          # 显示所有的提交记录（hash， 作者信息，提交时间和说明）</div><div class="line">$ git log -p       # 显示每次提交的内容差异</div></pre></td></tr></table></figure>
+<p> 显示reflog：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git reflog show</div></pre></td></tr></table></figure>
+<p> 删除reflog：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git reflog delete</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="分支与标签"><a href="#分支与标签" class="headerlink" title="分支与标签"></a>分支与标签</h2><p><strong>查看分支情况</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ git branch                   # 列出所有的分支（* 字符：表示当前所在的分支）</div><div class="line">$ git branch -v                # 查看各个分支最后一个提交对象的信息</div><div class="line">$ git branch -r                # 列出所有的远端分支</div><div class="line">$ git branch -a                # 查看所有分支(本地+远端)***</div><div class="line">$ git branch --merged          # 查看哪些分支已被并入当前分支（即在当前分支的直接上游）</div><div class="line">$ git branch --no-merged       # 查看尚未与当前分支合并的分支</div></pre></td></tr></table></figure>
+<p> <strong>基于当前分支创建新分支</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git branch &lt;new-branch&gt;</div></pre></td></tr></table></figure></p>
+<p> <strong>切换分支</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git checkout &lt;branch&gt;</div></pre></td></tr></table></figure></p>
+<p> <strong>创建并切换到新分支</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git checkout -b &lt;branch&gt;       # 相当于执行上面两条命令</div></pre></td></tr></table></figure></p>
+<p> 基于远程分支创建新的可追溯的分支：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git branch --track &lt;new-branch&gt; &lt;remote-branch&gt;</div></pre></td></tr></table></figure>
+<p> <strong>删除本地分支</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git branch -d &lt;branch&gt;            # 未合并的分支会提示错误</div><div class="line">$ git branch -D &lt;branch&gt;            # 强制执行，将会丢失未合并的修改！</div></pre></td></tr></table></figure></p>
+<p> 给当前版本打标签</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git tag &lt;tag-name&gt;</div><div class="line">$ git tag -a &lt;tag-name&gt;             # 给当前版本打标签并附加消息</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="更新与发布"><a href="#更新与发布" class="headerlink" title="更新与发布"></a>更新与发布</h2><p> <strong>列出当前的远程仓库</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git remote                 # 列出每个远程库的简短名字</div><div class="line">$ git remote -v              # 显示对应的克隆地址</div><div class="line">$ git remote show &lt;remote&gt;   # 查看远程仓库的信息，如origin</div></pre></td></tr></table></figure>
+<p> <strong>添加新的远程仓库</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git remote add &lt;remote&gt; &lt;url&gt;   # 指定一个简单的名字(以便将来引用)，指代对应的仓库地址</div><div class="line">$ git remote add origin  git://github.com/xxx.git   </div><div class="line"># 把远端的「原始来源」设为 github 端点。新增一个远程的仓库，命名为 origin。origin 的位置指向 Github</div></pre></td></tr></table></figure>
+<p> 下载远程端版本，但不合并到HEAD中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git fetch &lt;remote&gt;           # 同步远程服务器上的数据到本地。&lt;remote&gt; 一般为origin   ***</div><div class="line">git fetch -p &lt;remote&gt;</div></pre></td></tr></table></figure></p>
+<p> 下载远程端版本，并自动与HEAD版本合并：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git remote pull &lt;remote&gt; &lt;url&gt;</div></pre></td></tr></table></figure></p>
+<p> 将远程端版本合并到本地版本中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git pull                                ***拉下远程仓库的变更</div><div class="line">$ git pull &lt;remote&gt; &lt;branch&gt;</div><div class="line">$ git pull origin master</div></pre></td></tr></table></figure></p>
+<p> 以rebase方式将远端分支与本地合并：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git pull --rebase &lt;remote&gt; &lt;branch&gt;</div></pre></td></tr></table></figure></p>
+<p>将本地版本发布到远程端：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ git push &lt;remote&gt; &lt;branch&gt;               # 远程仓库名（远端的端点，如：origin）&lt;== 本地分支名</div><div class="line">$ git push origin master</div><div class="line">$ git push remote &lt;remote&gt; &lt;branch&gt;        #</div><div class="line">$ git push remote &lt;remote&gt;:&lt;branch&gt;        # 远程仓库名 远程分支名:本地分支名</div><div class="line">$ git push -u origin master                # 预设以后都是推到远程 origin 仓库的 master，所以以后可以直接 git push？</div></pre></td></tr></table></figure></p>
+<p> 删除远程端分支：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git push &lt;remote&gt; :&lt;branch&gt; (since Git v1.5.0)</div><div class="line">or</div><div class="line">git push &lt;remote&gt; --delete &lt;branch&gt; (since Git v1.7.0)</div></pre></td></tr></table></figure></p>
+<p> 发布标签:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git push --tags</div></pre></td></tr></table></figure></p>
+<p>Rename a remote<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git remote rename &lt;old-name&gt; &lt;new-name&gt;</div></pre></td></tr></table></figure></p>
+<p>Track a remote repository<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git remote add --track &lt;remote-branch&gt; &lt;remote&gt; &lt;url&gt;</div></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="合并与重置-Rebase"><a href="#合并与重置-Rebase" class="headerlink" title="合并与重置(Rebase)"></a>合并与重置(Rebase)</h2><p> 将分支合并到当前HEAD中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git merge &lt;branch&gt;</div></pre></td></tr></table></figure></p>
+<p>合并时出现了“Fast forward”的提示。由于当前 master 分支所在的提交对象是要并入的 hotfix 分支的直接上游，Git 只需把 master 分支指针直接右移。换句话说，如果顺着一个分支走下去可以到达另一个分支的话，那么 Git 在合并两者时，只会简单地把指针右移，因为这种单线的历史分支不存在任何需要解决的分歧，所以这种合并过程可以称为快进（Fast forward）。</p>
+<p> 将当前HEAD版本重置到分支中:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git rebase &lt;branch&gt;              # 请勿重置已发布的提交!</div></pre></td></tr></table></figure>
+<p> 退出重置:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git rebase --abort</div></pre></td></tr></table></figure></p>
+<p> 解决冲突后继续重置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git rebase --continue</div></pre></td></tr></table></figure></p>
+<p> 使用配置好的merge tool 解决冲突：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git mergetool</div></pre></td></tr></table></figure>
+<p> 在编辑器中手动解决冲突后，标记文件为<code>已解决冲突</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git add &lt;resolved-file&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git rm &lt;resolved-file&gt;</div></pre></td></tr></table></figure>
+<p> 合并提交：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git rebase -i &lt;commit-just-before-first&gt;</div></pre></td></tr></table></figure>
+<p>把上面的内容替换为下面的内容：</p>
+<p>原内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">pick &lt;commit_id&gt;</div><div class="line">pick &lt;commit_id2&gt;</div><div class="line">pick &lt;commit_id3&gt;</div></pre></td></tr></table></figure>
+<p>替换为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">pick &lt;commit_id&gt;</div><div class="line">squash &lt;commit_id2&gt;</div><div class="line">squash &lt;commit_id3&gt;</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h2><h3 id="commit的删除"><a href="#commit的删除" class="headerlink" title="commit的删除"></a>commit的删除</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git log                    #  查看现存commit的历史，按q退出</div><div class="line">$ git reset --hard HEAD~1    #  数字代表删除多少个分支</div><div class="line">$ git reset --hard HEAD      #  放弃工作目录下的所有修改：???</div></pre></td></tr></table></figure>
+<p> 移除缓存区的所有文件（i.e. 撤销上次<code>git add</code>）:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git reset HEAD</div></pre></td></tr></table></figure>
+<p> 放弃某个文件的所有本地修改：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git checkout HEAD &lt;file&gt;</div></pre></td></tr></table></figure>
+<p> 重置一个提交（通过创建一个截然不同的新提交）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git revert &lt;commit&gt;</div></pre></td></tr></table></figure>
+<h3 id="将HEAD重置到指定的版本，并抛弃该版本之后的所有修改"><a href="#将HEAD重置到指定的版本，并抛弃该版本之后的所有修改" class="headerlink" title="将HEAD重置到指定的版本，并抛弃该版本之后的所有修改"></a>将HEAD重置到指定的版本，并抛弃该版本之后的所有修改</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git reflog                  # 查看commit历史，包括现存和已删除的，按q退出</div><div class="line">$ git reset --hard &lt;commit&gt;   # &lt;commit&gt;为想恢复的commit ID</div></pre></td></tr></table></figure>
+<p> 用远端分支强制覆盖本地分支：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git reset --hard &lt;remote/branch&gt; e.g., upstream/master, origin/my-feature</div></pre></td></tr></table></figure>
+<p> 将HEAD重置到上一次提交的版本，并将之后的修改标记为未添加到缓存区的修改：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git reset &lt;commit&gt;</div></pre></td></tr></table></figure>
+<p> 将HEAD重置到上一次提交的版本，并保留未提交的本地修改：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git reset --keep &lt;commit&gt;</div></pre></td></tr></table></figure>
+<p> 删除添加<code>.gitignore</code>文件前错误提交的文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git rm -r --cached .</div><div class="line">$ git add .</div><div class="line">$ git commit -m &quot;remove xyz file&quot;</div></pre></td></tr></table></figure>
+<p><strong>修改的东西不想要保存</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ git status                             # 查看更改了什么</div><div class="line">$ git add .                              # 追踪</div><div class="line">$ git stash</div><div class="line">$ git stash clear</div><div class="line">$ git status                             # 继续查看更改了什么（已清空）</div></pre></td></tr></table></figure>
+<p>gitignore</p>
+<p>-可以设定哪一些档案不被 git 存取<br>-比如说 config/database.yml</p>
+<hr>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="https://blog.igevin.info/posts/git-cheat-sheet/" target="_blank" rel="external">Git Cheat Sheet by iGevin</a><br><a href="https://ihower.tw/git/" target="_blank" rel="external">Git 版本控制系統 —— ihower 的 Git 教室</a><br><a href="https://try.github.io/levels/1/challenges/1" target="_blank" rel="external">Try Git ⼗五分钟体验</a><br><a href="https://git-scm.com/book" target="_blank" rel="external">The entire Pro Git book</a><br><a href="https://github.com/geeeeeeeeek/git-recipes" target="_blank" rel="external">Git-recipes</a></p>
 
           
         
@@ -1135,7 +1679,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1157,7 +1701,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/about/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
