@@ -1,28 +1,29 @@
 ---
-title: Git Cheat Sheet
+title: Git-Recipes
 date: 2017-09-06 09:44:41
-tags: [git, 常用, cheat sheet]
+tags: [git, 常用, cheat sheet]## 配置
 ---
 
-
 ## 配置
-> 三种方式
+>  三种方式
 
 **系统（System）配置：**
+
 ```
 $ git config --system --list                                 # 列出系统配置
 ```
+
 文件路径：`/etc/gitconfig`（系统中对所有用户都普遍适用的配置）
 
-
 **全局（Global）配置：**
+
 ```
 $ git config --global user.name xxx                           # 设置用户名
 $ git config --global user.email xxx@xxx.com                  # 设置用户邮箱
 $ git config --global --list                                  # 列出全局配置
 ```
-文件路径：`~/.gitconfig`（用户目录下的配置文件只适用于该用户）
 
+文件路径：`~/.gitconfig`（用户目录下的配置文件只适用于该用户）
 
 **项目（Repository）配置：**
 
@@ -31,6 +32,7 @@ $ git config user.name "xxx"                                  # 设置用户名
 $ git config user.email xxxx@xxx.com                          # 设置用户邮箱
 $ git config --local --list                                   # 列出项目配置
 ```
+
 文件路径：`<工作目录>/.git/config`（这里的配置仅仅针对当前项目有效）
 
 **列出已有的配置：**
@@ -41,10 +43,10 @@ $ git config --list
 
 ------
 
-
 ## 创建
 
  **复制一个已创建的远程仓库:**
+
 ```
 # 通过 SSH
 $ git clone ssh://user@domain.com/repo.git
@@ -53,26 +55,29 @@ $ git clone user@domain.com:repo.git                # Git会默认使用SSH及�
 # 通过 HTTP
 $ git clone http://domain.com/user/repo.git
 ```
+
 文件路径：`当前目录/repo/.git`
 
-
  **在工作目录中初始化（创建）新的本地仓库:**
+
 ```
 $ git init                                            # 确保在工作目录里输入
 ```
+
 文件路径：`当前目录/.git`
 
 ------
 
-
 ## 本地修改
 
  **检查当前文件状态**
+
 ```
 $ git status                                          # 要确定哪些文件当前处于什么状态
 ```
 
 **查看具体修改了什么地方**
+
 ```
 # 查看未暂存的更新（git add之前输入）
 $ git diff                                            # q 退出                      
@@ -81,58 +86,53 @@ $ git diff --staged
 ```
 
 **跟踪新文件**
+
 ```
-$ git add <file>                          # <file>可以指明要跟踪的文件或目录（该目录下的所有文件）
-$ git add .                               # 把所有新档案和改过的档案加进追踪修订，但“保留”删掉的档案。
-$ git add -A                              # 全部加进追踪修订，包括删掉的档案。
-$ git add -p <file>                       # 把对某个文件的修改添加到下次提交中
+$ git add xxx                      # 可以指明要跟踪的文件或目录（该目录下的所有文件）
+$ git add .                        # 把所有新档案和改过的档案加进追踪修订，但“保留”删掉的档案。
+$ git add -A                       # 全部加进追踪修订，包括删掉的档案。
+$ git add -p xxx                   #### 把对某个文件的修改添加到下次提交中  
 ```
-> `git add` 是个多功能命令，根据目标文件的状态不同，此命令的效果也不同：
-> 1)可以用它开始跟踪新文件(未曾跟踪过的文件标记为需要跟踪)
-> 2)把已跟踪的文件放到暂存区,即把目标文件快照放入暂存区域(add file into staged area)
-> 3)用于合并时把有冲突的文件标记为已解决状态等
+
+>  `git add` 是个多功能命令，根据目标文件的状态不同，此命令的效果也不同：
+>  1)可以用它开始跟踪新文件(未曾跟踪过的文件标记为需要跟踪)
+>  2)把已跟踪的文件放到暂存区,即把目标文件快照放入暂存区域(add file into staged area)
+>  3)用于合并时把有冲突的文件标记为已解决状态等
 
 **提交更新**
+
 ```
-$ git commit                                # 提交之前已标记的变化?????
-$ git commit -m 'xxx'                       # 附加消息提交
+$ git commit -m 'xxx'                      # 附加消息提交
 ```
 
 **跟踪+提交更新**
-```
-$ git commit -a       #自动把所有已经跟踪过的文件暂存+提交（跳过使用暂存区域）
-$ git commit -a -m 'made a change'   ***
-```
 
+```
+$ git commit -a -m 'xxx'                   # 直接跳过使用暂存区域
+```
 
 **修改最后一次提交**
+
 ```
-$ git commit --amend          # 请勿修改已发布的提交记录!
+$ git commit --amend                      ####  请勿修改已发布的提交记录!
 ```
-
-git commit -a -m 'added new benchmarks'
-
-
 
 **移除文件**
+
 从暂存区域移除：
 ```
-$ rm grit.gemspec             # 只是简单地从工作目录中手工删除文件（变为未暂存）
-$ git rm <file>               # 记录此次移除文件的操作
-
+$ rm grit.gemspec                         #### 只是简单地从工作目录中手工删除文件（变为未暂存）
+$ git rm <file>                           #### 记录此次移除文件的操作
 ```
 
 若删除之前修改过并且已经放到暂存区域：
 ```
-$ git rm  -f                  # 强制删除（防误删除文件后丢失修改的内容）
+$ git rm  -f                              #### 强制删除（防误删除文件后丢失修改的内容）
 ```
 
 ```
-cd到需要删除git的目录，并运行命令              ***
-Mac OS或任何Linux发行版
-rm -rf .git
+rm -rf .git                               #### cd到需要删除git的目录，并运行命令
 ```
-
 
 把文件从暂存区域移除，但仍然希望保留在当前工作目录中：
 ```
@@ -140,23 +140,20 @@ $ git rm --cached xxx        # 列出文件或者目录的名字
 $ git rm log/\*.log          # glob 模式，此命令删除所有log/目录下扩展名为 .log 的文件
 # 注意到星号 `*` 之前的反斜杠 `\`，因为 Git 有它自己的文件模式扩展匹配方式，所以我们不用 shell 来帮忙展开（译注：实际上不加反斜杠也可以运行，只不过按照 shell 扩展的话，仅仅删除指定目录下的文件而不会递归匹配。上面的例子本来就指定了目录，所以效果等同，但下面的例子就会用递归方式匹配，所以必须加反斜杠。）。
 $ git rm \*~                 # 会递归删除当前目录及其子目录中所有 `~` 结尾的文件。
-
 ```
 
 **移动文件**
-要在 Git 中对文件改名
 
+要在 Git 中对文件改名
 ```
 $ git mv <file> <new file name>
-# 运行 `git mv` 就相当于运行了下面三条命令：
+# 上面相当于运行了下面三条命令：
 $ mv <file> <new file name>
 $ git rm <file>
 $ git add <new file name>
-
 ```
 
 把当前分支中未提交的修改移动到其他分支：
-
 ```
 git stash
 git checkout branch2
@@ -164,13 +161,11 @@ git stash pop
 ```
 
  将 stashed changes 应用到当前分支：
-
 ```
 git stash apply
 ```
 
  删除最新一次的 stashed changes：
-
 ```
 git stash drop
 ```
@@ -206,21 +201,19 @@ $ git log -p       # 显示每次提交的内容差异
 
 ```
 $ git reflog show
-
 ```
 
  删除reflog：
 
 ```
 $ git reflog delete
-
 ```
 
 ------
 
-##分支与标签
-
+## 分支与标签
 **查看分支情况**
+
 ```
 $ git branch                   # 列出所有的分支（* 字符：表示当前所在的分支）
 $ git branch -v                # 查看各个分支最后一个提交对象的信息
@@ -228,7 +221,6 @@ $ git branch -r                # 列出所有的远端分支
 $ git branch -a                # 查看所有分支(本地+远端)***
 $ git branch --merged          # 查看哪些分支已被并入当前分支（即在当前分支的直接上游）
 $ git branch --no-merged       # 查看尚未与当前分支合并的分支
-
 ```
 
  **基于当前分支创建新分支**
@@ -257,7 +249,6 @@ $ git branch --track <new-branch> <remote-branch>
 $ git branch -d <branch>            # 未合并的分支会提示错误
 $ git branch -D <branch>            # 强制执行，将会丢失未合并的修改！
 ```
-无法删除当前分支，要先离开你要删除的分支
 
  给当前版本打标签
 
@@ -290,7 +281,6 @@ $ git remote add origin  git://github.com/xxx.git
 ```
 
  下载远程端版本，但不合并到HEAD中：
-
 ```
 $ git fetch <remote>           # 同步远程服务器上的数据到本地。<remote> 一般为origin   ***
 git fetch -p <remote>
@@ -298,14 +288,12 @@ git fetch -p <remote>
 ```
 
  下载远程端版本，并自动与HEAD版本合并：
-
 ```
 $ git remote pull <remote> <url>
 
 ```
 
  将远程端版本合并到本地版本中：
-
 ```
 $ git pull                                ***拉下远程仓库的变更
 $ git pull <remote> <branch>
@@ -314,7 +302,6 @@ $ git pull origin master
 ```
 
  以rebase方式将远端分支与本地合并：
-
 ```
 git pull --rebase <remote> <branch>
 
@@ -332,7 +319,6 @@ $ git push -u origin master                # 预设以后都是推到远程 orig
 
 
  删除远程端分支：
-
 ```
 $ git push <remote> :<branch> (since Git v1.5.0)
 or
@@ -341,7 +327,6 @@ git push <remote> --delete <branch> (since Git v1.7.0)
 ```
 
  发布标签:
-
 ```
 $ git push --tags
 
@@ -351,7 +336,6 @@ Rename a remote
 ```
 git remote rename <old-name> <new-name>
 ```
-
 
 Track a remote repository
 ```
@@ -367,26 +351,23 @@ git remote add --track <remote-branch> <remote> <url>
 $ git merge <branch>
 
 ```
+
 合并时出现了“Fast forward”的提示。由于当前 master 分支所在的提交对象是要并入的 hotfix 分支的直接上游，Git 只需把 master 分支指针直接右移。换句话说，如果顺着一个分支走下去可以到达另一个分支的话，那么 Git 在合并两者时，只会简单地把指针右移，因为这种单线的历史分支不存在任何需要解决的分歧，所以这种合并过程可以称为快进（Fast forward）。
 
  将当前HEAD版本重置到分支中:
 
-*请勿重置已发布的提交!*
-
 ```
-$ git rebase <branch>
+$ git rebase <branch>              # 请勿重置已发布的提交!
 
 ```
 
  退出重置:
-
 ```
 $ git rebase --abort
 
 ```
 
  解决冲突后继续重置：
-
 ```
 $ git rebase --continue
 
@@ -442,7 +423,7 @@ squash <commit_id3>
 
 ## 撤销
 
-###commit的删除
+### commit的删除
 
 ```
 $ git log                    #  查看现存commit的历史，按q退出
@@ -472,7 +453,7 @@ $ git revert <commit>
 
 ```
 
- ###将HEAD重置到指定的版本，并抛弃该版本之后的所有修改
+### 将HEAD重置到指定的版本，并抛弃该版本之后的所有修改
 
 ```
 $ git reflog                  # 查看commit历史，包括现存和已删除的，按q退出
@@ -511,6 +492,7 @@ $ git commit -m "remove xyz file"
 ```
 
 **修改的东西不想要保存**
+
 ```
 $ git status                             # 查看更改了什么
 $ git add .                              # 追踪
@@ -521,9 +503,8 @@ $ git status                             # 继续查看更改了什么（已清�
 
 gitignore
 
-* 可以设定哪一些档案不被 git 存取
-* 比如说 config/database.yml
-
+-可以设定哪一些档案不被 git 存取
+-比如说 config/database.yml
 
 ------
 
@@ -533,3 +514,4 @@ gitignore
 [Git 版本控制系統 —— ihower 的 Git 教室](https://ihower.tw/git/)
 [Try Git ⼗五分钟体验](https://try.github.io/levels/1/challenges/1)
 [The entire Pro Git book](https://git-scm.com/book)
+[Git-recipes](https://github.com/geeeeeeeeek/git-recipes)
