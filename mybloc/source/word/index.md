@@ -17,8 +17,15 @@ Finder →[TotalFinder](http://totalfinder.binaryage.com)/[Path Finder](http://w
 Spotlight →[QuickSilver](https://qsapp.com/)/[Alfred](https://www.alfredapp.com/)
 [Heroku 所推出的环境命列工具包](https://toolbelt.heroku.com/)
 快速选择、显示16位颜色——[Sip](http://sipapp.io/)
-极致简洁的markdown编辑器——[Typora](https://typora.io/)——[Typora+ipic写作加图片技巧](https://sspai.com/post/36275)
+极致简洁的markdown编辑器——[Typora](https://typora.io/)
 图床神器——[iPic](https://toolinbox.net/iPic/)
+
+
+## 升级小技巧
+[苹果Mac自带词典完美扩充](http://www.jianshu.com/p/c57be986589b)
+[让Mac 自带字典可以“读”单词](https://www.zhihu.com/question/30134586)
+[Typora+ipic写作加图片技巧](https://sspai.com/post/36275)
+[Dash的用法](http://scriptfans.iteye.com/blog/1543219)
 
 ***
 
