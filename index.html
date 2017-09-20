@@ -317,6 +317,504 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/14/project/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Katherine Chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tKfTcly1fj5edaynjzj30hs0hsglv.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="时间的朋友">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/14/project/" itemprop="url">project for Ruby</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-14T09:58:56+08:00">
+                2017-09-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/09/14/project/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/09/14/project/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Introduction-to-Ruby-（变换字体的大小写）"><a href="#Introduction-to-Ruby-（变换字体的大小写）" class="headerlink" title="Introduction to Ruby （变换字体的大小写）"></a>Introduction to Ruby （变换字体的大小写）</h2><blockquote>
+<p>PUTTING THE FORM IN FORMATTER<br>Read a user’s input and correct his or her capitalization.</p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">print <span class="string">"What is your name? "</span>    </div><div class="line">name = gets.chomp</div><div class="line">name.capitalize!</div><div class="line"></div><div class="line">print <span class="string">"What city are you from? "</span>				</div><div class="line">city = gets.chomp</div><div class="line">city.upcase!</div><div class="line"></div><div class="line">puts <span class="string">"Your name is <span class="subst">#&#123;name&#125;</span> and you are from <span class="subst">#&#123;city&#125;</span>!"</span></div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">What is your name?                    <span class="comment"># $ katherine</span></div><div class="line">What city are you from?               <span class="comment"># $ guangzhou</span></div><div class="line"></div><div class="line"><span class="comment"># =&gt;Your name is Katherine and you are from GUANGZHOU!</span></div></pre></td></tr></table></figure>
+<ol>
+<li>提示用户输入信息 <code>print &quot;What is your name? &quot;</code></li>
+<li>获得用户的信息  <code>variable_name = gets.chomp</code><br><code>gets</code>    gets input from the user. (会自动换行)<br><code>chomp</code> removes that extra line.（移除多余的行数）</li>
+<li>转换大小写<br><code>.capitalize</code> 显示单词的第一个字母为大写，其他的为小写<br><code>.upcase</code> 显示单词的所有字母为大写<br><code>!</code> at the end of the method name so that Ruby will change the string in-place.</li>
+<li>输出内容：插入字串（string interpolation） <code>#{variable_name}</code></li>
+</ol>
+<hr>
+<h2 id="Control-Flow-in-Ruby（让-quot-s-quot-和-quot-th-quot-互换）"><a href="#Control-Flow-in-Ruby（让-quot-s-quot-和-quot-th-quot-互换）" class="headerlink" title="Control Flow in Ruby（让&quot;s&quot; 和 &quot;th&quot; 互换）"></a>Control Flow in Ruby（让<code>&quot;s&quot;</code> 和 <code>&quot;th&quot;</code> 互换）</h2><blockquote>
+<p>THITH MEANTH WAR!<br>Daffy Duckify a user’s string, replacing each <code>&quot;s&quot;</code> with <code>&quot;th&quot;</code></p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">print <span class="string">"Pleathe enter a thtring: "</span></div><div class="line">user_input = gets.chomp</div><div class="line">user_input.downcase!</div><div class="line"></div><div class="line"><span class="keyword">if</span> user_input.<span class="keyword">include</span>? <span class="string">"th"</span></div><div class="line">  user_input.gsub!(<span class="regexp">/th/</span>, <span class="string">"s"</span>)</div><div class="line"><span class="keyword">else</span></div><div class="line">  puts <span class="string">"Nothing to do here!"</span></div><div class="line"><span class="keyword">end</span></div><div class="line"></div><div class="line">puts <span class="string">"Your string is: <span class="subst">#&#123;user_input&#125;</span>"</span></div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Pleathe enter a thtring:          <span class="comment"># $ thtring</span></div><div class="line"><span class="comment"># =&gt; Your string is: string</span></div><div class="line"></div><div class="line">Pleathe enter a thtring:          <span class="comment"># $ haha</span></div><div class="line"><span class="comment"># =&gt; Nothing to do here!</span></div><div class="line"><span class="comment"># =&gt; Your string is: haha</span></div></pre></td></tr></table></figure>
+<ol>
+<li>把用户输入的内容全部转换为小写 <code>.downcase!</code></li>
+<li>设置条件 <code>if string_to_check.include? &quot;substring&quot;</code><br> <code>?</code> 按照惯例，通常表示判断 <code>true</code> 和 <code>false</code>，</li>
+<li>条件内容：如果<code>true</code>就执行 <code>string_to_change.gsub!(/s/, &quot;th&quot;)</code><br><code>.gsub!</code> stands for global substitution(替换字符中的单词)</li>
+</ol>
+<hr>
+<h2 id="Looping-with-Ruby（隐藏输入的信息）"><a href="#Looping-with-Ruby（隐藏输入的信息）" class="headerlink" title="Looping with Ruby（隐藏输入的信息）"></a>Looping with Ruby（隐藏输入的信息）</h2><blockquote>
+<p>REDACTED!<br>Hiding information is a major part of programming: protecting passwords, establishing secure connections, and securing programs against tampering all rely on controlling access to information.<br>change a user’s input with the tools we have now: arrays and iterators.</p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">puts <span class="string">"Text to search through: "</span></div><div class="line">text = gets.chomp</div><div class="line">puts <span class="string">"Word to redact: "</span></div><div class="line">redact = gets.chomp</div><div class="line"></div><div class="line">words = text.split(<span class="string">" "</span>)</div><div class="line"></div><div class="line">words.each <span class="keyword">do</span> <span class="params">|word|</span></div><div class="line">  <span class="keyword">if</span> word != redact</div><div class="line">    print word + <span class="string">" "</span></div><div class="line">  <span class="keyword">else</span></div><div class="line">    print <span class="string">"REDACTED "</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Text to search through:           <span class="comment"># $ today is Monday</span></div><div class="line">Word to redact:                   <span class="comment"># $ Monday</span></div><div class="line"><span class="comment"># =&gt; today is REDACTED</span></div></pre></td></tr></table></figure>
+<ul>
+<li><p><code>.split</code>  将字串(string)转换为数组(array).<br>  <strong>delimiter</strong> :<code>string.split()</code> 括号中可添加内容，若<code>sting</code>中有对应括号中的内容，<code>.split</code>会移除与内容对应的字串元素。</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># example</span></div><div class="line">text = <span class="string">"today is Monday"</span></div><div class="line">words1 = text.split(<span class="string">" "</span>)              <span class="comment"># =&gt; ["today", "is", "Monday"]</span></div><div class="line">words2 = text.split(<span class="string">"y"</span>)              <span class="comment"># =&gt; ["toda", " is Monda"]</span></div><div class="line">words3 = text.split(<span class="string">","</span>)              <span class="comment"># =&gt; ["today is Monday"]</span></div><div class="line"></div><div class="line"><span class="comment"># test</span></div><div class="line">text = <span class="string">"today is Monday"</span></div><div class="line">words = text.split(<span class="string">" "</span>)</div><div class="line">print words                           <span class="comment"># =&gt; ["today", "is", "Monday"]</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>打印信息</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># example</span></div><div class="line">letters = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>]</div><div class="line">letters.each <span class="keyword">do</span> <span class="params">|letter|</span></div><div class="line">  print letter                           <span class="comment"># =&gt; abcd</span></div><div class="line"><span class="keyword">end</span></div><div class="line"></div><div class="line"><span class="comment"># test</span></div><div class="line">words = [<span class="string">"today"</span>, <span class="string">"is"</span>, <span class="string">"Monday"</span>]</div><div class="line">words.each <span class="keyword">do</span> <span class="params">|word|</span></div><div class="line">    print word + <span class="string">" "</span>                     <span class="comment"># =&gt; today is Monday</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>添加筛选条件</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># test</span></div><div class="line">words = [<span class="string">"today"</span>, <span class="string">"is"</span>, <span class="string">"Monday"</span>]</div><div class="line">redact = <span class="string">"Monday"</span></div><div class="line"></div><div class="line">words.each <span class="keyword">do</span> <span class="params">|word|</span></div><div class="line">  <span class="keyword">if</span> word != redact</div><div class="line">    print word + <span class="string">" "</span>                     <span class="comment"># =&gt; today is</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>添加判断语句（Control Flow Know-How）</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># example</span></div><div class="line"><span class="keyword">if</span> var == <span class="number">10</span></div><div class="line">   print <span class="string">"Variable is 10"</span></div><div class="line"><span class="keyword">else</span></div><div class="line">   print <span class="string">"Variable is something else"</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h2 id="Arrays-and-Hashes（计算字符串出现的频率）"><a href="#Arrays-and-Hashes（计算字符串出现的频率）" class="headerlink" title="Arrays and Hashes（计算字符串出现的频率）"></a>Arrays and Hashes（计算字符串出现的频率）</h2><blockquote>
+<p> Create a Histogram<br> Show the number of times that word occurs<br> takes a user’s input, then builds a hash from that input.<br> Each key in the hash will be a word from the user;<br> each value will be the number of times that word occurs.</p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">puts <span class="string">"Text please: "</span></div><div class="line">text = gets.chomp</div><div class="line"></div><div class="line">words = text.split(<span class="string">" "</span>)</div><div class="line">frequencies = Hash.new(<span class="number">0</span>)</div><div class="line">words.each &#123; <span class="params">|word|</span> frequencies[word] += <span class="number">1</span> &#125;</div><div class="line">frequencies = frequencies.sort_by &#123;<span class="params">|a, b|</span> b &#125;</div><div class="line">frequencies.reverse!</div><div class="line">frequencies.each &#123; <span class="params">|word, frequency|</span> puts word + <span class="string">" "</span> + frequency.to_s &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">Text please:                <span class="comment"># $ what do you mean ohh ohh ohh</span></div><div class="line"><span class="comment"># =&gt; ohh 3</span></div><div class="line"><span class="comment"># =&gt; mean 1</span></div><div class="line"><span class="comment"># =&gt; you 1</span></div><div class="line"><span class="comment"># =&gt; do 1</span></div><div class="line"><span class="comment"># =&gt; what 1</span></div></pre></td></tr></table></figure>
+<p>A visual representation of data like this is called a <strong><em>histogram</em></strong>.</p>
+<ol>
+<li><p>从控制面板获得句子 (get input from the user)</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">puts <span class="string">"Text please: "</span></div><div class="line">text = gets.chomp            <span class="comment"># $ what do you mean ohh ohh ohh</span></div><div class="line">print text                   <span class="comment"># =&gt; what do you mean ohh ohh ohh</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>用<code>.split</code> 将字串换成数组(Building the Words Array)</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">text = <span class="string">"what do you mean ohh ohh ohh"</span></div><div class="line">words = text.split(<span class="string">" "</span>)</div><div class="line">print words                  </div><div class="line"><span class="comment"># =&gt; ["what", "do", "you", "mean", "ohh", "ohh", "ohh"]</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>建立散列（用于计算数组内单词发生的频率）<br>Creating the Frequencies Hash( create a hash mapping strings to integers.)</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># example</span></div><div class="line">h = Hash.new(<span class="string">"nothing here"</span>)         <span class="comment"># 建立新的空散列，默认值为“nothing here”</span></div><div class="line">puts h                               <span class="comment"># =&gt; &#123;&#125;</span></div><div class="line">puts h[<span class="string">"kitty"</span>]                      <span class="comment"># =&gt; nothing here</span></div><div class="line"></div><div class="line"><span class="comment"># test</span></div><div class="line">frequencies = Hash.new(<span class="number">0</span>)             <span class="comment"># 设定单词频率的默认值为0</span></div><div class="line">puts frequencies                      <span class="comment"># =&gt; &#123;&#125;</span></div><div class="line">puts frequencies[<span class="string">"ohh"</span>]               <span class="comment"># =&gt; 0</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>把数组转变成有频率的散列(Iterating Over the Array)<br> iterate over <code>words</code>to add each word to our <code>frequencies</code> hash, one at a time.</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># test</span></div><div class="line">colors = &#123; <span class="string">"red"</span> =&gt; <span class="number">2</span>, <span class="string">"blue"</span> =&gt; <span class="number">3</span> &#125;      <span class="comment"># 假定一个散列（键为字串，值为整数）</span></div><div class="line">colors[<span class="string">"blue"</span>] += <span class="number">1</span>                       <span class="comment"># 增值value（为"blue"的值添加1）</span></div><div class="line">puts colors[<span class="string">"blue"</span>]                       <span class="comment"># =&gt; 4</span></div><div class="line"></div><div class="line"><span class="comment"># try 1</span></div><div class="line">frequencies = Hash.new(<span class="number">0</span>)                 <span class="comment"># 默认值为0</span></div><div class="line">frequencies[<span class="string">"kaka"</span>] += <span class="number">1</span> 						 </div><div class="line">puts frequencies[<span class="string">"kaka"</span>]                  <span class="comment"># =&gt; 1</span></div><div class="line"></div><div class="line"><span class="comment"># try 2</span></div><div class="line">words = [<span class="string">"what"</span>, <span class="string">"do"</span>, <span class="string">"you"</span>, <span class="string">"mean"</span>, <span class="string">"ohh"</span>, <span class="string">"ohh"</span>, <span class="string">"ohh"</span>]</div><div class="line">frequencies = Hash.new(<span class="number">0</span>)</div><div class="line">words.each &#123; <span class="params">|word|</span> frequencies[word] += <span class="number">1</span> &#125;</div><div class="line">print frequencies					 </div><div class="line"><span class="comment"># =&gt; &#123;"what"=&gt;1, "do"=&gt;1, "you"=&gt;1, "mean"=&gt;1, "ohh"=&gt;3&#125;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>对散列内的字串和频率排列顺序（Sorting the Hash）<br><code>.sort_by</code> returns an array of arrays:<br>sort <code>colors</code> into green, red, and blue, from smallest to largest by count<br><code>.reverse</code> the array order so that the colors with the largest counts are first.</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># example</span></div><div class="line">colors = &#123;                    <span class="comment"># 建立以"color"为键，整数为对象的散列</span></div><div class="line">  <span class="string">"blue"</span> =&gt; <span class="number">3</span>,  </div><div class="line">  <span class="string">"green"</span> =&gt; <span class="number">1</span>,</div><div class="line">  <span class="string">"red"</span> =&gt; <span class="number">2</span></div><div class="line">&#125;</div><div class="line">colors = colors.sort_by <span class="keyword">do</span> <span class="params">|color, count|</span>  </div><div class="line">  count</div><div class="line"><span class="keyword">end</span></div><div class="line">print colors                  <span class="comment"># =&gt; [["green", 1], ["red", 2], ["blue", 3]]</span></div><div class="line"></div><div class="line">colors.reverse!</div><div class="line">print colors                  <span class="comment"># =&gt; [["blue", 3], ["red", 2], ["green", 1]]</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment"># test</span></div><div class="line">frequencies = &#123;<span class="string">"what"</span>=&gt;<span class="number">1</span>, <span class="string">"do"</span>=&gt;<span class="number">1</span>, <span class="string">"you"</span>=&gt;<span class="number">1</span>, <span class="string">"mean"</span>=&gt;<span class="number">1</span>, <span class="string">"ohh"</span>=&gt;<span class="number">3</span>&#125;</div><div class="line">frequencies = frequencies.sort_by <span class="keyword">do</span> <span class="params">|frequencies, count|</span></div><div class="line">  count</div><div class="line"><span class="keyword">end</span></div><div class="line">frequencies.reverse!</div><div class="line"></div><div class="line">print frequencies             </div><div class="line"><span class="comment"># =&gt; [["ohh", 3], ["mean", 1], ["you", 1], ["do", 1], ["what", 1]</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>将散列转换为histogram(Iterating Over the Hash)<br>iterate over <code>.each</code> key/value pair, storing the key as <code>name</code> and the value as <code>count</code>.<br><code>puts name + &quot; &quot;</code> print out the key and value separated by a space.<br><code>.to_s</code> convert the value from a number to a string</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># example</span></div><div class="line">fruit = &#123;                           <span class="comment"># 建立以水果为键，整数为对象的散列</span></div><div class="line">  <span class="string">"apple"</span> =&gt; <span class="number">2</span>,</div><div class="line">  <span class="string">"banana"</span> =&gt; <span class="number">3</span>,</div><div class="line">  <span class="string">"cherry"</span> =&gt; <span class="number">5</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">fruit.each <span class="keyword">do</span> <span class="params">|name, count|</span></div><div class="line">  puts name + <span class="string">" "</span> + count.to_s      <span class="comment"># =&gt; apple 2     banana 3     cherry 5</span></div><div class="line"><span class="keyword">end</span></div><div class="line"></div><div class="line"><span class="comment"># test</span></div><div class="line">frequencies = [[<span class="string">"ohh"</span>, <span class="number">3</span>], [<span class="string">"mean"</span>, <span class="number">1</span>], [<span class="string">"you"</span>, <span class="number">1</span>], [<span class="string">"do"</span>, <span class="number">1</span>], [<span class="string">"what"</span>, <span class="number">1</span>]]</div><div class="line"></div><div class="line">frequencies.each <span class="keyword">do</span> <span class="params">|word, frequency|</span></div><div class="line">  puts word + <span class="string">" "</span> + frequency.to_s    </div><div class="line"><span class="keyword">end</span></div><div class="line"></div><div class="line"><span class="comment"># =&gt; ohh 3</span></div><div class="line"><span class="comment"># =&gt; mean 1</span></div><div class="line"><span class="comment"># =&gt; you 1</span></div><div class="line"><span class="comment"># =&gt; do 1</span></div><div class="line"><span class="comment"># =&gt; what 1</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h2 id="Blocks-and-Sorting（为书籍排序）"><a href="#Blocks-and-Sorting（为书籍排序）" class="headerlink" title="Blocks and Sorting（为书籍排序）"></a>Blocks and Sorting（为书籍排序）</h2><blockquote>
+<p>Order your libary</p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">alphabetize</span><span class="params">(arr, rev=<span class="literal">false</span>)</span></span></div><div class="line">  <span class="keyword">if</span> rev</div><div class="line">    arr.sort &#123; <span class="params">|item1, item2|</span> item2 &lt;=&gt; item1 &#125;</div><div class="line">  <span class="keyword">else</span></div><div class="line">    arr.sort &#123; <span class="params">|item1, item2|</span> item1 &lt;=&gt; item2 &#125;</div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div><div class="line"></div><div class="line">books = [<span class="string">"Heart"</span>, <span class="string">"Code Complete"</span>, <span class="string">"The Lorax"</span>, <span class="string">"The Prophet"</span>, <span class="string">"Absalom!"</span>]</div><div class="line"></div><div class="line">puts <span class="string">"A-Z: <span class="subst">#&#123;alphabetize(books)&#125;</span>"</span></div><div class="line">puts <span class="string">"Z-A: <span class="subst">#&#123;alphabetize(books, <span class="literal">true</span>)&#125;</span>"</span></div><div class="line"></div><div class="line"><span class="comment"># =&gt; A-Z: ["Absalom!", "Code Complete", "Heart", "The Lorax", "The Prophet"]</span></div><div class="line"><span class="comment"># =&gt; Z-A: ["The Prophet", "The Lorax", "Heart", "Code Complete", "Absalom!"]</span></div></pre></td></tr></table></figure>
+<ol>
+<li><p>定义方法（Defining Our Method）</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">alphabetize</span></span></div><div class="line">  <span class="comment"># Do something</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>设置参数（Default Parameters）<br><code>arr</code> (for “array”)<br><code>rev=false</code><br><code>rev</code> (for “reverse”)如果使用者没有输入两个参数，<code>rev</code>默认为 <code>false</code></p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">alphabetize</span><span class="params">(arr, rev=<span class="literal">false</span>)</span></span></div><div class="line">  <span class="comment"># Do something</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>排序（Sorting）<br><code>.sort</code> simply returns a sorted array while leaving the original array alone<br><code>.sort!</code> modifies the actual array</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># example 1</span></div><div class="line">numbers = [<span class="number">5</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">8</span>]</div><div class="line">numbers.sort!                   <span class="comment"># =&gt; [1, 3, 5, 8]</span></div><div class="line">numbers.reverse!                <span class="comment"># =&gt; [8, 5, 3, 1]</span></div><div class="line"></div><div class="line"><span class="comment"># test 1</span></div><div class="line">books = [<span class="string">"Heart"</span>, <span class="string">"Code Complete"</span>, <span class="string">"The Lorax"</span>, <span class="string">"The Prophet"</span>, <span class="string">"Absalom!"</span>]</div><div class="line">books.sort!</div><div class="line"><span class="comment"># =&gt; ["Absalom!", "Code Complete", "Heart", "The Lorax", "The Prophet"]</span></div><div class="line"></div><div class="line">books.reverse!</div><div class="line"><span class="comment"># =&gt; ["The Prophet", "The Lorax", "Heart", "Code Complete", "Absalom!"]</span></div></pre></td></tr></table></figure>
+<p><code>&lt;=&gt;</code> the <em>combined comparison operator</em> ,to compare two Ruby objects.</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># test 2</span></div><div class="line">books = [<span class="string">"Heart"</span>, <span class="string">"Code Complete"</span>, <span class="string">"The Lorax"</span>, <span class="string">"The Prophet"</span>, <span class="string">"Absalom!"</span>]</div><div class="line"></div><div class="line"><span class="comment"># To sort our books in ascending order(A – Z ), in-place</span></div><div class="line">books.sort! &#123; <span class="params">|firstBook, secondBook|</span> firstBook &lt;=&gt; secondBook &#125;</div><div class="line"><span class="comment"># =&gt; ["Absalom!", "Code Complete", "Heart", "The Lorax", "The Prophet"]</span></div><div class="line"></div><div class="line"><span class="comment"># Sort your books in descending order(Z – A ), in-place below</span></div><div class="line">books.sort! &#123; <span class="params">|firstBook, secondBook|</span> secondBook &lt;=&gt; firstBook &#125;</div><div class="line"><span class="comment"># =&gt; ["The Prophet", "The Lorax", "Heart", "Code Complete", "Absalom!"]</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>添加条件控制（Sorting With Control Flow）<br><code>if-else</code> statement. If <code>rev</code> is true, call <code>reverse!</code> on <code>arr</code>, <code>else</code> return <code>arr</code>.</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># example</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">alphabetize</span><span class="params">(arr, rev=<span class="literal">false</span>)</span></span></div><div class="line">  <span class="keyword">if</span> rev</div><div class="line">    arr.sort &#123; <span class="params">|item1, item2|</span> item2 &lt;=&gt; item1 &#125;</div><div class="line">  <span class="keyword">else</span></div><div class="line">    arr.sort &#123; <span class="params">|item1, item2|</span> item1 &lt;=&gt; item2 &#125;</div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h2 id="Hashes-and-Symbols（查询电影）"><a href="#Hashes-and-Symbols（查询电影）" class="headerlink" title="Hashes and Symbols（查询电影）"></a>Hashes and Symbols（查询电影）</h2><blockquote>
+<p>A NIGHT AT THE MOVIES: Keep track of our movie ratings<br>It’ll do one of four things: add a new movie to a hash, update the rating for an existing movie, display the movies and ratings that are already in the hash, or delete a movie from the hash. If it doesn’t receive one of those four commands, the program will output some kind of error message.</p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line">movies = &#123;</div><div class="line">  <span class="symbol">Memento:</span> <span class="number">3</span>,</div><div class="line">  <span class="symbol">Primer:</span> <span class="number">4</span>,</div><div class="line">  <span class="symbol">Ishtar:</span> <span class="number">1</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">puts <span class="string">"What would you like to do?"</span></div><div class="line">puts <span class="string">"-- Type 'add' to add a movie."</span></div><div class="line">puts <span class="string">"-- Type 'update' to update a movie."</span></div><div class="line">puts <span class="string">"-- Type 'display' to display all movies."</span></div><div class="line">puts <span class="string">"-- Type 'delete' to delete a movie."</span></div><div class="line"></div><div class="line">choice = gets.chomp.downcase</div><div class="line"><span class="keyword">case</span> choice</div><div class="line"><span class="keyword">when</span> <span class="string">'add'</span></div><div class="line">  puts <span class="string">"What movie do you want to add?"</span></div><div class="line">  title = gets.chomp</div><div class="line">  <span class="keyword">if</span> movies[title.to_sym].<span class="literal">nil</span>?</div><div class="line">    puts <span class="string">"What's the rating? (Type a number 0 to 4.)"</span></div><div class="line">    rating = gets.chomp</div><div class="line">    movies[title.to_sym] = rating.to_i</div><div class="line">    puts <span class="string">"<span class="subst">#&#123;title&#125;</span> has been added with a rating of <span class="subst">#&#123;rating&#125;</span>."</span></div><div class="line">  <span class="keyword">else</span></div><div class="line">    puts <span class="string">"That movie already exists! Its rating is <span class="subst">#&#123;movies[title.to_sym]&#125;</span>."</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">when</span> <span class="string">'update'</span></div><div class="line">  puts <span class="string">"What movie do you want to update?"</span></div><div class="line">  title = gets.chomp</div><div class="line">  <span class="keyword">if</span> movies[title.to_sym].<span class="literal">nil</span>?</div><div class="line">    puts <span class="string">"Movie not found!"</span></div><div class="line">  <span class="keyword">else</span></div><div class="line">    puts <span class="string">"What's the new rating? (Type a number 0 to 4.)"</span></div><div class="line">    rating = gets.chomp</div><div class="line">    movies[title.to_sym] = rating.to_i</div><div class="line">    puts <span class="string">"<span class="subst">#&#123;title&#125;</span> has been updated with new rating of <span class="subst">#&#123;rating&#125;</span>."</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">when</span> <span class="string">'display'</span></div><div class="line">  movies.each <span class="keyword">do</span> <span class="params">|movie, rating|</span></div><div class="line">    puts <span class="string">"<span class="subst">#&#123;movie&#125;</span>: <span class="subst">#&#123;rating&#125;</span>"</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">when</span> <span class="string">'delete'</span></div><div class="line">  puts <span class="string">"What movie do you want to delete?"</span></div><div class="line">  title = gets.chomp</div><div class="line">  <span class="keyword">if</span> movies[title.to_sym].<span class="literal">nil</span>?</div><div class="line">    puts <span class="string">"Movie not found!"</span></div><div class="line">  <span class="keyword">else</span></div><div class="line">    movies.delete(title.to_sym)</div><div class="line">    puts <span class="string">"<span class="subst">#&#123;title&#125;</span> has been removed."</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">else</span></div><div class="line">  puts <span class="string">"Sorry, I didn't understand you."</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">What would you like to <span class="keyword">do</span>?</div><div class="line">-- Type <span class="string">'add'</span> to add a movie.</div><div class="line">-- Type <span class="string">'update'</span> to update a movie.</div><div class="line">-- Type <span class="string">'display'</span> to display all movies.</div><div class="line">-- Type <span class="string">'delete'</span> to delete a movie.</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment"># $ add</span></div><div class="line">What movie <span class="keyword">do</span> you want to add?	                    <span class="comment"># =&gt; StarWars</span></div><div class="line">What is  the rating? (Type a number 0 to 4.)        <span class="comment"># =&gt; 3</span></div><div class="line">StarWars has been added with a rating of 3.</div><div class="line"><span class="comment"># $ add</span></div><div class="line">What movie <span class="keyword">do</span> you want to add?                      <span class="comment"># =&gt; Primer</span></div><div class="line">That movie already exists! Its rating is 4.</div><div class="line"></div><div class="line"><span class="comment"># $ update</span></div><div class="line">What movie <span class="keyword">do</span> you want to update?                   <span class="comment"># =&gt; Primer</span></div><div class="line">What is the new rating? (Type a number 0 to 4.)     <span class="comment"># =&gt; 3.8</span></div><div class="line">Primer has been updated with new rating of 3.8.</div><div class="line"><span class="comment"># $ update</span></div><div class="line">What movie <span class="keyword">do</span> you want to update?                   <span class="comment"># =&gt; Cat</span></div><div class="line">Movie not found!</div><div class="line"></div><div class="line"><span class="comment"># $ display</span></div><div class="line">                                                    <span class="comment"># =&gt; Memento: 3</span></div><div class="line">                                                    <span class="comment"># =&gt; Primer: 4</span></div><div class="line">                                                    <span class="comment"># =&gt; Ishtar: 1</span></div><div class="line"></div><div class="line"><span class="comment"># $ delete</span></div><div class="line">What movie <span class="keyword">do</span> you want to delete?                   <span class="comment"># =&gt; Ishtar</span></div><div class="line">Ishtar has been removed.</div><div class="line"><span class="comment"># $ delete  </span></div><div class="line">What movie <span class="keyword">do</span> you want to delete?                   <span class="comment"># =&gt; Cat</span></div><div class="line">Movie not found</div><div class="line"></div><div class="line"><span class="comment"># $ "others"</span></div><div class="line">Sorry, I did not understand you.</div></pre></td></tr></table></figure>
+<ol>
+<li><p>建立基本信息（Setting Up）</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># example</span></div><div class="line">favorite_foods = &#123;</div><div class="line">  <span class="string">'vegetable'</span> =&gt; <span class="string">'broccoli'</span></div><div class="line">&#125;</div><div class="line">puts <span class="string">"Do you like coding in Ruby?"</span></div><div class="line">answer = gets.chomp</div></pre></td></tr></table></figure>
+</li>
+<li><p>建立情景（The Case Statement）<br><code>if</code> and <code>else</code> are powerful, but we can get bogged down in <code>if</code>s and <code>elsif</code>s if we have a lot of conditions to check.<br>The <code>case</code> statement: The <code>else</code> is what the <code>case</code> statement will do if it doesn’t match any of its <code>when</code> statements to the <code>case</code></p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># example</span></div><div class="line"><span class="keyword">case</span> language</div><div class="line">  <span class="keyword">when</span> <span class="string">"JS"</span></div><div class="line">    puts <span class="string">"Websites!"</span></div><div class="line">  <span class="keyword">when</span> <span class="string">"Python"</span></div><div class="line">    puts <span class="string">"Science!"</span></div><div class="line">  <span class="keyword">when</span> <span class="string">"Ruby"</span></div><div class="line">    puts <span class="string">"Web apps!"</span></div><div class="line">  <span class="keyword">else</span></div><div class="line">    puts <span class="string">"I don't know!"</span></div><div class="line"><span class="keyword">end</span></div><div class="line"></div><div class="line"><span class="comment"># test</span></div><div class="line">puts <span class="string">"Type add/update/display/delete here. "</span></div><div class="line">choice = gets.chomp.downcase</div><div class="line"></div><div class="line"><span class="keyword">case</span> choice</div><div class="line">  <span class="keyword">when</span> <span class="string">"add"</span></div><div class="line">  puts <span class="string">"Added!"</span></div><div class="line">  <span class="keyword">when</span> <span class="string">"update"</span></div><div class="line">  puts <span class="string">"Update!"</span></div><div class="line">  <span class="keyword">when</span> <span class="string">"display"</span></div><div class="line">  puts <span class="string">"Movies!"</span></div><div class="line">  <span class="keyword">when</span> <span class="string">"delete"</span></div><div class="line">  puts <span class="string">"Deleted!"</span></div><div class="line">  <span class="keyword">else</span></div><div class="line">  puts <span class="string">"Error!"</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>细化 <code>add</code> (Prompting: Redux!)<br>从使用者中获得电影名称和评级的字串<code>string</code>并且转换成了散列<code>hash</code><br>创建变量<code>title</code>，并提示使用者输入电影名称（a movie title）<br>创建变量<code>rating</code>，并提示使用者输入电影评级（the rating of the movie）<br>创建空的<code>movies</code> 散列（包含电影名称和电影评级）（movie/rating pair）<br>测试添加电影名称和评级是否成功</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># example</span></div><div class="line">numbers = &#123;&#125;</div><div class="line">numbers[<span class="string">"one"</span>] = <span class="number">1</span></div><div class="line">puts <span class="number">3</span> + numbers[<span class="string">"one"</span>]                     <span class="comment"># =&gt; 4</span></div><div class="line"></div><div class="line"><span class="comment"># test</span></div><div class="line">movies = &#123;&#125;</div><div class="line"></div><div class="line">puts <span class="string">"Enter a movie"</span>                        <span class="comment"># $ Cat</span></div><div class="line">title = gets.chomp</div><div class="line">puts <span class="string">"Enter a number "</span>                      <span class="comment"># $ 2</span></div><div class="line">rating = gets.chomp</div><div class="line">movies[title] = rating       </div><div class="line">puts movies                                 <span class="comment"># =&gt; &#123;"Cat"=&gt;"2"&#125;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>转换类型（Not My Type）<br>将散列中的字符串，转换为符号<code>symbols</code>或整数<code>integers</code><br><code>.to_sym</code>  can convert a string to a symbol  on  <code>title</code><br><code>.to_i</code>     will convert a string to an integer on <code>rating</code></p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">movies = &#123;&#125;</div><div class="line"></div><div class="line">puts <span class="string">"Enter a movie"</span>                        <span class="comment"># $ Cat</span></div><div class="line">title = gets.chomp</div><div class="line">puts <span class="string">"Enter a number "</span>                      <span class="comment"># $ 2</span></div><div class="line">rating = gets.chomp</div><div class="line">movies[title.to_sym] = rating.to_i     </div><div class="line">puts movies                                 <span class="comment"># =&gt; &#123;:Cat=&gt;2&#125;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>优化<code>add</code>条件情景，添加 <code>if</code>/<code>else</code> (Error! Error!)<br>若电影名称已存在，提示该电影已经存在。<br>若不存在（ <code>movies[title.to_sym]</code> is <code>nil</code>），即可添加电影。<br><code>.nil?</code>  will return <code>true</code> if the object it’s called on is <code>nil</code>, and <code>false</code> otherwise</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># example</span></div><div class="line">nil_variable = <span class="literal">nil</span></div><div class="line">age = <span class="number">26</span></div><div class="line"></div><div class="line">nil_variable.<span class="literal">nil</span>?                  <span class="comment"># =&gt; true</span></div><div class="line">age.<span class="literal">nil</span>?                           <span class="comment"># =&gt; false</span></div><div class="line"></div><div class="line"><span class="comment"># test</span></div><div class="line">movies = &#123;</div><div class="line">  <span class="symbol">StarWars:</span> <span class="number">4.8</span>,</div><div class="line">  <span class="symbol">Divergent:</span> <span class="number">4.7</span></div><div class="line">  &#125;</div><div class="line"></div><div class="line">puts <span class="string">"What movie do you want to add?"</span></div><div class="line">title = gets.chomp</div><div class="line"><span class="keyword">if</span> movies[title.to_sym].<span class="literal">nil</span>?</div><div class="line">  puts <span class="string">"What's the rating? (Type a number 0 to 4.)"</span></div><div class="line">  rating = gets.chomp</div><div class="line">  movies[title.to_sym] = rating.to_i</div><div class="line">  puts <span class="string">"<span class="subst">#&#123;title&#125;</span> has been added with a rating of <span class="subst">#&#123;rating&#125;</span>."</span></div><div class="line"><span class="keyword">else</span></div><div class="line">  puts <span class="string">"That movie already exists! Its rating is <span class="subst">#&#123;movies[title.to_sym]&#125;</span>."</span></div><div class="line"><span class="keyword">end</span></div><div class="line"></div><div class="line"><span class="comment"># 终端输出</span></div><div class="line">What movie <span class="keyword">do</span> you want to add?                     <span class="comment"># $ Cat</span></div><div class="line">What is the rating? (Type a number <span class="number">0</span> to <span class="number">4</span>.)        <span class="comment"># $ 2</span></div><div class="line"><span class="comment"># =&gt; Cat has been added with a rating of 2.</span></div><div class="line"></div><div class="line">What movie <span class="keyword">do</span> you want to add?                     <span class="comment"># =&gt; StarWars</span></div><div class="line"><span class="comment"># =&gt; That movie already exists! Its rating is 4.8.</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>细化<code>update</code>,和<code>add</code>差不多</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">puts <span class="string">"What movie do you want to update?"</span></div><div class="line">title = gets.chomp</div><div class="line"><span class="keyword">if</span> movies[title.to_sym].<span class="literal">nil</span>?</div><div class="line">  puts <span class="string">"Movie not found!"</span></div><div class="line"><span class="keyword">else</span></div><div class="line">  puts <span class="string">"What's the new rating? (Type a number 0 to 4.)"</span></div><div class="line">  rating = gets.chomp</div><div class="line">  movies[title.to_sym] = rating.to_i</div><div class="line">  puts <span class="string">"<span class="subst">#&#123;title&#125;</span> has been updated with new rating of <span class="subst">#&#123;rating&#125;</span>."</span></div><div class="line"><span class="keyword">end</span></div><div class="line"></div><div class="line"><span class="comment"># 终端显示</span></div><div class="line">What movie <span class="keyword">do</span> you want to update?                 <span class="comment"># $ Cat</span></div><div class="line"><span class="comment"># =&gt; Movie not found!</span></div><div class="line"></div><div class="line">What movie <span class="keyword">do</span> you want to update?                 <span class="comment"># $ StarWars</span></div><div class="line">What is the new rating? (Type a number <span class="number">0</span> to <span class="number">4</span>.)    <span class="comment"># $ 3</span></div><div class="line"><span class="comment"># =&gt; StarWars has been updated with new rating of 3.</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>细化 <code>display</code></p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">movies = &#123;</div><div class="line">  <span class="symbol">Memento:</span> <span class="number">3</span>,</div><div class="line">  <span class="symbol">Primer:</span> <span class="number">4</span>,</div><div class="line">  <span class="symbol">Ishtar:</span> <span class="number">1</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">movies.each <span class="keyword">do</span> <span class="params">|movie, rating|</span></div><div class="line">  puts <span class="string">"<span class="subst">#&#123;movie&#125;</span>: <span class="subst">#&#123;rating&#125;</span>"</span></div><div class="line"><span class="keyword">end</span></div><div class="line"></div><div class="line"><span class="comment"># =&gt; Memento: 3</span></div><div class="line"><span class="comment"># =&gt; Primer: 4</span></div><div class="line"><span class="comment"># =&gt; Ishtar: 1</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>细化<code>delete</code></p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">movies = &#123;</div><div class="line">  <span class="symbol">Memento:</span> <span class="number">3</span>,</div><div class="line">  <span class="symbol">Primer:</span> <span class="number">4</span>,</div><div class="line">  <span class="symbol">Ishtar:</span> <span class="number">1</span></div><div class="line">&#125;</div><div class="line">puts <span class="string">"What movie do you want to delete?"</span></div><div class="line">title = gets.chomp</div><div class="line"><span class="keyword">if</span> movies[title.to_sym].<span class="literal">nil</span>?</div><div class="line">  puts <span class="string">"Movie not found!"</span></div><div class="line"><span class="keyword">else</span></div><div class="line">  movies.delete(title.to_sym)</div><div class="line">  puts <span class="string">"<span class="subst">#&#123;title&#125;</span> has been removed."</span></div><div class="line"><span class="keyword">end</span></div><div class="line"></div><div class="line"><span class="comment"># 终端输出</span></div><div class="line">What movie <span class="keyword">do</span> you want to delete?		<span class="comment"># $ Cat</span></div><div class="line"><span class="comment"># =&gt; Movie not found!</span></div><div class="line"></div><div class="line">What movie <span class="keyword">do</span> you want to delete?		<span class="comment"># $ Memento</span></div><div class="line"><span class="comment"># =&gt; Memento has been removed.</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://www.codecademy.com/learn/learn-ruby" target="_blank" rel="external">CodeCademy</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/13/ruby/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Katherine Chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tKfTcly1fj5edaynjzj30hs0hsglv.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="时间的朋友">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/13/ruby/" itemprop="url">ruby</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-13T11:53:00+08:00">
+                2017-09-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ruby/" itemprop="url" rel="index">
+                    <span itemprop="name">Ruby</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/09/13/ruby/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/09/13/ruby/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Ruby"><a href="#Ruby" class="headerlink" title="Ruby"></a>Ruby</h2><p>Ruby 是用于快捷易用物件导向程式设计的直译式脚本语言</p>
+<p><em>直译式脚本语言(interpreted scripting language)：</em></p>
+<ul>
+<li>能够直接产生作业系统呼叫</li>
+<li>强大的字串处理(string operations) 及正规表示式(regular expressions)</li>
+<li>在开发时提供即时回馈</li>
+</ul>
+<p><em>快捷易用：</em></p>
+<ul>
+<li>不需要变数宣告(variable declarations)</li>
+<li>变数不需要型别(typed)</li>
+<li>语法简单一致</li>
+<li>自动管理记忆体</li>
+</ul>
+<p><em>物件导向程式设计：</em></p>
+<ul>
+<li>任何东西都是物件</li>
+<li>类别、方法、继承等</li>
+<li>单件方法(singleton methods)</li>
+<li>模组提供「混入」(mixin) 功能</li>
+<li>迭代器(iterators) 及闭包(closures)</li>
+</ul>
+<p><em>以及：</em></p>
+<ul>
+<li>多精确度整数(multiple precision integers)</li>
+<li>方便的例外处理(exception processing)</li>
+<li>动态载入(dynamic loading)</li>
+<li>执行绪支援(threading support)</li>
+</ul>
+<h2 id="程式语言分类"><a href="#程式语言分类" class="headerlink" title="程式语言分类"></a>程式语言分类</h2><p><strong>Ruby是个动态强分型的直译式程式语言。</strong></p>
+<p><strong>根据需不需要事先宣告变数型别：</strong></p>
+<ul>
+<li><p>静态分型(Static typing when possible)：Java、C、C++</p>
+<blockquote>
+<p> 编译期间做检查数据类型的语言，即写程序时要声明所有变量的数据类型，是固定的。使用数据之前，必须先声明数据类型（int ,float,double等）。相当于使用之前，首先要为它们分配好内存空间。</p>
+</blockquote>
+<p> 优点：结构非常规范，便于调试，方便类型安全<br> 缺点：为此需要写更多类型相关代码，不便于阅读、不清晰明了</p>
+</li>
+</ul>
+<ul>
+<li><p>动态分型(Dynamic typing when needed)：Ruby、Perl、Python和PHP</p>
+<blockquote>
+<p> 运行期间才做数据类型检查的语言，即动态类型语言编程时，永远不用给任何变量指定数据类型。该语言会在第一次赋值给变量时，在内部将数据类型记录下来。</p>
+</blockquote>
+<p>   优点：方便阅读，不需要写非常多的类型相关的代码；<br>   缺点：不方便调试，命名不规范时会造成读不懂，不利于理解等</p>
+</li>
+</ul>
+<p><strong>根据会不会隐性自动转换型别：</strong></p>
+<ul>
+<li><p>强分型(Strong typing)：Ruby、Perl、Python、Java</p>
+<blockquote>
+<p> 一旦变量被指定某个数据类型，如果不经强制转换，即永远是此数据类型。</p>
+</blockquote>
+<p> 优点：强类型定义语言带来的严谨性能够有效的避免许多错误。</p>
+</li>
+<li><p>弱分型(Weak typing)：PHP、C、C++</p>
+<blockquote>
+<p> 数据类型可以被忽略的语言。它与强类型定义语言相反, 一个变量可以赋不同数据类型的值。</p>
+</blockquote>
+<p> 优点：在速度上可能较快于强类型定义语言</p>
+</li>
+</ul>
+<p><strong>通常动态分型的程式语言多半也是</strong></p>
+<ul>
+<li>直译式(interpreted)程式语言:不需要事先编译，透过直译器(interpreter)执行即可</li>
+<li>解释型语言（英语：Interpreted language），又称解释型语言，是一种编程语言。这种类型的编程语言，会将代码一句一句直接运行，不需要像编译语言（Compiled language）一样，经过编译器先行编译为机器码，之后再运行。这种编程语言需要利用解释器，在运行期，动态将代码逐句解释（interpret）为机器码，或是已经预先编译为机器码的的子程序，之后再运行。</li>
+<li>理论上，任何编程语言都可以是编译式，或解释型的。它们之间的区别，仅与程序的应用有关。许多编程语言同时采用编译器与解释器来实现，其中包括Lisp，Pascal，C，BASIC 与 Python。JAVA及C#采用混合方式，先将代码编译为bytecode，在运行时再进行解释。</li>
+<li>编译式(compiled)程式语言:事先编译成执行档才行执行。是一种以编译器来实现的编程语言。它不像直译语言一样，由解释器将代码一句一句运行，而是以编译器，先将代码编译为机器码，再加以运行。理论上，任何编程语言都可以是编译式，或直译式的。它们之间的区别，仅与程序的应用有关。</li>
+<li>一般而言，用编译语言写成的程序，在运行期的运行速度，通常比用直译语言写的程序快。因为程序在编译期，已经被预先编译成机器码，可以直接运行，不用像直译语言一样，还要多一道直译程序。</li>
+</ul>
+<p>但是要先进行编译，之后才能运行程序，这也造成了编译语言的缺点。一般而言，编译语言的程序开发速度，以及除错时间，都是比较长的。因为它不像直译语言可以写完一行，或一小段程序之后，马上运行，马上除错。直译语言通常让程序开发的整体时间变少，在开发过程中，程序师也可以更弹性、快速的测试自己的想法。</p>
+<p>为了改善直译语言的效率而发展出的即时编译技术，已经缩小了这两种语言间的差距。这种技术混合了编译语言与直译语言的优点，它像编译语言一样，先把程序源代码编译成字节码。到运行期时，再将字节码直译，之后运行。Java与LLVM是这种技术的代表产物。</p>
+<p>优点：在运行期的运行速度，通常比用直译语言写的程序快。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">/* PHP */会隐形地自动转型</div><div class="line">$i = 1;</div><div class="line">echo &quot;Value is &quot; . $i ;</div><div class="line"># Value is 1                      </div><div class="line"></div><div class="line">/* C */会隐形地自动转型</div><div class="line">int a = 5;</div><div class="line">float b = a;</div><div class="line"></div><div class="line"># Ruby 会检查型别不相配而发生错误</div><div class="line">i = 1</div><div class="line">puts &quot;Value is &quot; + i</div><div class="line"></div><div class="line"># TypeError: can&apos;t convert Fixnum into String</div><div class="line">#   from (irb):2:in `+&apos;</div><div class="line">#   from (irb):2</div></pre></td></tr></table></figure>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://ihower.tw/rails/ruby.html" target="_blank" rel="external">ihower</a></li>
+<li><a href="https://www.zhihu.com/question/19918532" target="_blank" rel="external">弱类型、强类型、动态类型、静态类型语言的区别是什么？</a></li>
+<li>Ruby中文官方網站：<a href="http://www.ruby-lang.org/zh_TW/about/" target="_blank" rel="external">Ruby簡介</a>  / <a href="http://www.ruby-lang.org/zh_TW/documentation/quickstart/" target="_blank" rel="external">二十分鐘Ruby體驗</a>  /  <a href="http://www.ruby-lang.org/zh_TW/documentation/ruby-from-other-languages/" target="_blank" rel="external">從其他程式語言到Ruby</a></li>
+<li><a href="http://guides.ruby.tw/ruby/" target="_blank" rel="external">Ruby使用手冊</a></li>
+</ul>
+<p>免费的英语资源教学网站：</p>
+<ul>
+<li><a href="https://www.codecademy.com/learn/learn-ruby" target="_blank" rel="external">CodeCademy</a> 从做中学习线上的互动教学</li>
+<li><a href="http://ruby.learncodethehardway.org/book/" target="_blank" rel="external">Learn Ruby the Hard Way</a> 以习题为主的教材</li>
+<li>LaunchSchool 除了入门的内容，还包括完整练习题和解答：<ul>
+<li><a href="https://launchschool.com/books/ruby/" target="_blank" rel="external">Introduction to Programming with Ruby by Tealeaf Academy</a></li>
+<li><a href="https://launchschool.com/books/oo_ruby" target="_blank" rel="external">Object Oriented Programming with Ruby</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/08/terminal/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1679,7 +2177,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1690,7 +2188,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1701,7 +2199,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/about/index.html">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
