@@ -1,5 +1,5 @@
 ---
-title: project for Ruby
+title: project for Ruby 1
 date: 2017-09-14 09:58:56
 tags:
 ---
@@ -29,6 +29,7 @@ What city are you from?               # $ guangzhou
 # =>Your name is Katherine and you are from GUANGZHOU!
 ```
 
+<!--more-->
 
 1. 提示用户输入信息 `print "What is your name? " `
 2. 获得用户的信息  `variable_name = gets.chomp`

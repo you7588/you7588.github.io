@@ -40,8 +40,10 @@ $ git config --local --list                                   # 列出项目配�
 ```
 $ git config --list
 ```
+<!--more-->
 
 ------
+
 
 ## 创建
 

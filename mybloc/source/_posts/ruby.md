@@ -3,6 +3,7 @@ title: ruby
 date: 2017-09-13 11:53:00
 categories: Ruby
 tags: [ruby, 常用]
+description: Ruby 是用于快捷易用物件导向程式设计的直译式脚本语言
 
 ---
 
@@ -10,6 +11,7 @@ tags: [ruby, 常用]
 ## Ruby
 
 Ruby 是用于快捷易用物件导向程式设计的直译式脚本语言
+
 
 *直译式脚本语言(interpreted scripting language)：*
 
@@ -38,6 +40,7 @@ Ruby 是用于快捷易用物件导向程式设计的直译式脚本语言
 -  方便的例外处理(exception processing)
 -  动态载入(dynamic loading)
 -  执行绪支援(threading support)
+
 
 
 ## 程式语言分类
