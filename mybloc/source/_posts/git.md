@@ -63,7 +63,7 @@ $ git clone http://domain.com/user/repo.git
  **在工作目录中初始化（创建）新的本地仓库:**
 
 ```
-$ git init                                            # 确保在工作目录里输入
+$ git init                                            # 创建文件夹，确保在工作目录里输入
 ```
 
 文件路径：`当前目录/.git`
@@ -80,11 +80,13 @@ $ git status                                          # 要确定哪些文件当
 
 **查看具体修改了什么地方**
 
-```
+```bash
 # 查看未暂存的更新（git add之前输入）
 $ git diff                                            # q 退出                      
 # 查看已暂存的更新（git add之后输入）                                
-$ git diff --staged                   
+$ git diff --staged    
+# 查看预览差异，在合并改动之前
+$ git diff <source_branch> <target_branch>              
 ```
 
 **跟踪新文件**
@@ -254,9 +256,10 @@ $ git branch -D <branch>            # 强制执行，将会丢失未合并的修
 
  给当前版本打标签
 
-```
-$ git tag <tag-name>
-$ git tag -a <tag-name>             # 给当前版本打标签并附加消息
+```bash
+$ git log                   # 查看ID 的前 10 位字符
+$ git tag <tag-name>        # 如：git tag 1.0.0 1b2e1d63ff
+$ git tag -a <tag-name>     # 给当前版本打标签并附加消息
 ```
 
 ------
@@ -274,11 +277,11 @@ $ git remote show <remote>   # 查看远程仓库的信息，如origin
 
  **添加新的远程仓库**
 
-```
+```bash
 $ git remote add <remote> <url>   # 指定一个简单的名字(以便将来引用)，指代对应的仓库地址
-$ git remote add origin  git://github.com/xxx.git   
+$ git remote add origin <server>   
 # 把远端的「原始来源」设为 github 端点。新增一个远程的仓库，命名为 origin。origin 的位置指向 Github
-
+# 还没有克隆现有仓库，并欲将仓库连接到某个远程服务器，将改动推送到所添加的服务器上去。
 
 ```
 
@@ -517,3 +520,6 @@ gitignore
 [Try Git ⼗五分钟体验](https://try.github.io/levels/1/challenges/1)
 [The entire Pro Git book](https://git-scm.com/book)
 [Git-recipes](https://github.com/geeeeeeeeek/git-recipes)
+[git - 简明指南](http://rogerdudler.github.io/git-guide/index.zh.html)
+[Pro git](http://iissnan.com/progit/)
+[如何从主项目更新fork的项目？](https://github.com/xugy0926/getting-started-with-javascript/blob/master/topics/%E5%A6%82%E4%BD%95%E4%BB%8E%E4%B8%BB%E9%A1%B9%E7%9B%AE%E6%9B%B4%E6%96%B0fork%E7%9A%84%E9%A1%B9%E7%9B%AE.md)
