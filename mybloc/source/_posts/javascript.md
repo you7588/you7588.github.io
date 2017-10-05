@@ -447,9 +447,10 @@ Then it returned its value so the `getFahrenheit()` function could continue on t
 Finally, on the last line, we interpolated the function call within a `console.log()` statement.
 This works because `getFahrenheit()` returns its value.
 
-## Function Declarations
+## Function Declarations （函数语法定义）
 > a function that is bound to an identifier or name.
-> `function` + a name + a function body
+> 关键字`function` + 函数名 a name + `{`a function body`}`
+
 
 ```javascript
 function square (number) {
@@ -458,9 +459,32 @@ function square (number) {
 
 console.log(square(5));                   // ==> 25
 ```
-Function declarations do not end in a semi-colon.
+**Note:** Function declarations do not end in a semi-colon.
+(定义函数时，函数名也必不可少。缺少函数名，函数肯定无法被调用，这个函数被定义出来没有价值。)
 
-## Function Expressions
+
+**用函数语法定义一个函数，能获得定义提前的优待：**
+
+```javascript
+// 先定义后使用，很符合规矩。
+function print(content) {
+  console.log(content);
+}
+
+print('Hello, JS');
+
+
+// 看上去好像先使用了才定义
+print('Hello, JS');
+
+function print(content) {
+  console.log(content);
+}
+```
+其实上面两种形式是等价的，原因就是代码在执行之前，编译器会把通过函数语法定义的函数提前定义。从而保证可以在任意处调用函数。
+
+
+## Function Expressions （函数表达式定义）
 identifier can be omitted, creating an anonymous function.
 Function expressions are often stored in a variable.
 You can identify a function expression by the absence of a function name immediately trailing the function keyword.
@@ -472,7 +496,7 @@ const square = function (number) {
 
 console.log(square(5));                   // ==> 25
 ```
-Note: function expressions end with a semi-colon since they are stored in a variable.
+**Note:** function expressions end with a semi-colon since they are stored in a variable.
 
 
 ## Arrow Functions
@@ -765,25 +789,60 @@ This means that we can change the contents of an array, but cannot reassign the 
 ## for Loops
 
 ```javascript
+// make a for loop run forwards through an array:
 let animals = ["Grizzly Bear", "Sloth", "Sea Lion"];
 
 for (let animalIndex = 0; animalIndex < animals.length; animalIndex++) {
-  console.log(animals[animalIndex]);
+  console.log(animals[animalIndex]);      // ==> Grizzly Bear  Sloth  Sea Lion
 }
 
-// => Grizzly Bear  Sloth  Sea Lion
+// make it run backward through one:
+for (let animalsIndex=animals.length-1; animalsIndex >= 0;animalsIndex-- ) {
+  console.log(animals[animalsIndex]);      // ==> Sea Lion  Sloth  Grizzly Bear
+}
+
 ```
-We can make a for loop run forwards through an array, and make it run backward through one.
+
+**循环语句的三要素**
+-  循环开始的初始化变量 var i = 0;
+-  循环条件 i < myLikeColorsList.length;
+-  计数器变量更新 i++;
 
 ```javascript
-let animals = ["Grizzly Bear", "Sloth", "Sea Lion"];
-
-for (let animalsIndex=animals.length-1; animalsIndex >= 0;animalsIndex-- ) {
-  console.log('I would love to visit ' + animals[animalsIndex]);
+for (var i = 0; i < myLikeColorsList.length; i++) {
+  console.log(myLikeColorsList[i]);
 }
 
-// => Sea Lion  Sloth  Grizzly Bear
+// 等价于下面(把初始化变量提前)
+var i = 0;
+for (; i < myLikeColorsList.length; i++) {
+  console.log(myLikeColorsList[i]);
+}
+
+// 等价于下面(把初始化变量提前，把计数器的自增放在循环体内)
+var i = 0;
+for (; i < myLikeColorsList.length;) {
+  console.log(myLikeColorsList[i]);
+  i = i + 1; // i++;
+}
+
+// 初始化变量可以是多个，计数器变量更新也可以是多个
+for (var i =0, j = 0; i < myLikeColorsList.length; i++, j++) {
+console.log(‘种类’ + j);
+console.log(myLikeColorsList[i]);
+}
+
+// 创新的轮询数组的技巧
+// 两头同时轮询，轮询时间只用到了一半。
+
+for (var i =0, j = myLikeColorsList.length - 1; i < myLikeColorsList.length /2 ; i++, j--) {
+  console.log(myLikeColorsList[i]);
+  console.log(myLikeColorsList[j]);
+}
+console.log('\n');
+
 ```
+
 
 ## Nested for Loops
 > run a `for` loop inside another `for` loop to compare the items in two arrays.
