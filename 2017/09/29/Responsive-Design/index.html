@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="前端," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Sizing ElementsRelative MeasurementsResponsive design refers to the ability of a website to resize and reorganize its content based on:  The size of other content on the website. The size of the scree">
+<meta name="keywords" content="前端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="响应设计（Responsive Design）">
+<meta property="og:url" content="http://yoursite.com/2017/09/29/Responsive-Design/index.html">
+<meta property="og:site_name" content="时间的朋友">
+<meta property="og:description" content="Sizing ElementsRelative MeasurementsResponsive design refers to the ability of a website to resize and reorganize its content based on:  The size of other content on the website. The size of the scree">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-29T04:24:10.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="响应设计（Responsive Design）">
+<meta name="twitter:description" content="Sizing ElementsRelative MeasurementsResponsive design refers to the ability of a website to resize and reorganize its content based on:  The size of other content on the website. The size of the scree">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/09/29/Responsive-Design/"/>
+
+
+
+
+
+  <title>响应设计（Responsive Design） | 时间的朋友</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '105782654', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">时间的朋友</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">把琐碎的时间堆砌成一个伟大的生命。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            时间线
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-word">
+          <a href="/word/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            博物馆
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-cheatsheet">
+          <a href="/cheatsheet/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            速查卡
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-feedback">
+          <a href="/feedback/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-users"></i> <br />
+            
+            反馈
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/29/Responsive-Design/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Katherine Chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tKfTcly1fj5edaynjzj30hs0hsglv.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="时间的朋友">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">响应设计（Responsive Design）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-29T11:32:45+08:00">
+                2017-09-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/09/29/Responsive-Design/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/09/29/Responsive-Design/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Sizing-Elements"><a href="#Sizing-Elements" class="headerlink" title="Sizing Elements"></a>Sizing Elements</h1><h2 id="Relative-Measurements"><a href="#Relative-Measurements" class="headerlink" title="Relative Measurements"></a>Relative Measurements</h2><p>Responsive design refers to the ability of a website to resize and reorganize its content based on:</p>
+<ol>
+<li>The size of other content on the website.</li>
+<li>The size of the screen the website is being viewed on.</li>
+</ol>
+<h2 id="Em"><a href="#Em" class="headerlink" title="Em"></a>Em</h2><blockquote>
+<p>Historically, the em represented the width of a capital letter M in the typeface and size being used.<br>Today, the em represents the size of the base font being used.</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.heading</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">2em</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>if the base font of a browser is 16 pixels (which is normally the default size of text in a browser), then 1 em is equal to 16 pixels. 2 ems would equal 32 pixels, and so on.<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.splash-section</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">18px</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.splash-section</span> <span class="selector-tag">h1</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">1.5em</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>If you’re interested in sizing elements in comparison to other elements nearby, then the em unit would be better suited for the job.</p>
+<h2 id="Rem"><a href="#Rem" class="headerlink" title="Rem"></a>Rem</h2><blockquote>
+<p><strong>root em</strong>. it checks the <em>root element</em>. The root element is the <code>&lt;html&gt;</code> tag.</p>
+</blockquote>
+<p>Most browsers set the font size of <code>&lt;html&gt;</code> to 16 pixels, so by default rem measurements will be compared to that value. To set a different font size for the root element, you can add a CSS rule.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">html</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">20px</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">h1</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">2rem</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>the font size of the root element, <code>&lt;html&gt;</code>, is set to 20 pixels. All subsequent rem measurements will now be compared to that value and the size of <code>h1</code> elements in the example will be 40 pixels.<br>If you are interested in sizing elements consistently across an entire website, the rem measurement is the best unit for the job.</p>
+<h2 id="Percentages-Height-amp-Width"><a href="#Percentages-Height-amp-Width" class="headerlink" title="Percentages: Height &amp; Width"></a>Percentages: Height &amp; Width</h2><blockquote>
+<p>Percentages are often used to size box-model values, like width and height, padding, border, and margins. They can also be used to set positioning properties (top, bottom, left, right).</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.main</span> &#123;</div><div class="line">  <span class="attribute">height</span>: <span class="number">300px</span>;</div><div class="line">  <span class="attribute">width</span>: <span class="number">500px</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.main</span> <span class="selector-class">.subsection</span> &#123;</div><div class="line">  <span class="attribute">height</span>: <span class="number">50%</span>;</div><div class="line">  <span class="attribute">width</span>: <span class="number">50%</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Be careful, a child element’s dimensions may be set erroneously if the dimensions of its parent element aren’t set first.<br><strong>Note:</strong> Because the box model includes padding, borders, and margins, setting an element’s <code>width</code> to <code>100%</code> may cause content to overflow its parent container. While tempting, <code>100%</code> should only be used when content will not have padding, border, or margin.</p>
+<h2 id="Percentages-Padding-amp-Margin"><a href="#Percentages-Padding-amp-Margin" class="headerlink" title="Percentages: Padding &amp; Margin"></a>Percentages: Padding &amp; Margin</h2><blockquote>
+<p>Vertical padding and margin are also calculated based on the width of the parent:</p>
+</blockquote>
+<ol>
+<li>A container div is defined, but its height is not set (meaning it’s flat).</li>
+<li>The container then has a child element added within. The child element <em>does</em> have a set height. This causes the height of its parent container to stretch to that height.</li>
+<li>The child element requires a change, and its height is modified. This causes the parent container’s height to also stretch to the new height. This cycle occurs endlessly whenever the child element’s height is changed!</li>
+</ol>
+<p>For example, when a property like <code>margin-left</code> is set using a percentage (say <code>50%</code>), the element will be moved halfway to the right in the parent container (as opposed to the child element receiving a margin half of its parent’s margin).<br><strong>Note:</strong> When using relative sizing, ems and rems should be used to size text and dimensions on the page related to text size (i.e. padding around text). This creates a consistent layout based on text size. Otherwise, percentages should be used.</p>
+<h2 id="Width-amp-Height-Minimum-amp-Maximum"><a href="#Width-amp-Height-Minimum-amp-Maximum" class="headerlink" title="Width&amp;Height: Minimum &amp; Maximum"></a>Width&amp;Height: Minimum &amp; Maximum</h2><ol>
+<li><code>min-width</code> — ensures a minimum width for an element.</li>
+<li><code>max-width</code> — ensures a maximum width for an element.</li>
+<li><code>min-height</code> — ensures a minimum height for an element’s box.</li>
+<li><code>max-height</code> — ensures a maximum height for an element’s box.</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">p</span> &#123;</div><div class="line">  <span class="attribute">min-width</span>: <span class="number">300px</span>;</div><div class="line">  <span class="attribute">max-width</span>: <span class="number">600px</span>;</div><div class="line">  <span class="attribute">min-height</span>: <span class="number">150px</span>;</div><div class="line">  <span class="attribute">max-height</span>: <span class="number">300px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>Note</strong>: The unit of pixels is used to ensure hard limits on the dimensions of the element(s).</p>
+<h2 id="Scaling-Images-and-Videos"><a href="#Scaling-Images-and-Videos" class="headerlink" title="Scaling Images and Videos"></a>Scaling Images and Videos</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.container</span> &#123;</div><div class="line">  <span class="attribute">width</span>: <span class="number">50%</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">  <span class="attribute">overflow</span>: hidden;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.container</span> <span class="selector-tag">img</span> &#123;</div><div class="line">  <span class="attribute">max-width</span>: <span class="number">100%</span>;</div><div class="line">  <span class="attribute">height</span>: auto;</div><div class="line">  <span class="attribute">display</span>: block;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Scaling-Background-Images"><a href="#Scaling-Background-Images" class="headerlink" title="Scaling Background Images"></a>Scaling Background Images</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">'#'</span>);</div><div class="line">  <span class="attribute">background-repeat</span>: no-repeat;</div><div class="line">  <span class="attribute">background-position</span>: center;</div><div class="line">  <span class="attribute">background-size</span>: cover;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>by default, images will repeat</p>
+<h2 id="Review-Relative-Measurements"><a href="#Review-Relative-Measurements" class="headerlink" title="Review: Relative Measurements"></a>Review: Relative Measurements</h2><ul>
+<li>Content on a website can be sized relative to other elements on the page using <em>relative measurements</em>.</li>
+<li>The unit of <code>em</code> sizes font relative to the font size of a parent element.</li>
+<li>The unit of <code>rem</code> sizes font relative to the font size of a root element. That root element is the <code>&lt;html&gt;</code> element.</li>
+<li>Percentages are commonly used to size box-model features, like the width, height, borders, padding, or margin of an element.</li>
+<li>When percentages are used to size width and height, child elements will be sized relative to the dimensions of their parent (remember that parent dimensions must first be set).</li>
+<li>Percentages can be used to set padding and margin. Horizontal and vertical padding and margin are set relative to the width of a parent element.</li>
+<li>The minimum and maximum width of elements can be set using <code>min-width</code> and <code>max-width</code>.</li>
+<li>The minimum and maximum height of elements can be set using <code>min-height</code> and <code>max-height</code>.</li>
+<li>When the height of an image or video is set, then its width can be set to <code>auto</code> so that the media scales proportionally. Reversing these two properties and values will also achieve the same result.</li>
+<li>A background image of an HTML element will scale proportionally when its <code>background-size</code> property is set to <code>cover</code>.</li>
+</ul>
+<h1 id="Media-Queries"><a href="#Media-Queries" class="headerlink" title="Media Queries"></a>Media Queries</h1><h2 id="Media-Queries-1"><a href="#Media-Queries-1" class="headerlink" title="Media Queries"></a>Media Queries</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">media</span> only screen and (max-width: <span class="number">480px</span>) &#123;</div><div class="line">  <span class="selector-tag">body</span> &#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">12px</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ol>
+<li><code>@media</code> — This keyword begins a media query rule and instructs the CSS compiler on how to parse the rest of the rule.</li>
+<li><code>only screen</code> — Indicates what types of devices should use this rule. In early attempts to target different devices, CSS incorporated different media types (screen, print, handheld). The rationale was that by knowing the media type, the proper CSS rules could be applied. However, “handheld” and “screen” devices began to occupy a much wider range of sizes and having only one CSS rule per media device was not sufficient. <code>screen</code> is the media type always used for displaying content, no matter the type of device. The <code>only</code> keyword is added to indicate that this rule only applies to one media type (<code>screen</code>).</li>
+<li><code>and (max-width : 480px)</code> — This part of the rule is called a <em>media feature</em>, and instructs the CSS compiler to apply the CSS styles to devices with a width of 480 pixels or smaller. Media features are the conditions that must be met in order to render the CSS within a media query.</li>
+<li>CSS rules are nested inside of the media query’s curly braces. The rules will be applied when the media query is met. In the example above, the text in the <code>body</code> element is set to a <code>font-size</code> of <code>12px</code> when the user’s screen is less than 480px.</li>
+</ol>
+<h2 id="Range"><a href="#Range" class="headerlink" title="Range"></a>Range</h2><p>By using multiple widths and heights, a range can be set for a media query.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@media only screen and (min-width: 320px) and (max-width: 480px) &#123;</div><div class="line">    /* ruleset for 320px - 480px */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">@media only screen and (min-width: 320px) &#123;</div><div class="line">    /* ruleset for 320px - 479px */</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">@media only screen and (min-width: 480px) &#123;</div><div class="line">    /* ruleset for &gt; 480px */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Dots-Per-Inch-DPI"><a href="#Dots-Per-Inch-DPI" class="headerlink" title="Dots Per Inch (DPI)"></a>Dots Per Inch (DPI)</h2><p>Another media feature we can target is screen resolution.</p>
+<p>To target by resolution, we can use the <code>min-resolution</code> and <code>max-resolution</code> media features. These media features accept a resolution value in either <a href="https://en.wikipedia.org/wiki/Dots_per_inch" target="_blank" rel="external">dots per inch (dpi)</a> or dots per centimeter (dpc).</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@media only screen and (min-resolution: 300dpi) &#123;</div><div class="line">    /* CSS for high resolution screens */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>The media query in the example above targets high resolution screens by making sure the screen resolution is at least 300 dots per inch. If the screen resolution query is met, then we can use CSS to display high resolution images and other media.</p>
+<h2 id="And-Operator"><a href="#And-Operator" class="headerlink" title="And Operator"></a>And Operator</h2><p>The <code>and</code> operator can be used to require multiple media features.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@media only screen and (max-width: 480px) and (min-resolution: 300dpi) &#123;</div><div class="line">    /* CSS ruleset */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>By placing the <code>and</code> operator between the two media features, the browser will require both media features to be true before it renders the CSS within the media query. The <code>and</code> operator can be used to chain as many media features as necessary.</p>
+<h2 id="Comma-Separated-List"><a href="#Comma-Separated-List" class="headerlink" title="Comma Separated List"></a>Comma Separated List</h2><p>If only one of multiple media features in a media query must be met, media features can be separated in a comma separated list.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">media</span> only screen and (min-width: <span class="number">480px</span>), (orientation: landscape) &#123;</div><div class="line">    <span class="comment">/* CSS ruleset */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>we used a comma (<code>,</code>) to separate multiple rules. The example above requires only one of the media features to be true for its CSS to apply.</p>
+<p>The <code>orientation</code> media feature detects if the page has more width than height. If a page is wider, it’s considered <code>landscape</code>, and if a page is taller, it’s considered <code>portrait</code>.</p>
+<h2 id="Breakpoints"><a href="#Breakpoints" class="headerlink" title="Breakpoints"></a>Breakpoints</h2><p>We know how to use media queries to apply CSS rules based on screen size and resolution, but how do we determine what queries to set?</p>
+<p>The points at which media queries are set are called <em>breakpoints</em>. Breakpoints are the screen sizes at which your web page does not appear properly. For example, if we want to target tablets that are in landscape orientation, we can create the following breakpoint:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">media</span> only screen and (min-width: <span class="number">768px</span>) and (max-width: <span class="number">1024px</span>) and (orientation: landscape) &#123;</div><div class="line">    <span class="comment">/* CSS ruleset */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>The example above creates a screen size range the size of a tablet in landscape mode and also identifies the orientation.</p>
+<p>Rather than set breakpoints based on specific devices, the best practice is to resize your browser to view where the website naturally breaks based on its content. The dimensions at which the layout breaks or looks odd become your media query breakpoints. Within those breakpoints, we can adjust the CSS to make the page resize and reorganize.</p>
+<p>By observing the dimensions at which a website naturally breaks, you can set media query breakpoints that create the best possible user experience on a project by project basis, rather than forcing every project to fit a certain screen size. Different projects have different needs, and creating a responsive design should be no different.</p>
+<p>Check out <a href="https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-5/screen-sizes.png" target="_blank" rel="external">this</a> list of breakpoints by device widths. Use it as a reference of screen widths to test your website to make certain it looks great across a variety of devices.</p>
+<h2 id="Review-Media-Queries"><a href="#Review-Media-Queries" class="headerlink" title="Review: Media Queries"></a>Review: Media Queries</h2><ul>
+<li>When a website responds to the size of the screen it’s viewed on, it’s called a <em>responsive</em> website.</li>
+<li>You can write <em>media queries</em> to help with different screen sizes.</li>
+<li>Media queries require <em>media features</em>. Media features are the conditions that must be met to render the CSS within a media query.</li>
+<li>Media features can detect many aspects of a user’s browser, including the screen’s width, height, resolution, orientation, and more.</li>
+<li>The <code>and</code> operator requires multiple media features to be true at once.</li>
+<li>A comma separated list of media features only requires one media feature to be true for the code within to be applied.</li>
+<li>The best practice for identifying where media queries should be set is by resizing the browser to determine where the content naturally breaks. Natural breakpoints are found by resizing the browser.</li>
+</ul>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://www.codecademy.com" target="_blank" rel="external">codecademy</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/前端/" rel="tag"># 前端</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/23/CSS/" rel="next" title="CSS">
+                <i class="fa fa-chevron-left"></i> CSS
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/29/javascript/" rel="prev" title="javascript">
+                javascript <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="https://ws2.sinaimg.cn/large/006tKfTcly1fj5edaynjzj30hs0hsglv.jpg"
+              alt="Katherine Chen" />
+          
+            <p class="site-author-name" itemprop="name">Katherine Chen</p>
+            <p class="site-description motion-element" itemprop="description">尽量只写对别人有用的文章……</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/about/index.html">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/you7588" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:you7588@gmail.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                    
+                      E-Mail
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Sizing-Elements"><span class="nav-number">1.</span> <span class="nav-text">Sizing Elements</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Relative-Measurements"><span class="nav-number">1.1.</span> <span class="nav-text">Relative Measurements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Em"><span class="nav-number">1.2.</span> <span class="nav-text">Em</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Rem"><span class="nav-number">1.3.</span> <span class="nav-text">Rem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Percentages-Height-amp-Width"><span class="nav-number">1.4.</span> <span class="nav-text">Percentages: Height & Width</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Percentages-Padding-amp-Margin"><span class="nav-number">1.5.</span> <span class="nav-text">Percentages: Padding & Margin</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Width-amp-Height-Minimum-amp-Maximum"><span class="nav-number">1.6.</span> <span class="nav-text">Width&Height: Minimum & Maximum</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Scaling-Images-and-Videos"><span class="nav-number">1.7.</span> <span class="nav-text">Scaling Images and Videos</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Scaling-Background-Images"><span class="nav-number">1.8.</span> <span class="nav-text">Scaling Background Images</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Review-Relative-Measurements"><span class="nav-number">1.9.</span> <span class="nav-text">Review: Relative Measurements</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Media-Queries"><span class="nav-number">2.</span> <span class="nav-text">Media Queries</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Media-Queries-1"><span class="nav-number">2.1.</span> <span class="nav-text">Media Queries</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Range"><span class="nav-number">2.2.</span> <span class="nav-text">Range</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dots-Per-Inch-DPI"><span class="nav-number">2.3.</span> <span class="nav-text">Dots Per Inch (DPI)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#And-Operator"><span class="nav-number">2.4.</span> <span class="nav-text">And Operator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Comma-Separated-List"><span class="nav-number">2.5.</span> <span class="nav-text">Comma Separated List</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Breakpoints"><span class="nav-number">2.6.</span> <span class="nav-text">Breakpoints</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Review-Media-Queries"><span class="nav-number">2.7.</span> <span class="nav-text">Review: Media Queries</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">3.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Katherine Chen</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://chen-lingmin.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2017/09/29/Responsive-Design/';
+          this.page.identifier = '2017/09/29/Responsive-Design/';
+          this.page.title = '响应设计（Responsive Design）';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://chen-lingmin.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Introction to JavaScript JavaScript is a widely used web-based programming language that powers the dynamic behavior on most websites, including this one.  Console a tool that developers use to record">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript">
+<meta property="og:url" content="http://yoursite.com/2017/09/29/javascript/index.html">
+<meta property="og:site_name" content="时间的朋友">
+<meta property="og:description" content="Introction to JavaScript JavaScript is a widely used web-based programming language that powers the dynamic behavior on most websites, including this one.  Console a tool that developers use to record">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNc79gy1fk45z8cd6vj310j0t5tba.jpg">
+<meta property="og:updated_time" content="2017-10-04T15:21:45.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javascript">
+<meta name="twitter:description" content="Introction to JavaScript JavaScript is a widely used web-based programming language that powers the dynamic behavior on most websites, including this one.  Console a tool that developers use to record">
+<meta name="twitter:image" content="https://ws3.sinaimg.cn/large/006tNc79gy1fk45z8cd6vj310j0t5tba.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/09/29/javascript/"/>
+
+
+
+
+
+  <title>javascript | 时间的朋友</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '105782654', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">时间的朋友</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">把琐碎的时间堆砌成一个伟大的生命。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            时间线
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-word">
+          <a href="/word/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            博物馆
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-cheatsheet">
+          <a href="/cheatsheet/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            速查卡
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-feedback">
+          <a href="/feedback/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-users"></i> <br />
+            
+            反馈
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/29/javascript/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Katherine Chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tKfTcly1fj5edaynjzj30hs0hsglv.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="时间的朋友">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">javascript</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-29T12:27:37+08:00">
+                2017-09-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/09/29/javascript/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/09/29/javascript/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Introction-to-JavaScript"><a href="#Introction-to-JavaScript" class="headerlink" title="Introction to JavaScript"></a>Introction to JavaScript</h1><blockquote>
+<p><strong>JavaScript</strong> is a widely used web-based programming language that powers the dynamic behavior on most websites, including this one.</p>
+</blockquote>
+<h2 id="Console"><a href="#Console" class="headerlink" title="Console"></a>Console</h2><blockquote>
+<p>a tool that developers use to record the output of their JavaScript programs.</p>
+</blockquote>
+<p>The <code>console.log()</code> command is used to print, or log, text to the console.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="string">"Hello!"</span>);</div></pre></td></tr></table></figure></p>
+<h2 id="Data-Types"><a href="#Data-Types" class="headerlink" title="Data Types"></a>Data Types</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="string">'New York City'</span>);</div><div class="line"><span class="built_in">console</span>.log(<span class="number">40.7</span>);</div><div class="line"><span class="built_in">console</span>.log(<span class="literal">true</span>);</div><div class="line"><span class="built_in">console</span>.log(<span class="literal">null</span>);</div></pre></td></tr></table></figure>
+<ul>
+<li><strong>Strings</strong> — Any grouping of keyboard characters (letters, spaces, numbers, or symbols) surrounded by single quotes (<code>&#39;Hello&#39;</code>) or double quotes (<code>&quot;World!&quot;</code>).</li>
+<li><strong>Numbers</strong> — Any number, including numbers with decimals: <code>4</code>, <code>1516</code>, <code>.002</code>, <code>23.42</code>.</li>
+<li><strong>Booleans</strong> — Either <code>true</code> or <code>false</code>, with no quotations.</li>
+<li><strong>Null</strong> — Can only be <code>null</code>. It represents the absence of value.</li>
+<li><strong>undefined</strong></li>
+</ul>
+<h2 id="Math-Operators"><a href="#Math-Operators" class="headerlink" title="Math Operators"></a>Math Operators</h2><ol>
+<li>Add: <code>+</code></li>
+<li>Subtract: <code>-</code></li>
+<li>Multiply: <code>*</code></li>
+<li>Divide: <code>/</code></li>
+</ol>
+<h2 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="string">'Hello'</span>.length);       <span class="comment">// =&gt; 5</span></div></pre></td></tr></table></figure>
+<h2 id="Built-in-Methods"><a href="#Built-in-Methods" class="headerlink" title="Built-in Methods"></a><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/prototype" target="_blank" rel="external">Built-in Methods</a></h2><blockquote>
+<p>an instance + <code>.</code> + the name of the method + <code>()</code></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="string">'Hello'</span>.toUpperCase());                     <span class="comment">// =&gt; 'HELLO'</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'Hey'</span>.startsWith(<span class="string">'H'</span>));                     <span class="comment">// =&gt; true</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'    Remove whitespace   '</span>.trim());         <span class="comment">// =&gt;  Remove whitespace</span></div></pre></td></tr></table></figure>
+<ul>
+<li><code>.toUpperCase()</code> — returns a string in all capital letters: <code>&#39;HELLO&#39;</code>.</li>
+<li><code>.startsWith()</code> — accepts the character <code>&#39;H&#39;</code> as an input between the opening and closing parentheses.</li>
+<li><code>&#39; Remove whitespace &#39;</code> — trims the whitespace at the beginning and end of a string.</li>
+</ul>
+<h2 id="Libraries"><a href="#Libraries" class="headerlink" title="Libraries"></a>Libraries</h2><blockquote>
+<p>Call a method without an instance.<br>the library name + <code>.</code> +  the name of the method + <code>()</code></p>
+</blockquote>
+<p> <code>Math</code> library——One such collection contains mathematical methods</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">50</span>);</div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.ceil	<span class="built_in">Math</span>.floor((<span class="built_in">Math</span>.random() * <span class="number">100</span>)))</div></pre></td></tr></table></figure>
+<ol>
+<li><code>Math.random</code> generates a random number between 0 and 1.</li>
+<li>multiply that number by <code>50</code>, so now we have a number between 0 and 50.</li>
+<li><code>Math.floor()</code>——Takes a decimal number, and rounds down to the nearest whole number.</li>
+<li><code>.ceil()</code>  —— returns the smallest integer greater than or equal to a decimal number.</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>.isInteger(<span class="number">34.2</span>));</div></pre></td></tr></table></figure>
+<p> <code>isInteger()</code>  —— checks if a number is an integer.</p>
+<h2 id="Comments"><a href="#Comments" class="headerlink" title="Comments"></a>Comments</h2><ol>
+<li><p>A <em>single line comment</em></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// The first 5 decimals of pi</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'Pi is equal to '</span> + <span class="number">3.14159</span>);</div></pre></td></tr></table></figure>
+</li>
+<li><p>A <em>multi-line comment</em></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line"><span class="comment">console.log('All of this code');</span></div><div class="line"><span class="comment">console.log('Is commented out');</span></div><div class="line"><span class="comment">console.log('And will not be executed);</span></div><div class="line"><span class="comment">*/</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="Review-Types-and-Operators"><a href="#Review-Types-and-Operators" class="headerlink" title="Review Types and Operators"></a>Review Types and Operators</h2><ul>
+<li>4 essential data types in JavaScript include strings, numbers, booleans, and null.</li>
+<li>Data is printed, or logged, to the console with <code>console.log()</code>.</li>
+<li>Four built-in mathematical operators include <code>+</code>, <code>-</code>, <code>*</code>, and <code>/</code>.</li>
+<li>JavaScript associates certain properties with different data types.</li>
+<li>JavaScript has built-in methods for different data types.</li>
+<li>Libraries are collections of methods that can be called without an instance.</li>
+<li>You can write single-line comments with <code>//</code> and multi-line comments between <code>/*</code> and <code>*/</code>.</li>
+</ul>
+<hr>
+<h1 id="Variables"><a href="#Variables" class="headerlink" title="Variables"></a>Variables</h1><blockquote>
+<p>变量是表示值得一个符号名字。</p>
+</blockquote>
+<h2 id="Create-a-Variable-const"><a href="#Create-a-Variable-const" class="headerlink" title="Create a Variable: const"></a>Create a Variable: const</h2><blockquote>
+<p>In general, only use <code>const</code> if the value saved to a variable does not change in your program.</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> myName = <span class="string">'Arya'</span>;</div><div class="line"><span class="built_in">console</span>.log(myName);                            <span class="comment">// ==&gt; Arya</span></div></pre></td></tr></table></figure>
+<ol>
+<li><code>const</code>  —— constant, creates a new variable with a value that cannot change.</li>
+<li><code>myName</code> —— the variable’s name. no spaces, and we capitalized the <code>N</code>. Capitalizing in this way is a standard convention in JavaScript called <em>camelCasing</em></li>
+<li><code>=</code> —— the <em>assignment operator</em>. It assigns the value (<code>&#39;Arya&#39;</code>) to the variable (<code>myName</code>).</li>
+<li><code>&#39;Arya&#39;</code> is the <em>value</em> assigned (<code>=</code>) to the variable <code>myName</code>.</li>
+</ol>
+<h2 id="Create-a-Variable-let"><a href="#Create-a-Variable-let" class="headerlink" title="Create a Variable: let"></a>Create a Variable: let</h2><blockquote>
+<p><code>Let</code>  can be reassigned.</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> meal = <span class="string">'Enchiladas'</span>;</div><div class="line"><span class="built_in">console</span>.log(meal);                              <span class="comment">// ==&gt; Enchiladas</span></div><div class="line">meal = <span class="string">'Tacos'</span>;</div><div class="line"><span class="built_in">console</span>.log(meal);                              <span class="comment">// ==&gt; Tacos</span></div></pre></td></tr></table></figure>
+<h2 id="Undefined"><a href="#Undefined" class="headerlink" title="Undefined"></a>Undefined</h2><blockquote>
+<p>JavaScript creates space for this variable in memory and sets it to <code>undefined</code>.</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> whatAmI;</div></pre></td></tr></table></figure>
+<h2 id="Mathematical-Assignment-Operators"><a href="#Mathematical-Assignment-Operators" class="headerlink" title="Mathematical Assignment Operators"></a>Mathematical Assignment Operators</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> x = <span class="number">4</span>;</div><div class="line">x = x + <span class="number">1</span>;                  <span class="comment">// ==&gt; 5</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> x = <span class="number">4</span>;</div><div class="line">x += <span class="number">2</span>;                     <span class="comment">// ==&gt; 6</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> y = <span class="number">4</span>;</div><div class="line">y -= <span class="number">2</span>;                     <span class="comment">// ==&gt; 2</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> z = <span class="number">4</span>;</div><div class="line">z *= <span class="number">2</span>;                     <span class="comment">// ==&gt; 8</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> r = <span class="number">4</span>;</div><div class="line">r++;                        <span class="comment">// ==&gt; 5</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> t = <span class="number">4</span>;</div><div class="line">t--;                        <span class="comment">// ==&gt; 3</span></div></pre></td></tr></table></figure>
+<ol>
+<li><code>+=</code>, <code>-=</code>, and <code>*=</code> perform the mathematical operation of the first operator (<code>+</code>, <code>-</code>, or <code>*</code>) using the number on the right, then assign the new value to the variable.</li>
+<li>The increment (<code>++</code>) and decrement (<code>--</code>) operators are responsible for increasing and decreasing a number variable by one, respectively.</li>
+</ol>
+<h2 id="String-Interpolation"><a href="#String-Interpolation" class="headerlink" title="String Interpolation"></a>String Interpolation</h2><blockquote>
+<p>inserting the data saved to a variable into a string</p>
+</blockquote>
+<ol>
+<li><code>+</code> (the addition operator) —— is used to interpolate (insert) a string variable into a string.</li>
+<li><code>${myVariable}</code> —— for ES6, we can insert variables into strings with ease.</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> myPet = <span class="string">'armadillo'</span>;</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'I own a pet '</span> + myPet + <span class="string">'.'</span>);  <span class="comment">// ==&gt;  'I own a pet armadillo.'</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> myPet = <span class="string">'armadillo'</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">`I own a pet <span class="subst">$&#123;myPet&#125;</span>.`</span>)        <span class="comment">// ==&gt;  'I own a pet armadillo.'</span></div></pre></td></tr></table></figure>
+<h2 id="Review-Variables"><a href="#Review-Variables" class="headerlink" title="Review Variables"></a>Review Variables</h2><ul>
+<li>Variables hold reusable data in a program.</li>
+<li>JavaScript will throw an error if you try to reassign <code>const</code> variables.</li>
+<li>You can reassign variables that you create with the <code>let</code>keyword.</li>
+<li>Unset variables store the primitive data type <code>undefined</code>.</li>
+<li>Mathematical assignment operators make it easy to calculate a new value and assign it to the same variable.</li>
+<li>The <code>+</code> operator is used to interpolate (combine) multiple strings.</li>
+<li>In JavaScript ES6, backticks and <code>${}</code> are used to interpolate values into a string.</li>
+</ul>
+<hr>
+<h1 id="Control-Flow"><a href="#Control-Flow" class="headerlink" title="Control Flow"></a>Control Flow</h1><h2 id="if-else-Statements"><a href="#if-else-Statements" class="headerlink" title="if/else Statements"></a>if/else Statements</h2><blockquote>
+<p>if/else statements are how programs can process yes/no questions programmatically.</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> needsCoffee = <span class="literal">true</span>;</div><div class="line"><span class="keyword">if</span> (needsCoffee === <span class="literal">true</span>) &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'Finding coffee'</span>);</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'Keep on keeping on!'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="else-if-Statements"><a href="#else-if-Statements" class="headerlink" title="else if Statements"></a>else if Statements</h2><blockquote>
+<p>If we have a question that has multiple yes conditions, or multiple no conditions…</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> stopLight = <span class="string">'green'</span>;</div><div class="line"></div><div class="line"><span class="keyword">if</span> (stopLight === <span class="string">'red'</span>) &#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'Stop'</span>);</div><div class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (stopLight === <span class="string">'yellow'</span>) &#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'Slow down'</span>);</div><div class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (stopLight === <span class="string">'green'</span>) &#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'Go!'</span>);</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'Caution, unknown!'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="True-and-False-Values"><a href="#True-and-False-Values" class="headerlink" title="True and False Values"></a>True and False Values</h2><blockquote>
+<p>In JavaScript, all variables and conditions have a <em>truthy</em> or <em>falsy</em> value.</p>
+</blockquote>
+<p>All variables that have been created and set are truthy (and will evaluate to true if they are the condition of a control flow statement) unless they contain one of the seven values listed below:</p>
+<ul>
+<li><code>false</code></li>
+<li><code>0</code> and <code>-0</code></li>
+<li><code>&quot;&quot;</code> and <code>&#39;&#39;</code> (empty strings)</li>
+<li><code>null</code></li>
+<li><code>undefined</code></li>
+<li><code>NaN</code> (Not a Number)</li>
+<li><code>document.all</code> (something you will rarely encounter)</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> variableOne = <span class="string">'I Exist!'</span>;</div><div class="line"><span class="keyword">if</span> (variableOne) &#123;</div><div class="line"><span class="comment">// This code will run because variableOne contains a truthy value.</span></div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line"><span class="comment">// This code will not run because the first block ran.</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>In programming, we often evaluate whether or not an expression is true or truthy.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> isRaining = <span class="literal">true</span>;</div><div class="line"><span class="keyword">if</span> (isRaining) &#123;</div><div class="line">   <span class="built_in">console</span>.log(<span class="string">'Carry an umbrella!'</span>);</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'Enjoy the sun!'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p> <code>!</code>  —— an operator for swapping the truthiness and falsiness of values</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> isPhoneCharged = <span class="literal">true</span>;</div><div class="line"><span class="keyword">if</span> (!isPhoneCharged) &#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'Plug in your phone!'</span>);</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'No need to charge!'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Comparison-Operators"><a href="#Comparison-Operators" class="headerlink" title="Comparison Operators"></a>Comparison Operators</h2><ul>
+<li>Less than: <code>&lt;</code></li>
+<li>Greater than: <code>&gt;</code></li>
+<li>Less than or equal to: <code>&lt;=</code></li>
+<li>Greater than or equal to: <code>&gt;=</code></li>
+<li>if two things equal each other, we write <code>===</code></li>
+<li>if two things <em>do not</em> equal each other, we write <code>!==</code></li>
+</ul>
+<h2 id="Logical-Operators"><a href="#Logical-Operators" class="headerlink" title="Logical Operators"></a>Logical Operators</h2><ul>
+<li><code>&amp;&amp;</code> ——both must be true</li>
+<li><code>||</code>——either can be true</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (stopLight === <span class="string">'green'</span> &amp;&amp; pedestrians === <span class="literal">false</span>) &#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'Go!'</span>);</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'Stop'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="switch-Statements"><a href="#switch-Statements" class="headerlink" title="switch Statements"></a>switch Statements</h2><blockquote>
+<p>switch statement to write more concise and readable code.</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> groceryItem = <span class="string">'papaya'</span>;</div><div class="line"></div><div class="line"><span class="keyword">switch</span> (groceryItem) &#123;</div><div class="line">  <span class="keyword">case</span> <span class="string">'tomato'</span>:</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'Tomatoes are $0.49'</span>);</div><div class="line">    <span class="keyword">break</span>;</div><div class="line">  <span class="keyword">case</span> <span class="string">'lime'</span>:</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'Limes are $1.49'</span>);</div><div class="line">    <span class="keyword">break</span>;</div><div class="line">  <span class="keyword">case</span> <span class="string">'papaya'</span>:</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'Papayas are $1.29'</span>);</div><div class="line">    <span class="keyword">break</span>;</div><div class="line">  <span class="keyword">default</span>:</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'Invalid item'</span>);</div><div class="line">    <span class="keyword">break</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ol>
+<li>The <code>switch</code> keyword initiates the statement and is followed by <code>( ... )</code>, which contains the condition that each <code>case</code> will compare to.In the example, the condition is groceryItem.</li>
+<li><code>case</code> —— is like the <code>else if</code> part of an <code>if</code>/<code>else if</code>/<code>else</code>statement.</li>
+<li><code>break</code> —— prevent the <code>switch</code> statement from executing any more of its code. Without adding <code>break</code>at the end of each case, the program will execute the code for all matching cases and the default code as well. This behavior is different from <code>if</code>/<code>else</code> conditional statements which execute only one block of code.</li>
+<li>At the end of each <code>switch</code> statement, there is a <code>default</code> condition. If none of the <code>case</code>s are true, then this code will run.</li>
+</ol>
+<h2 id="Ternary-Operator"><a href="#Ternary-Operator" class="headerlink" title="Ternary Operator"></a>Ternary Operator</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> isNightTime = <span class="literal">true</span>;</div><div class="line"></div><div class="line"><span class="keyword">if</span> (isNightTime) &#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'Turn on the lights!'</span>);</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'Turn off the lights!'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">isNightTime ? <span class="built_in">console</span>.log(<span class="string">'Turn on the lights!'</span>) : <span class="built_in">console</span>.log(<span class="string">'Turn off the lights!'</span>);</div></pre></td></tr></table></figure>
+<ol>
+<li><code>isNightTime ?</code> —This checks if <code>isNightTime</code> is truthy.</li>
+<li><code>console.log (&#39;Turn on the lights!&#39;)</code> — this code will be executed if the condition is truthy.</li>
+<li><code>:</code> — a colon separates the two different blocks of code that can be executed.</li>
+<li><code>console.log(&#39;Turn off the lights!&#39;);</code> — this code will be executed if the condition is falsy.</li>
+</ol>
+<h2 id="Review-Control-Flow"><a href="#Review-Control-Flow" class="headerlink" title="Review: Control Flow"></a>Review: Control Flow</h2><ul>
+<li><code>if</code>/<code>else</code> statements make binary decisions and execute different code based on conditions.</li>
+<li>All conditions are evaluated to be truthy or falsy.</li>
+<li>We can add more conditional statements to <code>if</code>/<code>else</code>statements with <code>else if</code>.</li>
+<li><code>switch</code> statements make complicated <code>if</code>/<code>else</code>statements easier to read and achieve the same result.</li>
+<li>The ternary operator (<code>?</code>) and a colon (<code>:</code>) allow us to refactor simple <code>if</code>/<code>else</code> statements.</li>
+<li>Comparison operators, including <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, and <code>&gt;=</code>can compare two variables or values.</li>
+<li>After two values are compared, the conditional statement evaluates to <code>true</code> or <code>false</code>.</li>
+<li>The logical operator <code>&amp;&amp;</code> checks if both sides of a condition are truthy.</li>
+<li>The logical operator <code>||</code> checks if either side is truthy.</li>
+<li>The logical operator <code>!==</code> checks if the two sides are not equal.</li>
+<li>An exclamation mark (<code>!</code>) switches the truthiness / falsiness of the value of a variable.</li>
+<li>One equals symbol (<code>=</code>) is used to assign a value to a variable.</li>
+<li>Three equals symbols (<code>===</code>) are used to check if two variables are equal to each other.</li>
+</ul>
+<hr>
+<h1 id="Functions"><a href="#Functions" class="headerlink" title="Functions"></a>Functions</h1><h2 id="Functions-1"><a href="#Functions-1" class="headerlink" title="Functions"></a>Functions</h2><blockquote>
+<p>A function is a block of code designed to perform a task. Any code between curly braces is also known as a <em>block</em>.<br>Functions are like recipes. They accept data, perform actions on that data, and return a result.</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> calculatorIsOn = <span class="literal">false</span>;</div><div class="line"></div><div class="line"><span class="keyword">const</span> pressPowerButton = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">  <span class="keyword">if</span> (calculatorIsOn) &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'Calculator turning off.'</span>);</div><div class="line">    calculatorIsOn = <span class="literal">false</span>;</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'Calculator turning on.'</span>);</div><div class="line">    calculatorIsOn = <span class="literal">true</span>;</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">pressPowerButton();               <span class="comment">// ==&gt; Calculator turning on.</span></div><div class="line">pressPowerButton();               <span class="comment">// ==&gt; Calculator turning off.</span></div></pre></td></tr></table></figure>
+<ol>
+<li>We created a function named <code>pressPowerButton</code>.</li>
+</ol>
+<ul>
+<li><code>const pressPowerButton</code> creates a variable with a given name written in <em>camelCase</em>.</li>
+<li><strong>arrow function</strong> syntax：The variable is then set equal <code>=</code> to a set of parentheses followed by an arrow token <code>() =&gt;</code>, indicating the variable stores a function.</li>
+<li>between the curly braces <code>{}</code> is the <em>function body</em>, or the JavaScript statements that define the function. This is followed by a semi-colon <code>;</code>.</li>
+</ul>
+<ol>
+<li>Inside the function body is an <code>if</code>/<code>else</code> statement.</li>
+<li>call the function —— <code>pressPowerButton();</code>. This executes the function, running all code within the function body.</li>
+</ol>
+<h2 id="Parameters"><a href="#Parameters" class="headerlink" title="Parameters"></a>Parameters</h2><blockquote>
+<p>Parameters are variables in a function definition that represent data we can input into the function.</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> multiplyByThirteen = <span class="function">(<span class="params">inputNumber</span>) =&gt;</span> &#123;</div><div class="line">  <span class="built_in">console</span>.log(inputNumber * <span class="number">13</span>);</div><div class="line">&#125;;</div><div class="line"></div><div class="line">multiplyByThirteen(<span class="number">9</span>);                    <span class="comment">// ==&gt; 117</span></div></pre></td></tr></table></figure>
+<p><code>inputNumber</code> is a parameter, but when we call <code>multiplyByThirteen(9)</code>, the <code>9</code> is called an <em>argument</em>. In other words, arguments are provided when you call a function, and parameters receive arguments as their value.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> getAverage = <span class="function">(<span class="params">numberOne, numberTwo</span>) =&gt;</span> &#123;</div><div class="line">  <span class="keyword">const</span> average = (numberOne + numberTwo) / <span class="number">2</span> ;</div><div class="line">  <span class="built_in">console</span>.log(average);</div><div class="line">&#125;;</div><div class="line"></div><div class="line">getAverage(<span class="number">365</span>, <span class="number">27</span>);                    <span class="comment">// ==&gt; 196</span></div></pre></td></tr></table></figure>
+<h2 id="Return"><a href="#Return" class="headerlink" title="Return"></a>Return</h2><blockquote>
+<p>The purpose of a function is to take some input, perform some task on that input, then return a result.</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> getAverage = <span class="function">(<span class="params">numberOne, numberTwo</span>) =&gt;</span> &#123;</div><div class="line">  <span class="keyword">const</span> average = (numberOne + numberTwo) / <span class="number">2</span>;</div><div class="line">  <span class="keyword">return</span> average;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(getAverage(<span class="number">365</span>, <span class="number">27</span>));         <span class="comment">// ==&gt; 196</span></div></pre></td></tr></table></figure>
+<p>When functions <code>return</code> their value, we can use them together and inside one another.<br>If our calculator needed to have a Celsius to Fahrenheit operation, we could write it with two functions like so:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> multiplyByNineFifths = <span class="function">(<span class="params">celsius</span>) =&gt;</span> &#123;</div><div class="line">  <span class="keyword">return</span> celsius * (<span class="number">9</span>/<span class="number">5</span>);</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">const</span> getFahrenheit = <span class="function">(<span class="params">celsius</span>) =&gt;</span> &#123;</div><div class="line">  <span class="keyword">return</span> multiplyByNineFifths(celsius) + <span class="number">32</span>;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'The temperature is '</span> + getFahrenheit(<span class="number">15</span>) + <span class="string">'°F'</span>);</div><div class="line"><span class="comment">// Output: The temperature is 59°F</span></div></pre></td></tr></table></figure>
+<p>Take a look at the <code>getFahrenheit()</code> function.<br>Inside of its block, we called <code>multiplyByNineFifths()</code> and passed it the degrees in <code>celsius</code>.<br>The <code>multiplyByNineFifths()</code>function multiplied the <code>celsius</code> by <code>(9/5)</code>.<br>Then it returned its value so the <code>getFahrenheit()</code> function could continue on to add <code>32</code> to it.<br>Finally, on the last line, we interpolated the function call within a <code>console.log()</code> statement.<br>This works because <code>getFahrenheit()</code> returns its value.</p>
+<h2 id="Function-Declarations-（函数语法定义）"><a href="#Function-Declarations-（函数语法定义）" class="headerlink" title="Function Declarations （函数语法定义）"></a>Function Declarations （函数语法定义）</h2><blockquote>
+<p>a function that is bound to an identifier or name.<br>关键字<code>function</code> + 函数名 a name + <code>{</code>a function body<code>}</code></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">square</span> (<span class="params">number</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> number * number;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(square(<span class="number">5</span>));                   <span class="comment">// ==&gt; 25</span></div></pre></td></tr></table></figure>
+<p><strong>Note:</strong> Function declarations do not end in a semi-colon.<br>(定义函数时，函数名也必不可少。缺少函数名，函数肯定无法被调用，这个函数被定义出来没有价值。)</p>
+<p><strong>用函数语法定义一个函数，能获得定义提前的优待：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 先定义后使用，很符合规矩。</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">print</span>(<span class="params">content</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(content);</div><div class="line">&#125;</div><div class="line"></div><div class="line">print(<span class="string">'Hello, JS'</span>);</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">// 看上去好像先使用了才定义</span></div><div class="line">print(<span class="string">'Hello, JS'</span>);</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">print</span>(<span class="params">content</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(content);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>其实上面两种形式是等价的，原因就是代码在执行之前，编译器会把通过函数语法定义的函数提前定义。从而保证可以在任意处调用函数。</p>
+<h2 id="Function-Expressions-（函数表达式定义）"><a href="#Function-Expressions-（函数表达式定义）" class="headerlink" title="Function Expressions （函数表达式定义）"></a>Function Expressions （函数表达式定义）</h2><p>identifier can be omitted, creating an anonymous function.<br>Function expressions are often stored in a variable.<br>You can identify a function expression by the absence of a function name immediately trailing the function keyword.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> square = <span class="function"><span class="keyword">function</span> (<span class="params">number</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> number * number;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(square(<span class="number">5</span>));                   <span class="comment">// ==&gt; 25</span></div></pre></td></tr></table></figure>
+<p><strong>Note:</strong> function expressions end with a semi-colon since they are stored in a variable.</p>
+<h2 id="Arrow-Functions"><a href="#Arrow-Functions" class="headerlink" title="Arrow Functions"></a>Arrow Functions</h2><blockquote>
+<p>A shorter syntax for a function expression. You can identify arrow functions through the use of parentheses and the arrow token <code>() =&gt;</code>.</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> square = <span class="function">(<span class="params">number</span>) =&gt;</span> &#123;</div><div class="line">  <span class="keyword">return</span> number * number;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(square(<span class="number">5</span>));                   <span class="comment">// ==&gt; 25</span></div></pre></td></tr></table></figure>
+<p>We can refactor this function in three ways. The most condensed form of the function is known as <strong>concise body</strong>.</p>
+<ol>
+<li>Functions that take a single parameter should not use parentheses. However, if a function takes zero or multiple parameters, parentheses are required.</li>
+<li>A function composed of a sole single-line block is automatically returned.<br>The contents of the block should immediately follow the arrow <code>=&gt;</code> and the <code>return</code>keyword can be removed.<br>This is referred to as <strong>implicit return</strong></li>
+<li>A function composed of a sole single-line block does not need brackets.</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> square = <span class="function"><span class="params">number</span> =&gt;</span> number * number;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(square(<span class="number">5</span>));                   <span class="comment">// ==&gt; 25</span></div></pre></td></tr></table></figure>
+<ol>
+<li>The parentheses around <code>number</code> have been removed, since it is a single parameter.</li>
+<li>The <code>return</code> keyword has been removed since the function consists of a single-line block.</li>
+<li>The <code>{}</code> have been removed, again, since the function consists of a single-line block.</li>
+</ol>
+<h2 id="Review-Functions"><a href="#Review-Functions" class="headerlink" title="Review Functions"></a>Review Functions</h2><ul>
+<li><em>Functions</em> are written to perform a task.</li>
+<li>Functions take data, perform a set of tasks on the data, and then return the result.</li>
+<li>We can define parameters to be used when calling the function.</li>
+<li>When calling a function, we can pass in <em>arguments</em>, which will set the function’s parameters.</li>
+<li>We can use <code>return</code> to return the result of a function which allows us to call functions anywhere, even inside other functions.</li>
+</ul>
+<hr>
+<h1 id="Scope"><a href="#Scope" class="headerlink" title="Scope"></a>Scope</h1><blockquote>
+<p>Scope refers to where a variable can be accessed in a program.<br>While some variables can be accessed from anywhere within a program, other variables may only be available in a specific context.</p>
+</blockquote>
+<h2 id="Global-Scope"><a href="#Global-Scope" class="headerlink" title="Global Scope"></a>Global Scope</h2><blockquote>
+<p>Variables defined in the global scope are declared outside of a set of curly braces <code>{}</code>, referred to as a <em>block</em>, and are thus available throughout a program.<br>Global variables make data accessible from any place within a program.</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> color = <span class="string">'blue'</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> colorOfSky = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">  <span class="keyword">return</span> color;                             <span class="comment">// ==&gt; blue</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(colorOfSky());                  <span class="comment">// ==&gt; blue</span></div></pre></td></tr></table></figure>
+<ol>
+<li>Here the variable <code>color</code> is declared <strong>outside</strong> of the function block, giving it global scope.</li>
+<li>In turn, <code>color</code> can be accessed within the <code>colorOfSky</code> function.</li>
+</ol>
+<p><strong>Note:</strong> It’s better to avoid defining variables in the global scope. Globally scoped variables can collide with variables that are more locally scoped, causing unexpected behavior in our code.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> satellite = <span class="string">'The Moon'</span>;</div><div class="line"><span class="keyword">const</span> galaxy = <span class="string">'The Milky Way'</span>;</div><div class="line"></div><div class="line"><span class="keyword">let</span> stars = <span class="string">'North Star'</span>;</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">const</span> myNightSky = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">  stars = <span class="string">'Sirius'</span>;</div><div class="line">  <span class="keyword">return</span> <span class="string">'Night Sky: '</span> + satellite + <span class="string">','</span> + stars + <span class="string">','</span> + galaxy;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(myNightSky());       <span class="comment">// ==&gt; Night Sky: The Moon,Sirius,The Milky Way</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(myNightSky(stars));  <span class="comment">// ==&gt; Night Sky: The Moon,Sirius,The Milky Way</span></div></pre></td></tr></table></figure>
+<p>the global variable <code>stars</code> was reassigned to <code>&#39;Sirius&#39;</code>.</p>
+<h2 id="Block-Scope"><a href="#Block-Scope" class="headerlink" title="Block Scope"></a>Block Scope</h2><blockquote>
+<p>A variable defined in the block is only accessible within the curly braces.</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> colorOfSky = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">  <span class="keyword">let</span> color = <span class="string">'blue'</span>;</div><div class="line">  <span class="built_in">console</span>.log(color);          </div><div class="line">&#125;;</div><div class="line"></div><div class="line">colorOfSky();                       <span class="comment">// ==&gt; blue</span></div><div class="line"><span class="built_in">console</span>.log(color);                 <span class="comment">// ==&gt; ReferenceError</span></div></pre></td></tr></table></figure>
+<p>defined within an if block:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> colorOfSky = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">  <span class="keyword">const</span> dusk = <span class="literal">true</span>;</div><div class="line">  <span class="keyword">let</span> color = <span class="string">'blue'</span>;</div><div class="line">  <span class="keyword">if</span> (dusk) &#123;</div><div class="line">    <span class="keyword">let</span> color = <span class="string">'pink'</span>;</div><div class="line">    <span class="built_in">console</span>.log(color);</div><div class="line">  &#125;</div><div class="line">  <span class="built_in">console</span>.log(color);</div><div class="line">&#125;;</div><div class="line"></div><div class="line">colorOfSky();                       <span class="comment">// ==&gt; pink, blue</span></div><div class="line"><span class="built_in">console</span>.log(color);                 <span class="comment">// ==&gt; undefined</span></div></pre></td></tr></table></figure></p>
+<p>defined within a for loop:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> cloudCount = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">  <span class="keyword">let</span> i = <span class="number">2</span>;</div><div class="line">  <span class="built_in">console</span>.log(i);</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</div><div class="line">    <span class="built_in">console</span>.log(i);</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">cloudCount();                           <span class="comment">// ==&gt; 2, All numbers from 0 to 9</span></div><div class="line"><span class="built_in">console</span>.log(i);                         <span class="comment">// ==&gt; Reference Error</span></div></pre></td></tr></table></figure></p>
+<h2 id="Review-Scope"><a href="#Review-Scope" class="headerlink" title="Review: Scope"></a>Review: Scope</h2><ul>
+<li><em>Scope</em> is the idea in programming that some variables are accessible/inaccessible from other parts of the program.</li>
+<li><em>Global Scope</em> refers to variables that are accessible to every part of the program.</li>
+<li><em>Block Scope</em> refers to variables that are accessible only within the block they are defined.</li>
+</ul>
+<hr>
+<h1 id="Arrays"><a href="#Arrays" class="headerlink" title="Arrays"></a>Arrays</h1><blockquote>
+<p>Arrays are JavaScript’s way of making lists.</p>
+</blockquote>
+<p>A foundational concept of programming is how to organize and store data.<br>One way we organize data in real life is to make lists.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">New Year&apos;s Resolutions:</div><div class="line">1. Rappel into a cave</div><div class="line">2. Take a falconry class</div><div class="line">3. Learn to juggle</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> newYearsResolutions = [<span class="string">'Rappel into a cave'</span>, <span class="string">'Take a falconry class'</span>, <span class="string">'Learn to juggle'</span>];</div></pre></td></tr></table></figure>
+<p>These lists can store any data types (including strings, numbers, and booleans) and they are ordered, meaning each item has a numbered position.</p>
+<h2 id="Property-Access"><a href="#Property-Access" class="headerlink" title="Property Access"></a>Property Access</h2><p>JavaScript starts counting from <code>0</code> rather than <code>1</code>, This is because JavaScript is <strong>zero-indexed</strong>.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> newYearsResolutions = [<span class="string">'Rappel into a cave'</span>, <span class="string">'Take a falconry class'</span>, <span class="string">'Learn to juggle'</span>];</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(newYearsResolutions[<span class="number">0</span>]);           <span class="comment">// ==&gt; 'Rappel into a cave'</span></div></pre></td></tr></table></figure></p>
+<p>You can also access individual characters in a string.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> hello = <span class="string">'Hello World'</span>;</div><div class="line"><span class="built_in">console</span>.log(hello[<span class="number">6</span>]);                         <span class="comment">// ==&gt; W</span></div></pre></td></tr></table></figure></p>
+<h2 id="Update-Elements"><a href="#Update-Elements" class="headerlink" title="Update Elements"></a>Update Elements</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> seasons = [<span class="string">"Winter"</span>, <span class="string">"Spring"</span>, <span class="string">"Summer"</span>, <span class="string">"Fall"</span>];</div><div class="line"></div><div class="line">seasons[<span class="number">3</span>] = <span class="string">"Autumn"</span>;</div><div class="line"><span class="built_in">console</span>.log(seasons)                 <span class="comment">// ==&gt; Winter   Spring    Summer    Autumn</span></div></pre></td></tr></table></figure>
+<h2 id="length-property"><a href="#length-property" class="headerlink" title="length property"></a>length property</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> newYearsResolutions = [<span class="string">'Rappel into a cave'</span>, <span class="string">'Take a falconry class'</span>];</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(newYearsResolutions.length);                <span class="comment">// ==&gt;  2</span></div></pre></td></tr></table></figure>
+<h2 id="Array-Methods"><a href="#Array-Methods" class="headerlink" title="Array Methods"></a>Array Methods</h2><blockquote>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank" rel="external">Mozilla Developer Network (MDN)</a></p>
+</blockquote>
+<p><code>.push()</code> —— add items to the end of an array.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> n = [<span class="string">'i0'</span>, <span class="string">'i1'</span>, <span class="string">'i2'</span>];</div><div class="line">n.push(<span class="string">'i3'</span>, <span class="string">'i4'</span>);                    <span class="comment">// ==&gt; ['i0', 'i1', 'i2', 'i3', 'i4'];</span></div></pre></td></tr></table></figure>
+<p> <code>.pop()</code> —— removes the last item of an array.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> n = [<span class="string">'i0'</span>, <span class="string">'i1'</span>, <span class="string">'i2'</span>];</div><div class="line">n.pop();                               <span class="comment">// ==&gt; [ 'i0', 'i1' ]</span></div></pre></td></tr></table></figure>
+<p><code>.join()</code> ——  joins all elements of an array (or an array-like object) into a string.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> a = [<span class="string">'Wind'</span>, <span class="string">'Rain'</span>, <span class="string">'Fire'</span>];</div><div class="line">a.join();                               <span class="comment">// ==&gt; 'Wind,Rain,Fire'</span></div><div class="line">a.join(<span class="string">', '</span>);                           <span class="comment">// ==&gt; 'Wind, Rain, Fire'</span></div><div class="line">a.join(<span class="string">' + '</span>);                          <span class="comment">// ==&gt; 'Wind + Rain + Fire'</span></div><div class="line">a.join(<span class="string">''</span>);                             <span class="comment">// ==&gt; 'WindRainFire'</span></div></pre></td></tr></table></figure></p>
+<p><code>.slice()</code> —— extracts a section of a string and returns it as a new string.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> a = [<span class="string">'zero'</span>, <span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three'</span>];</div><div class="line"><span class="keyword">let</span> sliced = a.slice(<span class="number">1</span>, <span class="number">3</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(a);                         <span class="comment">// ==&gt; ['zero', 'one', 'two', 'three']</span></div><div class="line"><span class="built_in">console</span>.log(sliced);                    <span class="comment">// ==&gt; ['one', 'two']</span></div></pre></td></tr></table></figure></p>
+<p><code>.splice()</code> —— changes the contents of an array by removing existing elements and/or adding new elements.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> myFish = [<span class="string">'angel'</span>, <span class="string">'clown'</span>, <span class="string">'mandarin'</span>, <span class="string">'sturgeon'</span>];</div><div class="line"></div><div class="line">myFish.splice(<span class="number">2</span>, <span class="number">0</span>, <span class="string">'drum'</span>);            <span class="comment">// insert 'drum' at 2-index position</span></div><div class="line"><span class="comment">// myFish is ["angel", "clown", "drum", "mandarin", "sturgeon"]</span></div><div class="line"></div><div class="line">myFish.splice(<span class="number">2</span>, <span class="number">1</span>);    <span class="comment">// remove 1 item at 2-index position (that is, "drum")</span></div><div class="line"><span class="comment">// myFish is ["angel", "clown", "mandarin", "sturgeon"]</span></div></pre></td></tr></table></figure></p>
+<p><code>.shift()</code> —— removes the first element from an array and returns that element. This method changes the length of the array.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line"><span class="keyword">let</span> b = a.shift();</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(a);                             <span class="comment">// ==&gt; [2, 3]</span></div><div class="line"><span class="built_in">console</span>.log(b);                             <span class="comment">// ==&gt; 1</span></div></pre></td></tr></table></figure></p>
+<p><code>.unshift()</code> ——  adds one or more elements to the beginning of an array and returns the new length of the array.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line">a.unshift(<span class="number">4</span>, <span class="number">5</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(a);                               <span class="comment">// ==&gt; [4, 5, 1, 2, 3]</span></div></pre></td></tr></table></figure></p>
+<p><code>.concat()</code> —— merge two or more arrays. This method does not change the existing arrays, but instead returns a new array.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">let</span> arr1 = [<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>];</div><div class="line"><span class="keyword">let</span> arr2 = [<span class="string">'d'</span>, <span class="string">'e'</span>, <span class="string">'f'</span>];</div><div class="line"></div><div class="line"><span class="keyword">let</span> arr3 = arr1.concat(arr2);           <span class="comment">// ==&gt; [ "a", "b", "c", "d", "e", "f" ]</span></div></pre></td></tr></table></figure>
+<h2 id="Arrays-with-let-and-const"><a href="#Arrays-with-let-and-const" class="headerlink" title="Arrays with let and const"></a>Arrays with let and const</h2><p>Variables declared with <code>let</code>can be reassigned.<br>Variables that are assigned with <code>const</code> cannot be reassigned.<br>However, arrays that are declared with <code>const</code>remain <em>mutable</em>, or changeable.<br>This means that we can change the contents of an array, but cannot reassign the variable name to a new array or other data type.</p>
+<h2 id="Review-Arrays"><a href="#Review-Arrays" class="headerlink" title="Review Arrays"></a>Review Arrays</h2><ul>
+<li>Arrays are lists and are a way to store data in JavaScript.</li>
+<li>Arrays are created with brackets <code>[]</code>.</li>
+<li>Each item inside of an array is at a numbered position, starting at <code>0</code>.</li>
+<li>We can access one item in an array using its numbered position, with syntax like: <code>myArray[0]</code>.</li>
+<li>We can also change an item in an array using its numbered position, with syntax like <code>myArray[0] = &quot;new string&quot;</code>;</li>
+<li>Arrays have a <code>length</code> property, which allows you to see how many items are in an array.</li>
+<li>Arrays have their own methods, including <code>.push()</code> and <code>.pop()</code>, which add and remove items from an array, respectively.</li>
+<li>Arrays have many other methods that perform different functions, such as <code>.slice()</code> and <code>.shift()</code>. You can read the documentation for any array method on the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank" rel="external">Mozilla Developer Network</a> website.</li>
+<li>Variables that contain arrays can be declared with <code>let</code>or <code>const</code>. Even when declared with <code>const</code>, arrays are still mutable; they can be changed. However, a variable declared with <code>const</code> cannot be reassigned.</li>
+</ul>
+<hr>
+<h1 id="Loops"><a href="#Loops" class="headerlink" title="Loops"></a>Loops</h1><p><code>for</code> —— let us loop a block of code a known amount of times.<br><code>while</code> —— let us loop a block of code an unknown amount of times.</p>
+<h2 id="for-Loops"><a href="#for-Loops" class="headerlink" title="for Loops"></a>for Loops</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// make a for loop run forwards through an array:</span></div><div class="line"><span class="keyword">let</span> animals = [<span class="string">"Grizzly Bear"</span>, <span class="string">"Sloth"</span>, <span class="string">"Sea Lion"</span>];</div><div class="line"></div><div class="line"><span class="keyword">for</span> (<span class="keyword">let</span> animalIndex = <span class="number">0</span>; animalIndex &lt; animals.length; animalIndex++) &#123;</div><div class="line">  <span class="built_in">console</span>.log(animals[animalIndex]);      <span class="comment">// ==&gt; Grizzly Bear  Sloth  Sea Lion</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// make it run backward through one:</span></div><div class="line"><span class="keyword">for</span> (<span class="keyword">let</span> animalsIndex=animals.length<span class="number">-1</span>; animalsIndex &gt;= <span class="number">0</span>;animalsIndex-- ) &#123;</div><div class="line">  <span class="built_in">console</span>.log(animals[animalsIndex]);      <span class="comment">// ==&gt; Sea Lion  Sloth  Grizzly Bear</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>循环语句的三要素</strong></p>
+<ul>
+<li>循环开始的初始化变量 var i = 0;</li>
+<li>循环条件 i &lt; myLikeColorsList.length;</li>
+<li>计数器变量更新 i++;</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; myLikeColorsList.length; i++) &#123;</div><div class="line">  <span class="built_in">console</span>.log(myLikeColorsList[i]);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 等价于下面(把初始化变量提前)</span></div><div class="line"><span class="keyword">var</span> i = <span class="number">0</span>;</div><div class="line"><span class="keyword">for</span> (; i &lt; myLikeColorsList.length; i++) &#123;</div><div class="line">  <span class="built_in">console</span>.log(myLikeColorsList[i]);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 等价于下面(把初始化变量提前，把计数器的自增放在循环体内)</span></div><div class="line"><span class="keyword">var</span> i = <span class="number">0</span>;</div><div class="line"><span class="keyword">for</span> (; i &lt; myLikeColorsList.length;) &#123;</div><div class="line">  <span class="built_in">console</span>.log(myLikeColorsList[i]);</div><div class="line">  i = i + <span class="number">1</span>; <span class="comment">// i++;</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 初始化变量可以是多个，计数器变量更新也可以是多个</span></div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i =<span class="number">0</span>, j = <span class="number">0</span>; i &lt; myLikeColorsList.length; i++, j++) &#123;</div><div class="line"><span class="built_in">console</span>.log(‘种类’ + j);</div><div class="line"><span class="built_in">console</span>.log(myLikeColorsList[i]);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 创新的轮询数组的技巧</span></div><div class="line"><span class="comment">// 两头同时轮询，轮询时间只用到了一半。</span></div><div class="line"></div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i =<span class="number">0</span>, j = myLikeColorsList.length - <span class="number">1</span>; i &lt; myLikeColorsList.length /<span class="number">2</span> ; i++, j--) &#123;</div><div class="line">  <span class="built_in">console</span>.log(myLikeColorsList[i]);</div><div class="line">  <span class="built_in">console</span>.log(myLikeColorsList[j]);</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'\n'</span>);</div></pre></td></tr></table></figure>
+<h2 id="Nested-for-Loops"><a href="#Nested-for-Loops" class="headerlink" title="Nested for Loops"></a>Nested for Loops</h2><blockquote>
+<p>run a <code>for</code> loop inside another <code>for</code> loop to compare the items in two arrays.<br>Every time the outer <code>for</code> loop runs once, the inner <code>for</code>loop will run completely.</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; myArray.length; i++) &#123;</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; yourArray.length; j++) &#123;</div><div class="line">    <span class="comment">//Code To Run</span></div><div class="line">   &#125;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> myPlaces = [<span class="string">'Houston'</span>, <span class="string">'Sioux Falls'</span>, <span class="string">'Phoenix'</span>];</div><div class="line"><span class="keyword">let</span> friendPlaces = [<span class="string">'Sioux Falls'</span>, <span class="string">'Missoula'</span>, <span class="string">'Buffalo'</span>];</div><div class="line"></div><div class="line"><span class="keyword">for</span> (<span class="keyword">let</span> myPlacesIndex = <span class="number">0</span>; myPlacesIndex &lt; myPlaces.length; myPlacesIndex++) &#123;</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> friendPlacesIndex = <span class="number">0</span>; friendPlacesIndex &lt; friendPlaces.length; friendPlacesIndex++) &#123;</div><div class="line">		<span class="keyword">if</span> (myPlaces[myPlacesIndex] === friendPlaces[friendPlacesIndex]) &#123;</div><div class="line">      <span class="built_in">console</span>.log(friendPlaces[friendPlacesIndex]);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="while-Loops"><a href="#while-Loops" class="headerlink" title="while Loops"></a>while Loops</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span> (condition) &#123;</div><div class="line">  <span class="comment">// code block that loops until condition is false</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ol>
+<li>The loop begins with the keyword <code>while</code>.</li>
+<li>Inside the parentheses, we write a condition. As long as the condition evaluates to <code>true</code>, the block of code will loop.</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> cards = [<span class="string">'Diamond'</span>, <span class="string">'Spade'</span>, <span class="string">'Heart'</span>, <span class="string">'Club'</span>];</div><div class="line"></div><div class="line"><span class="keyword">let</span> currentCard = <span class="string">'Heart'</span>;</div><div class="line"></div><div class="line"><span class="keyword">while</span> (currentCard !== <span class="string">'Spade'</span>) &#123;</div><div class="line">  <span class="built_in">console</span>.log(currentCard);</div><div class="line">  currentCard = cards[<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">4</span>)];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'You found a spade!'</span>);</div></pre></td></tr></table></figure>
+<p><code>currentCard = cards[Math.floor(Math.random() * 4)];</code></p>
+<p>This code will generate a random number between <code>0</code>and <code>3</code>, the range of indices of the <code>cards</code> array, and reassign <code>currentCard</code> to a new card from that array.</p>
+<h2 id="Infinite-Loops"><a href="#Infinite-Loops" class="headerlink" title="Infinite Loops"></a>Infinite Loops</h2><p>Both <code>for</code> loops and <code>while</code> loops need explicit instructions on when to terminate.</p>
+<p>Infinite loops are more common in <code>while</code> loops because they don’t have an iterator built into their syntax. <code>while</code> loop, be sure to write the code that will guarantee the condition will eventually be met.</p>
+<p><code>for</code> loops require a start condition, a stop condition, and an iterator.</p>
+<h2 id="Review-Loops"><a href="#Review-Loops" class="headerlink" title="Review: Loops"></a>Review: Loops</h2><ul>
+<li><code>for</code> loops allow us to repeat a block of code a known amount of times.</li>
+<li>We can use a <code>for</code> loop inside another <code>for</code> loop to compare two lists.</li>
+<li><code>while</code> loops are for looping over a code block an unknown amount of times.</li>
+<li>Infinite loops occur when stop conditions are never met.</li>
+</ul>
+<hr>
+<h1 id="Iterators"><a href="#Iterators" class="headerlink" title="Iterators"></a>Iterators</h1><blockquote>
+<p>These methods are called on arrays and complete such tasks as altering each element and selecting elements that fit certain criteria.</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> artists = [<span class="string">'Picasso'</span>, <span class="string">'Kahlo'</span>, <span class="string">'Matisse'</span>, <span class="string">'Utamaro'</span>];</div><div class="line"></div><div class="line">artists.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">artist</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(artist + <span class="string">' is one of my favorite artists.'</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="keyword">let</span> numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</div><div class="line"></div><div class="line"><span class="keyword">let</span> squareNumbers = numbers.map(<span class="function"><span class="keyword">function</span>(<span class="params">number</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> number * number;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(squareNumbers);</div><div class="line"></div><div class="line"><span class="keyword">let</span> things = [<span class="string">'desk'</span>, <span class="string">'chair'</span>, <span class="number">5</span>, <span class="string">'backpack'</span>, <span class="number">3.14</span>, <span class="number">100</span>];</div><div class="line"></div><div class="line"><span class="keyword">let</span> onlyNumbers = things.filter(<span class="function"><span class="keyword">function</span>(<span class="params">thing</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="keyword">typeof</span> thing === <span class="string">'number'</span>;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(onlyNumbers);</div></pre></td></tr></table></figure>
+<h2 id="forEach"><a href="#forEach" class="headerlink" title=".forEach()"></a>.forEach()</h2><blockquote>
+<p>execute the same code on each element of an array.</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> groceries = [<span class="string">'whole wheat flour'</span>, <span class="string">'brown sugar'</span>, <span class="string">'salt'</span>, <span class="string">'cranberries'</span>, <span class="string">'walnuts'</span>];</div><div class="line"></div><div class="line">groceries.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">groceryItem</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">' - '</span> + groceryItem);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">&gt; <span class="comment">// ==&gt; - whole wheat flour</span></div><div class="line">&gt; <span class="comment">// ==&gt; - brown sugar</span></div><div class="line">&gt; <span class="comment">// ==&gt; - salt</span></div><div class="line">&gt; <span class="comment">// ==&gt; - cranberries</span></div><div class="line">&gt; <span class="comment">// ==&gt; - walnuts</span></div></pre></td></tr></table></figure>
+<ol>
+<li><code>groceries.forEach</code> calls the <code>.forEach()</code> method on the groceries array.</li>
+<li><code>(function(groceryItem) {</code> creates a function that takes a single parameter, <code>groceryItem</code> and opens the block of code for that function. Because <code>.forEach()</code> is an iterator method, every element in the <code>groceries</code>array will be passed to this function as an argument in place of <code>groceryItem</code>.</li>
+<li><code>});</code> closes the function code block and <code>.forEach()</code>method in that order.</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">groceries.forEach(<span class="function"><span class="params">groceryItem</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">' - '</span> + groceryItem));</div></pre></td></tr></table></figure>
+<p>There are three important things to know about the <code>.forEach()</code> method.</p>
+<ol>
+<li>It is an array method. It must be called upon an array.</li>
+<li>Any changes to the iterated array value won’t be updated in the original array.</li>
+<li>The return value is <code>undefined</code>.</li>
+</ol>
+<h2 id="map"><a href="#map" class="headerlink" title=".map()"></a>.map()</h2><blockquote>
+<p>change the contents of the array</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</div><div class="line"></div><div class="line"><span class="keyword">let</span> bigNumbers = numbers.map(<span class="function"><span class="keyword">function</span>(<span class="params">number</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> number * <span class="number">10</span>;</div><div class="line">&#125;);</div><div class="line"><span class="comment">// ==&gt; [ 10, 20, 30, 40, 50 ]</span></div></pre></td></tr></table></figure>
+<ol>
+<li><code>let bigNumbers = numbers.map</code> creates a new array, <code>bigNumbers</code>, in which the returned values of the <code>.map()</code> method will be saved and calls the <code>.map()</code>method on the <code>numbers</code> array.</li>
+<li><code>(function(number) {</code> creates a function that takes a single parameter, <code>number</code>, and opens the block of code for that function.</li>
+<li><code>return number * 10;</code> is the code we wish to execute upon each element in the array. This will save each value from the <code>numbers</code> array, multiplied by <code>10</code>, to the <code>bigNumbers</code> array.</li>
+<li><code>});</code> closes the function code block and <code>.map()</code>method in that order.</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</div><div class="line"><span class="keyword">let</span> bigNumbers = numbers.map(<span class="function"><span class="params">numbers</span> =&gt;</span> numbers * <span class="number">10</span>);</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> animals = [<span class="string">'Hen'</span>, <span class="string">'elephant'</span>, <span class="string">'llama'</span>, <span class="string">'leopard'</span>, <span class="string">'ostrich'</span>, <span class="string">'Whale'</span>, <span class="string">'octopus'</span>, <span class="string">'rabbit'</span>, <span class="string">'lion'</span>, <span class="string">'dog'</span>];</div><div class="line"><span class="keyword">let</span> secretMessage = animals.map(<span class="function"><span class="params">animal</span> =&gt;</span> animal.charAt(<span class="number">0</span>));</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(secretMessage.join(<span class="string">''</span>));                        <span class="comment">// ==&gt; HelloWorld</span></div></pre></td></tr></table></figure>
+<h2 id="filter"><a href="#filter" class="headerlink" title=".filter()"></a>.filter()</h2><blockquote>
+<p>returns certain elements from the original array that evaluate to truthy based on conditions written in the block of the method.</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> words = [<span class="string">'chair'</span>, <span class="string">'music'</span>, <span class="string">'pillow'</span>, <span class="string">'brick'</span>, <span class="string">'pen'</span>, <span class="string">'door'</span>];</div><div class="line"></div><div class="line"><span class="keyword">let</span> shortWords = words.filter(<span class="function"><span class="keyword">function</span>(<span class="params">word</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> word.length &lt; <span class="number">6</span>;</div><div class="line">&#125;);</div><div class="line"><span class="comment">// ==&gt; [ 'chair', 'music', 'brick', 'pen', 'door' ]</span></div></pre></td></tr></table></figure>
+<ol>
+<li><code>let shortWords =</code> declares a new array that will contain the returned elements of the <code>.filter()</code>method.</li>
+<li><code>words.filter(function(word) {</code> calls the <code>.filter()</code> method on the <code>words</code> array and creates a function that will take a single parameter, <code>word</code>. Each element in the <code>words</code> array will be passed to this function as an argument.</li>
+<li><code>return word.length &lt; 6;</code> is the condition to filter for all elements in the <code>words</code> array that have fewer than <code>6</code> characters will be added to the <code>shortWords</code> array.</li>
+<li><code>});</code> closes the code block and <code>.filter()</code> method in that order.</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> shortWords = words.filter(<span class="function"><span class="params">word</span> =&gt;</span> word.length &lt; <span class="number">6</span>);</div></pre></td></tr></table></figure>
+<h2 id="Iterator-Documentation"><a href="#Iterator-Documentation" class="headerlink" title="Iterator Documentation"></a>Iterator Documentation</h2><ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank" rel="external">Mozilla Developer Network</a>   </li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Iteration_methods" target="_blank" rel="external">A list of iterator</a></li>
+</ul>
+<p>The documentation for each method contains several sections:</p>
+<ol>
+<li>A short definition</li>
+<li>A block with the correct syntax for using the method</li>
+<li>A list of parameters the method accepts or requires</li>
+<li>The return value of the function</li>
+<li>An extended description</li>
+<li>Examples of the method’s use</li>
+<li>Polyfill, Specifications, Browser Compatibility</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> words = [<span class="string">'unique'</span>, <span class="string">'uncanny'</span>, <span class="string">'pique'</span>, <span class="string">'oxymoron'</span>, <span class="string">'guise'</span>];</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(words.some(<span class="function"><span class="keyword">function</span>(<span class="params">word</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> word.length &lt; <span class="number">6</span>;                                       <span class="comment">// ==&gt; true</span></div><div class="line">&#125;));</div><div class="line"></div><div class="line"><span class="keyword">let</span> interestingWords = words.filter(<span class="function"><span class="params">word</span> =&gt;</span> word.length &gt; <span class="number">5</span>);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(interestingWords.every(<span class="function"><span class="params">word</span> =&gt;</span> word.length &gt; <span class="number">5</span>));   <span class="comment">// ==&gt; true</span></div></pre></td></tr></table></figure>
+<h2 id="Choose-the-Right-Iterator"><a href="#Choose-the-Right-Iterator" class="headerlink" title="Choose the Right Iterator"></a>Choose the Right Iterator</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> cities = [<span class="string">'Nashville'</span>, <span class="string">'Charlotte'</span>, <span class="string">'Asheville'</span>, <span class="string">'Austin'</span>, <span class="string">'Boulder'</span>];</div><div class="line"></div><div class="line"><span class="keyword">let</span> nums = [<span class="number">1</span>, <span class="number">50</span>, <span class="number">75</span>, <span class="number">200</span>, <span class="number">350</span>, <span class="number">525</span>, <span class="number">1000</span>];</div><div class="line"></div><div class="line"><span class="comment">//  Choose a method that will return undefined</span></div><div class="line">cities.forEach(<span class="function"><span class="params">city</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'Have you visited '</span> + city + <span class="string">'?'</span>));</div><div class="line"></div><div class="line"><span class="comment">// Choose a method that will return a new array</span></div><div class="line"><span class="keyword">let</span> longCities = cities.filter(<span class="function"><span class="params">city</span> =&gt;</span> city.length &gt; <span class="number">7</span>);</div><div class="line"></div><div class="line"><span class="comment">// Choose a method that will return a new array</span></div><div class="line"><span class="keyword">let</span> smallerNums = nums.map(<span class="function"><span class="params">num</span> =&gt;</span> num - <span class="number">5</span>);</div><div class="line"></div><div class="line"><span class="comment">// Choose a method that will return a boolean value</span></div><div class="line">nums.some(<span class="function"><span class="params">num</span> =&gt;</span> num &lt; <span class="number">0</span>);</div></pre></td></tr></table></figure>
+<h2 id="Review-Iterators"><a href="#Review-Iterators" class="headerlink" title="Review: Iterators"></a>Review: Iterators</h2><ul>
+<li><code>.forEach()</code> is used to execute the same code on every element in an array but does not change the array and returns <code>undefined</code>.</li>
+<li><code>.map()</code> executes the same code on every element in an array and returns a new array with the updated elements.</li>
+<li><code>.filter()</code> checks every element in an array to see if it meets certain criteria and returns a new array with the elements that return truthy for the criteria.</li>
+<li>All iterator methods can be written using arrow function syntax. In fact, given the succinctness and the implicit return of arrow function syntax, this is quickly becoming the preferred way to write these types of method calls.</li>
+<li>You can visit the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank" rel="external">Mozilla Developer Network</a> to learn more about iterator methods (and all other parts of JavaScript!).</li>
+<li>Additional iterator methods such as <code>.some()</code>, <code>.every()</code>, <code>.reduce()</code>perform different functions.</li>
+</ul>
+<hr>
+<h1 id="Objects"><a href="#Objects" class="headerlink" title="Objects"></a>Objects</h1><blockquote>
+<p>JavaScript <em>objects</em> are containers that can store data and functions.<br>The data we store in an object is not ordered — we can only access it by calling its associated <em>key</em>.<br>对象是名/值对的集合，或字符串到值射映的集合。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> restaurant = &#123;</div><div class="line">  name: <span class="string">'Italian Bistro'</span>,</div><div class="line">  seatingCapacity: <span class="number">120</span>,</div><div class="line">  hasDineInSpecial: <span class="literal">true</span>,</div><div class="line">  entrees: [<span class="string">'Penne alla Bolognese'</span>, <span class="string">'Chicken Cacciatore'</span>, <span class="string">'Linguine Pesto'</span>]</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<ol>
+<li><code>let restaurant</code> creates a variable named <code>restaurant</code> that stores the object.</li>
+<li>We create the object between curly braces: <code>{}</code>.</li>
+<li>key <code>:</code> value</li>
+<li>Every key-value pair is separated by a comma <code>,</code>.</li>
+</ol>
+<p>An objects keys point to values that can be any data type, including other objects.</p>
+<h2 id="Accessing-Object-Properties"><a href="#Accessing-Object-Properties" class="headerlink" title="Accessing Object Properties"></a>Accessing Object Properties</h2><blockquote>
+<p>通过<code>.</code>或<code>·[]</code>来访问对象属性。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> restaurant = &#123;</div><div class="line">  name: <span class="string">'Italian Bistro'</span>,</div><div class="line">  seatingCapacity: <span class="number">120</span>,</div><div class="line">  hasDineInSpecial: <span class="literal">true</span>,</div><div class="line">  entrees: [<span class="string">'Penne alla Bolognese'</span>, <span class="string">'Chicken Cacciatore'</span>, <span class="string">'Linguine pesto'</span>]</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(restaurant.entrees);</div><div class="line"><span class="comment">// ==&gt; ['Penne alla Bolognese', 'Chicken Cacciatore', 'Linguine pesto']</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(restaurant[<span class="string">'entrees'</span>]);</div><div class="line"></div><div class="line"><span class="comment">// ==&gt; ['Penne alla Bolognese', 'Chicken Cacciatore', 'Linguine pesto']</span></div></pre></td></tr></table></figure>
+<p>Bracket notation is required to use variables to look up keys within an object. It’s not possible to use variables like this with dot notation.</p>
+<p>For example, a restaurant may have different specials based on the time of day. We could put each special in the <code>restaurantSpecials</code>object, then select the one we need later in our program based on the current time.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> meal = <span class="string">'none'</span>;</div><div class="line"><span class="keyword">let</span> time = <span class="number">12</span>;</div><div class="line"></div><div class="line"><span class="keyword">const</span> restaurantSpecials = &#123;</div><div class="line"> breakfast: <span class="string">'The breakfast special is 20% off freshly squeezed orange juice'</span>,</div><div class="line"> lunch: <span class="string">'The lunch special is 10% off appetizers'</span>,</div><div class="line"> none: <span class="string">'There are no specials currently'</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">if</span> (time &lt; <span class="number">11</span>) &#123;</div><div class="line">  meal = <span class="string">'breakfast'</span>;</div><div class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (time &lt; <span class="number">5</span>) &#123;</div><div class="line">  meal = <span class="string">'lunch'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(restaurantSpecials[meal]);</div><div class="line"><span class="comment">// ==&gt; The lunch special is 10% off appetizers</span></div></pre></td></tr></table></figure>
+<ol>
+<li>The <code>restaurantSpecials</code> object has three key-value pairs for different specials throughout the day: <code>breakfast</code>, <code>lunch</code>, and <code>none</code>.</li>
+<li>The <code>if</code>/<code>else</code> statement sets the <code>meal</code>variable to <code>&#39;breakfast&#39;</code> or <code>&#39;lunch&#39;</code>based on the the <code>time</code>. For purposes of this example, we can imagine the <code>time</code> variable getting updated every hour.</li>
+<li>On the last line, we wrote <code>restaurantSpecials[meal]</code>. The <code>meal</code>variable is not a key in the <code>restaurantSpecials</code> object. Because we are using bracket notation, JavaScript looks at the <code>meal</code> variable’s value. In this case, <code>meal</code> is set to <code>&#39;lunch&#39;</code> within the <code>if</code>/<code>else</code> statement because <code>time</code> is equal to <code>12</code>. Since <code>special</code> equals <code>&#39;lunch&#39;</code>, writing <code>restaurantSpecials[meal]</code> is the same as writing <code>restaurantSpecials[&#39;lunch&#39;]</code> — the code outputs the lunch special.</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> person = &#123;</div><div class="line">  name: <span class="string">'kaka'</span>,</div><div class="line">  age: <span class="number">12</span>,</div><div class="line">  weekendAlarm: <span class="string">'No alarms needed'</span>,</div><div class="line">  weekAlarm: <span class="string">'Alarm set at 7AM'</span>,</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> day = [<span class="string">'Monday'</span>, <span class="string">'Tuesday'</span>, <span class="string">'Wednesday'</span>, <span class="string">'Saturday'</span>, <span class="string">'Sunday'</span>];</div><div class="line"><span class="keyword">let</span> alarm;</div><div class="line"></div><div class="line"><span class="keyword">if</span> (day===<span class="string">'Sunday'</span> || day===<span class="string">'Saturday'</span>) &#123;</div><div class="line">  alarm = <span class="string">'weekendAlarm'</span>;</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">  alarm = <span class="string">'weekAlarm'</span>;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(person[alarm])</div><div class="line"><span class="comment">// ==&gt; Alarm set at 7AM</span></div></pre></td></tr></table></figure>
+<h2 id="Adding-a-Property"><a href="#Adding-a-Property" class="headerlink" title="Adding a Property"></a>Adding a Property</h2><blockquote>
+<p>Objects are considered <em>mutable</em>, which means you can change them after they’re created. Even if you save an object to a <code>const</code> variable</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> restaurant = &#123;</div><div class="line">  name: <span class="string">'Italian Bistro'</span>,</div><div class="line">  seatingCapacity: <span class="number">120</span>,</div><div class="line">  hasDineInSpecial: <span class="literal">true</span>,</div><div class="line">  entrees: [<span class="string">'Penne alla Bolognese'</span>, <span class="string">'Chicken Cacciatore'</span>, <span class="string">'Linguine pesto'</span>]</div><div class="line">&#125;</div><div class="line"></div><div class="line">restaurant[<span class="string">'appetizers'</span>] = [<span class="string">'Fried Calamari'</span>, <span class="string">'Bruschetta'</span>];</div><div class="line">restaurant.desserts = [<span class="string">'Homemade Tiramisu'</span>, <span class="string">'Cannoli'</span>];</div></pre></td></tr></table></figure>
+<h2 id="Editing-a-Property"><a href="#Editing-a-Property" class="headerlink" title="Editing a Property"></a>Editing a Property</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">restaurant[<span class="string">'appetizers'</span>] = [<span class="string">'Fried Calamari'</span>, <span class="string">'Bruschetta'</span>, <span class="string">'Caprese Salad'</span>];</div><div class="line">restaurant.desserts = [<span class="string">'Homemade Tiramisu'</span>, <span class="string">'Canolli'</span>, <span class="string">'Cheesecake'</span>];</div></pre></td></tr></table></figure>
+<h2 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> restaurant = &#123;</div><div class="line">  name: <span class="string">'Italian Bistro'</span>,</div><div class="line">  openRestaurant: <span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">'Unlock the door, flip the open sign. We are open for business!'</span>;</div><div class="line">  &#125;,</div><div class="line">  closeRestaurant: <span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">'Lock the door, flip the open sign. We are closed.'</span></div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(restaurant.openRestaurant());</div><div class="line"><span class="comment">// ==&gt; Unlock the door, flip the open sign. We are open for business!</span></div><div class="line"><span class="built_in">console</span>.log(restaurant.closeRestaurant());</div><div class="line"><span class="comment">// ==&gt; Lock the door, flip the open sign. We are closed.</span></div></pre></td></tr></table></figure>
+<h2 id="Methods-ES6"><a href="#Methods-ES6" class="headerlink" title="Methods: ES6"></a>Methods: ES6</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> restaurant = &#123;</div><div class="line">  name: <span class="string">'Italian Bistro'</span>,</div><div class="line">  openRestaurant() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">'Unlock the door, flip the open sign. We are open for business!'</span>;</div><div class="line">  &#125;,</div><div class="line">  closeRestaurant() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">'Lock the door, flip the open sign. We are closed.'</span></div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h2 id="The-this-Keyword"><a href="#The-this-Keyword" class="headerlink" title="The this Keyword"></a>The this Keyword</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> restaurant = &#123;</div><div class="line">  name: <span class="string">'Italian Bistro'</span>,</div><div class="line">  hasDineInSpecial: <span class="literal">true</span>,</div><div class="line">  openRestaurant() &#123;</div><div class="line">    <span class="keyword">if</span> (hasDineInSpecial) &#123;</div><div class="line">      <span class="keyword">return</span> <span class="string">'Unlock the door, post the special on the board, then flip the open sign.'</span>;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      <span class="keyword">return</span> <span class="string">'Unlock the door, then flip the open sign.'</span>;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(restaurant.openRestaurant());</div><div class="line"><span class="comment">// ==&gt; ReferenceError: hasDineInSpecial is not defined</span></div></pre></td></tr></table></figure>
+<p>The error above doesn’t work because <code>hasDineInSpecial</code> is out of the <code>.openRestaurant()</code> method’s scope.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> restaurant = &#123;</div><div class="line">  name: <span class="string">'Italian Bistro'</span>,</div><div class="line">  hasDineInSpecial: <span class="literal">true</span>,</div><div class="line">  openRestaurant: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.hasDineInSpecial) &#123;</div><div class="line">      <span class="keyword">return</span> <span class="string">'Unlock the door, post the special on the board, then flip the open sign.'</span></div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      <span class="keyword">return</span> <span class="string">'Unlock the door, then flip the open sign.'</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(restaurant.openRestaurant());</div><div class="line"><span class="comment">// ==&gt; Unlock the door, post the special on the board, then flip the open sign.</span></div></pre></td></tr></table></figure>
+<p><code>this</code>keyword refers to the current object, which we use to grab the value saved to <code>hasDineInSpecial</code>.</p>
+<p><code>this.hasDineInSpecial</code> inside the object is the same as accessing <code>restaurant.hasDineInSpecial</code> outside the object.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> myObj = &#123;</div><div class="line">  name: <span class="string">'Miti'</span>,</div><div class="line">  sayHello() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;<span class="keyword">this</span>.name&#125;</span> says hello!`</span>;</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>If we call <code>myObj.sayHello()</code>, our method will return <code>&#39;Miti says hello!&#39;</code>. <code>this</code> in the example above is called inside the <code>myObj</code>object, which limits the scope to the properties inside of <code>myObj</code>.</p>
+<p>Let’s change that by switching the object calling <code>this</code>:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> yourObj = &#123;</div><div class="line">  name: <span class="string">'Timer'</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line">yourObj.sayHello = myObj.sayHello;</div><div class="line"><span class="comment">// Sets the sayHello method on yourObj to be the sayHello method on yourObj</span></div></pre></td></tr></table></figure>
+<p>If you call <code>yourObj.sayHello()</code>, it will return <code>&#39;Timer says hello!&#39;</code>. <code>this</code> in the example above is called inside the <code>yourObj</code> object, which limits the scope to the properties inside of <code>yourObj</code>.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> person = &#123;</div><div class="line">  name: <span class="string">'Tyron'</span>,</div><div class="line">  age: <span class="number">40</span>,</div><div class="line">  weekendAlarm: <span class="string">'No alarms needed'</span>,</div><div class="line">  weekAlarm: <span class="string">'Alarm set to 7AM'</span>,</div><div class="line"></div><div class="line">  sayHello: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">`Hello, my name is <span class="subst">$&#123;<span class="keyword">this</span>.name&#125;</span>`</span>;</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  sayGoodbye() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">'Goodbye!'</span>;</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">let</span> friend = &#123;</div><div class="line">  name: <span class="string">'pingki'</span>,</div><div class="line">&#125;</div><div class="line"></div><div class="line">friend.sayHello = person.sayHello;</div><div class="line"><span class="built_in">console</span>.log(friend.sayHello())                <span class="comment">// ==&gt; Hello, my name is pingki</span></div><div class="line"><span class="built_in">console</span>.log(person.sayHello());               <span class="comment">// ==&gt; Hello, my name is Tyron</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> day = <span class="string">'Tuesday'</span>;</div><div class="line"><span class="keyword">let</span> alarm;</div><div class="line"></div><div class="line"><span class="keyword">if</span> (day === <span class="string">'Saturday'</span> || day === <span class="string">'Sunday'</span> ) &#123;</div><div class="line">  alarm = <span class="string">'weekendAlarm'</span>;</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">  alarm = <span class="string">'weekAlarm'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(person[alarm]);                      <span class="comment">// ==&gt; Alarm set to 7AM</span></div></pre></td></tr></table></figure>
+<h2 id="Getters-and-Setters"><a href="#Getters-and-Setters" class="headerlink" title="Getters and Setters"></a>Getters and Setters</h2><blockquote>
+<p>A common object design paradigm is to include getter and setter methods as attributes.</p>
+</blockquote>
+<p>Getter and setter methods get and set the properties inside of an object. There are a couple of advantages to using these methods for getting and setting properties directly:</p>
+<ul>
+<li>You can check if new data is valid before setting a property.</li>
+<li>You can perform an action on the data while you are getting or setting a property.</li>
+<li>You can control which properties can be set and retrieved.</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> restaurant = &#123;</div><div class="line">  name: <span class="string">'Italian Bistro'</span>,</div><div class="line">  seatingCapacity: <span class="number">120</span>,</div><div class="line">  hasDineInSpecial: <span class="literal">true</span>,</div><div class="line">  entrees: [<span class="string">'Penne alla Bolognese'</span>, <span class="string">'Chicken Cacciatore'</span>, <span class="string">'Linguine Pesto'</span>]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>Available seats = Capacity - Seats Taken</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> restaurant = &#123;</div><div class="line">  _name: <span class="string">'Italian Bistro'</span>,</div><div class="line">  _seatingCapacity: <span class="number">120</span>,</div><div class="line">  _hasDineInSpecial: <span class="literal">true</span>,</div><div class="line">  _entrees: [<span class="string">'Penne alla Bolognese'</span>, <span class="string">'Chicken Cacciatore'</span>, <span class="string">'Linguine pesto'</span>],</div><div class="line"></div><div class="line">  set seatingCapacity(newCapacity) &#123;</div><div class="line">      <span class="keyword">if</span> (<span class="keyword">typeof</span> newCapacity === <span class="string">'number'</span>) &#123;</div><div class="line">        <span class="keyword">this</span>._seatingCapacity = newCapacity;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;newCapacity&#125;</span> is valid input.`</span>);</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">`Change <span class="subst">$&#123;newCapacity&#125;</span> to a number.`</span>)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>Developers use an underscore before a property name to indicate a property or value should not be modified directly by other code.</li>
+<li>The <code>set seatingCapacity()</code> setter method accepts <code>newCapacity</code> as a variable. The <code>newCapacity</code> variable holds the new value that we will store in <code>_seatingCapacity</code>.</li>
+<li>Inside of the <code>.seatingCapacity()</code> setter we use a conditional statement to check if the <code>newCapacity</code> variable (our new value) is a number.</li>
+<li>If the input value is a number (valid input), then we use <code>this._seatingCapacity</code> to change the value assigned to <code>_seatingCapacity</code>. If it is not valid, then we output a message to the user.</li>
+</ul>
+<p><strong>How to use?</strong><br>Now that you know how to create a setter method, you may be wondering how we use it.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">restaurant.seatingCapacity = <span class="number">150</span>;           <span class="comment">// ==&gt; 150 is valid input.</span></div></pre></td></tr></table></figure>
+<p>We set the <code>_seatingCapacity</code> value to <code>150</code>. We use the same syntax we would use to set a property that doesn’t have a setter method. Since the input (<code>150</code>) is a number, our method will execute the first block in the conditional statement — it changes <code>_seatingCapacity</code> to <code>150</code> and logs <code>150 is a valid input.</code> to the console.</p>
+<p><strong>A way to access them:</strong><br>Once you’ve set the properties, you need a way to access them. Getters are used to get the property values inside of an object. Like setters, getters are preferred to setters because you can do additional processing inside the method.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> restaurant = &#123;</div><div class="line">  _name: <span class="string">'Italian Bistro'</span>,</div><div class="line">  _seatingCapacity: <span class="number">120</span>,</div><div class="line">  _hasDineInSpecial: <span class="literal">true</span>,</div><div class="line">  _entrees: [<span class="string">'Penne alla Bolognese'</span>, <span class="string">'Chicken Cacciatore'</span>, <span class="string">'Linguine pesto'</span>],</div><div class="line"></div><div class="line">  set seatingCapacity(seatingCapacity) &#123;</div><div class="line">      <span class="keyword">if</span> (typeOf newCapacity === <span class="string">'number'</span>) &#123;</div><div class="line">        <span class="keyword">this</span>._seatingCapacity = newCapacity;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">`Change <span class="subst">$&#123;newCapacity&#125;</span> to a number.`</span>)</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  get seatingCapacity() &#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">`There are <span class="subst">$&#123;<span class="keyword">this</span>._seatingCapacity&#125;</span> seats at Italian Bistro.`</span>);</div><div class="line">      <span class="keyword">return</span> <span class="keyword">this</span>._seatingCapacity;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>In the example above, the getter method (<code>get seatingCapacity()</code>) logs something to the console and returns the value saved to <code>_seatingCapacity</code>. We call the getter method the same way we would access a property without a method:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">restaurant.seatingCapacity = <span class="number">150</span>;</div><div class="line"><span class="keyword">const</span> seats = restaurant.seatingCapacity;</div></pre></td></tr></table></figure>
+<p>In this example we set the <code>seatingCapacity</code>to <code>150</code>, then call the getter method using <code>restaurant.seatingCapacity</code> and save the result to a variable called <code>seats</code>. The getter will also log the following line of code to the console:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">There are <span class="number">150</span> seats at Italian Bistro.</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> person = &#123;</div><div class="line">  _name: <span class="string">'Lu Xun'</span>,</div><div class="line">  _age: <span class="number">137</span>,</div><div class="line"></div><div class="line">  set age(ageIn) &#123;</div><div class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> ageIn === <span class="string">'number'</span>) &#123;</div><div class="line">      <span class="keyword">this</span>._age = ageIn;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span> &#123;</div><div class="line">      <span class="built_in">console</span>.log(<span class="string">'Invalid input'</span>);</div><div class="line">      <span class="keyword">return</span> <span class="string">'Invalid input'</span>;                   </div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  get age() &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;<span class="keyword">this</span>._name&#125;</span> is <span class="subst">$&#123;<span class="keyword">this</span>._age&#125;</span> years old.`</span>);</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>._age;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">&#125;;</div><div class="line"></div><div class="line">person.age = <span class="string">'Thirty-nine'</span>;                <span class="comment">// ==&gt; Invalid input</span></div><div class="line">person.age = <span class="number">39</span>;                           <span class="comment">// ==&gt; Lu Xun is 39 years old.</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(person.age);                   <span class="comment">// ==&gt; 39</span></div></pre></td></tr></table></figure>
+<h2 id="Review-Objects"><a href="#Review-Objects" class="headerlink" title="Review:Objects"></a>Review:Objects</h2><ul>
+<li>Objects store key-value pairs and let us represent real-world things in JavaScript.</li>
+<li>Properties in objects are separated by commas. Key-value pairs are always separated by a colon.</li>
+<li>You can add or edit a property within an object with dot notation.</li>
+<li>A method is a function in an object.</li>
+<li><code>this</code> helps us with scope inside of object methods. <code>this</code> is a dynamic variable that can change depending on the object that is calling the method.</li>
+<li>Getter and setter methods allow you to process data before accessing or setting property values.</li>
+</ul>
+<hr>
+<h1 id="Classes"><a href="#Classes" class="headerlink" title="Classes"></a>Classes</h1><blockquote>
+<p>A tool that developers use to quickly produce similar objects.<br>A great way to reduce duplicate code and debugging time.</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> halley = &#123;</div><div class="line">  _name: <span class="string">'Halley'</span>,</div><div class="line">  _behavior: <span class="number">0</span>,</div><div class="line"></div><div class="line">  get name() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>._name;</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  get behavior() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>._behavior;</div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  incrementBehavior() &#123;</div><div class="line">    <span class="keyword">this</span>._behavior++;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Now, imagine you own a dog daycare and want to create a catalog of all the dogs who belong to the daycare. Instead of using the syntax above for every dog that joins the daycare, we can create a Dog class that serves as a template for creating new Dog objects. For each new dog, you can provide a value for their name.</p>
+<p><strong>Created a class called Dog, and used it to produce a Dog object:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(name) &#123;</div><div class="line">    <span class="keyword">this</span>._name = name;</div><div class="line">    <span class="keyword">this</span>._behavior = <span class="number">0</span>;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  get name() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>._name;</div><div class="line">  &#125;</div><div class="line">  get behavior() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>._behavior;</div><div class="line">  &#125;   </div><div class="line"></div><div class="line">  incrementBehavior() &#123;</div><div class="line">    <span class="keyword">this</span>._behavior ++;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">const</span> halley = <span class="keyword">new</span> Dog(<span class="string">'Halley'</span>);</div><div class="line"><span class="built_in">console</span>.log(halley.name);                           <span class="comment">// ==&gt; Halley</span></div><div class="line"><span class="built_in">console</span>.log(halley.behavior);                       <span class="comment">// ==&gt; 0</span></div><div class="line"></div><div class="line">halley.incrementBehavior();</div><div class="line"><span class="built_in">console</span>.log(halley.name);                           <span class="comment">// ==&gt; Halley</span></div><div class="line"><span class="built_in">console</span>.log(halley.behavior);                       <span class="comment">// ==&gt; 1</span></div></pre></td></tr></table></figure></p>
+<h2 id="Constructor"><a href="#Constructor" class="headerlink" title="Constructor"></a>Constructor</h2><blockquote>
+<p><code>constructor()</code> method —— every time it creates a new instance of a class.<br>Although you may see similarities between class and object syntax, there is the important method that sets them apart.</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(name) &#123;</div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">    <span class="keyword">this</span>.behavior = <span class="number">0</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li><code>Dog</code> —— the name of our class. By convention, we capitalize and CamelCase class names.</li>
+<li><code>constructor()</code> —— creates a new <strong>instance</strong> of a class.</li>
+<li>This <code>constructor()</code> method accepts one argument, <code>name</code>.</li>
+<li>Inside of the <code>constructor()</code> method, we use the <code>this</code> keyword. In the context of a class, <code>this</code> refers to an instance of that class. In the <code>Dog</code> class, we use <code>this</code>to set the value of the Dog instance’s <code>name</code> property to the <code>name</code> argument.</li>
+<li><code>behavior</code> ——keep track of the number of times a dog misbehaves. initialized to zero.</li>
+</ul>
+<h2 id="Instance"><a href="#Instance" class="headerlink" title="Instance"></a>Instance</h2><blockquote>
+<p>An object that contains the property names and methods of a class, but with unique property values.</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(name) &#123;</div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">    <span class="keyword">this</span>.behavior = <span class="number">0</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">const</span> halley = <span class="keyword">new</span> Dog(<span class="string">'Halley'</span>);</div><div class="line"><span class="built_in">console</span>.log(halley.name);                          <span class="comment">// ==&gt;  Output: 'Halley'</span></div></pre></td></tr></table></figure>
+<ul>
+<li><code>new</code>  —— generate a new instance of the <code>Dog</code> class. The <code>new</code>keyword calls the <code>constructor()</code>, runs the code inside of it, and then returns the new instance.</li>
+<li>We pass the <code>&#39;Halley&#39;</code> string to the Dog constructor, which sets the <code>name</code> property to <code>&#39;Halley&#39;</code>.</li>
+<li>we log the value saved to the <code>name</code> key in our <code>halley</code> object, which logs <code>&#39;Halley&#39;</code> to the console.</li>
+</ul>
+<h2 id="Methods-1"><a href="#Methods-1" class="headerlink" title="Methods"></a>Methods</h2><p>Class method and getter syntax is the same as it is for objects <strong>except you can not include commas between methods</strong>.</p>
+<p><strong>Add getter methods for name and behavior:</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(name) &#123;</div><div class="line">    <span class="keyword">this</span>._name = name;</div><div class="line">    <span class="keyword">this</span>._behavior = <span class="number">0</span>;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  get name() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>._name;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  get behavior() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>._behavior;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  incrementBehavior() &#123;</div><div class="line">    <span class="keyword">this</span>._behavior++;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li><code>_name</code>and <code>_behavior</code> —— indicate these properties should not be accessed directly.</li>
+<li><code>.incrementBehavior()</code> —— When you call .incrementBehavior() on a Dog instance, it adds 1 to it.<br><strong>Note:</strong> Between each of our methods, we did <em>not</em> include commas.</li>
+</ul>
+<h2 id="Method-Calls"><a href="#Method-Calls" class="headerlink" title="Method Calls"></a>Method Calls</h2><p><strong>Use our new methods to access and manipulate data from Dog instances:</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(name) &#123;</div><div class="line">    <span class="keyword">this</span>._name = name;</div><div class="line">    <span class="keyword">this</span>._behavior = <span class="number">0</span>;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  get name() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>._name;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  get behavior() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>._behavior;</div><div class="line">  &#125;   </div><div class="line"></div><div class="line">  incrementBehavior() &#123;</div><div class="line">    <span class="keyword">this</span>._behavior++;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">const</span> halley = <span class="keyword">new</span> Dog(<span class="string">'Halley'</span>);</div><div class="line"></div><div class="line"><span class="keyword">let</span> nikko = <span class="keyword">new</span> Dog(<span class="string">'Nikko'</span>);              <span class="comment">// Create dog named Nikko</span></div><div class="line">nikko.incrementBehavior();                 <span class="comment">// Add 1 to nikko instance's behavior</span></div><div class="line"><span class="keyword">let</span> bradford = <span class="keyword">new</span> Dog(<span class="string">'Bradford'</span>);        <span class="comment">// Create dog name Bradford</span></div><div class="line"><span class="built_in">console</span>.log(nikko.behavior);               <span class="comment">// ==&gt; 1</span></div><div class="line"><span class="built_in">console</span>.log(bradford.behavior);            <span class="comment">// ==&gt; 0</span></div></pre></td></tr></table></figure>
+<h2 id="Inheritance"><a href="#Inheritance" class="headerlink" title="Inheritance"></a>Inheritance</h2><p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fk45z8cd6vj310j0t5tba.jpg" alt=""></p>
+<p>Imagine our doggy daycare is so successful that we decide to expand the business and open a kitty daycare. Before the daycare opens, we need to create a <code>Cat</code> class so we can quickly generate <code>Cat</code> instances. We know that the properties in our <code>Cat</code> class (<code>name</code>, <code>behavior</code>) are similar to the properties in our <code>Dog</code> class, though, there will be some differences, because of course, cats are not dogs.</p>
+<p>Let’s say that our <code>Cat</code> class looks like this:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cat</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(name, usesLitter) &#123;</div><div class="line">    <span class="keyword">this</span>._name = name;</div><div class="line">    <span class="keyword">this</span>._usesLitter = usesLitter;</div><div class="line">    <span class="keyword">this</span>._behavior = <span class="number">0</span>;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  get name() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>._name;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  get usesLitter() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>._usesLitter;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  get behavior() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>._behavior;</div><div class="line">  &#125;  </div><div class="line"></div><div class="line">  incrementBehavior() &#123;</div><div class="line">    <span class="keyword">this</span>._behavior++;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>In the example above, we create a <code>Cat</code> class. It shares a couple of properties (<code>_name</code> and <code>_behavior</code>) and a method (<code>.incrementBehavior()</code>) with the <code>Dog</code>class from earlier exercises. The <code>Cat</code> class also contains one additional property (<code>_usesLitter</code>), that holds a boolean value to indicate whether a cat can use their litter box.</p>
+<p>When multiple classes share properties or methods, they become candidates for <em>inheritance</em> — a tool developers use to decrease the amount of code they need to write.</p>
+<p>With inheritance, you can create a <em>parent</em> class (also known as a superclass) with properties and methods that multiple <em>child</em> classes (also known as subclasses) share. The child classes inherit the properties and methods from their parent class.</p>
+<p>Let’s abstract the shared properties and methods from our <code>Cat</code> and <code>Dog</code> classes into a parent class called <code>Animal</code>.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span> </span>&#123;</div><div class="line">  <span class="keyword">constructor</span>(name) &#123;</div><div class="line">    <span class="keyword">this</span>._name = name;</div><div class="line">    <span class="keyword">this</span>._behavior = <span class="number">0</span>;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  get name() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>._name;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  get behavior() &#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>._behavior;</div><div class="line">  &#125;   </div><div class="line"></div><div class="line">  incrementBehavior() &#123;</div><div class="line">    <span class="keyword">this</span>._behavior++;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>In the example above, the <code>Animal</code> class contains the properties and methods that the <code>Cat</code> and <code>Dog</code> classes share (<code>name</code>, <code>behavior</code>, <code>.incrementBehavior()</code>).</p>
+<p>The diagram to the right shows the relationships we want to create between the Animal, Cat, and Dog classes.</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/29/Responsive-Design/" rel="next" title="响应设计（Responsive Design）">
+                <i class="fa fa-chevron-left"></i> 响应设计（Responsive Design）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/05/function/" rel="prev" title="Javascript 知识点">
+                Javascript 知识点 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="https://ws2.sinaimg.cn/large/006tKfTcly1fj5edaynjzj30hs0hsglv.jpg"
+              alt="Katherine Chen" />
+          
+            <p class="site-author-name" itemprop="name">Katherine Chen</p>
+            <p class="site-description motion-element" itemprop="description">尽量只写对别人有用的文章……</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/about/index.html">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/you7588" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:you7588@gmail.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                    
+                      E-Mail
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introction-to-JavaScript"><span class="nav-number">1.</span> <span class="nav-text">Introction to JavaScript</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Console"><span class="nav-number">1.1.</span> <span class="nav-text">Console</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-Types"><span class="nav-number">1.2.</span> <span class="nav-text">Data Types</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Math-Operators"><span class="nav-number">1.3.</span> <span class="nav-text">Math Operators</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Properties"><span class="nav-number">1.4.</span> <span class="nav-text">Properties</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Built-in-Methods"><span class="nav-number">1.5.</span> <span class="nav-text">Built-in Methods</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Libraries"><span class="nav-number">1.6.</span> <span class="nav-text">Libraries</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Comments"><span class="nav-number">1.7.</span> <span class="nav-text">Comments</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Review-Types-and-Operators"><span class="nav-number">1.8.</span> <span class="nav-text">Review Types and Operators</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Variables"><span class="nav-number">2.</span> <span class="nav-text">Variables</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Create-a-Variable-const"><span class="nav-number">2.1.</span> <span class="nav-text">Create a Variable: const</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Create-a-Variable-let"><span class="nav-number">2.2.</span> <span class="nav-text">Create a Variable: let</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Undefined"><span class="nav-number">2.3.</span> <span class="nav-text">Undefined</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mathematical-Assignment-Operators"><span class="nav-number">2.4.</span> <span class="nav-text">Mathematical Assignment Operators</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#String-Interpolation"><span class="nav-number">2.5.</span> <span class="nav-text">String Interpolation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Review-Variables"><span class="nav-number">2.6.</span> <span class="nav-text">Review Variables</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Control-Flow"><span class="nav-number">3.</span> <span class="nav-text">Control Flow</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#if-else-Statements"><span class="nav-number">3.1.</span> <span class="nav-text">if/else Statements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#else-if-Statements"><span class="nav-number">3.2.</span> <span class="nav-text">else if Statements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#True-and-False-Values"><span class="nav-number">3.3.</span> <span class="nav-text">True and False Values</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Comparison-Operators"><span class="nav-number">3.4.</span> <span class="nav-text">Comparison Operators</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Logical-Operators"><span class="nav-number">3.5.</span> <span class="nav-text">Logical Operators</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#switch-Statements"><span class="nav-number">3.6.</span> <span class="nav-text">switch Statements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ternary-Operator"><span class="nav-number">3.7.</span> <span class="nav-text">Ternary Operator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Review-Control-Flow"><span class="nav-number">3.8.</span> <span class="nav-text">Review: Control Flow</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Functions"><span class="nav-number">4.</span> <span class="nav-text">Functions</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Functions-1"><span class="nav-number">4.1.</span> <span class="nav-text">Functions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Parameters"><span class="nav-number">4.2.</span> <span class="nav-text">Parameters</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Return"><span class="nav-number">4.3.</span> <span class="nav-text">Return</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Function-Declarations-（函数语法定义）"><span class="nav-number">4.4.</span> <span class="nav-text">Function Declarations （函数语法定义）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Function-Expressions-（函数表达式定义）"><span class="nav-number">4.5.</span> <span class="nav-text">Function Expressions （函数表达式定义）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Arrow-Functions"><span class="nav-number">4.6.</span> <span class="nav-text">Arrow Functions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Review-Functions"><span class="nav-number">4.7.</span> <span class="nav-text">Review Functions</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Scope"><span class="nav-number">5.</span> <span class="nav-text">Scope</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Global-Scope"><span class="nav-number">5.1.</span> <span class="nav-text">Global Scope</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Block-Scope"><span class="nav-number">5.2.</span> <span class="nav-text">Block Scope</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Review-Scope"><span class="nav-number">5.3.</span> <span class="nav-text">Review: Scope</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Arrays"><span class="nav-number">6.</span> <span class="nav-text">Arrays</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Property-Access"><span class="nav-number">6.1.</span> <span class="nav-text">Property Access</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Update-Elements"><span class="nav-number">6.2.</span> <span class="nav-text">Update Elements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#length-property"><span class="nav-number">6.3.</span> <span class="nav-text">length property</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Array-Methods"><span class="nav-number">6.4.</span> <span class="nav-text">Array Methods</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Arrays-with-let-and-const"><span class="nav-number">6.5.</span> <span class="nav-text">Arrays with let and const</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Review-Arrays"><span class="nav-number">6.6.</span> <span class="nav-text">Review Arrays</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Loops"><span class="nav-number">7.</span> <span class="nav-text">Loops</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#for-Loops"><span class="nav-number">7.1.</span> <span class="nav-text">for Loops</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nested-for-Loops"><span class="nav-number">7.2.</span> <span class="nav-text">Nested for Loops</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#while-Loops"><span class="nav-number">7.3.</span> <span class="nav-text">while Loops</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Infinite-Loops"><span class="nav-number">7.4.</span> <span class="nav-text">Infinite Loops</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Review-Loops"><span class="nav-number">7.5.</span> <span class="nav-text">Review: Loops</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Iterators"><span class="nav-number">8.</span> <span class="nav-text">Iterators</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#forEach"><span class="nav-number">8.1.</span> <span class="nav-text">.forEach()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#map"><span class="nav-number">8.2.</span> <span class="nav-text">.map()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#filter"><span class="nav-number">8.3.</span> <span class="nav-text">.filter()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Iterator-Documentation"><span class="nav-number">8.4.</span> <span class="nav-text">Iterator Documentation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Choose-the-Right-Iterator"><span class="nav-number">8.5.</span> <span class="nav-text">Choose the Right Iterator</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Review-Iterators"><span class="nav-number">8.6.</span> <span class="nav-text">Review: Iterators</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Objects"><span class="nav-number">9.</span> <span class="nav-text">Objects</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Accessing-Object-Properties"><span class="nav-number">9.1.</span> <span class="nav-text">Accessing Object Properties</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Adding-a-Property"><span class="nav-number">9.2.</span> <span class="nav-text">Adding a Property</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Editing-a-Property"><span class="nav-number">9.3.</span> <span class="nav-text">Editing a Property</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Methods"><span class="nav-number">9.4.</span> <span class="nav-text">Methods</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Methods-ES6"><span class="nav-number">9.5.</span> <span class="nav-text">Methods: ES6</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-this-Keyword"><span class="nav-number">9.6.</span> <span class="nav-text">The this Keyword</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Getters-and-Setters"><span class="nav-number">9.7.</span> <span class="nav-text">Getters and Setters</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Review-Objects"><span class="nav-number">9.8.</span> <span class="nav-text">Review:Objects</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Classes"><span class="nav-number">10.</span> <span class="nav-text">Classes</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Constructor"><span class="nav-number">10.1.</span> <span class="nav-text">Constructor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Instance"><span class="nav-number">10.2.</span> <span class="nav-text">Instance</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Methods-1"><span class="nav-number">10.3.</span> <span class="nav-text">Methods</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Method-Calls"><span class="nav-number">10.4.</span> <span class="nav-text">Method Calls</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Inheritance"><span class="nav-number">10.5.</span> <span class="nav-text">Inheritance</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Katherine Chen</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://chen-lingmin.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2017/09/29/javascript/';
+          this.page.identifier = '2017/09/29/javascript/';
+          this.page.title = 'javascript';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://chen-lingmin.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
