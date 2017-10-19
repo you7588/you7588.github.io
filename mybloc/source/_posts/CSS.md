@@ -7,13 +7,25 @@ tags: [CSS]
 
 # CSS Setup and Selectors
 
-## CSS
+## CSS （层叠样式表）
 > Cascading Style Sheets
-> a language that web developers use to **style** the HTML content on a web page.
 
 
-## Inline Styles
+- 和HTML一样都是标记语言，可以直接由浏览器执行，属于浏览器解释型语言。
+- 能够对网页中的元素进行精确的控制
+- 能够真正做到网页表现与内容分离的一种样式设计语言
+- 最新版本为CSS3
+
+## CSS和HTML的关系
+- HTML是标记，是把文字、图片等内容放在HTML标签中让浏览器去解释，并把内容显示在浏览器中，供用户阅读
+- CSS是为HTML标签添加各种样式，用来告诉浏览器，应该如何显示这些标签里面的内容，起到局部与美化页面的作用
+  a language that web developers use to **style** the HTML content on a web page.
+
+
+## CSS样式的写法格式  
+### Inline Styles（行内样式）
 > a quick way of directly styling an HTML element.
+> 在HTML标签内部，以属性的方式写CSS样式，该CSS样式只会对本标签起到作用。
 
 ``` html
 <p style="color: red;">I'm learning to code!</p>
@@ -21,9 +33,9 @@ tags: [CSS]
 <p style="font-family: Arial;">
 ```
 
-## The style Tag
+### The style Tag（页内样式）
 > To use the `<style>` element, it must be placed inside of the `<head>` element.
-> After adding a `<style>` tag in the head section, you can begin writing CSS code.
+> 直接在本页面写CSS样式，所写的样式只会影响本页面，其他页面不会受到影响。
 
 ``` html
 <head>
@@ -36,13 +48,20 @@ tags: [CSS]
 </head>
 ```
 
-## The .css file
+### The .css file（外链样式）
 > Developers avoid mixing code by storing HTML and CSS code in separate files (HTML files contain only HTML code, and CSS files contain only CSS code).
 
-You can create a CSS file by using the .css file name extension, like so: `style.css`
+You can create a CSS file by using the `.css` file name extension, like so: `style.css`
+通过载入的方式加载CSS样式，文件后缀名为`.css`，只要页面加载本CSS文件，那么这些页面都会受到影响。
 
+```html
+<head>
+  <title>CSS样式</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+```
 
-## Linking the CSS File
+### Linking the CSS File
 > When HTML and CSS code are in separate files, the files must be linked.
 > `<link>`  a self-closing tag , to link HTML and CSS files together.placed within the head of the HTML file.  
 
@@ -55,38 +74,32 @@ You can create a CSS file by using the .css file name extension, like so: `style
 - `type` — describes the type of document that you are linking to (in this case, a CSS file). The value of this attribute should be set to `text/css`.
 - `rel` — describes the relationship between the HTML file and the CSS file. Because you are linking to a stylesheet, the value should be set to `stylesheet`.
 
-## Tag Name
+
+# CSS基础选择器
+
+## 4种CSS基础选择器
+### Tag Name（标签选择器）
 > CSS can select HTML elements by using an element's tag name. A tag name is the word (or character) between HTML angle brackets.
 
 ```html
-<p>...</p>
-```
-``` css
-p {
+<style>
+  p {  }
+</style>
 
-}
+<body>
+  <p>...</p>
+</body>
 ```
 
-## Class Name
+
+### Class Name（class选择器）
 > To select an HTML element by its class using CSS, a period (.) must be prepended to the class's name.
 
-``` html
-<p class="brand">Sole Shoe Company</p>
-```
-``` css
+```html
+<style>
 .brand {
   text-transform: capitalize;
 }
-```
-In the example above case, the class is brand, so the CSS selector for it is .brand.
-
-
-## Multiple Classes
-
-``` html
-<h1 class="green bold uppercase"> ... </h1>
-```
-``` css
 .green {
   color: green;
 }
@@ -99,26 +112,45 @@ In the example above case, the class is brand, so the CSS selector for it is .br
   text-transform: uppercase;
   font-family: cursive;
 }
+</style>
+
+
+<body>
+  <p class="brand">Sole Shoe Company</p>
+
+  <!-- Multiple Classes -->
+  <h1 class="green bold uppercase"> ... </h1>
+</body>
 ```
 
-
-## ID Name
+### ID Name（ID选择器）
 >If an HTML element needs to be styled uniquely (no matter what classes are applied to the element), we can add an ID to the element.
 
 ``` html
-<h1 id="large-title"> ... </h1>
-```
-``` css
-#large-title {
+<style>
+  #large-title { }
+</style>
 
-}
+<body>
+  <h1 id="large-title"> ... </h1>
+
+<!-- 错误示范 -->
+  <div id="kaka text">...</div>  
+</body>
 ```
 
-## Chaining Selectors
+### 通用选择器
+```html
+<!-- 所有 -->
+*{ font-size:40px; color:red; }
+```
+
+## 2种复合选择器
+### Chaining Selectors
 > Require an HTML element to have two or more CSS selectors at the same time.
 
 ``` HTML
-<h1 class="special coco">...</h1>
+  <h1 class="special coco">...</h1>
 ```
 
 ``` css
@@ -127,7 +159,7 @@ h1.special {
 }
 ```
 
-## Nested Elements
+### Nested Elements
 >  selecting elements that are nested within other HTML elements.
 
 ``` html
@@ -1342,12 +1374,6 @@ As of now `.woff2` appears to be the way of the future, due to greatly reduced f
 -  The `text-align` property places text in the left, right, or center of its parent container.
 -  Text can have two different color attributes: `color`and `background-color`. `color` defines the color of the text, while `background-color` defines the color behind the text.
 
-
-
-
-
-
-
 ## Review
 
 -  *Typography* is the art of arranging text on a page.
@@ -1361,3 +1387,90 @@ As of now `.woff2` appears to be the way of the future, due to greatly reduced f
 -  The `word-spacing` property changes how far apart individual words are.
 -  The `letter-spacing` property changes how far apart individual letters are.
 -  The `text-align` property changes where text horizontally on a page.
+
+---
+
+# IE浏览器的兼容
+
+所谓的浏览器兼容问题，是指因为不同的浏览器对同一段代码有不同的解析，造成页面显示效果不统一的情况。在大多数情况下，IE6-IE8浏览器在Web发展中起到很大阻力，Web前端工程师写好的页面在Firefox、Chrome、Opera等主流浏览器下测试，基本没有什么问题，而在IE6-IE8浏览器下预览，又是另一番景象，本来规整的页面全乱了。
+
+幸好随着HTML5的盛行，IE低版本的浏览器也逐渐退出舞台，所以现在很多网站也不再去考虑IE6-IE8低版本的浏览器，不过有些特殊的网站不得不考虑低版本浏览器，比如政府网站、教育系统网站，网站性质也决定了不得不兼容低版本浏览器，那么下面我们就介绍一下常见的IE低版本的兼容方式，如果你的客户网站不考虑低版本浏览器，你就可以完全忽略该节课了。
+
+## 1.IE6双倍边距
+
+产生因素：当元素有float属性，又有margin属性时，在IE6下面显示的margin的值是设置值的两倍。
+
+解决方法：将有float属性的元素添加display:inline属性。
+
+## 2.伪类选择器hover
+
+产生因素：IE6只支持a标签的CSS定义hover效果，其他标签添加hover效果没有任何作用。
+
+解决方法：一方面可以使用JavaScript添加鼠标移入效果，另一方面只能将其他标签改变为a标签后再添加hover效果。
+
+## 3.定义元素的不透明度
+
+产生因素：opacity:0.5，可以改变元素的透明度，取值范围是0~1，但是IE6不支持这种透明度表现方式。
+
+解决方法：IE6浏览器专属的透明度属性， filter：alpha（opacity=80），取值范围是0~100。
+
+## 4.IE各个版本hack
+
+```css
+/*属性hack方式*/
+
+.box {_width:100px;}             /* IE6专用*/
+
+.box {*+width:100px;}          /* IE7专用*/
+
+.box {*width:100px;}            /* IE6、IE7共用*/
+
+.box {width:100px\0;}           /* IE8、IE9共用*/
+
+.box {width:100px\9;}           /* IE6、IE7、IE8、IE9共用*/
+
+.box {width:330px\9\0;}        /* IE9专用*/
+
+
+/*选择器hack*/
+
+*html .box{width:100px;}       /*IE6*/
+
+*+html .box{width:100px;}     /*IE7*/
+
+```
+---
+
+# CSS3与CSS2.1的区别
+
+## 什么是CSS3
+
+CSS3是CSS2的一个升级版本，CSS3提供了非常多新途径去改善您的设计工作，且做了不少重要的变化，大部分的CSS3规范都重复了CSS2.1的内容，但也在它的基础上进行了很多增补和修订。
+
+## CSS3新特性
+
+总的来说CSS3主要拥有以下几个新的亮点：高级选择器，圆角，多背景，自定义字体，动画与过渡，渐变色，box阴影，rgba颜色表示，文字阴影，图形化边界等。
+
+### 网页细节更易操作
+
+在CSS3之前，如果想要在页面上添加圆角或阴影，只能通过图片的方式才能实现想要表达的效果，但是CSS3添加了“背景和边框”模块，比如常见的圆角、阴影、边框、背景都是该模块的，还有一个模块是"色彩和图像"，比如新增的rgba(0,0,0,0.5)增加了透明色。
+
+### 字体多样化   
+
+CSS3之前，Web设计师必须使用已在用户计算机上安装好的字体。通过CSS3，Web设计师可以使用他们喜欢的任意字体。当您找到或购买到希望使用的字体时，可将该字体文件存放到Web服务器上，它会在需要时被自动下载到用户的计算机上。
+
+### 种类多样的选择器
+
+CSS3新增了非常多的高级选择器，可用它们选取HTML结构中的特定片段而无需增加特定的ID或类，在CSS3之前想要选择特定的区块只能通过JS来选择，CSS3增加的这些选择器，能够很好的满足我们的需求，并且使用CSS3选择器代码更加简洁且不容易出错。
+
+### 2D-3D转换
+
+在CSS3中可以为任意元素添加2D的变形，我们能够对元素进行移动、缩放、转动、拉长或拉伸。转换是使元素改变形状、尺寸和位置的一种效果。3D转换是基于二维变换的相同属性，如果熟悉二维变换，会发现3D变形的功能和2D变换的功能类似。CSS3中的3D变换主要包括以下几种，如： 3D位移、 3D旋转、3D缩放、3D矩阵。
+
+### 过渡和动画
+
+CSS3中的过渡（transition）和动画（animation），都可以让页面增加动效，提高页面的视觉效果，但是这两种是有区分的，过渡（transition）是一种简单的动画，可以理解为从一种状态到另一种状态具有非常平滑的过渡效果，但是过渡需要有某些事件进行触发才可以进行动画，动画（animation）是无需事件触发就能完成特定的动画，现在页面上常见的动态效果基本都是CSS3的animation动画可以完成的。
+
+### 媒体查询
+
+用户浏览网页的设备越来越复杂，大屏幕电脑、平板、智能手机，以前做设计只针对大屏幕电脑分辨率，现在已经不太适合，因为移动端智能设备的普及。我们应该让我们的设计在不同的设备做出不同的响应，让用户不管使用什么样的设备访问网站都有一个不错的用户体验，完成这种网站的制作就需要使用CSS3的媒体查询，适应不同的设备显示。

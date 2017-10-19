@@ -75,15 +75,16 @@ console.log(Number.isInteger(34.2));
 ```
  `isInteger()`  —— checks if a number is an integer.
 
-## Comments
+## Comments（注释）
+> JavaScript supports two styles of comments, as demonstrated below.
 
-1. A *single line comment*
+1. Inline Comments (single line comment)
    ```javascript
    // The first 5 decimals of pi
    console.log('Pi is equal to ' + 3.14159);
    ```
 
-2. A *multi-line comment*
+2. Block Comments (multi-line comment)
    ```javascript
    /*
    console.log('All of this code');
