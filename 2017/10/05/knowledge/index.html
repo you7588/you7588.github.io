@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="JS," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="什么是函数？函数可以认为是一段JavaScript代码片段，也可以认为是一个代码黑盒，也可以认为是一台代码机器。重要的特征：你告诉它干活，它就能给你相应结果。至于能干什么活，那就是函数设计者的事情。函数就是一个可以执行固定任务的代码段，函数只需要定义一次，但能被执行任意次。 123456789// 定义一个函数printfunction print() &amp;#123;  console.log(&apos;h">
+<meta name="keywords" content="JS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript 知识点">
+<meta property="og:url" content="http://yoursite.com/2017/10/05/knowledge/index.html">
+<meta property="og:site_name" content="时间的朋友">
+<meta property="og:description" content="什么是函数？函数可以认为是一段JavaScript代码片段，也可以认为是一个代码黑盒，也可以认为是一台代码机器。重要的特征：你告诉它干活，它就能给你相应结果。至于能干什么活，那就是函数设计者的事情。函数就是一个可以执行固定任务的代码段，函数只需要定义一次，但能被执行任意次。 123456789// 定义一个函数printfunction print() &amp;#123;  console.log(&apos;h">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-10-09T13:36:53.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Javascript 知识点">
+<meta name="twitter:description" content="什么是函数？函数可以认为是一段JavaScript代码片段，也可以认为是一个代码黑盒，也可以认为是一台代码机器。重要的特征：你告诉它干活，它就能给你相应结果。至于能干什么活，那就是函数设计者的事情。函数就是一个可以执行固定任务的代码段，函数只需要定义一次，但能被执行任意次。 123456789// 定义一个函数printfunction print() &amp;#123;  console.log(&apos;h">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/10/05/knowledge/"/>
+
+
+
+
+
+  <title>Javascript 知识点 | 时间的朋友</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '105782654', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">时间的朋友</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">把琐碎的时间堆砌成一个伟大的生命。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            时间线
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-word">
+          <a href="/word/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            博物馆
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-cheatsheet">
+          <a href="/cheatsheet/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            速查卡
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-feedback">
+          <a href="/feedback/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-users"></i> <br />
+            
+            反馈
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/05/knowledge/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Katherine Chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tKfTcly1fj5edaynjzj30hs0hsglv.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="时间的朋友">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Javascript 知识点</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-05T09:50:51+08:00">
+                2017-10-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/10/05/knowledge/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/10/05/knowledge/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="什么是函数？"><a href="#什么是函数？" class="headerlink" title="什么是函数？"></a>什么是函数？</h2><p>函数可以认为是一段JavaScript代码片段，也可以认为是一个代码黑盒，也可以认为是一台代码机器。<br>重要的特征：你告诉它干活，它就能给你相应结果。至于能干什么活，那就是函数设计者的事情。<br>函数就是一个可以执行固定任务的代码段，函数只需要定义一次，但能被执行任意次。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 定义一个函数print</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">print</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'hello, JS'</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 多次调用print函数</span></div><div class="line">print();</div><div class="line">print();</div><div class="line">print();</div></pre></td></tr></table></figure>
+<h2 id="定义一个函数的语法"><a href="#定义一个函数的语法" class="headerlink" title="定义一个函数的语法"></a>定义一个函数的语法</h2><p>定义函数最少最少需要三个元素：</p>
+<ul>
+<li>关键字<code>function</code></li>
+<li>函数名<code>funcname()</code></li>
+<li>一对挂括号<code>{}</code></li>
+</ul>
+<p><strong>示例：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function print() &#123;</div><div class="line">  console.log(&apos;hello, JS&apos;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>错误示范：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">print() &#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'hello, JS'</span>);       <span class="comment">//缺function 编译器完全不认识，在执行编译的时候直接就报错。</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'hello, JS'</span>);		  <span class="comment">//没有函数名，无法被调用。</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">print</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'hello, JS'</span>);		  <span class="comment">//缺挂括号，编译器就认为print()就是函数print的函数体内容</span></div><div class="line">print();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="函数三要素"><a href="#函数三要素" class="headerlink" title="函数三要素"></a>函数三要素</h2><p>假如你要请一个人帮忙做某事，你必须要明确到底请谁（函数名）？告诉他你的要求（参数）是什么，他处理完事情后就会给你一个结果。</p>
+<p><strong>当你要定义（设计）一个函数的时候，你就要站在设计函数的角度去思考。</strong></p>
+<ol>
+<li>我设计这个函数到底是为了完成什么功能？</li>
+<li>我设计这个函数需不需要调用者给我一些数据？</li>
+<li>我设计这个函数有没有必要返回一个结果数据？</li>
+<li>我设计这个函数应该用什么方式返回数据？</li>
+</ol>
+<p><strong>当你要调用一个函数的时候，你就要站在使用者的角度去思考。</strong></p>
+<ol>
+<li>我调用的这个函数能否完成我想要的功能。</li>
+<li>我调用的这个函数都需要一些什么数据才能完成功能。</li>
+<li>我调用的这个函数会不会给一个结果数据。</li>
+<li>我调用的这个函数用的是什么方式返回数据。</li>
+</ol>
+<p><strong>从设计函数的角度和从使用一个函数的角度，都反映出几个重要的要素。</strong></p>
+<ol>
+<li>函数名。一个函数名对应了一个函数执行体，这个执行体会完成一个具体的功能。</li>
+<li>参数。一个函数在执行的时候可能需要参数，也可能不需要。</li>
+<li>返回值。一个函数执行完后，可能返回一个结果，也可能不返回。</li>
+</ol>
+<h2 id="函数名-像使用变量一样使用函数名"><a href="#函数名-像使用变量一样使用函数名" class="headerlink" title="函数名(像使用变量一样使用函数名)"></a>函数名(像使用变量一样使用函数名)</h2><blockquote>
+<p> 像使用变量一样使用函数名，函数名从某种意义上可以理解为变量名。<br><strong>变量名</strong>和<strong>函数名</strong>的使用方式的明显差异就是：函数名在调用时要带上一对括号<code>()</code>。</p>
+</blockquote>
+<p><strong>一个变量要先定义后使用：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 定义一个变量name，并赋值字符串'xiaoming'</span></div><div class="line"><span class="keyword">var</span> name = <span class="string">'xiaoming'</span>;</div><div class="line"></div><div class="line"><span class="comment">// 因为字符串xiaoming被赋值给了变量name，我们才得已通过name来操作字符串xiaoming</span></div><div class="line"><span class="keyword">var</span> fullname = <span class="string">'xu'</span> + name;</div><div class="line"></div><div class="line"><span class="comment">// 把变量name的值传递给console的log函数进行打印</span></div><div class="line"><span class="built_in">console</span>.log(name);</div></pre></td></tr></table></figure>
+<p><strong>函数也应该要先定义再使用：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// 先定义函数</div><div class="line">function print() &#123;</div><div class="line">  console.log(&apos;hello, JS&apos;);</div><div class="line">&#125;</div><div class="line">// 再使用（使用函数一般称为调用）</div><div class="line">print();</div></pre></td></tr></table></figure>
+<p>先定义后使用之间的关联就是函数名起到联系。</p>
+<p><strong>但，函数定义即使放在调用的下面也没问题：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// 调用print函数</div><div class="line">print();</div><div class="line"></div><div class="line">// 定义函数print</div><div class="line">function print() &#123;</div><div class="line">  console.log(&apos;hello, JS&apos;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>其实上面两种形式是等价的，原因就是代码在执行之前，编译器会把通过函数语法定义的函数提前定义。从而保证可以在任意处调用函数。</p>
+<h2 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h2><blockquote>
+<p> 在函数执行过程中，完成某些逻辑处理时需要的一些必要的数据。</p>
+<p> 参数就是函数设计者向调用者要求的数据来源方式。</p>
+</blockquote>
+<p><strong>无设置参数时：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">print</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'hello, JS'</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//正确：</span></div><div class="line">print();						<span class="comment">// ==&gt; hello, JS</span></div><div class="line"></div><div class="line"><span class="comment">//错误：</span></div><div class="line"><span class="keyword">var</span> content = <span class="string">'hello, world'</span>;</div><div class="line">print(content);					<span class="comment">// ==&gt; hello, JS(直接无视参数)</span></div></pre></td></tr></table></figure>
+<p><strong>有设置参数时：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">print</span>(<span class="params">content</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(content);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//正确：</span></div><div class="line">print(<span class="string">'hello, JS'</span>); 			<span class="comment">// ==&gt; hello, JS</span></div><div class="line"></div><div class="line"><span class="comment">//错误：</span></div><div class="line">print(); 						<span class="comment">// ==&gt; undefined(没有内置内容给参数变量content)</span></div></pre></td></tr></table></figure>
+<p><strong>逻辑问题（牛头不对马嘴）：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">print</span>(<span class="params">name, content</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'i am '</span> + name);</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'i am learning '</span> + content);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//正确：</span></div><div class="line">print(<span class="string">'xiaoming'</span>, <span class="string">'JS'</span>); 		</div><div class="line"><span class="comment">// ==&gt; i am xiaoming</span></div><div class="line"><span class="comment">// ==&gt; i am learning JS</span></div><div class="line"></div><div class="line"><span class="comment">//错误：</span></div><div class="line">print(<span class="string">'JS'</span>, <span class="string">'xiaoming'</span>);</div><div class="line"><span class="comment">// ==&gt; i am JS</span></div><div class="line"><span class="comment">// ==&gt; i am learning xiaoming</span></div></pre></td></tr></table></figure>
+<h2 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h2><blockquote>
+<p> 一个函数要不要明确返回结果取决设计者的自我判断。</p>
+</blockquote>
+<p><strong>没有返回值：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">print</span>(<span class="params">content</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(content);</div><div class="line">&#125;</div><div class="line"></div><div class="line">print(<span class="string">'hello, JS'</span>);</div></pre></td></tr></table></figure>
+<p><code>print</code>这个函数的功能就是打印调用者传进来的内容，打印就结束，没有必要返回某个值。</p>
+<p><strong>尴尬示范（强硬加上的返回值）：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">print</span>(<span class="params">content</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(content);</div><div class="line">  <span class="keyword">return</span> <span class="literal">true</span>;					 <span class="comment">// 给一个返回值，返回true表示打印完了。</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> result = print(<span class="string">'hello, JS'</span>);</div></pre></td></tr></table></figure>
+<p><strong>有返回值：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">x, y</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> result = x + y;</div><div class="line">  <span class="keyword">return</span> result;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> result = sum(<span class="number">1</span>, <span class="number">2</span>);</div><div class="line"><span class="built_in">console</span>.log(result);</div></pre></td></tr></table></figure>
+<ul>
+<li>sum这个函数被设计成做两个数的相加，加完的结果明确了返回（return result）。这个返回值就很必要，如果加完不给结果这个函数就没有多大意义。</li>
+<li>一个函数在定义的时候明确了返回值，调用者就要明确用一个变量来接收返回值。<code>var result = sum(1, 2);</code>就很明确接收了返回值。当sum函数体内执行完后，return出来的result给到了调用者定义的result变量（注意：sum函数内部的result变量和sum函数外面的result变量不是一个作用域下的，它们是不同的两个变量）。</li>
+<li>只有用result变量接收了sum的返回值，我才有机会打印结果</li>
+</ul>
+<p><strong>注：</strong> 不被使用的变量都是垃圾代码</p>
+<h2 id="两种定义函数方式的差异"><a href="#两种定义函数方式的差异" class="headerlink" title="两种定义函数方式的差异"></a>两种定义函数方式的差异</h2><ul>
+<li><p>函数语法定义方式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">print</span>(<span class="params">content</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(content);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>函数表达式定义方式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> print = <span class="function"><span class="keyword">function</span> (<span class="params">content</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(content);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>差异：</strong></p>
+</li>
+<li>调用函数时，函数语法定义法能提前，函数表达式定义法就能不提前</li>
+<li>​</li>
+</ul>
+<h2 id="函数语法定义方式"><a href="#函数语法定义方式" class="headerlink" title="函数语法定义方式"></a>函数语法定义方式</h2><blockquote>
+<p> 用函数语法定义一个函数，能获得定义提前的优待。</p>
+</blockquote>
+<p><strong>先定义后使用：</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">print</span>(<span class="params">content</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(content);</div><div class="line">&#125;</div><div class="line"></div><div class="line">print(<span class="string">'Hello, JS'</span>);</div></pre></td></tr></table></figure></p>
+<p><strong>函数定义即使放在调用的下面也没问题：</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">print(<span class="string">'Hello, JS'</span>);</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">print</span>(<span class="params">content</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(content);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>其实上面两种形式是等价的，原因就是代码在执行之前，编译器会把通过函数语法定义的函数提前定义。从而保证可以在任意处调用函数。</p>
+<h2 id="表达式定义方式"><a href="#表达式定义方式" class="headerlink" title="表达式定义方式"></a>表达式定义方式</h2><blockquote>
+<p> 表达式定义方式和普通定义变量是一个道理（一样理解）</p>
+</blockquote>
+<p><strong>定义一个变量：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> name = <span class="string">'xiaoming'</span>;</div><div class="line"><span class="keyword">var</span> name = <span class="string">'xu'</span> + name；</div></pre></td></tr></table></figure>
+<ul>
+<li><code>xiaoming</code>是一个字符串表达式</li>
+</ul>
+<ul>
+<li><code>&#39;xu&#39; + name</code>是一个表达式，表示计算出结果<code>xuxiaoming</code>后，把结果赋值给了变量<code>fullname</code>。</li>
+</ul>
+<p><strong>定义函数表达式：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> print = <span class="function"><span class="keyword">function</span> (<span class="params">content</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(content);</div><div class="line">&#125;</div><div class="line"></div><div class="line">print(<span class="string">'Hello，JS'</span>);</div></pre></td></tr></table></figure>
+<ul>
+<li><code>function(content) { console.log(content )}</code>就是一个表达式。</li>
+<li>把表达式赋值给变量<code>print</code>后，变量<code>print</code>是一个函数变量。有了这个函数变量print，我们就可以通过print变量执行该函数了。</li>
+</ul>
+<p><strong>错误示范：</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">print(<span class="string">'Hello，JS'</span>);				 <span class="comment">// 喔喔。。没定义怎么能使用？</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> print = <span class="function"><span class="keyword">function</span> (<span class="params">content</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(content);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上面的代码肯定出错。既然print是一个函数变量，一个变量没有定义之前肯定是不能使用的啦。<br>有人就问，函数语法定义法能提前，为啥函数表达式定义法就不提前呢？<br>那我提个问题，如果函数表达式定义法能提前，那定义变量是不是意味着都提前了呢。那就乱套了。</p>
+<h2 id="深入表达式定义法"><a href="#深入表达式定义法" class="headerlink" title="深入表达式定义法"></a>深入表达式定义法</h2><p><strong> 直接使用表达式</strong></p>
+<p>函数语法定义法有提前优待，那也不能说表达式定义法就没有价值。价值可大了。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 这是函数语法定义方式</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">print</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'Hello, JS'</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">setTimeout(print, <span class="number">5000</span>);</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 这是函数表达式定义方式</span></div><div class="line"><span class="keyword">var</span> print = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'Hello, JS'</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">setTimeout(print, <span class="number">5000</span>);</div></pre></td></tr></table></figure>
+<p>定义了一个函数，然后调用setTimeout，5秒钟后回调print。</p>
+<p><strong>改进的写法：</strong></p>
+<ul>
+<li>变量的做法</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> name = <span class="string">'xiaoming'</span>;</div><div class="line"><span class="built_in">console</span>.log(name);</div></pre></td></tr></table></figure>
+<p>可以省一个变量</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="string">'xiaoming'</span>);</div></pre></td></tr></table></figure>
+<ul>
+<li>函数的做法</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> print = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'Hello, JS'</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">setTimeout(print, <span class="number">5000</span>);</div></pre></td></tr></table></figure>
+<p>可以省一个变量</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'Hello, JS'</span>);</div><div class="line">&#125;, <span class="number">5000</span>);</div></pre></td></tr></table></figure>
+<p><strong>在函数中定义函数</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">printWelcome</span>(<span class="params">name</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> addWelcome = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="string">'你好！'</span> + name;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="built_in">console</span>.log(addWelcome());</div><div class="line">&#125;</div><div class="line"></div><div class="line">printWelcome(<span class="string">'xiaoming'</span>);</div></pre></td></tr></table></figure>
+<h2 id="了不起的axios-http"><a href="#了不起的axios-http" class="headerlink" title="了不起的axios(http)"></a>了不起的axios(http)</h2><p><a href="https://github.com/mzabriskie/axios" target="_blank" rel="external">axios</a>是一个在全后端通吃的HTTP客户端，解决所有在js学习过程中http相关的请求。<br>前端要访问服务端数据，服务端访问另一个服务端数据，这两种访问都需要用到http客户端。<br>前后端通吃是axios的优势，但更牛的是，它能把处理写成链式结构。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">axios.get().then().then().catch();</div></pre></td></tr></table></figure>
+<p>以上的处理流程解释如下:<br><code>axios.get()</code>获得的结果给到第一个<code>then()</code>，处理完后给到第二个<code>then()</code>。如果中间过程发生错误，会直接跳到<code>catch()</code>里。</p>
+<p>事实上<code>axios.get()</code>是一个异步函数，<code>axios.get()</code>的异步回来后才会调用后面的<code>then()</code>函数。以这样的推理，整个<code>axios.get().then().then().catch()</code>就是一个异步函数链条。</p>
+<h3 id="Get请求"><a href="#Get请求" class="headerlink" title="Get请求"></a>Get请求</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">axios.get(<span class="string">'/api'</span>)</div><div class="line">  .then(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(response);</div><div class="line">  &#125;)</div><div class="line">  .catch(<span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(error);</div><div class="line">  &#125;);</div></pre></td></tr></table></figure>
+<h3 id="Post请求"><a href="#Post请求" class="headerlink" title="Post请求"></a>Post请求</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">axios.post(<span class="string">'/api'</span>, &#123;</div><div class="line">    firstName: <span class="string">'Fred'</span>,</div><div class="line">    lastName: <span class="string">'Flintstone'</span></div><div class="line">  &#125;)</div><div class="line">  .then(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(response);</div><div class="line">  &#125;)</div><div class="line">  .catch(<span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(error);</div><div class="line">  &#125;);</div></pre></td></tr></table></figure>
+<hr>
+<h2 id="代码就是由这些组成的"><a href="#代码就是由这些组成的" class="headerlink" title="代码就是由这些组成的"></a>代码就是由这些组成的</h2><p>在写JS代码时，似乎都是在操作下面4类语法。</p>
+<ul>
+<li>一个数据集合(对象、json)。</li>
+<li>两种函数（同步、异步）</li>
+<li>三大结构（顺序语句、条件语句、循环语句）</li>
+<li>多种数据格式（数字，字符串，数组，布尔，json，对象）的使用方式</li>
+</ul>
+<p>下面详细剖析一个案例来说明代码的组成。</p>
+<p>比如想通过 <a href="https://js.xinshengdaxue.com/api" target="_blank" rel="external">https://js.xinshengdaxue.com/api</a> 提供的接口来获取心里话数据。</p>
+<p>心里话接口信息请参考接口文档 <a href="http://js.xinshengdaxue.com/api/" target="_blank" rel="external">http://js.xinshengdaxue.com/api/</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">[GET] /api/v1/learnJS/course/:id/words</div><div class="line">id: 第一期课程为<span class="number">1</span></div><div class="line"></div><div class="line">结果：</div><div class="line">&#123;</div><div class="line">  code, <span class="comment">// 1: 处理正常，0：处理错误</span></div><div class="line">  message, <span class="comment">// code === 0 时返回</span></div><div class="line">  words</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>以下代码使用了axios第三方库来发起http请求获取数据<a href="https://github.com/xugy0926/getting-started-with-javascript/blob/master/topics/%E4%BA%86%E4%B8%8D%E8%B5%B7%E7%9A%84axios(http" target="_blank" rel="external">点这里了解axios</a>.md)</p>
+<h3 id="第一步：通过axios提供的异步函数get获取数据"><a href="#第一步：通过axios提供的异步函数get获取数据" class="headerlink" title="第一步：通过axios提供的异步函数get获取数据"></a>第一步：通过axios提供的异步函数get获取数据</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">axios.get(<span class="string">'https://js.xinshengdaxue.com/api/v1/learnJS/course/1/words'</span>)</div><div class="line">  .then(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</div><div class="line">    <span class="comment">// response对象就是我们获取到的结果对象</span></div><div class="line">  &#125;)</div><div class="line">  .catch(<span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(error);</div><div class="line">  &#125;);</div></pre></td></tr></table></figure>
+<h3 id="第二步：依据获取到的结果对象，并操纵对象来分析从服务端返回来的结果"><a href="#第二步：依据获取到的结果对象，并操纵对象来分析从服务端返回来的结果" class="headerlink" title="第二步：依据获取到的结果对象，并操纵对象来分析从服务端返回来的结果"></a>第二步：依据获取到的结果对象，并操纵对象来分析从服务端返回来的结果</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">axios.get(<span class="string">'https://js.xinshengdaxue.com/api/v1/learnJS/course/1/words'</span>)</div><div class="line">  .then(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</div><div class="line">    <span class="comment">// 读取对象中的code属性值，如果值等于1，说明服务器的逻辑处理是正常</span></div><div class="line">    <span class="keyword">if</span> (response.data.code === <span class="number">1</span>) &#123;</div><div class="line">      alert(<span class="string">'success'</span>);</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      alert(<span class="string">'failed'</span>);</div><div class="line">    &#125;</div><div class="line">  &#125;)</div><div class="line">  .catch(<span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(error);</div><div class="line">  &#125;);</div></pre></td></tr></table></figure>
+<h3 id="第三步：在code等于1的逻辑中把心里话数据拿出来并赋值给一个变量wordsList"><a href="#第三步：在code等于1的逻辑中把心里话数据拿出来并赋值给一个变量wordsList" class="headerlink" title="第三步：在code等于1的逻辑中把心里话数据拿出来并赋值给一个变量wordsList"></a>第三步：在code等于1的逻辑中把心里话数据拿出来并赋值给一个变量wordsList</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">axios.get(<span class="string">'https://js.xinshengdaxue.com/api/v1/learnJS/course/1/words'</span>)</div><div class="line">  .then(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (response.data.code === <span class="number">1</span>) &#123;</div><div class="line">      <span class="comment">// 将response中的心里话数据拿出来并赋值给一个变量。</span></div><div class="line">      <span class="comment">// 这时我们拿着wordsList这个变量可以做你想要的任意操作。</span></div><div class="line">      <span class="keyword">var</span> wordsList = response.data.words;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      alert(<span class="string">'failed'</span>);</div><div class="line">    &#125;</div><div class="line">  &#125;)</div><div class="line">  .catch(<span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(error);</div><div class="line">  &#125;);</div></pre></td></tr></table></figure>
+<h3 id="第四步：想要过滤掉名字为空的数据"><a href="#第四步：想要过滤掉名字为空的数据" class="headerlink" title="第四步：想要过滤掉名字为空的数据"></a>第四步：想要过滤掉名字为空的数据</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">axios.get(<span class="string">'https://js.xinshengdaxue.com/api/v1/learnJS/course/1/words'</span>)</div><div class="line">  .then(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (response..data.code === <span class="number">1</span>) &#123;</div><div class="line">      <span class="comment">// 将response中的心里话数据拿出来并赋值给一个变量。</span></div><div class="line">      <span class="comment">// 这时我们拿着wordsList这个变量可以做你想要的任意操作。</span></div><div class="line">      <span class="keyword">var</span> wordsList = response.data.words;</div><div class="line"></div><div class="line">      <span class="comment">// 过滤名字内容为空的数据</span></div><div class="line">      <span class="keyword">var</span> filterWordsList = [];</div><div class="line">      <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; wordsList.length; i++) &#123;</div><div class="line">        <span class="comment">// 当name，avatar，words三个属性都有内容时，加入到数组filterWordsList</span></div><div class="line">        <span class="keyword">if</span> (wordsList[i].name &amp;&amp; !wordsList[i].avatar &amp;&amp; wordsList[i].words) &#123;</div><div class="line">          filterWordsList.push(wordsList[i]);</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line"></div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      alert(<span class="string">'failed'</span>);</div><div class="line">    &#125;</div><div class="line">  &#125;)</div><div class="line">  .catch(<span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(error);</div><div class="line">  &#125;);</div></pre></td></tr></table></figure>
+<h3 id="第五步：将最终的结果反映到vue的data变量中"><a href="#第五步：将最终的结果反映到vue的data变量中" class="headerlink" title="第五步：将最终的结果反映到vue的data变量中"></a>第五步：将最终的结果反映到vue的data变量中</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">axios.get(<span class="string">'https://js.xinshengdaxue.com/api/v1/learnJS/course/1/words'</span>)</div><div class="line">  .then(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (response.data.code === <span class="number">1</span>) &#123;</div><div class="line">      <span class="comment">// 将response中的心里话数据拿出来并赋值给一个变量。</span></div><div class="line">      <span class="comment">// 这时我们拿着wordsList这个变量可以做你想要的任意操作。</span></div><div class="line">      <span class="keyword">var</span> wordsList = response.data.words;</div><div class="line"></div><div class="line">      <span class="keyword">var</span> filterWordsList = [];</div><div class="line">      <span class="comment">// 过滤内容为空的数据</span></div><div class="line">      <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; wordsList.length; i++) &#123;</div><div class="line">        <span class="comment">// 当name，avatar，words三个属性都有内容时，加入到数组filterWordsList</span></div><div class="line">        <span class="keyword">if</span> (wordsList[i].name &amp;&amp; !wordsList[i].avatar &amp;&amp; wordsList[i].words) &#123;</div><div class="line">          filterWordsList.push(wordsList[i]);</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line"></div><div class="line">      <span class="comment">// 将filterWordsList赋值给Vue的data里的wordsList变量。</span></div><div class="line">      <span class="comment">// 倘若data里的wordsList变量和html中的节点绑定了，页面就会自动更新数据</span></div><div class="line">      app.wordsList = filterWordsList;</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      alert(<span class="string">'failed'</span>);</div><div class="line">    &#125;</div><div class="line">  &#125;)</div><div class="line">  .catch(<span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(error);</div><div class="line">  &#125;);</div></pre></td></tr></table></figure>
+<p>以上五步循序渐进的处理涉及到了语法重点的所有知识。</p>
+<ul>
+<li>调用了异步函数<code>axios.get()</code>。</li>
+<li>使用数据集合(response，wordsList, filterWordsList)。</li>
+<li>运用了三大结构中的顺序语句、条件语句、循环语句。</li>
+<li>操作了数据格式。<ul>
+<li>运用点号来访问对象属性。response.code等。</li>
+<li>读取数组长度。wordsList.length。</li>
+<li>游标方式访问数据内容。wordsList[i]）。</li>
+</ul>
+</li>
+</ul>
+<h2 id="立即执行函数"><a href="#立即执行函数" class="headerlink" title="立即执行函数"></a>立即执行函数</h2><h3 id="如何定义完函数就立即执行？"><a href="#如何定义完函数就立即执行？" class="headerlink" title="如何定义完函数就立即执行？"></a>如何定义完函数就立即执行？</h3><p>   一个函数定义完就执行，这种技巧在编程中经常用到。</p>
+<p>   正常情况下，我们都是这样做的：</p>
+   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 定义函数print</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">print</span>(<span class="params">content</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(content);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 调用函数print</span></div><div class="line">print(<span class="string">'Hello, JS'</span>);</div></pre></td></tr></table></figure>
+<p>   把函数明确定义出来的好处当然很多，功能清晰，可以重复调用。</p>
+<p>   但有人就喜欢这样做：</p>
+   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">content</span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(content);</div><div class="line">&#125;)(<span class="string">'Hello, JS'</span>);</div></pre></td></tr></table></figure>
+<p>   上面这种写法让人非常难以理解。而且，这个函数定义出来就被执行了，并不能重复调用。</p>
+<p>   这就好比你造了一台机器，这台机器只运行了一次就死了，从函数重复利用的角度来看，没有价值。</p>
+<p>   先不管这个，我们先从技术的角度来拆解分析这件事情。</p>
+   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> (<span class="params">content</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(content);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>   上面这个是函数表达式，单独存在的时候没有价值。</p>
+<p>   前面说了，正常情况下直接用函数语法方式给定一个函数名：</p>
+   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">print</span>(<span class="params">content</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(content);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>   或者，是把函数表达式赋值给一个变量。</p>
+   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> print = <span class="function"><span class="keyword">function</span>(<span class="params">content</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(content)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>   只有这样，才能正常利用pint来调用函数。</p>
+<p>   但是，一个函数表达式两侧直接加上括号，就能获得这个表达式的值：</p>
+   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">content</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(content);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>   然后对这个值进行直接调用，调用函数时后面跟一对括号：</p>
+   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">content</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(content);</div><div class="line">&#125;)(<span class="string">'Hello, JS'</span>)</div></pre></td></tr></table></figure>
+<p>   这就完成了一次直接定义并且直接调用的动作，省去了一次函数命名的过程。看上去是不是没啥价值？但是真的没价值吗？</p>
+<h3 id="定义完就执行的价值"><a href="#定义完就执行的价值" class="headerlink" title="定义完就执行的价值"></a>定义完就执行的价值</h3><p>   在前端的技术中，无法像在nodejs一样通过require引用模块，所以第三方的模块都放在 <code>&lt;head&gt;</code> 里。</p>
+<p>   比如：</p>
+   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;head lang=<span class="string">"en"</span>&gt;</div><div class="line">    &lt;script src=<span class="string">"https://unpkg.com/vue"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line">    &lt;script src=<span class="string">"https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line">&lt;<span class="regexp">/head&gt;</span></div></pre></td></tr></table></figure>
+<p>   上面引入了两个模块，vue和jquery。</p>
+<p>   引入进来后，我们可以在js代码中直接调用他们来进行业务操作。比如：</p>
+   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">  <span class="comment">// 使用了Vue对象来初始化</span></div><div class="line">  <span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</div><div class="line">    el: <span class="string">'#app'</span>,</div><div class="line">    data: &#123;</div><div class="line">      title: <span class="string">'learn JS'</span></div><div class="line">    &#125;</div><div class="line">  &#125;);</div><div class="line"></div><div class="line">  <span class="comment">// 使用了$对象</span></div><div class="line">  $.get(....);</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div></pre></td></tr></table></figure>
+<p>   事实上，有一件很奇怪的事情就是，为什么我引入了vue和jquery，就可以在js中直接使用Vue和$这两个对象呢？我并没有像nodejs的require一样明确的把模块指定给某个变量。</p>
+   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// nodejs引入模块，我们可以明确用一个变量来接收</span></div><div class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</div></pre></td></tr></table></figure>
+<p>   这是因为，在前端引入第三方模块的过程中，一旦第三方的js文件被下载下来后，浏览器会立即去执行下载过来的js文件，并把执行过程中产生的对象加入到一个全局的对象中，以方便开发者调用。</p>
+<p>   当vue.js文件下载过来之后，浏览器会立即执行vue.js，产生了Vue这个对象，并把Vue这个对象加入到了全局的对象中。从而，开发者就可以在自己的js代码中调用Vue这个对象。</p>
+<p>   vue.js的代码为了保证自己能被立即执行，用的就是这种定义立即执行的技巧。</p>
+   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">global</span>) </span>&#123;</div><div class="line">  ....</div><div class="line">  ....</div><div class="line">  global.Vue = Vue</div><div class="line">&#125;)(<span class="keyword">this</span>)</div></pre></td></tr></table></figure>
+<p>   如果你想定义一个js文件放在public中，也可以采用这个技巧。方式可以参考words-from-the-heart的测试代码。</p>
+<p>   words-from-the-heart/index.html<br>   words-from-the-heart/public/js/index.js</p>
+<hr>
+<h2 id="匿名函数使用技巧"><a href="#匿名函数使用技巧" class="headerlink" title="匿名函数使用技巧"></a>匿名函数使用技巧</h2><p>   以下例子是一个模拟异步处理的手法</p>
+   <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 定义一个函数，函数名为callback</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">callback</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'我终于被调用了'</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 5秒钟后调用callback函数</span></div><div class="line">setTimeout(callback, <span class="number">5000</span>);</div></pre></td></tr></table></figure>
+<ol>
+<li>定义了一个函数callback。</li>
+<li><p>然后调用setTimeout函数，5秒钟后调用callback函数。</p>
+<p>其实，我们可以采用匿名函数来简化流程。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'我终于被调用了'</span>);</div><div class="line">  &#125;, <span class="number">5000</span>);</div></pre></td></tr></table></figure>
+<p>通过匿名函数的方式带来直接的好处就是，不用去考虑怎么定义函数的命名。提高了写代码的效率。</p>
+</li>
+</ol>
+<hr>
+<h2 id="变量命名简明技巧"><a href="#变量命名简明技巧" class="headerlink" title="变量命名简明技巧"></a>变量命名简明技巧</h2><ul>
+<li><ol>
+<li>完整代表了变量的含义吗？ -&gt; 推到出更多信息</li>
+</ol>
+</li>
+<li><ol>
+<li>以问题为导向了吗？ -&gt; 反映了问题而非解决方案</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> start = <span class="number">0</span>; <span class="comment">// bad。 开始什么？不明白</span></div><div class="line"><span class="keyword">var</span> startCount = <span class="number">1</span>; <span class="comment">// good。  可以推到出是number类型</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> end = <span class="number">100</span>; <span class="comment">// bad。 end什么？不明白</span></div><div class="line"><span class="keyword">var</span> endCount = <span class="number">100</span>; <span class="comment">// good。可以推导出是结束数字，number类型。</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> file = <span class="string">'./name_style.js'</span>; <span class="comment">// bad。 文件内容？不清楚</span></div><div class="line"><span class="keyword">var</span> jsFilePath = <span class="string">'./name_style.js'</span>; <span class="comment">// good。可以推导出是js文件的路径，路径一定是字符串。</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> id = <span class="string">'1234567'</span>; <span class="comment">// bad 什么id？不明白</span></div><div class="line"><span class="keyword">var</span> nameId = <span class="string">'1234567'</span>; <span class="comment">// good。可以推到是名字的id。</span></div></pre></td></tr></table></figure>
+<p>// 表述一个人的基本信息</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> person = &#123;   <span class="comment">// bad。person可以表示一个人，但没办法知道是个人信息</span></div><div class="line">  name: <span class="string">'xiaoming'</span>,</div><div class="line">  age: <span class="number">18</span>,</div><div class="line">  sex: <span class="string">'man'</span></div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> personInfoObj = &#123;  <span class="comment">// good。可以推到出这是个人信息，而且还是一个object类型。</span></div><div class="line">  name: <span class="string">'xiaoming'</span>,</div><div class="line">  age: <span class="number">18</span>,</div><div class="line">  sex: <span class="string">'man'</span></div><div class="line">&#125;</div><div class="line">​</div></pre></td></tr></table></figure>
+<p>// 表示一个输入的雇员信息<br>​<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> inputData = &#123; <span class="comment">// bad。只能表示是输入的数据。输入的什么数据？不清楚。只知道how，不知道what。</span></div><div class="line">  name: <span class="string">'xiaoming'</span>,</div><div class="line">  age: <span class="number">18</span>,</div><div class="line">  sex: <span class="string">'man'</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> employeeData = &#123; <span class="comment">// good。 这是个雇员的数据(很明确知道what是什么)，很清晰。</span></div><div class="line">  name: <span class="string">'xiaoming'</span>,</div><div class="line">  age: <span class="number">18</span>,</div><div class="line">  sex: <span class="string">'man'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="同步函数的两种返回结果的方式"><a href="#同步函数的两种返回结果的方式" class="headerlink" title="同步函数的两种返回结果的方式"></a>同步函数的两种返回结果的方式</h2><p>同步函数既可以立即返回结果，也能通过间接返回(callback)结果。</p>
+<h3 id="立即返回结果"><a href="#立即返回结果" class="headerlink" title="立即返回结果"></a>立即返回结果</h3><p>比如定义一个求和函数sum并调用一次求和动作。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 定义求和函数sum</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a, b</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> c = a + b;</div><div class="line">  <span class="keyword">return</span> c;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 调用sum函数，并传递两个值给sum的参数，当sum函数执行完并将结果赋值给变量value</span></div><div class="line"><span class="keyword">var</span> value = sum(<span class="number">1</span>, <span class="number">2</span>);</div><div class="line"><span class="comment">// 打印value的值</span></div><div class="line"><span class="built_in">console</span>.log(value);</div></pre></td></tr></table></figure>
+<p>为了更好的看清楚整个流程，可以在代码中加入打印代码执行序列号。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="string">'flow: 1'</span>);</div><div class="line"><span class="comment">// 定义求和函数sum</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a, b</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'flow: 2'</span>);</div><div class="line">  <span class="keyword">var</span> c = a + b;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'flow: 3'</span>);</div><div class="line">  <span class="keyword">return</span> c;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'flow: 4'</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'flow: 5'</span>);</div><div class="line"><span class="comment">// 调用sum函数，并传递两个值给sum的参数，当sum函数执行完并将结果赋值给变量value</span></div><div class="line"><span class="keyword">var</span> result = sum(<span class="number">1</span>, <span class="number">2</span>);</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'flow: 6'</span>);</div><div class="line"><span class="comment">// 打印result的值</span></div><div class="line"><span class="built_in">console</span>.log(result);</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'flow: 7'</span>);</div></pre></td></tr></table></figure>
+<p>代码执行的序列是<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">flow: <span class="number">1</span></div><div class="line">flow: <span class="number">5</span></div><div class="line">flow: <span class="number">2</span></div><div class="line">flow: <span class="number">3</span></div><div class="line">flow: <span class="number">6</span></div><div class="line"><span class="number">3</span></div><div class="line">flow: <span class="number">7</span></div></pre></td></tr></table></figure></p>
+<p>在函数sum内，<code>flow: 4</code>并不能被执行，因为前面一行<code>return c</code>会导致整个函数结束执行。</p>
+<h3 id="callback返回结果"><a href="#callback返回结果" class="headerlink" title="callback返回结果"></a>callback返回结果</h3><p>比如定义一个求和函数sum并调用一次求和动作。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 定义求和函数sum</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a, b, callback</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> c = a + b;</div><div class="line">  callback(c);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 定义一个callback函数，用于接收sum函数返回的值</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">resultCallback</span>(<span class="params">value</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(value);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 调用sum函数，并传递两个值给sum的参数，同时把resultCallback传过去</span></div><div class="line"><span class="keyword">var</span> result = sum(<span class="number">1</span>, <span class="number">2</span>, resultCallback);</div><div class="line"><span class="comment">// 打印value的值</span></div><div class="line"><span class="built_in">console</span>.log(result);</div></pre></td></tr></table></figure>
+<p>打印代码执行序列号</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="string">'flow: 1'</span>);</div><div class="line"><span class="comment">// 定义求和函数sum</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">a, b, callback</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'flow: 2'</span>);</div><div class="line">  <span class="keyword">var</span> c = a + b;</div><div class="line">  callback(c);</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'flow: 3'</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'flow: 4'</span>);</div><div class="line"><span class="comment">// 定义一个callback函数，用于接收sum函数返回的值</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">resultCallback</span>(<span class="params">value</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'flow: 5'</span>);</div><div class="line">  <span class="built_in">console</span>.log(value);</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'flow: 6'</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'flow: 7'</span>);</div><div class="line"><span class="comment">// 调用sum函数，并传递两个值给sum的参数，同时把resultCallback传过去</span></div><div class="line"><span class="keyword">var</span> result = sum(<span class="number">1</span>, <span class="number">2</span>, resultCallback);</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'flow: 8'</span>);</div><div class="line"><span class="comment">// 打印result的值</span></div><div class="line"><span class="built_in">console</span>.log(result);</div><div class="line"><span class="built_in">console</span>.log(<span class="string">'flow: 9'</span>);</div></pre></td></tr></table></figure>
+<p>代码执行的序列是</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">flow: <span class="number">1</span></div><div class="line">flow: <span class="number">4</span></div><div class="line">flow: <span class="number">7</span></div><div class="line">flow: <span class="number">2</span></div><div class="line">flow: <span class="number">5</span></div><div class="line"><span class="number">3</span></div><div class="line">flow: <span class="number">6</span></div><div class="line">flow: <span class="number">3</span></div><div class="line">flow: <span class="number">8</span></div><div class="line"><span class="literal">undefined</span></div><div class="line">flow: <span class="number">9</span></div></pre></td></tr></table></figure>
+<p>在函数sum内，没有明确return结果，而是通过callback函数返回的结果。所以console.log(result)的result是一个没有定义的值undefined。</p>
+<p>虽然同步函数可以通过立即返回和间接返回得到函数的处理结果，但是间接返回在同步函数中的处理过于画蛇添足，还增加了代码的复杂度。同步函数处理的间接返回结果并不是一件好事。</p>
+<hr>
+<h2 id="callback函数的设计学"><a href="#callback函数的设计学" class="headerlink" title="callback函数的设计学"></a>callback函数的设计学</h2><p>JavaScript语言发展太快了，api文档跟不上语言的发展速度。<br>callback函数的设计理念，三个关键词：</p>
+<ul>
+<li>异步处理</li>
+<li>错误处理</li>
+<li>开源社区</li>
+</ul>
+<p>JavaScript的语言特性就是异步处理，一层套一层的异步调用，如果某个异步处理出了问题，该怎么告知调用者？<br>错误优先处理：所有的工程师定义的所有异步函数的回调的第一个参数默认为错误参数。<br>就这么一个简单的口号，解决了所有异步调用的错误处理问题。<br>有了一个原则：错误优先处理。我们写任何代码就很随性了。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 读取某个文件夹路径里的所有内容</span></div><div class="line">fs.readdir(<span class="string">'path'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</div><div class="line">   <span class="keyword">if</span> (err) &#123;</div><div class="line">       <span class="keyword">return</span>;</div><div class="line">   &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 读取某个文件内容</span></div><div class="line">fs.readFile(<span class="string">'file_path'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>&#123;</div><div class="line">   <span class="keyword">if</span> (error) &#123;</div><div class="line">       <span class="keyword">return</span>;</div><div class="line">   &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 写入'hello, js'到某个文件中</span></div><div class="line">fs.writeFile(<span class="string">'file_path'</span>, <span class="string">'Hello, JS'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">   <span class="keyword">if</span> (e) &#123;</div><div class="line">       <span class="keyword">return</span>;</div><div class="line">   &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>以上你不管是调用哪个异步函数，callback的第一个参数都是用来接收错误信息的。参数的名字？就显然不重要了，你随意的取。不过建议命名为err，这是所有优秀工程师的统一命名。</p>
+<p>当错误问题解决了，那怎么知道该函数会不会返回结果内容呢？这当然是要查api文档啦。某一个异步函数是否返回结果内容，api文档都会清楚告知。但是！如果不差查api文档能不能知道是否返回结果呢？能！需要像福尔摩斯一样去推理。</p>
+<ul>
+<li><code>fs.readdir</code> —— 读取目录下的所有文件名，这么明确的异步处理函数，你说会不会返回内容呢？答案肯定是会的，而且一定是个数组。注意readdir的作用，是返回所有文件名。</li>
+<li><code>fs.readFile</code> —— 读取某个文件的内容，这么明确的异步处理函数，你说会不会返回内容呢？答案肯定是会的，而且一定是string。注意readFile的作用，是返回文件内容。</li>
+<li><code>fs.writeFile</code> —— 将内容写入到某个文件，这么明确的异步处理函数，你说会不会返回内容呢？答案肯定是不会的。</li>
+</ul>
+<p>通过函数的作用，来推理callback函数的返回内容就是这么简简单单。<br>那如果推理得知会返回内容，内容应该怎么获得呢？<br>前面的错误优先返回中，错误变量err会占据callback函数的第一个位置，那结果就是第二个位置。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 读取某个文件夹路径里的所有内容</span></div><div class="line">fs.readdir(<span class="string">'path'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, files</span>) </span>&#123;</div><div class="line">   <span class="keyword">if</span> (err) &#123;</div><div class="line">       <span class="keyword">return</span>;</div><div class="line">   &#125;</div><div class="line"></div><div class="line">  <span class="built_in">console</span>.log(files);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">// 读取某个文件内容</span></div><div class="line">fs.readFile(<span class="string">'file_path'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, file</span>) </span>&#123;</div><div class="line">   <span class="keyword">if</span> (error) &#123;</div><div class="line">       <span class="keyword">return</span>;</div><div class="line">   &#125;</div><div class="line"></div><div class="line">  <span class="built_in">console</span>.log(file);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>谨记callback函数的设计理念：</p>
+<ol>
+<li>错误处理优先。</li>
+<li>依据函数作用推测是否有结果，如果有结果，结果参数在第二位。</li>
+</ol>
+<p>不管是错误处理还是推理是否有结果返回，这样的设计理念体现出工程师与工程师之间的信任，javascript语言好像是更有人情味的编程语言。<br>如果你哪一天在使用一个第三方库发现回调函数没有遵从这个原则，我建议你赶紧把这个第三方库扔到大海里去，让它从你的生活中消失。这个作者不值得你信任。</p>
+<hr>
+<h2 id="JavaScript的语法学习指引"><a href="#JavaScript的语法学习指引" class="headerlink" title="JavaScript的语法学习指引"></a>JavaScript的语法学习指引</h2><p>JavaScript的基本语法特性的组合在一起成为：JavaScript标准库。其包含了语法和不同数据类型的使用方式。</p>
+<h3 id="途径一：w3school"><a href="#途径一：w3school" class="headerlink" title="途径一：w3school"></a>途径一：<a href="http://www.w3school.com.cn/js/index.asp" target="_blank" rel="external">w3school</a></h3><p>在w3school里看语法要注意几个点。</p>
+<ol>
+<li>里面的JavaScript知识都是在浏览器环境下讲的。</li>
+<li>里面的JS HTML DOM是前端html的知识，教你如何运用js代码来处理html、css、事件。这个知识涉及到了浏览器运行环境里的某些内置库。</li>
+<li>里面的JS Window是浏览器知识，教你如何运用js代码来处理浏览器的一些属性。这个知识涉及到了浏览器运行环境里的某些内置库。</li>
+<li>JS 库，这里讲解了浏览器运行环境下用的一些库。</li>
+</ol>
+<p>所以，在w3school学JavaScript语法需要结合一些前端知识，要注重分辨哪些是JavaScript的语法知识，哪些又是浏览器内置库的知识，别搞混了。</p>
+<h3 id="途径二：JavaScript权威指南（犀牛书）"><a href="#途径二：JavaScript权威指南（犀牛书）" class="headerlink" title="途径二：JavaScript权威指南（犀牛书）"></a>途径二：JavaScript权威指南（犀牛书）</h3><p>学习语法知识时，可以用浏览器环境或者nodejs运行环境去试验书中的代码。</p>
+<h4 id="第一部分："><a href="#第一部分：" class="headerlink" title="第一部分："></a>第一部分：</h4><ol>
+<li>第1章 - 第7章是JS的基础。（强烈要求掌握）</li>
+<li>第8章 - JS的重点重点重点。（强烈要求掌握）</li>
+<li>第9章- 在进阶过程时去掌握。（初学者学有余力时去了解）</li>
+<li>第10、第11可以暂时忽略。</li>
+<li>2.5可选分号 — 强烈忽略本小节。</li>
+</ol>
+<h4 id="第二部分："><a href="#第二部分：" class="headerlink" title="第二部分："></a>第二部分：</h4><p>和前端开发有关的内容。</p>
+<h4 id="第三部分和第四部分："><a href="#第三部分和第四部分：" class="headerlink" title="第三部分和第四部分："></a>第三部分和第四部分：</h4><p>内置服务的api。当字典来查。</p>
+<h4 id="途径三：mozilla-JavaScript"><a href="#途径三：mozilla-JavaScript" class="headerlink" title="途径三：mozilla JavaScript"></a>途径三：mozilla JavaScript</h4><ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript" target="_blank" rel="external">JavaScript</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML" target="_blank" rel="external">HTML</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS" target="_blank" rel="external">CSS</a></li>
+</ul>
+<hr>
+<h2 id="学习语法时的自问技巧"><a href="#学习语法时的自问技巧" class="headerlink" title="学习语法时的自问技巧"></a>学习语法时的自问技巧</h2><ul>
+<li>一个数据集合(对象、json)。</li>
+<li>两种函数（同步、异步）</li>
+<li>三大结构（顺序语句、条件语句、循环语句）</li>
+<li>多种数据格式（数字，字符串，数组，布尔，json，对象）的使用方式<br>以上4大块语法是构建js代码流程的基础。</li>
+</ul>
+<p>在平时的编码中，要实现想法就离不开这些基础知识。不信？请<a href="https://github.com/xugy0926/getting-started-with-javascript/blob/master/topics/%E4%BB%A3%E7%A0%81%E5%B0%B1%E6%98%AF%E7%94%B1%E8%BF%99%E4%BA%9B%E7%BB%84%E6%88%90%E7%9A%84.md" target="_blank" rel="external">点这里</a></p>
+<p>学习JS是要始终思考下面问题。</p>
+<ul>
+<li><p>一个数据集合(对象)。</p>
+<ul>
+<li>如何定义一个对象？</li>
+<li>如何访问对象的属性？</li>
+</ul>
+</li>
+<li><p>两种函数（同步、异步）</p>
+<ul>
+<li>如何定义函数？（函数语法定义方式和表达式定义方式的区别）</li>
+<li>如何调用同步函数？同步函数怎么返回结果。</li>
+<li>如何调用异步函数？异步函数怎么返回结果。</li>
+</ul>
+</li>
+<li><p>三大结构（顺序语句、条件语句、循环语句）</p>
+<ul>
+<li>顺序语句的执行流程。</li>
+<li>条件语句的执行流程。什么内容才能成为条件，是语句？还是表达式？</li>
+<li>循环语句的执行流程。循环语句的三大特性：什么是初始化语句？什么是循环判断条件？什么是累加器？为什么需要三大特性才能保证循环正确执行。</li>
+</ul>
+</li>
+<li><p>多种数据格式（数字，字符串，数组，布尔，json，对象）的使用方式。</p>
+<ul>
+<li>字符串怎么相加来拼接字符串？</li>
+<li>数字和字符串可以相加吗？哪数组和字符串能相加吗？和对象呢？和其他格式呢？</li>
+<li>数组怎么用游标访问元素？数据可以删掉元素吗？可以增加吗？可以排序吗？</li>
+<li>什么样的表达式才能得到布尔值？将数字1和字符串1进行比较会得到true还是false？</li>
+<li>怎么访问对象的属性？可以给某个对象动态的添加属性吗？<br>​<br>学习JS语法基础知识时要把被动变为主动。如果你始终跟着书本走，你的思路就被牵制了。比如在学习数组格式时，你首先要想一个数组格式存在什么价值？会带来记录数据的便利性吗？便利性体现在哪？该怎么利用这些便利性？只有这样你才能真正掌握。</li>
+</ul>
+</li>
+</ul>
+<h2 id="学习函数抓住这几个点"><a href="#学习函数抓住这几个点" class="headerlink" title="学习函数抓住这几个点"></a>学习函数抓住这几个点</h2><h3 id="两种定义函数的方式"><a href="#两种定义函数的方式" class="headerlink" title="两种定义函数的方式"></a><a href="https://github.com/xugy0926/getting-started-with-javascript/blob/master/topics/%E4%B8%A4%E7%A7%8D%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0%E6%96%B9%E5%BC%8F%E7%9A%84%E5%B7%AE%E5%BC%82.md" target="_blank" rel="external">两种定义函数的方式</a></h3><ul>
+<li>函数语法方式定义。</li>
+<li>函数表达式定义。</li>
+</ul>
+<h3 id="两种使用函数的方式"><a href="#两种使用函数的方式" class="headerlink" title="两种使用函数的方式"></a>两种使用函数的方式</h3><ul>
+<li>同步函数。</li>
+<li>异步函数。</li>
+</ul>
+<h3 id="两种函数返回结果的方式"><a href="#两种函数返回结果的方式" class="headerlink" title="两种函数返回结果的方式"></a><a href="https://github.com/xugy0926/getting-started-with-javascript/blob/master/topics/%E5%90%8C%E6%AD%A5%E5%87%BD%E6%95%B0%E7%9A%84%E4%B8%A4%E7%A7%8D%E8%BF%94%E5%9B%9E%E7%BB%93%E6%9E%9C%E7%9A%84%E6%96%B9%E5%BC%8F.md" target="_blank" rel="external">两种函数返回结果的方式</a></h3><ul>
+<li>立即返回结果。</li>
+<li>callback返回结果。</li>
+</ul>
+<h3 id="两个返回结果的注意点"><a href="#两个返回结果的注意点" class="headerlink" title="两个返回结果的注意点"></a>两个返回结果的注意点</h3><ul>
+<li>同步函数可以采用callback返回结果，但不要这么做。</li>
+<li>异步函数只能采用callback返回最终结果。但调用异步函数本身也有一个立即返回值。两个返回结果要区分。</li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="http://code.7xinsheng.com/" target="_blank" rel="external">小白学编程</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JS/" rel="tag"># JS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/29/javascript/" rel="next" title="javascript">
+                <i class="fa fa-chevron-left"></i> javascript
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/07/exercise/" rel="prev" title="javscript-exercise">
+                javscript-exercise <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="https://ws2.sinaimg.cn/large/006tKfTcly1fj5edaynjzj30hs0hsglv.jpg"
+              alt="Katherine Chen" />
+          
+            <p class="site-author-name" itemprop="name">Katherine Chen</p>
+            <p class="site-description motion-element" itemprop="description">尽量只写对别人有用的文章……</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/about/index.html">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/you7588" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:you7588@gmail.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                    
+                      E-Mail
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是函数？"><span class="nav-number">1.</span> <span class="nav-text">什么是函数？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定义一个函数的语法"><span class="nav-number">2.</span> <span class="nav-text">定义一个函数的语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数三要素"><span class="nav-number">3.</span> <span class="nav-text">函数三要素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数名-像使用变量一样使用函数名"><span class="nav-number">4.</span> <span class="nav-text">函数名(像使用变量一样使用函数名)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参数"><span class="nav-number">5.</span> <span class="nav-text">参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#返回值"><span class="nav-number">6.</span> <span class="nav-text">返回值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#两种定义函数方式的差异"><span class="nav-number">7.</span> <span class="nav-text">两种定义函数方式的差异</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数语法定义方式"><span class="nav-number">8.</span> <span class="nav-text">函数语法定义方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表达式定义方式"><span class="nav-number">9.</span> <span class="nav-text">表达式定义方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#深入表达式定义法"><span class="nav-number">10.</span> <span class="nav-text">深入表达式定义法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#了不起的axios-http"><span class="nav-number">11.</span> <span class="nav-text">了不起的axios(http)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Get请求"><span class="nav-number">11.1.</span> <span class="nav-text">Get请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Post请求"><span class="nav-number">11.2.</span> <span class="nav-text">Post请求</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码就是由这些组成的"><span class="nav-number">12.</span> <span class="nav-text">代码就是由这些组成的</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一步：通过axios提供的异步函数get获取数据"><span class="nav-number">12.1.</span> <span class="nav-text">第一步：通过axios提供的异步函数get获取数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二步：依据获取到的结果对象，并操纵对象来分析从服务端返回来的结果"><span class="nav-number">12.2.</span> <span class="nav-text">第二步：依据获取到的结果对象，并操纵对象来分析从服务端返回来的结果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三步：在code等于1的逻辑中把心里话数据拿出来并赋值给一个变量wordsList"><span class="nav-number">12.3.</span> <span class="nav-text">第三步：在code等于1的逻辑中把心里话数据拿出来并赋值给一个变量wordsList</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第四步：想要过滤掉名字为空的数据"><span class="nav-number">12.4.</span> <span class="nav-text">第四步：想要过滤掉名字为空的数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第五步：将最终的结果反映到vue的data变量中"><span class="nav-number">12.5.</span> <span class="nav-text">第五步：将最终的结果反映到vue的data变量中</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#立即执行函数"><span class="nav-number">13.</span> <span class="nav-text">立即执行函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何定义完函数就立即执行？"><span class="nav-number">13.1.</span> <span class="nav-text">如何定义完函数就立即执行？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义完就执行的价值"><span class="nav-number">13.2.</span> <span class="nav-text">定义完就执行的价值</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#匿名函数使用技巧"><span class="nav-number">14.</span> <span class="nav-text">匿名函数使用技巧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量命名简明技巧"><span class="nav-number">15.</span> <span class="nav-text">变量命名简明技巧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#同步函数的两种返回结果的方式"><span class="nav-number">16.</span> <span class="nav-text">同步函数的两种返回结果的方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#立即返回结果"><span class="nav-number">16.1.</span> <span class="nav-text">立即返回结果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#callback返回结果"><span class="nav-number">16.2.</span> <span class="nav-text">callback返回结果</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#callback函数的设计学"><span class="nav-number">17.</span> <span class="nav-text">callback函数的设计学</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript的语法学习指引"><span class="nav-number">18.</span> <span class="nav-text">JavaScript的语法学习指引</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#途径一：w3school"><span class="nav-number">18.1.</span> <span class="nav-text">途径一：w3school</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#途径二：JavaScript权威指南（犀牛书）"><span class="nav-number">18.2.</span> <span class="nav-text">途径二：JavaScript权威指南（犀牛书）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#第一部分："><span class="nav-number">18.2.1.</span> <span class="nav-text">第一部分：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第二部分："><span class="nav-number">18.2.2.</span> <span class="nav-text">第二部分：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第三部分和第四部分："><span class="nav-number">18.2.3.</span> <span class="nav-text">第三部分和第四部分：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#途径三：mozilla-JavaScript"><span class="nav-number">18.2.4.</span> <span class="nav-text">途径三：mozilla JavaScript</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#学习语法时的自问技巧"><span class="nav-number">19.</span> <span class="nav-text">学习语法时的自问技巧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#学习函数抓住这几个点"><span class="nav-number">20.</span> <span class="nav-text">学习函数抓住这几个点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#两种定义函数的方式"><span class="nav-number">20.1.</span> <span class="nav-text">两种定义函数的方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#两种使用函数的方式"><span class="nav-number">20.2.</span> <span class="nav-text">两种使用函数的方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#两种函数返回结果的方式"><span class="nav-number">20.3.</span> <span class="nav-text">两种函数返回结果的方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#两个返回结果的注意点"><span class="nav-number">20.4.</span> <span class="nav-text">两个返回结果的注意点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">21.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Katherine Chen</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://chen-lingmin.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2017/10/05/knowledge/';
+          this.page.identifier = '2017/10/05/knowledge/';
+          this.page.title = 'Javascript 知识点';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://chen-lingmin.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

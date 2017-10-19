@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="JS," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="判断对象用typeof obj ===‘object’判断obj是否是一个object： 12345678910111213var obj = &amp;#123;  name: &apos;xiaoming&apos;&amp;#125;function output(obj) &amp;#123;  if (typeof obj.name === &apos;object&apos;) &amp;#123;    console.log(obj.name);  &amp;">
+<meta name="keywords" content="JS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javscript-exercise">
+<meta property="og:url" content="http://yoursite.com/2017/10/07/exercise/index.html">
+<meta property="og:site_name" content="时间的朋友">
+<meta property="og:description" content="判断对象用typeof obj ===‘object’判断obj是否是一个object： 12345678910111213var obj = &amp;#123;  name: &apos;xiaoming&apos;&amp;#125;function output(obj) &amp;#123;  if (typeof obj.name === &apos;object&apos;) &amp;#123;    console.log(obj.name);  &amp;">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79gy1fka3vr2tv1j31kw12fjw1.jpg">
+<meta property="og:updated_time" content="2017-10-10T07:44:46.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javscript-exercise">
+<meta name="twitter:description" content="判断对象用typeof obj ===‘object’判断obj是否是一个object： 12345678910111213var obj = &amp;#123;  name: &apos;xiaoming&apos;&amp;#125;function output(obj) &amp;#123;  if (typeof obj.name === &apos;object&apos;) &amp;#123;    console.log(obj.name);  &amp;">
+<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tNc79gy1fka3vr2tv1j31kw12fjw1.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/10/07/exercise/"/>
+
+
+
+
+
+  <title>javscript-exercise | 时间的朋友</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '105782654', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">时间的朋友</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">把琐碎的时间堆砌成一个伟大的生命。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            时间线
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-word">
+          <a href="/word/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            博物馆
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-cheatsheet">
+          <a href="/cheatsheet/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            速查卡
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-feedback">
+          <a href="/feedback/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-users"></i> <br />
+            
+            反馈
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/07/exercise/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Katherine Chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tKfTcly1fj5edaynjzj30hs0hsglv.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="时间的朋友">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">javscript-exercise</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-07T19:38:21+08:00">
+                2017-10-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/10/07/exercise/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/10/07/exercise/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="判断对象"><a href="#判断对象" class="headerlink" title="判断对象"></a>判断对象</h2><p>用<code>typeof obj ===‘object’</code>判断<code>obj</code>是否是一个<code>object</code>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">  name: <span class="string">'xiaoming'</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">output</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (<span class="keyword">typeof</span> obj.name === <span class="string">'object'</span>) &#123;</div><div class="line">    <span class="built_in">console</span>.log(obj.name);</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'obj is not a object'</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">output(obj);</div></pre></td></tr></table></figure>
+<p><a href="https://github.com/xugy0926/getting-started-with-javascript/issues/640" target="_blank" rel="external">以上代码有缺陷吗？如果有，该如何改进？</a></p>
+<p>有缺陷。</p>
+<ol>
+<li>因为<code>typeof null</code>的结果也是<code>object</code>，但在js中<code>null</code>实际上并不是对象，为保证<code>obj = null</code>时也能正确判断，所以需要加上对<code>null</code>的判断<code>if (typeof obj === &#39;object&#39; &amp;&amp; obj !== null)</code>;</li>
+<li>如果该函数是用于判断任意变量或直接量是否是对象的，那么使用<code>obj.name</code>就不合逻辑了。因为不是所有对象都有<code>name</code>的属性的。为了和<code>else</code>的结果对应，为对象时输出<code>console.log(‘obj is an object&#39;)</code>比较符合写函数的目的。</li>
+<li><code>output</code>函数在接收参数传入时，如果参数正好是<code>null</code>，<code>null</code>也是object类型，而<code>null.name</code>会导致代码运行报错。因此一定要排除特殊情况<code>null</code>。</li>
+<li>至于传入的<code>obj</code>是否有无<code>name</code>，这个最少不会导致代码运行出错，<code>obj.name</code>即使没有也会默认输出一个<code>undefined</code>。是否必要判断<code>obj</code>中存不存在<code>name</code>，可以依据具体的业务情况来定夺。</li>
+</ol>
+<p><strong>修正后的代码：</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">  name: <span class="string">'xiaoming'</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">output</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (!obj &amp;&amp; <span class="keyword">typeof</span> obj === <span class="string">'object'</span>) &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'obj is an object'</span>);</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'obj is NOT a object'</span>);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">output(obj);</div></pre></td></tr></table></figure></p>
+<p><strong>参考：</strong><br>【null和undefined】犀牛书3.4章节<br>【逻辑与（&amp;&amp;）】犀牛书4.10.1章节<br>【typeof 运算符】犀牛书4.13.2章节</p>
+<hr>
+<h2 id="对象的属性差异"><a href="#对象的属性差异" class="headerlink" title="对象的属性差异"></a>对象的属性差异</h2><p>对象是JS中最重要的概念之一。在定义对象时，有以下两种方法：</p>
+<p><strong>”属性定义“</strong> 大法（常用）：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">  name: <span class="string">'xiaoming'</span>,</div><div class="line">  age: <span class="number">18</span>,</div><div class="line">  isStudent: <span class="literal">true</span>  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>上面<code>obj</code>有3个属性，分别是<code>name</code>、<code>age</code>、<code>isStudent</code>。</p>
+<p> <strong>”键值定义“</strong> 大法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">  <span class="string">"name"</span>: <span class="string">'xiaoming'</span>,</div><div class="line">  <span class="string">"age"</span>: <span class="number">18</span>,</div><div class="line">  <span class="string">"isStudent"</span>: <span class="literal">true</span>  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>”键值定义“对象方式和json对象格式一样，这也是为什么在js中，所谓的json对象和普通对象经常混为一谈。</p>
+<p><a href="https://github.com/xugy0926/getting-started-with-javascript/issues/642" target="_blank" rel="external">这两种方式的共同点是什么？差异又是什么？</a></p>
+<h3 id="使用时的差异点"><a href="#使用时的差异点" class="headerlink" title="使用时的差异点"></a>使用时的差异点</h3><p>定义对象时可以混搭<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">  <span class="string">'name'</span>: <span class="string">'xiaoming'</span>,           <span class="comment">// 键值</span></div><div class="line">  age: <span class="number">18</span>,                      <span class="comment">// 属性</span></div><div class="line">  isStudent: <span class="literal">true</span>               <span class="comment">// 属性</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>正常访问属性<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 通过键访问name</span></div><div class="line"><span class="built_in">console</span>.log(obj[<span class="string">'name'</span>])        <span class="comment">// ==&gt; xiaoming</span></div><div class="line"></div><div class="line"><span class="comment">// 通过属性访问age</span></div><div class="line"><span class="built_in">console</span>.log(obj.age)            <span class="comment">// ==&gt; 18</span></div></pre></td></tr></table></figure></p>
+<p>也可以反过来<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 通过属性访问name</span></div><div class="line"><span class="built_in">console</span>.log(obj.name)          <span class="comment">// ==&gt; xiaoming</span></div><div class="line"></div><div class="line"><span class="comment">// 通过键值访问age  </span></div><div class="line"><span class="built_in">console</span>.log(obj[<span class="string">'age'</span>])        <span class="comment">// ==&gt; 18</span></div></pre></td></tr></table></figure></p>
+<p>通过以上事例，可以认为不管是属性还是键值，都可以随意用属性访问方式或键值访问方式来访问内容。但真的是这样吗？</p>
+<p>下面的定义做点变化：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">  <span class="string">'my name'</span>: <span class="string">'xiaoming'</span>,      <span class="comment">// 键是‘my name’，有一个空格</span></div><div class="line">  age: <span class="number">18</span>,                    <span class="comment">// 属性</span></div><div class="line">  isStudent: <span class="literal">true</span>             <span class="comment">// 属性</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(obj[<span class="string">'my name'</span>]);    <span class="comment">// ==&gt; xiaoming</span></div><div class="line"><span class="built_in">console</span>.log(obj.my name);       <span class="comment">// ==&gt; error!!!!</span></div></pre></td></tr></table></figure></p>
+<p>此时，<code>&#39;my name&#39;</code>只能通过键值访问方式来访问内容，而不能用属性方式</p>
+<p>键值方式可以采用任意字符，哪怕是中文也可以。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">  <span class="string">'姓名'</span>: <span class="string">'xiaoming'</span>,             <span class="comment">// 键是‘my name’，有一个空格</span></div><div class="line">  age: <span class="number">18</span>,                        <span class="comment">// 属性</span></div><div class="line">  isStudent: <span class="literal">true</span>                 <span class="comment">// 属性</span></div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(obj[<span class="string">'姓名'</span>]);         <span class="comment">// ==&gt; xiaoming</span></div></pre></td></tr></table></figure></p>
+<p><strong>总结</strong><br><strong>1. 键可以用任意字符，不满足js的变量命名方式也可以。</strong><br><strong>2. 属性必须满足js的变量命名方式才可以。</strong></p>
+<h3 id="键是可以是一个表达式的值"><a href="#键是可以是一个表达式的值" class="headerlink" title="键是可以是一个表达式的值"></a>键是可以是一个表达式的值</h3><p>当键是一个表达式值时，设置和访问时都是可以动态计算的。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> list = [<span class="string">'xiaoming'</span>, <span class="string">'xiaohua'</span>];</div><div class="line"><span class="keyword">var</span> obj = &#123;&#125;;</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; list.length; i++) &#123;</div><div class="line">  obj[<span class="string">'name='</span> + list[i]] = list[i];</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(obj);  <span class="comment">// ==&gt; &#123; 'name=xiaoming': 'xiaoming', 'name=xiaohua': 'xiaohua' &#125;</span></div></pre></td></tr></table></figure>
+<p><strong>总结</strong></p>
+<ol>
+<li>键可以是表达式，动态构建，访问时也可以动态构建键。</li>
+<li>属性不具备这个特性。</li>
+</ol>
+<h3 id="不管是键值还是属性，都适用于值为函数时"><a href="#不管是键值还是属性，都适用于值为函数时" class="headerlink" title="不管是键值还是属性，都适用于值为函数时"></a>不管是键值还是属性，都适用于值为函数时</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">  <span class="string">'姓名'</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'xiaoming'</span>);</div><div class="line">  &#125;,</div><div class="line">  age: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="number">18</span>)</div><div class="line">  &#125;,</div><div class="line">&#125;</div><div class="line"></div><div class="line">obj[<span class="string">'姓名'</span>]();</div><div class="line">obj.age();</div></pre></td></tr></table></figure>
+<p><strong>总结: 用键值还是属性，主要考虑键和属性的命名差异点，至于后面的值是什么类型无所谓。</strong></p>
+<h3 id="构建动态的键，有什么应用场景"><a href="#构建动态的键，有什么应用场景" class="headerlink" title="构建动态的键，有什么应用场景"></a>构建动态的键，有什么应用场景</h3><p>比如前端会按照分页的方式从服务端获取数据，那么每一页的数据都可以通过动态构建键的方式存储在obj对象中。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;&#125;;</div><div class="line"></div><div class="line">getData(page) &#123;</div><div class="line">  axios.get(<span class="string">'url'</span>, <span class="attr">params</span>: &#123;page&#125;).then(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</div><div class="line">    obj[<span class="string">'page='</span> + page] = response.data;</div><div class="line">  &#125;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">getData(<span class="number">1</span>);</div><div class="line">getData(<span class="number">2</span>);</div><div class="line">getData(<span class="number">3</span>);</div><div class="line"></div><div class="line">以上obj感觉像是一个键值对的数据库对象，再使用内容时操作起来很方便。</div></pre></td></tr></table></figure>
+<p><strong>参考：</strong><br><a href="https://github.com/xugy0926/getting-started-with-javascript/blob/master/topics/%E7%AC%AC%E4%B8%80%E6%AC%A1%E4%BD%BF%E7%94%A8JSON.md" target="_blank" rel="external">第一次使用JSON</a></p>
+<hr>
+<h2 id="对象的浅拷贝"><a href="#对象的浅拷贝" class="headerlink" title="对象的浅拷贝"></a><a href="https://github.com/xugy0926/getting-started-with-javascript/issues/643" target="_blank" rel="external">对象的浅拷贝</a></h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">  count: <span class="number">1</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">output</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">  obj.count = obj.count + <span class="number">1</span>;</div><div class="line">  <span class="built_in">console</span>.log(obj.count);</div><div class="line">&#125;</div><div class="line"></div><div class="line">output(obj);</div><div class="line"><span class="built_in">console</span>.log(obj.count);</div></pre></td></tr></table></figure>
+<p>在上面代码之后，执行下面代码分别输出什么？</p>
+<ol>
+<li>假如两个值不一样，为什么？</li>
+<li>假如两个值一样，为什么？有没有办法保证output函数内的obj.cout的改变不影响外面的obj.count？</li>
+</ol>
+<p><strong>解答：</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">  count: <span class="number">1</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> anotherObj = &#123;</div><div class="line">  count: <span class="number">1</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(anotherObj == obj);       <span class="comment">// ==&gt; false</span></div></pre></td></tr></table></figure></p>
+<p>分别定义了<code>obj</code>和<code>anotherOjb</code>，他们的对象实体内容虽然都一样，但还是不同的对象。<br>对象赋值并不是等于复制对象，而是引用。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">  count: <span class="number">1</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> anotherObj = obj;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(anotherObj === obj);        <span class="comment">// ==&gt; true</span></div></pre></td></tr></table></figure>
+<p>此时<code>anotherObj</code>和<code>obj</code>是指向同一个对象实体。anotherObj此时是obj的引用，引用就像别名一样。<br>通过以上判断，可以认为两者是同一个对象。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">output</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">  obj.count = obj.count + <span class="number">1</span>;</div><div class="line">  <span class="built_in">console</span>.log(obj.count);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>基于以上分析，<code>output</code>函数的形参对象变量其实就是实参变量的引用，所有他们是同一个。<br>在output函数内为了不影响真正的obj实体，有两种方式。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">output</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">  obj = <span class="built_in">Object</span>.assign(&#123;&#125;, obj);</div><div class="line">  obj.count = obj.count + <span class="number">1</span>;</div><div class="line">  <span class="built_in">console</span>.log(obj.count);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">output</span>(<span class="params">obj</span>) </span>&#123;</div><div class="line">  obj = <span class="built_in">JSON</span>.parse(<span class="built_in">JSON</span>.stringify(obj));</div><div class="line">  obj.count = obj.count + <span class="number">1</span>;</div><div class="line">  <span class="built_in">console</span>.log(obj.count);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>以上两种方式都是对形参obj对象重新“复制”一份新的对象。</p>
+<h2 id="数组元素和数组对象属性"><a href="#数组元素和数组对象属性" class="headerlink" title="数组元素和数组对象属性"></a>数组元素和数组对象属性</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">  count: <span class="number">1</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> myArray = [<span class="string">'red'</span>, <span class="string">'white'</span>, <span class="string">'black'</span>];</div><div class="line"><span class="built_in">console</span>.log(myArray.length);        <span class="comment">// ==&gt; 3</span></div><div class="line"></div><div class="line">myArray.obj = obj;</div><div class="line"><span class="built_in">console</span>.log(myArray.length);        <span class="comment">// ==&gt; 3</span></div></pre></td></tr></table></figure>
+<p>两次打印myArray的length是多少？为什么？</p>
+<p><strong>解答：</strong></p>
+<ol>
+<li>js中一切都是对象。包括函数也是对象。对象可以动态添加属性值。</li>
+<li>数组也是对象，只不过这个对象恰好有一个别的数据类型不具备的特点，可以通过索引来访问。</li>
+</ol>
+<p>因为数组是对象的特殊形式，它同样有着属性名的概念，但和对象不同的是它使用0~2^32-2之间的整数属性名作为数组的索引，当不指定属性名时默认使用索引作为属性名。而length属性值，即数组的方法.length的值始终等于当前最大索引+1。</p>
+<p>本例里初始赋值自动为三个元素建立了索引，最大索引为2。第一次myArray.length = 2 + 1，所以是3。而后加入的obj由于属性名obj不是索引，自然不影响索引号和length的值，所以第二次输出myArray.length还是3。</p>
+<p>如果把obj在myArray中属性名改成符合索引格式的值，那么myArray.length的值就会改变了，而且不一定要接着索引2。代码如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;</div><div class="line">  count: <span class="number">1</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> myArray = [<span class="string">'red'</span>, <span class="string">'white'</span>, <span class="string">'black'</span>];</div><div class="line"><span class="built_in">console</span>.log(myArray.length);</div><div class="line"></div><div class="line">myArray[<span class="string">"5"</span>] = obj;</div><div class="line"><span class="built_in">console</span>.log(myArray.length);</div></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="闭包函数认知"><a href="#闭包函数认知" class="headerlink" title="闭包函数认知"></a>闭包函数认知</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">main</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> name = <span class="string">'xiaoming'</span>;</div><div class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(name);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> output = main();</div><div class="line">output();</div></pre></td></tr></table></figure>
+<p><code>main()</code>函数执行会返回一个函数，并赋值给了<code>output</code>。这说明output的定义时再<code>main()</code>外部，但为啥我在<code>main()</code>外部执行<code>output()</code>却可以使用name并正常输出<code>name</code>的值呢？</p>
+<p><strong>解答：</strong></p>
+<p>在js中函数的变量作用域是通过作用域链定义的，它在函数定义的时候就已经创建了，而不是在调用函数时决定的。由于闭包的特性，当函数定义了嵌套的函数，并将它作为返回值返回或者存储在某处的属性里时，就会有一个外部引用指向这个嵌套的函数，同时将它的作用域链保存下来，而这条作用域链就包含了嵌套函数的局部变量以及定义他们的外部函数的局部变量。</p>
+<p>本例中，执行main()并将嵌套函数返回给output时，output()生成的变量作用域链里，就包含了main()里的name及值。所以，可以正常输出name的值。</p>
+<p>闭包的特点就是能把原始作用域的内容带出去（事实上是同作用于下的变量可以访问），这里要重点记住一个特点：如果在某个作用域下但凡还有一个变量（包括函数变量）还在使用，那么这个作用域下的所有其他变量都不会销毁。<br><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fka3vr2tv1j31kw12fjw1.jpg" alt=""></p>
+<hr>
+<h2 id="解释setTimeout的回调执行的原理"><a href="#解释setTimeout的回调执行的原理" class="headerlink" title="解释setTimeout的回调执行的原理"></a>解释setTimeout的回调执行的原理</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">output</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> name = <span class="string">'xiaoming'</span>;</div><div class="line">  setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(name);</div><div class="line">  &#125;, <span class="number">1000</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">output();</div></pre></td></tr></table></figure>
+<p>能解释一下为啥setTimeout中的回到函数为啥能访问output的变量name吗？</p>
+<hr>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://code.7xinsheng.com/" target="_blank" rel="external">新生大学小社群</a><br><a href="https://github.com/xugy0926/getting-started-with-javascript/" target="_blank" rel="external">老师的github</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JS/" rel="tag"># JS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/05/knowledge/" rel="next" title="Javascript 知识点">
+                <i class="fa fa-chevron-left"></i> Javascript 知识点
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/08/types/" rel="prev" title="JavaScript’s Data Types（数据类型）">
+                JavaScript’s Data Types（数据类型） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="https://ws2.sinaimg.cn/large/006tKfTcly1fj5edaynjzj30hs0hsglv.jpg"
+              alt="Katherine Chen" />
+          
+            <p class="site-author-name" itemprop="name">Katherine Chen</p>
+            <p class="site-description motion-element" itemprop="description">尽量只写对别人有用的文章……</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/about/index.html">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/you7588" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:you7588@gmail.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                    
+                      E-Mail
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#判断对象"><span class="nav-number">1.</span> <span class="nav-text">判断对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象的属性差异"><span class="nav-number">2.</span> <span class="nav-text">对象的属性差异</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用时的差异点"><span class="nav-number">2.1.</span> <span class="nav-text">使用时的差异点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#键是可以是一个表达式的值"><span class="nav-number">2.2.</span> <span class="nav-text">键是可以是一个表达式的值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不管是键值还是属性，都适用于值为函数时"><span class="nav-number">2.3.</span> <span class="nav-text">不管是键值还是属性，都适用于值为函数时</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构建动态的键，有什么应用场景"><span class="nav-number">2.4.</span> <span class="nav-text">构建动态的键，有什么应用场景</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象的浅拷贝"><span class="nav-number">3.</span> <span class="nav-text">对象的浅拷贝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组元素和数组对象属性"><span class="nav-number">4.</span> <span class="nav-text">数组元素和数组对象属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#闭包函数认知"><span class="nav-number">5.</span> <span class="nav-text">闭包函数认知</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解释setTimeout的回调执行的原理"><span class="nav-number">6.</span> <span class="nav-text">解释setTimeout的回调执行的原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">7.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Katherine Chen</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://chen-lingmin.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2017/10/07/exercise/';
+          this.page.identifier = '2017/10/07/exercise/';
+          this.page.title = 'javscript-exercise';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://chen-lingmin.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

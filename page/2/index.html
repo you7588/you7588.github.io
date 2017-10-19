@@ -317,6 +317,1624 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/29/Responsive-Design/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Katherine Chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tKfTcly1fj5edaynjzj30hs0hsglv.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="时间的朋友">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/29/Responsive-Design/" itemprop="url">响应设计（Responsive Design）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-29T11:32:45+08:00">
+                2017-09-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/09/29/Responsive-Design/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/09/29/Responsive-Design/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Sizing-Elements"><a href="#Sizing-Elements" class="headerlink" title="Sizing Elements"></a>Sizing Elements</h1><h2 id="Relative-Measurements"><a href="#Relative-Measurements" class="headerlink" title="Relative Measurements"></a>Relative Measurements</h2><p>Responsive design refers to the ability of a website to resize and reorganize its content based on:</p>
+<ol>
+<li>The size of other content on the website.</li>
+<li>The size of the screen the website is being viewed on.</li>
+</ol>
+<h2 id="Em"><a href="#Em" class="headerlink" title="Em"></a>Em</h2><blockquote>
+<p>Historically, the em represented the width of a capital letter M in the typeface and size being used.<br>Today, the em represents the size of the base font being used.</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.heading</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">2em</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>if the base font of a browser is 16 pixels (which is normally the default size of text in a browser), then 1 em is equal to 16 pixels. 2 ems would equal 32 pixels, and so on.<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.splash-section</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">18px</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.splash-section</span> <span class="selector-tag">h1</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">1.5em</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>If you’re interested in sizing elements in comparison to other elements nearby, then the em unit would be better suited for the job.</p>
+<h2 id="Rem"><a href="#Rem" class="headerlink" title="Rem"></a>Rem</h2><blockquote>
+<p><strong>root em</strong>. it checks the <em>root element</em>. The root element is the <code>&lt;html&gt;</code> tag.</p>
+</blockquote>
+<p>Most browsers set the font size of <code>&lt;html&gt;</code> to 16 pixels, so by default rem measurements will be compared to that value. To set a different font size for the root element, you can add a CSS rule.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">html</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">20px</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">h1</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">2rem</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>the font size of the root element, <code>&lt;html&gt;</code>, is set to 20 pixels. All subsequent rem measurements will now be compared to that value and the size of <code>h1</code> elements in the example will be 40 pixels.<br>If you are interested in sizing elements consistently across an entire website, the rem measurement is the best unit for the job.</p>
+<h2 id="Percentages-Height-amp-Width"><a href="#Percentages-Height-amp-Width" class="headerlink" title="Percentages: Height &amp; Width"></a>Percentages: Height &amp; Width</h2><blockquote>
+<p>Percentages are often used to size box-model values, like width and height, padding, border, and margins. They can also be used to set positioning properties (top, bottom, left, right).</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.main</span> &#123;</div><div class="line">  <span class="attribute">height</span>: <span class="number">300px</span>;</div><div class="line">  <span class="attribute">width</span>: <span class="number">500px</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.main</span> <span class="selector-class">.subsection</span> &#123;</div><div class="line">  <span class="attribute">height</span>: <span class="number">50%</span>;</div><div class="line">  <span class="attribute">width</span>: <span class="number">50%</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Be careful, a child element’s dimensions may be set erroneously if the dimensions of its parent element aren’t set first.<br><strong>Note:</strong> Because the box model includes padding, borders, and margins, setting an element’s <code>width</code> to <code>100%</code> may cause content to overflow its parent container. While tempting, <code>100%</code> should only be used when content will not have padding, border, or margin.</p>
+<h2 id="Percentages-Padding-amp-Margin"><a href="#Percentages-Padding-amp-Margin" class="headerlink" title="Percentages: Padding &amp; Margin"></a>Percentages: Padding &amp; Margin</h2><blockquote>
+<p>Vertical padding and margin are also calculated based on the width of the parent:</p>
+</blockquote>
+<ol>
+<li>A container div is defined, but its height is not set (meaning it’s flat).</li>
+<li>The container then has a child element added within. The child element <em>does</em> have a set height. This causes the height of its parent container to stretch to that height.</li>
+<li>The child element requires a change, and its height is modified. This causes the parent container’s height to also stretch to the new height. This cycle occurs endlessly whenever the child element’s height is changed!</li>
+</ol>
+<p>For example, when a property like <code>margin-left</code> is set using a percentage (say <code>50%</code>), the element will be moved halfway to the right in the parent container (as opposed to the child element receiving a margin half of its parent’s margin).<br><strong>Note:</strong> When using relative sizing, ems and rems should be used to size text and dimensions on the page related to text size (i.e. padding around text). This creates a consistent layout based on text size. Otherwise, percentages should be used.</p>
+<h2 id="Width-amp-Height-Minimum-amp-Maximum"><a href="#Width-amp-Height-Minimum-amp-Maximum" class="headerlink" title="Width&amp;Height: Minimum &amp; Maximum"></a>Width&amp;Height: Minimum &amp; Maximum</h2><ol>
+<li><code>min-width</code> — ensures a minimum width for an element.</li>
+<li><code>max-width</code> — ensures a maximum width for an element.</li>
+<li><code>min-height</code> — ensures a minimum height for an element’s box.</li>
+<li><code>max-height</code> — ensures a maximum height for an element’s box.</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">p</span> &#123;</div><div class="line">  <span class="attribute">min-width</span>: <span class="number">300px</span>;</div><div class="line">  <span class="attribute">max-width</span>: <span class="number">600px</span>;</div><div class="line">  <span class="attribute">min-height</span>: <span class="number">150px</span>;</div><div class="line">  <span class="attribute">max-height</span>: <span class="number">300px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>Note</strong>: The unit of pixels is used to ensure hard limits on the dimensions of the element(s).</p>
+<h2 id="Scaling-Images-and-Videos"><a href="#Scaling-Images-and-Videos" class="headerlink" title="Scaling Images and Videos"></a>Scaling Images and Videos</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.container</span> &#123;</div><div class="line">  <span class="attribute">width</span>: <span class="number">50%</span>;</div><div class="line">  <span class="attribute">height</span>: <span class="number">200px</span>;</div><div class="line">  <span class="attribute">overflow</span>: hidden;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.container</span> <span class="selector-tag">img</span> &#123;</div><div class="line">  <span class="attribute">max-width</span>: <span class="number">100%</span>;</div><div class="line">  <span class="attribute">height</span>: auto;</div><div class="line">  <span class="attribute">display</span>: block;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Scaling-Background-Images"><a href="#Scaling-Background-Images" class="headerlink" title="Scaling Background Images"></a>Scaling Background Images</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">'#'</span>);</div><div class="line">  <span class="attribute">background-repeat</span>: no-repeat;</div><div class="line">  <span class="attribute">background-position</span>: center;</div><div class="line">  <span class="attribute">background-size</span>: cover;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>by default, images will repeat</p>
+<h2 id="Review-Relative-Measurements"><a href="#Review-Relative-Measurements" class="headerlink" title="Review: Relative Measurements"></a>Review: Relative Measurements</h2><ul>
+<li>Content on a website can be sized relative to other elements on the page using <em>relative measurements</em>.</li>
+<li>The unit of <code>em</code> sizes font relative to the font size of a parent element.</li>
+<li>The unit of <code>rem</code> sizes font relative to the font size of a root element. That root element is the <code>&lt;html&gt;</code> element.</li>
+<li>Percentages are commonly used to size box-model features, like the width, height, borders, padding, or margin of an element.</li>
+<li>When percentages are used to size width and height, child elements will be sized relative to the dimensions of their parent (remember that parent dimensions must first be set).</li>
+<li>Percentages can be used to set padding and margin. Horizontal and vertical padding and margin are set relative to the width of a parent element.</li>
+<li>The minimum and maximum width of elements can be set using <code>min-width</code> and <code>max-width</code>.</li>
+<li>The minimum and maximum height of elements can be set using <code>min-height</code> and <code>max-height</code>.</li>
+<li>When the height of an image or video is set, then its width can be set to <code>auto</code> so that the media scales proportionally. Reversing these two properties and values will also achieve the same result.</li>
+<li>A background image of an HTML element will scale proportionally when its <code>background-size</code> property is set to <code>cover</code>.</li>
+</ul>
+<h1 id="Media-Queries"><a href="#Media-Queries" class="headerlink" title="Media Queries"></a>Media Queries</h1><h2 id="Media-Queries-1"><a href="#Media-Queries-1" class="headerlink" title="Media Queries"></a>Media Queries</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">media</span> only screen and (max-width: <span class="number">480px</span>) &#123;</div><div class="line">  <span class="selector-tag">body</span> &#123;</div><div class="line">    <span class="attribute">font-size</span>: <span class="number">12px</span>;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ol>
+<li><code>@media</code> — This keyword begins a media query rule and instructs the CSS compiler on how to parse the rest of the rule.</li>
+<li><code>only screen</code> — Indicates what types of devices should use this rule. In early attempts to target different devices, CSS incorporated different media types (screen, print, handheld). The rationale was that by knowing the media type, the proper CSS rules could be applied. However, “handheld” and “screen” devices began to occupy a much wider range of sizes and having only one CSS rule per media device was not sufficient. <code>screen</code> is the media type always used for displaying content, no matter the type of device. The <code>only</code> keyword is added to indicate that this rule only applies to one media type (<code>screen</code>).</li>
+<li><code>and (max-width : 480px)</code> — This part of the rule is called a <em>media feature</em>, and instructs the CSS compiler to apply the CSS styles to devices with a width of 480 pixels or smaller. Media features are the conditions that must be met in order to render the CSS within a media query.</li>
+<li>CSS rules are nested inside of the media query’s curly braces. The rules will be applied when the media query is met. In the example above, the text in the <code>body</code> element is set to a <code>font-size</code> of <code>12px</code> when the user’s screen is less than 480px.</li>
+</ol>
+<h2 id="Range"><a href="#Range" class="headerlink" title="Range"></a>Range</h2><p>By using multiple widths and heights, a range can be set for a media query.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@media only screen and (min-width: 320px) and (max-width: 480px) &#123;</div><div class="line">    /* ruleset for 320px - 480px */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">@media only screen and (min-width: 320px) &#123;</div><div class="line">    /* ruleset for 320px - 479px */</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">@media only screen and (min-width: 480px) &#123;</div><div class="line">    /* ruleset for &gt; 480px */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Dots-Per-Inch-DPI"><a href="#Dots-Per-Inch-DPI" class="headerlink" title="Dots Per Inch (DPI)"></a>Dots Per Inch (DPI)</h2><p>Another media feature we can target is screen resolution.</p>
+<p>To target by resolution, we can use the <code>min-resolution</code> and <code>max-resolution</code> media features. These media features accept a resolution value in either <a href="https://en.wikipedia.org/wiki/Dots_per_inch" target="_blank" rel="external">dots per inch (dpi)</a> or dots per centimeter (dpc).</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@media only screen and (min-resolution: 300dpi) &#123;</div><div class="line">    /* CSS for high resolution screens */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>The media query in the example above targets high resolution screens by making sure the screen resolution is at least 300 dots per inch. If the screen resolution query is met, then we can use CSS to display high resolution images and other media.</p>
+<h2 id="And-Operator"><a href="#And-Operator" class="headerlink" title="And Operator"></a>And Operator</h2><p>The <code>and</code> operator can be used to require multiple media features.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@media only screen and (max-width: 480px) and (min-resolution: 300dpi) &#123;</div><div class="line">    /* CSS ruleset */</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>By placing the <code>and</code> operator between the two media features, the browser will require both media features to be true before it renders the CSS within the media query. The <code>and</code> operator can be used to chain as many media features as necessary.</p>
+<h2 id="Comma-Separated-List"><a href="#Comma-Separated-List" class="headerlink" title="Comma Separated List"></a>Comma Separated List</h2><p>If only one of multiple media features in a media query must be met, media features can be separated in a comma separated list.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">media</span> only screen and (min-width: <span class="number">480px</span>), (orientation: landscape) &#123;</div><div class="line">    <span class="comment">/* CSS ruleset */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>we used a comma (<code>,</code>) to separate multiple rules. The example above requires only one of the media features to be true for its CSS to apply.</p>
+<p>The <code>orientation</code> media feature detects if the page has more width than height. If a page is wider, it’s considered <code>landscape</code>, and if a page is taller, it’s considered <code>portrait</code>.</p>
+<h2 id="Breakpoints"><a href="#Breakpoints" class="headerlink" title="Breakpoints"></a>Breakpoints</h2><p>We know how to use media queries to apply CSS rules based on screen size and resolution, but how do we determine what queries to set?</p>
+<p>The points at which media queries are set are called <em>breakpoints</em>. Breakpoints are the screen sizes at which your web page does not appear properly. For example, if we want to target tablets that are in landscape orientation, we can create the following breakpoint:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">media</span> only screen and (min-width: <span class="number">768px</span>) and (max-width: <span class="number">1024px</span>) and (orientation: landscape) &#123;</div><div class="line">    <span class="comment">/* CSS ruleset */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>The example above creates a screen size range the size of a tablet in landscape mode and also identifies the orientation.</p>
+<p>Rather than set breakpoints based on specific devices, the best practice is to resize your browser to view where the website naturally breaks based on its content. The dimensions at which the layout breaks or looks odd become your media query breakpoints. Within those breakpoints, we can adjust the CSS to make the page resize and reorganize.</p>
+<p>By observing the dimensions at which a website naturally breaks, you can set media query breakpoints that create the best possible user experience on a project by project basis, rather than forcing every project to fit a certain screen size. Different projects have different needs, and creating a responsive design should be no different.</p>
+<p>Check out <a href="https://s3.amazonaws.com/codecademy-content/courses/freelance-1/unit-5/screen-sizes.png" target="_blank" rel="external">this</a> list of breakpoints by device widths. Use it as a reference of screen widths to test your website to make certain it looks great across a variety of devices.</p>
+<h2 id="Review-Media-Queries"><a href="#Review-Media-Queries" class="headerlink" title="Review: Media Queries"></a>Review: Media Queries</h2><ul>
+<li>When a website responds to the size of the screen it’s viewed on, it’s called a <em>responsive</em> website.</li>
+<li>You can write <em>media queries</em> to help with different screen sizes.</li>
+<li>Media queries require <em>media features</em>. Media features are the conditions that must be met to render the CSS within a media query.</li>
+<li>Media features can detect many aspects of a user’s browser, including the screen’s width, height, resolution, orientation, and more.</li>
+<li>The <code>and</code> operator requires multiple media features to be true at once.</li>
+<li>A comma separated list of media features only requires one media feature to be true for the code within to be applied.</li>
+<li>The best practice for identifying where media queries should be set is by resizing the browser to determine where the content naturally breaks. Natural breakpoints are found by resizing the browser.</li>
+</ul>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p><a href="https://www.codecademy.com" target="_blank" rel="external">codecademy</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/23/CSS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Katherine Chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tKfTcly1fj5edaynjzj30hs0hsglv.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="时间的朋友">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/23/CSS/" itemprop="url">CSS</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-23T22:49:52+08:00">
+                2017-09-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/09/23/CSS/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/09/23/CSS/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="CSS-Setup-and-Selectors"><a href="#CSS-Setup-and-Selectors" class="headerlink" title="CSS Setup and Selectors"></a>CSS Setup and Selectors</h1><h2 id="CSS-（层叠样式表）"><a href="#CSS-（层叠样式表）" class="headerlink" title="CSS （层叠样式表）"></a>CSS （层叠样式表）</h2><blockquote>
+<p>Cascading Style Sheets</p>
+</blockquote>
+<ul>
+<li>和HTML一样都是标记语言，可以直接由浏览器执行，属于浏览器解释型语言。</li>
+<li>能够对网页中的元素进行精确的控制</li>
+<li>能够真正做到网页表现与内容分离的一种样式设计语言</li>
+<li>最新版本为CSS3</li>
+</ul>
+<h2 id="CSS和HTML的关系"><a href="#CSS和HTML的关系" class="headerlink" title="CSS和HTML的关系"></a>CSS和HTML的关系</h2><ul>
+<li>HTML是标记，是把文字、图片等内容放在HTML标签中让浏览器去解释，并把内容显示在浏览器中，供用户阅读</li>
+<li>CSS是为HTML标签添加各种样式，用来告诉浏览器，应该如何显示这些标签里面的内容，起到局部与美化页面的作用<br>a language that web developers use to <strong>style</strong> the HTML content on a web page.</li>
+</ul>
+<h2 id="CSS样式的写法格式"><a href="#CSS样式的写法格式" class="headerlink" title="CSS样式的写法格式"></a>CSS样式的写法格式</h2><h3 id="Inline-Styles（行内样式）"><a href="#Inline-Styles（行内样式）" class="headerlink" title="Inline Styles（行内样式）"></a>Inline Styles（行内样式）</h3><blockquote>
+<p>a quick way of directly styling an HTML element.<br>在HTML标签内部，以属性的方式写CSS样式，该CSS样式只会对本标签起到作用。</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">"color: red;"</span>&gt;</span>I'm learning to code!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">"color: red; font-size: 20px;"</span>&gt;</span>I'm learning to code!<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">"font-family: Arial;"</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="The-style-Tag（页内样式）"><a href="#The-style-Tag（页内样式）" class="headerlink" title="The style Tag（页内样式）"></a>The style Tag（页内样式）</h3><blockquote>
+<p>To use the <code>&lt;style&gt;</code> element, it must be placed inside of the <code>&lt;head&gt;</code> element.<br>直接在本页面写CSS样式，所写的样式只会影响本页面，其他页面不会受到影响。</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="undefined">    p &#123;</span></div><div class="line"><span class="undefined">      color: red;</span></div><div class="line"><span class="undefined">      font-size: 20px;</span></div><div class="line"><span class="undefined">    &#125;</span></div><div class="line"><span class="undefined">  </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="The-css-file（外链样式）"><a href="#The-css-file（外链样式）" class="headerlink" title="The .css file（外链样式）"></a>The .css file（外链样式）</h3><blockquote>
+<p>Developers avoid mixing code by storing HTML and CSS code in separate files (HTML files contain only HTML code, and CSS files contain only CSS code).</p>
+</blockquote>
+<p>You can create a CSS file by using the <code>.css</code> file name extension, like so: <code>style.css</code><br>通过载入的方式加载CSS样式，文件后缀名为<code>.css</code>，只要页面加载本CSS文件，那么这些页面都会受到影响。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>CSS样式<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"style.css"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="Linking-the-CSS-File"><a href="#Linking-the-CSS-File" class="headerlink" title="Linking the CSS File"></a>Linking the CSS File</h3><blockquote>
+<p>When HTML and CSS code are in separate files, the files must be linked.<br><code>&lt;link&gt;</code>  a self-closing tag , to link HTML and CSS files together.placed within the head of the HTML file.  </p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"https://www.codecademy.com/stylesheets/style.css"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"./style.css"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"style.css"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span>&gt;</span></div></pre></td></tr></table></figure>
+<ul>
+<li><code>href</code> — like the anchor element, the value of this attribute must be the address, or path, to the CSS file.</li>
+<li><code>type</code> — describes the type of document that you are linking to (in this case, a CSS file). The value of this attribute should be set to <code>text/css</code>.</li>
+<li><code>rel</code> — describes the relationship between the HTML file and the CSS file. Because you are linking to a stylesheet, the value should be set to <code>stylesheet</code>.</li>
+</ul>
+<h1 id="CSS基础选择器"><a href="#CSS基础选择器" class="headerlink" title="CSS基础选择器"></a>CSS基础选择器</h1><h2 id="4种CSS基础选择器"><a href="#4种CSS基础选择器" class="headerlink" title="4种CSS基础选择器"></a>4种CSS基础选择器</h2><h3 id="Tag-Name（标签选择器）"><a href="#Tag-Name（标签选择器）" class="headerlink" title="Tag Name（标签选择器）"></a>Tag Name（标签选择器）</h3><blockquote>
+<p>CSS can select HTML elements by using an element’s tag name. A tag name is the word (or character) between HTML angle brackets.</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="undefined">  p &#123;  &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>...<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="Class-Name（class选择器）"><a href="#Class-Name（class选择器）" class="headerlink" title="Class Name（class选择器）"></a>Class Name（class选择器）</h3><blockquote>
+<p>To select an HTML element by its class using CSS, a period (.) must be prepended to the class’s name.</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="undefined">.brand &#123;</span></div><div class="line"><span class="undefined">  text-transform: capitalize;</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="undefined">.green &#123;</span></div><div class="line"><span class="undefined">  color: green;</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="undefined"></span></div><div class="line"><span class="undefined">.bold &#123;</span></div><div class="line"><span class="undefined">  font-weight: bold;</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="undefined"></span></div><div class="line"><span class="undefined">.uppercase &#123;</span></div><div class="line"><span class="undefined">  text-transform: uppercase;</span></div><div class="line"><span class="undefined">  font-family: cursive;</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"brand"</span>&gt;</span>Sole Shoe Company<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"></div><div class="line">  <span class="comment">&lt;!-- Multiple Classes --&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">"green bold uppercase"</span>&gt;</span> ... <span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="ID-Name（ID选择器）"><a href="#ID-Name（ID选择器）" class="headerlink" title="ID Name（ID选择器）"></a>ID Name（ID选择器）</h3><blockquote>
+<p>If an HTML element needs to be styled uniquely (no matter what classes are applied to the element), we can add an ID to the element.</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="undefined">  #large-title &#123; &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">h1</span> <span class="attr">id</span>=<span class="string">"large-title"</span>&gt;</span> ... <span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 错误示范 --&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"kaka text"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">div</span>&gt;</span>  </div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="通用选择器"><a href="#通用选择器" class="headerlink" title="通用选择器"></a>通用选择器</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 所有 --&gt;</span></div><div class="line">*&#123; font-size:40px; color:red; &#125;</div></pre></td></tr></table></figure>
+<h2 id="2种复合选择器"><a href="#2种复合选择器" class="headerlink" title="2种复合选择器"></a>2种复合选择器</h2><h3 id="Chaining-Selectors"><a href="#Chaining-Selectors" class="headerlink" title="Chaining Selectors"></a>Chaining Selectors</h3><blockquote>
+<p>Require an HTML element to have two or more CSS selectors at the same time.</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">"special coco"</span>&gt;</span>...<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">h1</span><span class="selector-class">.special</span> &#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="Nested-Elements"><a href="#Nested-Elements" class="headerlink" title="Nested Elements"></a>Nested Elements</h3><blockquote>
+<p> selecting elements that are nested within other HTML elements.</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">'main-list'</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span> ... <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span> ... <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span> ... <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.main-list</span> <span class="selector-tag">li</span> &#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Chaining-and-Specificity"><a href="#Chaining-and-Specificity" class="headerlink" title="Chaining and Specificity"></a>Chaining and Specificity</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">p</span> &#123;</div><div class="line">  <span class="attribute">color</span>: blue;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.main</span> <span class="selector-tag">p</span> &#123;</div><div class="line">  <span class="attribute">color</span>: red;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Both of these CSS rules define what a <code>p</code> element should look like. Since <code>.main p</code> has a class and a <code>p</code> tag as its selector, only the <code>p</code> elements inside the <code>.main</code> element will appear red.<br>This occurs despite there being another more general rule that states <code>p</code> elements should be blue.</p>
+<h2 id="Important"><a href="#Important" class="headerlink" title="Important"></a>Important</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">p</span> &#123;</div><div class="line">  <span class="attribute">color</span>: blue <span class="meta">!important</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.main</span> <span class="selector-tag">p</span> &#123;</div><div class="line">  <span class="attribute">color</span>: red;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>The <code>!important</code> flag is only useful when an element appears the same way 100% of the time.<br>Since it’s almost impossible to guarantee that this will be true throughout a project and over time,<br>it’s best to avoid <code>!important</code>altogether.</p>
+<h2 id="Specificity"><a href="#Specificity" class="headerlink" title="Specificity"></a>Specificity</h2><blockquote>
+<p>Specificity is the order by which the browser decides which CSS styles will be displayed.</p>
+</blockquote>
+<p><strong> <code>!important</code>   &gt;&gt; ID   &gt;&gt;    class   &gt;&gt;   tag</strong></p>
+<h2 id="Multiple-Selectors"><a href="#Multiple-Selectors" class="headerlink" title="Multiple Selectors"></a>Multiple Selectors</h2><blockquote>
+<p>In order to make CSS more concise, it’s possible to add CSS styles to multiple CSS selectors all at once.<br>This prevents writing repetitive code.</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">h1</span> &#123;</div><div class="line">  <span class="attribute">font-family</span>: Georgia;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.menu</span> &#123;</div><div class="line">  <span class="attribute">font-family</span>: Georgia;</div><div class="line">&#125;</div><div class="line"></div><div class="line">==&gt;</div><div class="line"></div><div class="line"><span class="selector-tag">h1</span>,</div><div class="line"><span class="selector-class">.menu</span> &#123;</div><div class="line">  <span class="attribute">font-family</span>: Georgia;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Review-CSS-Selectors"><a href="#Review-CSS-Selectors" class="headerlink" title="Review CSS Selectors"></a>Review CSS Selectors</h2><ul>
+<li>CSS can change the look of HTML elements. In order to do this, CSS must select HTML elements, then apply styles to them.</li>
+<li>CSS can select HTML elements by tag, class, or ID.</li>
+<li>Multiple CSS classes can be applied to one HTML element.</li>
+<li>Classes can be reusable, while IDs can only be used once.</li>
+<li>IDs are more specific than classes, and classes are more specific than tags. That means IDs will override any styles from a class, and classes will override any styles from a tag selector.</li>
+<li>Multiple selectors can be chained together to select an element. This raises the specificity, but can be necessary.</li>
+<li>Nested elements can be selected by separating selectors with a space.</li>
+<li>The <code>!important</code> flag will override any style, however it should almost never be used, as it is extremely difficult to override.</li>
+<li>Multiple unrelated selectors can receive the same styles by separating the selector names with commas.</li>
+</ul>
+<h1 id="CSS-VISUAL-RULES"><a href="#CSS-VISUAL-RULES" class="headerlink" title="CSS VISUAL RULES"></a>CSS VISUAL RULES</h1><h2 id="CSS-Structure"><a href="#CSS-Structure" class="headerlink" title="CSS Structure"></a>CSS Structure</h2><blockquote>
+<p>CSS declarations consist of a property and a value.</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">h1</span> &#123;</div><div class="line">  <span class="attribute">color</span>: blue;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Property — the style of that element (i.e., size, color, etc.).<br>Value — the value of the property (i.e., 18px for size, blue for color, etc.).</p>
+<h2 id="Opacity"><a href="#Opacity" class="headerlink" title="Opacity"></a>Opacity</h2><blockquote>
+<p>the measure of how transparent an element is.</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.overlay</span> &#123;</div><div class="line">  <span class="attribute">opacity</span>: <span class="number">0.5</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>1 representing 100%, or fully visible and opaque,<br>0 representing 0%, or fully invisible.</p>
+<h2 id="Background-Image"><a href="#Background-Image" class="headerlink" title="Background Image"></a>Background Image</h2><blockquote>
+<p>change the background of an element.</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.main-banner</span> &#123;</div><div class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">"https://www.example.com/image.jpg"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-class">.main-banner</span> &#123;</div><div class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(<span class="string">"images/mountains.jpg"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>The url should be a url to an image. The url can be a file within your project, or it can be a link to an external site.<br>To link to an image inside an existing project, you must provide a relative file path.</p>
+<h2 id="Review-Visual-Rules"><a href="#Review-Visual-Rules" class="headerlink" title="Review Visual Rules"></a>Review Visual Rules</h2><ul>
+<li>CSS declarations are structured into property and value pairs.</li>
+<li>CSS can make an element transparent with the <code>opacity</code> property.</li>
+<li>CSS can also set the background of an element to an image with the <code>background-image</code> property.</li>
+</ul>
+<h1 id="The-Box-Model"><a href="#The-Box-Model" class="headerlink" title="The Box Model"></a>The Box Model</h1><h2 id="the-Box-Model"><a href="#the-Box-Model" class="headerlink" title="the Box Model"></a>the Box Model</h2><p>All elements on a web page are interpreted by the browser as “living” inside of a box.</p>
+<ol>
+<li><code>height</code>and<code>width</code>——the width and height of the content area.</li>
+<li><code>padding</code>  —  the amount of space between the content area and the border.</li>
+<li><code>border</code>  —the thickness and style of the border surrounding the content area and padding.</li>
+<li><code>margin</code>  —  the amount of space between the border and the outside edge of the element.</li>
+<li><code>overflow</code></li>
+</ol>
+<p><img src="/Users/chenxiaomin/Desktop/屏幕快照 2017-09-23 15.38.20.png" alt="屏幕快照 2017-09-23 15.38.20"></p>
+<h2 id="Height-and-Width"><a href="#Height-and-Width" class="headerlink" title="Height and Width"></a>Height and Width</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">p &#123;</div><div class="line">  height: 80px;</div><div class="line">  width: 240px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p> <code>px</code> —— <em>pixels</em>,allow you to set the exact size of an element’s box (width and height).</p>
+<p>When the width and height of an element are set in pixels, it will be the same size on all devices — an element that fills a laptop screen will overflow a mobile screen.</p>
+<h2 id="Borders"><a href="#Borders" class="headerlink" title="Borders"></a>Borders</h2><p>A <em>border</em> is a line that surrounds an element, like a frame around a painting.</p>
+<ol>
+<li><code>width</code> — The thickness of the border: pixels,<code>thin</code>, <code>medium</code>,  <code>thick</code></li>
+<li><code>style</code> — The design of the border: <code>none</code>, <code>dotted</code>,  <code>solid</code>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-style##Values" target="_blank" rel="external">10 different styles</a>.</li>
+<li><code>color</code> — The color of the border.  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value" target="_blank" rel="external">140 built-in color keywords</a>.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">p &#123;</div><div class="line">  border: 3px solid coral;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">p.content-header &#123;</div><div class="line">  height: 80px;</div><div class="line">  width: 240px;</div><div class="line">  border: solid coral;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>The default border is <code>medium none color</code>, where <code>color</code> is the current color of the element.</p>
+<h2 id="Border-Radius"><a href="#Border-Radius" class="headerlink" title="Border Radius"></a>Border Radius</h2><p>shape of an element’s box: square.</p>
+<p> <code>border-radius</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">div.container &#123;</div><div class="line">  border: 3px solid rgb(22, 77, 100);</div><div class="line">  border-radius: 5px;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">div.container &#123;</div><div class="line">  height: 60px;</div><div class="line">  width: 60px;</div><div class="line">  border: 3px solid rgb(22, 77, 100);</div><div class="line">  border-radius: 100%;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Padding"><a href="#Padding" class="headerlink" title="Padding"></a>Padding</h2><p> Padding is like the space between a picture and the frame surrounding it.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">p.content-header &#123;</div><div class="line">  padding: 10px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">p.content-header &#123;</div><div class="line">  padding-bottom: 10px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">p.content-header &#123;</div><div class="line">  padding: 6px 11px 4px 9px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">p.content-header &#123;</div><div class="line">  padding: 5px 10px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ol>
+<li><code>padding-top</code></li>
+<li><code>padding-right</code></li>
+<li><code>padding-bottom</code></li>
+<li><code>padding-left</code></li>
+<li>in a clockwise rotation.  top (6 px), right (11 px), bottom (4 px), left (9 px)</li>
+<li><code>5px</code> for the top and bottom sides of the content. <code>10px</code>, for the left and right sides of the content.</li>
+</ol>
+<h2 id="Margins"><a href="#Margins" class="headerlink" title="Margins"></a>Margins</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">p &#123;</div><div class="line">  border: 1px solid aquamarine;</div><div class="line">  margin: 20px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">p &#123;</div><div class="line">  border: 3px solid DarkSlateGrey;</div><div class="line">  margin-right: 15px;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">p &#123;</div><div class="line">  margin: 6px 10px 5px 12px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">p &#123;</div><div class="line">  margin: 6px 12px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ol>
+<li><code>margin-top</code></li>
+<li><code>margin-right</code></li>
+<li><code>margin-bottom</code></li>
+<li><code>margin-left</code></li>
+<li>top (6 pixels), right (10 pixels), bottom (5 pixels), left (12 pixels) sides of the box.</li>
+<li><code>6px</code>, for the top and bottom of the box. <code>12px</code>, sfor the left and right sides of the box.</li>
+</ol>
+<h2 id="Auto"><a href="#Auto" class="headerlink" title="Auto"></a>Auto</h2><p>The <code>margin</code> property also lets you center content.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">div &#123;</div><div class="line">  margin: 0 auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p> <code>margin: 0 auto;</code> will center the <code>div</code>s in their containing elements.</p>
+<p> <code>0</code> sets the top and bottom margins to 0 pixels.</p>
+<p> <code>auto</code> value instructs the browser to adjust the left and right margins until the element is centered within its containing element.</p>
+<p> <code>div</code> elements in the example above should center within an element that fills the page, but this doesn’t occur. Why?</p>
+<p>In order to center an element, a width must be set for that element. Otherwise, the width of the div will be automatically set to the full width of its containing element, like the <code>&lt;body&gt;</code>, for example. It’s not possible to center an element that takes up the full width of the page.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">div.headline &#123;</div><div class="line">  width: 400px;</div><div class="line">  margin: 0 auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>In the example above, the width of the div is set to 400 pixels, which is less than the width of most screens. This will cause the div to center within a containing element that is greater than 400 pixels wide.</p>
+<h2 id="Margin-Collapse"><a href="#Margin-Collapse" class="headerlink" title="Margin Collapse"></a>Margin Collapse</h2><p> top and bottom margins, vertical margins, <em>collapse</em>,</p>
+<p>Horizontal margins (left and right), like padding, are always displayed and added together.</p>
+<p>For example, if two divs with ids <code>##div-one</code> and <code>##div-two</code>, are next to each other, they will be as far apart as the sum of their adjacent margins.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">##img-one &#123;</div><div class="line">  margin-right: 20px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">##img-two &#123;</div><div class="line">  margin-left: 20px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>In this example, the space between the <code>##img-one</code> and <code>##img-two</code>borders is 40 pixels. The right margin of <code>##img-one</code> (<code>20px</code>) and the left margin of <code>##img-two</code> (<code>20px</code>) add to make a total margin of 40 pixels.</p>
+<p>Vertical margins do not add. Instead, the larger of the two vertical margins sets the distance between adjacent elements.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">##img-one &#123;</div><div class="line">  margin-bottom: 30px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">##img-two &#123;</div><div class="line">  margin-top: 20px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>In this example, the vertical margin between the <code>##img-one</code> and <code>##img-two</code> elements is 30 pixels. Although the sum of the margins is 50 pixels, the margin collapses so the spacing is only dependent on the <code>##img-one</code>bottom margin.</p>
+<p>Study the graphic display to the right. Elements A and B have 20 pixels of horizontal margin, the sum of each element’s margin. Elements A and C have 30 pixels of vertical margin — the top margin of element C.</p>
+<p><img src="/Users/chenxiaomin/Desktop/屏幕快照 2017-09-23 16.29.50.png" alt="屏幕快照 2017-09-23 16.29.50"></p>
+<h2 id="Minimum-and-Maximum-Height-and-Width"><a href="#Minimum-and-Maximum-Height-and-Width" class="headerlink" title="Minimum and Maximum Height and Width"></a>Minimum and Maximum Height and Width</h2><ol>
+<li><code>min-width</code> — ensures a minimum width of an element’s box.</li>
+<li><code>max-width</code> — ensures a maximum width of an element’s box.</li>
+<li><code>min-height</code> — ensures a minimum height for an element’s box.</li>
+<li><code>max-height</code> — ensures a maximum height of an element’s box.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">p &#123;</div><div class="line">  min-width: 300px;</div><div class="line">  max-width: 600px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">p &#123;</div><div class="line">  min-height: 150px;</div><div class="line">  max-height: 300px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Overflow"><a href="#Overflow" class="headerlink" title="Overflow"></a>Overflow</h2><p>All of the components of the box model comprise an element’s size. For example, an image that has the following dimensions is 364 pixels wide and 244 pixels tall.</p>
+<ul>
+<li>300 pixels wide</li>
+<li>200 pixels tall</li>
+<li>10 pixels padding on the left and right</li>
+<li>10 pixels padding on the top and bottom</li>
+<li>2 pixels border on the left and right</li>
+<li>2 pixels border on the top and bottom</li>
+<li>20 pixels margin on the left and right</li>
+<li>10 pixels margin on the top and bottom</li>
+</ul>
+<p>The total dimensions (364px by 244px) are calculated by adding all of the vertical dimensions together and all of the horizontal dimensions together. Sometimes, these components result in an element that is larger than the parent’s containing area.</p>
+<p>How can we ensure that we can view all of an element that is larger than its parent’s containing area?</p>
+<p>The <code>overflow</code> property controls what happens to content that spills, or overflows, outside its box. It can be set to one of the following values:</p>
+<ul>
+<li><code>hidden</code> - when set to this value, any content that overflows will be hidden from view.</li>
+<li><code>scroll</code> - when set to this value, a scrollbar will be added to the element’s box so that the rest of the content can be viewed by scrolling.</li>
+<li><code>visible</code> - when set to this value, the overflow content will be displayed outside of the containing element. Note, this is the default value.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">p &#123;</div><div class="line">  overflow: scroll;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>In the example above, if any of the paragraph content overflows (perhaps a user resizes their browser window), a scrollbar will appear so that users can view the rest of the content.</p>
+<p>The overflow property is set on a parent element to instruct a web browser how to render child elements. For example, if a div’s overflow property is set to <code>scroll</code>, all children of this div will display overflowing content with a scroll bar.</p>
+<h2 id="Resetting-Defaults"><a href="#Resetting-Defaults" class="headerlink" title="Resetting Defaults"></a>Resetting Defaults</h2><p>User agent stylesheets often have default CSS rules that set default values for padding and margin.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">* &#123;</div><div class="line">  margin: 0;</div><div class="line">  padding: 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p> <code>0</code> do not require a unit of measurement.</p>
+<h2 id="Visibility"><a href="#Visibility" class="headerlink" title="Visibility"></a>Visibility</h2><p>Elements can be hidden from view with the <code>visibility</code> property.</p>
+<ol>
+<li><code>hidden</code> — hides an element.</li>
+<li><code>visible</code> — displays an element.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;ul&gt;</div><div class="line">  &lt;li&gt;Explore&lt;/li&gt;</div><div class="line">  &lt;li&gt;Connect&lt;/li&gt;</div><div class="line">  &lt;li class=&quot;future&quot;&gt;Donate&lt;/li&gt;</div><div class="line">&lt;ul&gt;</div><div class="line"></div><div class="line">.future &#123;</div><div class="line">  visibility: hidden;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>users can still view the contents of the list item (e.g., <code>Donate</code>) by viewing the source code in their browser. the web page will <em>only</em> hide the contents of the element. It will still leave an empty space where the element is intended to display.</p>
+<p><strong>Note:</strong> What’s the difference between <code>display: none</code> and <code>visibility: hidden</code>?</p>
+<p> <code>display: none</code> will be completely removed from the web page.</p>
+<p><code>visibility: hidden</code>  will not be visible on the web page, but the space reserved for it will.</p>
+<h2 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h2><ol>
+<li>The box model comprises a set of properties used to create space around and between HTML elements.</li>
+<li>The height and width of a content area can be set in pixels or percentage.</li>
+<li>Borders surround the content area and padding of an element. The color, style, and thickness of a border can be set with CSS properties.</li>
+<li>Padding is the space between the content area and the border. It can be set in pixels or percent.</li>
+<li>Margin is the amount of spacing outside of an element’s border.</li>
+<li>Horizontal margins add, so the total space between the borders of adjacent elements is equal to the sum of the right margin of one element and the left margin of the adjacent element.</li>
+<li>Vertical margins collapse, so the space between vertically adjacent elements is equal to the larger margin.</li>
+<li><code>margin: 0 auto</code> horizontally centers an element inside of its parent content area, if it has a width.</li>
+<li>The <code>overflow</code> property can be set to <code>display</code>, <code>hide</code>, or <code>scroll</code>, and dictates how HTML will render content that overflows its parent’s content area.</li>
+<li>The <code>visibility</code> property can hide or show elements.</li>
+</ol>
+<h2 id="Box-Model-Content-Box"><a href="#Box-Model-Content-Box" class="headerlink" title="Box Model: Content-Box"></a>Box Model: Content-Box</h2><p>Many properties in CSS have a default value and don’t have to be explicitly set in the stylesheet.</p>
+<p> the default <code>font-weight</code> of text is <code>normal</code></p>
+<p><code>box-sizing</code> property controls the type of box model the browser should use when interpreting a web page.</p>
+<p>The default value of this property is <code>content-box</code>. This is the same box model that is affected by border thickness and padding.</p>
+<p><img src="/Users/chenxiaomin/Desktop/屏幕快照 2017-09-23 17.25.53.png" alt="屏幕快照 2017-09-23 17.25.53"></p>
+<h2 id="Box-Model-Border-Box"><a href="#Box-Model-Border-Box" class="headerlink" title="Box Model: Border-Box"></a>Box Model: Border-Box</h2><p> reset the entire box model and specify a new one: <code>border-box</code>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">* &#123;</div><div class="line">  box-sizing: border-box;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>the universal selector (<code>*</code>) targets all elements on the web page and sets their box model to the <code>border-box</code> model.</p>
+<p>avoids the dimensional issues that exist in the former box model you learned about.</p>
+<p>In this box model, the height and width of the box will remain fixed. The border thickness and padding will be included inside of the box, which means the overall dimensions of the box do not change.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;h1&gt;Hello World&lt;/h1&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"> * &#123;</div><div class="line">  box-sizing: border-box;</div><div class="line">&#125;</div><div class="line"></div><div class="line">h1 &#123;</div><div class="line">  border: 1px solid black;</div><div class="line">  height: 200px;</div><div class="line">  width: 300px;</div><div class="line">  padding: 10px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>In the example above, the height of the box would remain at 200 pixels and the width would remain at 300 pixels. The border thickness and padding would remain entirely <em>inside</em> of the box.</p>
+<p><img src="/Users/chenxiaomin/Desktop/屏幕快照 2017-09-23 17.31.45.png" alt="屏幕快照 2017-09-23 17.31.45"></p>
+<h2 id="Review-Changing-the-Box-Model"><a href="#Review-Changing-the-Box-Model" class="headerlink" title="Review: Changing the Box Model"></a>Review: Changing the Box Model</h2><ol>
+<li>In the default box model, box dimensions are affected by border thickness and padding.</li>
+<li>The <code>box-sizing</code> property controls the box model used by the browser.</li>
+<li>The default value of the <code>box-sizing</code> property is <code>content-box</code>.</li>
+<li>The value for the new box model is <code>border-box</code>.</li>
+<li>The <code>border-box</code> model is not affected by border thickness or padding.</li>
+</ol>
+<h2 id="Flow-of-HTML"><a href="#Flow-of-HTML" class="headerlink" title="Flow of HTML"></a>Flow of HTML</h2><p>A browser will render the elements of an HTML document that has no CSS from left to right, top to bottom, in the same order as they exist in the document. This is called the <em>flow</em> of elements in HTML.</p>
+<p>In addition to the properties tha t it provides to style HTML elements, CSS includes properties that change how a browser <em>positions</em> elements. These properties specify where an element is located on a page, if the element can share lines with other elements, and other related attributes.</p>
+<p>In this lesson, you will learn five properties for adjusting the position of HTML elements in the browser:</p>
+<ul>
+<li><code>position</code></li>
+<li><code>display</code></li>
+<li><code>z-index</code></li>
+<li><code>float</code></li>
+<li><code>clear</code></li>
+</ul>
+<p>Each of these properties will allow us to position and view elements on a web page. They can be used in conjunction with any other styling properties you may know.</p>
+<h2 id="Position"><a href="#Position" class="headerlink" title="Position"></a>Position</h2><p><img src="https://s3.amazonaws.com/codecademy-content/courses/web-101/unit-7/alex-clark-experiment/static.png" alt="img"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.boxes &#123;</div><div class="line">  width: 120px;</div><div class="line">  height: 70px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>block-level elements in the image above take up their own line of space and therefore don’t overlap each other.   the default <em>position</em> for block-level elements.</p>
+<ol>
+<li><code>static</code> - the default value (it does not need to be specified)</li>
+<li><code>relative</code></li>
+<li><code>absolute</code></li>
+<li><code>fixed</code></li>
+</ol>
+<h2 id="Position-Relative"><a href="#Position-Relative" class="headerlink" title="Position: Relative"></a>Position: Relative</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.box-bottom &#123;</div><div class="line">  background-color: DeepSkyBlue;</div><div class="line">  position: relative;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Note that offset properties will not work if the position of the element is not set to <code>relative</code>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.box-bottom &#123;</div><div class="line">  background-color: DeepSkyBlue;</div><div class="line">  position: relative;</div><div class="line">  top: 20px;</div><div class="line">  left: 50px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ol>
+<li><code>top</code> - moves the element down.</li>
+<li><code>bottom</code> - moves the element up.</li>
+<li><code>left</code> - moves the element right.</li>
+<li><code>right</code> - moves the element left.</li>
+</ol>
+<p>the div will be moved down 20 pixels and to the right 50 pixels from its default static position. The image below displays the new position of the box. The dotted line represents where the statically positioned (default) box was positioned.</p>
+<p><img src="https://s3.amazonaws.com/codecademy-content/courses/web-101/unit-7/alex-clark-experiment/relative.png" alt="img"></p>
+<p>pixels, ems, percentages.</p>
+<h2 id="Position-Absolute"><a href="#Position-Absolute" class="headerlink" title="Position: Absolute"></a>Position: Absolute</h2><p><code>absolute</code> all other elements on the page will <em>ignore</em> the element and act like it is not present on the page.</p>
+<p>the element will scroll out of view when a user scrolls.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.box-bottom &#123;</div><div class="line">  background-color: DeepSkyBlue;</div><div class="line">  position: absolute;</div><div class="line">  top: 20px;</div><div class="line">  left: 50px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>The bottom box in this image (colored blue) is displaced from the top left corner of its container. It is 20 pixels lower and 50 pixels to the right of the top box.</p>
+<p>If offset properties weren’t specified, the top box would be entirely covered by the bottom box.</p>
+<p><img src="https://s3.amazonaws.com/codecademy-content/courses/web-101/unit-7/alex-clark-experiment/absolute.gif" alt="img"></p>
+<h2 id="Position-Fixed"><a href="#Position-Fixed" class="headerlink" title="Position: Fixed"></a>Position: Fixed</h2><p>We can <em>fix</em> an element to a specific position on the page (regardless of user scrolling) by setting its position to <code>fixed</code>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.box-bottom &#123;</div><div class="line">  background-color: DeepSkyBlue;</div><div class="line">  position: fixed;</div><div class="line">  top: 20px;</div><div class="line">  left: 50px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="https://s3.amazonaws.com/codecademy-content/courses/web-101/unit-7/alex-clark-experiment/fixed.gif" alt="img"></p>
+<h2 id="Z-Index"><a href="#Z-Index" class="headerlink" title="Z-Index"></a>Z-Index</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">.box-top &#123;</div><div class="line">  background-color: Aquamarine;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.box-bottom &#123;</div><div class="line">  background-color: DeepSkyBlue;</div><div class="line">  position: absolute;</div><div class="line">  top: 20px;</div><div class="line">  left: 50px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>z-index</code> controls how far “back” or how far “forward” an element should appear on the web page.</p>
+<p>accepts integer values,that instruct the browser on the order in which elements should be displayed on the web page.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">.box-top &#123;</div><div class="line">  background-color: Aquamarine;</div><div class="line">  position: relative;</div><div class="line">  z-index: 2;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.box-bottom &#123;</div><div class="line">  background-color: DeepSkyBlue;</div><div class="line">  position: absolute;</div><div class="line">  top: 20px;</div><div class="line">  left: 50px;</div><div class="line">  z-index: 1;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p> <code>.box-top</code> position to relative and the z-index to 2. the z-index property does <em>not</em> work on static elements.</p>
+<p>The z-index of <code>2</code> moves the <code>.box-top</code> element forward, because it is greater than the <code>.box-bottom</code> z-index, <code>1</code></p>
+<p><img src="https://s3.amazonaws.com/codecademy-content/courses/web-101/unit-7/alex-clark-experiment/z-index.png" alt="img"></p>
+<h2 id="Inline-Display"><a href="#Inline-Display" class="headerlink" title="Inline Display"></a>Inline Display</h2><p>Every HTML element has a default <code>display</code> value that dictates if it can share horizontal space with other elements.</p>
+<p> Some elements fill the entire browser from left to right regardless of the size of their content.</p>
+<p>Other elements only take up as much horizontal space as their content requires and can be directly next to other elements.</p>
+<p> <code>display</code> property: <code>inline</code>, <code>block</code>, and <code>inline-block</code>.</p>
+<p>The default <code>display</code> for some tags, such as <code>&lt;em&gt;</code>, <code>&lt;strong&gt;</code>, and <code>&lt;a&gt;</code>, is called <em>inline</em>.</p>
+<p>Inline elements have a box that wraps tightly around their content, only taking up the amount of space necessary to display their content and not requiring a new line after each element.</p>
+<p>The height and width of these elements cannot be specified in the CSS document.</p>
+<p>For example, the text of an anchor tag will, by default, be displayed on the same line as the text inside of an emphasize element.</p>
+<p>Each of these will only be as wide as necessary to contain their content.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">To learn more about &lt;em&gt;inline&lt;/em&gt; elements, click &lt;a href=&quot;##&quot;&gt;here&lt;/a&gt;.</div></pre></td></tr></table></figure>
+<p> the <code>&lt;em&gt;</code> element is <code>inline</code>, because it displays its content on the same line as the content surrounding it, including the anchor tag.</p>
+<p> <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements" target="_blank" rel="external">inline elements</a></p>
+<p>The CSS <code>display</code> property provides the ability to make any element an inline element. This includes elements that are not inline by default such as paragraphs, divs, and headings.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">h1 &#123;</div><div class="line">  display: inline;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>change the display of all <code>&lt;h1&gt;</code> elements to <code>inline</code>. The browser will render <code>&lt;h1&gt;</code> elements on the same line as other inline elements immediately before or after them (if there are any).</p>
+<h2 id="Block-Display"><a href="#Block-Display" class="headerlink" title="Block Display"></a>Block Display</h2><p><strong>block-level elements</strong> are not displayed in the same line as the content around them.</p>
+<p>These elements fill the entire width of the page and, unless specified, are the height necessary to accommodate the content inside of them.</p>
+<p><strong>block-level elements</strong>:</p>
+<p>heading elements (<code>&lt;h1&gt;</code> ~ <code>&lt;h6&gt;</code>), <code>&lt;p&gt;</code>, <code>&lt;div&gt;</code> , <code>&lt;footer&gt;</code>,<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements" target="_blank" rel="external">the MDN documentation</a>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">strong &#123;</div><div class="line">  display: block;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>In the example above, all <code>&lt;strong&gt;</code> elements will be displayed on their own line, with no content directly on either side of them even though their contents may not fill the width of most computer screens.</p>
+<h2 id="Inline-Block-Display"><a href="#Inline-Block-Display" class="headerlink" title="Inline-Block Display"></a>Inline-Block Display</h2><p><code>inline-block</code>. Inline-block display combines features of both inline and block elements.</p>
+<p>appear next to each other and we can specify their dimensions</p>
+<p><code>width</code> , <code>height</code></p>
+<p>Images are the best example of default inline-block elements.</p>
+<p><code>div</code>s in the CSS below will be displayed on the same line and with the specified dimensions:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;rectangle&quot;&gt;</div><div class="line">  &lt;p&gt;I’m a rectangle!&lt;/p&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;div class=&quot;rectangle&quot;&gt;</div><div class="line">  &lt;p&gt;So am I!&lt;/p&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;div class=&quot;rectangle&quot;&gt;</div><div class="line">  &lt;p&gt;Me three!&lt;/p&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">.rectangle &#123;</div><div class="line">  display: inline-block;</div><div class="line">  width: 200px;</div><div class="line">  height: 300px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>.rectangle</code> <code>div</code>s will all appear inline with a width of 200 pixels and height of 300 pixels, even though the text inside of them may not require 200 pixels by 300 pixels of space.</p>
+<h2 id="Float"><a href="#Float" class="headerlink" title="Float"></a>Float</h2><ol>
+<li><code>left</code> - this value will move, or float, elements as far left as possible.</li>
+<li><code>right</code> - this value will move elements as far right as possible.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">.boxes &#123;</div><div class="line">    width: 120px;</div><div class="line">    height: 70px;</div><div class="line">&#125;</div><div class="line"></div><div class="line">.box-bottom &#123;</div><div class="line">  background-color: DeepSkyBlue;</div><div class="line">  float: right;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>This works for static and relative positioned elements.</p>
+<p><img src="https://s3.amazonaws.com/codecademy-content/courses/web-101/unit-7/alex-clark-experiment/float-right.png" alt="img"></p>
+<p>Floated elements must have a width specified, as in the example above. Otherwise, the element will assume the full width of its containing element, and changing the float value will not yield any visible results.</p>
+<h2 id="Clear"><a href="#Clear" class="headerlink" title="Clear"></a>Clear</h2><p> when multiple floated elements have different heights, it can affect their layout on the page.</p>
+<p>Specifically, elements can “bump” into each other and not allow other elements to properly move to the left or right.</p>
+<p><code>clear</code>: specifies how elements should behave when they bump into each other on the page.</p>
+<ol>
+<li><code>left</code> — the left side of the element will not touch any other element within the same containing element.</li>
+<li><code>right</code> — the right side of the element will not touch any other element within the same containing element.</li>
+<li><code>both</code> — neither side of the element will touch any other element within the same containing element.</li>
+<li><code>none</code> — the element can touch either side.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">div &#123;</div><div class="line">  width: 200px;</div><div class="line">  float: left;</div><div class="line">&#125;</div><div class="line"></div><div class="line">div.special &#123;</div><div class="line">  clear: left;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>all divs on the page are floated to the left side. The div with class <code>special</code>did not move all the way to the left because a taller div blocked its positioning. By setting its <code>clear</code> property to <code>left</code>, the <code>special</code> div will be moved all the way to the left side of the page.</p>
+<h2 id="Review-Layout"><a href="#Review-Layout" class="headerlink" title="Review: Layout"></a>Review: Layout</h2><ol>
+<li>The <code>position</code> property allows you to specify the position of an element in three different ways.</li>
+<li>When set to <code>relative</code>, an element’s position is relative to its default position on the page.</li>
+<li>When set to <code>absolute</code>, an element’s position can be pinned to any part of the web page, but the element will still move out of view when the page is scrolled.</li>
+<li>When set to <code>fixed</code>, an element’s position can be pinned to any part of the web page. The element will remain in view no matter what.</li>
+<li>The <code>z-index</code> of an element specifies how far back or how far forward an element appears on the page.</li>
+<li>The <code>float</code> property can move elements as far left or as far right as possible on a web page.</li>
+<li>You can clear an element’s left or right side (or both) using the <code>clear</code> property.</li>
+</ol>
+<h2 id="Color"><a href="#Color" class="headerlink" title="Color"></a>Color</h2><ul>
+<li><p><a href="https://msdn.microsoft.com/en-us/library/aa358802(v=vs.85" target="_blank" rel="external"><strong>Named colors</strong></a>.aspx)</p>
+<ul>
+<li>English words, <strong>keyword colors</strong>: <code>blue</code>, <code>black</code>, and <code>LimeGreen</code></li>
+<li>total 147 named colors</li>
+</ul>
+</li>
+<li><p><em>RGB</em></p>
+<ul>
+<li><code>rgb(7, 210, 50)</code>  a mix of red, green, blue</li>
+<li>have a decimal number value from 0 to 255, Each can be one of 256 values.</li>
+<li><code>256 * 256 * 256 = 16,777,216</code></li>
+</ul>
+</li>
+<li><p><a href="http://dba.med.sc.edu/price/irf/Adobe_tg/models/images/hsl_top.JPG" target="_blank" rel="external"><em>HSL</em> </a></p>
+<ul>
+<li><p><code>hsl(200, 20%, 50%)</code>   </p>
+</li>
+<li><p>hue (the color itself, ranges from 0 to 360 ),  Red: 0,360; Green:120, Blue:240</p>
+</li>
+<li><p>saturation (the intensity of the color, percentages )</p>
+</li>
+<li><p>lightness (how light or dark a color is, percentages )</p>
+<p>​</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value" target="_blank" rel="external">Hexadecimal or hex colors</a></p>
+<ul>
+<li>Hexadecimal is a number system with has sixteen digits, 0 to 9 followed by “A” to “F”.</li>
+<li>Each can be one of 256 values.<code>256 * 256 * 256 = 16,777,216</code></li>
+<li>Hex:  <code>##</code> +  three or six characters.(values for red, blue and green), using hexadecimal numbers</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">DarkSeaGreen: ##8FBC8F</div><div class="line">Sienna:       ##A0522D</div><div class="line">SaddleBrown:  ##8B4513</div><div class="line">Brown:        ##A52A2A</div><div class="line">Black:        ##000000 or ##000</div><div class="line">White:        ##FFFFFF or ##FFF</div><div class="line">Aqua:         ##00FFFF or ##0FF</div></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+<li><p>Opacity and Alpha</p>
+<ul>
+<li><code>hsla</code>   alpha, a decimal number from 0 (completely transparent) to 1 (opaque,non-transparent)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">color: hsla(34, 100%, 50%, 0.1);</div></pre></td></tr></table></figure>
+<ul>
+<li><code>rgba</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">color: rgba(234, 45, 98, 0.33);</div></pre></td></tr></table></figure>
+<ul>
+<li><code>rgba(0, 0, 0, 0)</code>    <code>transparent</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">color: transparent;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<ol>
+<li><code>color</code> - this property styles an element’s foreground color.</li>
+<li><code>background-color</code> - this property styles an element’s background color.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">h1 &#123;</div><div class="line">  color: Red;</div><div class="line">  background-color: Blue;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Typography"><a href="#Typography" class="headerlink" title="Typography"></a>Typography</h2><h2 id="Font-Family"><a href="#Font-Family" class="headerlink" title="Font Family"></a>Font Family</h2><p>The phrase “type of font” refers to the technical term <a href="https://en.wikipedia.org/wiki/Typeface" target="_blank" rel="external">typeface</a>, or <em>font family</em>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">h1 &#123;</div><div class="line">  font-family: Garamond;</div><div class="line">&#125;</div><div class="line"></div><div class="line">h1 &#123;</div><div class="line">  font-family: &quot;Courier New&quot;;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ol>
+<li>The font specified in a stylesheet must be installed on a user’s computer in order for that font to display when a user visits the web page.</li>
+<li>The default typeface for all HTML elements is <code>Times New Roman</code>.</li>
+<li>It’s a good practice to limit the number of typefaces used on a web page to 2 or 3.</li>
+<li>When the name of a typeface consists of more than one word, it’s a best practice to enclose the typeface’s name in quotes</li>
+</ol>
+<h2 id="Font-Size"><a href="#Font-Size" class="headerlink" title="Font Size"></a>Font Size</h2><p>To change the size of text on your web page</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">p &#123;</div><div class="line">  font-size: 18px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>px</code> means pixels , a way to measure font size.</p>
+<h2 id="Font-Weight"><a href="#Font-Weight" class="headerlink" title="Font Weight"></a>Font Weight</h2><p> controls how bold or thin text appears.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">p &#123;</div><div class="line">  font-weight: bold;</div><div class="line">&#125;</div><div class="line"></div><div class="line">header &#123;</div><div class="line">font-weight: 800;</div><div class="line">&#125;</div><div class="line"></div><div class="line">footer &#123;</div><div class="line">font-weight: 200;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>By default, the <code>font-weight</code> of most text elements is set to <code>normal</code>.</p>
+<p>Some elements, like headers, have built-in bold styling.</p>
+<p>a numeric scale ranging from 100 to 900.</p>
+<p>Valid values are multiples of 100 within this range such as <code>200</code> or <code>500</code>.</p>
+<ol>
+<li><code>400</code> is the default <code>font-weight</code> of most text.</li>
+<li><code>700</code> signifies a bold <code>font-weight</code>.</li>
+<li><code>300</code> signifies a light <code>font-weight</code>.</li>
+</ol>
+<p>not all fonts can be assigned a numeric <code>font-weight</code>.</p>
+<h2 id="Font-Style"><a href="#Font-Style" class="headerlink" title="Font Style"></a>Font Style</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">h3 &#123;</div><div class="line">  font-style: italic;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p> <code>italic</code></p>
+<p>the default: <code>normal</code></p>
+<h2 id="Word-Spacing"><a href="#Word-Spacing" class="headerlink" title="Word Spacing"></a>Word Spacing</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">h1 &#123;</div><div class="line">  word-spacing: 0.3em;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>The default:<code>0.25em</code></p>
+<p>the preferred unit is ems.</p>
+<h2 id="Letter-Spacing"><a href="#Letter-Spacing" class="headerlink" title="Letter Spacing"></a>Letter Spacing</h2><p>kerning: increasing the spacing between individual letters.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">h1 &#123;</div><div class="line">  letter-spacing: 0.3em;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Text-Transformation"><a href="#Text-Transformation" class="headerlink" title="Text Transformation"></a>Text Transformation</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">h1 &#123;</div><div class="line">  text-transform: uppercase;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p> <code>uppercase</code></p>
+<p> <code>lowercase</code></p>
+<h2 id="Text-Alignment"><a href="#Text-Alignment" class="headerlink" title="Text Alignment"></a>Text Alignment</h2><p>the default:  appears on the left side of the browser.</p>
+<p> <code>text-align</code> To align text</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">h1 &#123;</div><div class="line">  text-align: right;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ol>
+<li><code>left</code> — aligns text to the left hand side of its parent element</li>
+<li><code>center</code> — centers text inside of its parent element.</li>
+<li><code>right</code> — aligns text to the right hand side of its parent element.</li>
+</ol>
+<h2 id="Line-Height-Anatomy"><a href="#Line-Height-Anatomy" class="headerlink" title="Line Height Anatomy"></a>Line Height Anatomy</h2><p> <code>line-height</code>: modifies the <em>leading</em> of text.</p>
+<p><img src="/Users/chenxiaomin/Desktop/屏幕快照 2017-09-23 23.32.09.png" alt="屏幕快照 2017-09-23 23.32.09"></p>
+<ol>
+<li>A unites number, such as <code>1.2</code>. This number is an absolute value that will compute the line height as a ratio of the font size.</li>
+<li>A number specified by unit, such as <code>12px</code>. This number can be any valid CSS unit, such as pixels, percents, ems, or rems.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">p &#123;</div><div class="line">  line-height: 1.4;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Serif-and-Sans-Serif"><a href="#Serif-and-Sans-Serif" class="headerlink" title="Serif and Sans Serif"></a>Serif and Sans Serif</h2><ol>
+<li>Serif — fonts that have extra details on the ends of each letter. Examples include fonts like Times New Roman or Georgia, among others.</li>
+<li>Sans-Serif — fonts that do not have extra details on the ends of each letter. Instead, letters have straight, flat edges, like Arial or Helvetica.</li>
+</ol>
+<p><img src="/Users/chenxiaomin/Desktop/屏幕快照 2017-09-23 23.37.06.png" alt="屏幕快照 2017-09-23 23.37.06"></p>
+<h2 id="Fallback-Fonts"><a href="#Fallback-Fonts" class="headerlink" title="Fallback Fonts"></a>Fallback Fonts</h2><p>Most computers have a small set of typefaces pre-installed:</p>
+<p>serif fonts like Times New Roman</p>
+<p>sans-serif fonts like Arial.</p>
+<p>These pre-installed fonts serve as <em>fallback fonts</em> if the stylesheet specifies a font which is not installed on a user’s computer.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">h1 &#123;</div><div class="line">  font-family: &quot;Garamond&quot;, &quot;Times&quot;, serif;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ol>
+<li>Use the Garamond font for all <code>&lt;h1&gt;</code> elements on the web page.</li>
+<li>If Garamond is not available, use the Times font.</li>
+<li>If Garamond and Times are not available, use any serif font pre-installed on the user’s computer.</li>
+</ol>
+<p>The fonts specified after Garamond are the fallback fonts (<code>Times</code>, <code>serif</code>).</p>
+<p></p>
+<p><em>non-user fonts</em>:  New fonts are often centralized in directories made available for public use.  </p>
+<p><a href="https://fonts.google.com/" target="_blank" rel="external">Google Fonts</a></p>
+<p>\1. A single linked font, using <code>Droid Serif</code> as an example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">  &lt;link href=&quot;https://fonts.googleapis.com/css?family=Droid+Serif&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot;&gt;</div><div class="line">&lt;/head&gt;</div><div class="line"></div><div class="line">.space .sample .text &#123;</div><div class="line">  font-family: &quot;Space Mono&quot;, monospace;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>\2. Multiple linked fonts, using the <code>Droid Serif</code> and <code>Playfair Display</code> fonts as an example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">  &lt;link href=&quot;https://fonts.googleapis.com/css?family=Droid+Serif|Playfair+Display&quot; type=&quot;text/css&quot; rel=&quot;stylesheet&quot;&gt;</div><div class="line">&lt;/head&gt;</div></pre></td></tr></table></figure>
+<p>\3. Multiple linked fonts, along with weights and styles. Here <code>Droid Serif</code> has font weights of <code>400</code>, <code>700</code>, and <code>700i</code>, while <code>Playfair Display</code> has font weights of <code>400</code>, <code>700</code>, and <code>900i</code>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">  &lt;link href=&quot;https://fonts.googleapis.com/css?family=Droid+Serif:400,700,700i|Playfair+Display:400,700,900i&quot; rel=&quot;stylesheet&quot;&gt;</div><div class="line">&lt;/head&gt;</div></pre></td></tr></table></figure>
+<p>Once a font is linked, we can create CSS selectors to target elements, just as we do with other fonts.</p>
+<h2 id="Font-Face"><a href="#Font-Face" class="headerlink" title="Font-Face"></a>Font-Face</h2><p><code>@font-face</code></p>
+<ol>
+<li>Instead of using the font’s link in the HTML document, enter the link into the URL bar in the browser.</li>
+<li>The browser will load the CSS rules. You will need to focus on the rules that are directly labeled as <code>/* latin */</code>. Some of the latin rules are on separate lines. You will need each of these.</li>
+<li>Copy each of the CSS rules labeled latin, and paste the rules from the browser to the top of <strong>style.css</strong>.</li>
+</ol>
+<p>It important to stress the need to copy the <code>@font-face</code> rules to the top of the stylesheet for the font to load correctly in the project. <a href="https://fonts.googleapis.com/css?family=Space+Mono:400,700/" target="_blank" rel="external">here</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">/* latin */</div><div class="line">@font-face &#123;</div><div class="line">  font-family: &apos;Space Mono&apos;;</div><div class="line">  font-style: normal;</div><div class="line">  font-weight: 400;</div><div class="line">  src: local(&apos;Space Mono&apos;), local(&apos;SpaceMono-Regular&apos;), url(https://fonts.gstatic.com/s/spacemono/v1/adVweg3BJhE6r8jYmXseHQzyDMXhdD8sAj6OAJTFsBI.woff2) format(&apos;woff2&apos;);</div><div class="line">  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">@font-face &#123;</div><div class="line">  font-family: &quot;Roboto&quot;;</div><div class="line">  src: url(fonts/Roboto.woff2) format(&apos;woff2&apos;),</div><div class="line">       url(fonts/Roboto.woff) format(&apos;woff&apos;),</div><div class="line">       url(fonts/Roboto.tff) format(&apos;truetype&apos;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ol>
+<li>The main difference is the use of a relative file path instead of a web URL.</li>
+<li>We add a format for each file to specify which font to use. Different browsers support different font types, so providing multiple font file options will support more browsers.</li>
+</ol>
+<p>As of now <code>.woff2</code> appears to be the way of the future, due to greatly reduced file sizes and improved performance, but many browsers still don’t support it. There are lots of great sources to find fonts to use locally, such as <a href="https://www.fontsquirrel.com/" target="_blank" rel="external">Font Squirrel</a>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">@font-face &#123;</div><div class="line">  font-family: &quot;Glegoo&quot;;</div><div class="line">  src: url(../fonts/Glegoo-Regular.ttf) format(&apos;truetype&apos;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">.banner p &#123;</div><div class="line">  border-top: 1px solid ##fff;</div><div class="line">  border-bottom: 1px solid ##fff;</div><div class="line">  padding: 10px;</div><div class="line">  color: ##ffffff;</div><div class="line">  font-weight: bold;</div><div class="line">  line-height: 1.4;</div><div class="line">  font-family: &quot;Glegoo&quot;;</div><div class="line">  font-size: 20px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ul>
+<li>The <code>font-family</code> property defines the typeface of an element.</li>
+<li><code>font-size</code> controls the size of text displayed.</li>
+<li><code>font-weight</code> defines how thin or thick text is displayed.</li>
+<li>The <code>text-align</code> property places text in the left, right, or center of its parent container.</li>
+<li>Text can have two different color attributes: <code>color</code>and <code>background-color</code>. <code>color</code> defines the color of the text, while <code>background-color</code> defines the color behind the text.</li>
+</ul>
+<h2 id="Review-1"><a href="#Review-1" class="headerlink" title="Review"></a>Review</h2><ul>
+<li><em>Typography</em> is the art of arranging text on a page.</li>
+<li>Text can appear in any number of weights, with the <code>font-weight</code>property.</li>
+<li>Text can appear in italics with the <code>font-style</code> property.</li>
+<li>The vertical spacing between lines of text can be modified with the <code>line-height</code> property.</li>
+<li><em>Serif</em> fonts have extra details on the ends of each letter. <em>Sans-Serif</em>fonts do not.</li>
+<li><em>Fallback fonts</em> are used when a certain font is not installed on a user’s computer.</li>
+<li>Google Fonts provides free fonts that can be used in an HTML file with the <code>&lt;link&gt;</code> tag or the <code>@font-face</code> property.</li>
+<li>Local fonts can be added to a document with the <code>@font-face</code>property and the path to the font’s source.</li>
+<li>The <code>word-spacing</code> property changes how far apart individual words are.</li>
+<li>The <code>letter-spacing</code> property changes how far apart individual letters are.</li>
+<li>The <code>text-align</code> property changes where text horizontally on a page.</li>
+</ul>
+<hr>
+<h1 id="IE浏览器的兼容"><a href="#IE浏览器的兼容" class="headerlink" title="IE浏览器的兼容"></a>IE浏览器的兼容</h1><p>所谓的浏览器兼容问题，是指因为不同的浏览器对同一段代码有不同的解析，造成页面显示效果不统一的情况。在大多数情况下，IE6-IE8浏览器在Web发展中起到很大阻力，Web前端工程师写好的页面在Firefox、Chrome、Opera等主流浏览器下测试，基本没有什么问题，而在IE6-IE8浏览器下预览，又是另一番景象，本来规整的页面全乱了。</p>
+<p>幸好随着HTML5的盛行，IE低版本的浏览器也逐渐退出舞台，所以现在很多网站也不再去考虑IE6-IE8低版本的浏览器，不过有些特殊的网站不得不考虑低版本浏览器，比如政府网站、教育系统网站，网站性质也决定了不得不兼容低版本浏览器，那么下面我们就介绍一下常见的IE低版本的兼容方式，如果你的客户网站不考虑低版本浏览器，你就可以完全忽略该节课了。</p>
+<h2 id="1-IE6双倍边距"><a href="#1-IE6双倍边距" class="headerlink" title="1.IE6双倍边距"></a>1.IE6双倍边距</h2><p>产生因素：当元素有float属性，又有margin属性时，在IE6下面显示的margin的值是设置值的两倍。</p>
+<p>解决方法：将有float属性的元素添加display:inline属性。</p>
+<h2 id="2-伪类选择器hover"><a href="#2-伪类选择器hover" class="headerlink" title="2.伪类选择器hover"></a>2.伪类选择器hover</h2><p>产生因素：IE6只支持a标签的CSS定义hover效果，其他标签添加hover效果没有任何作用。</p>
+<p>解决方法：一方面可以使用JavaScript添加鼠标移入效果，另一方面只能将其他标签改变为a标签后再添加hover效果。</p>
+<h2 id="3-定义元素的不透明度"><a href="#3-定义元素的不透明度" class="headerlink" title="3.定义元素的不透明度"></a>3.定义元素的不透明度</h2><p>产生因素：opacity:0.5，可以改变元素的透明度，取值范围是0~1，但是IE6不支持这种透明度表现方式。</p>
+<p>解决方法：IE6浏览器专属的透明度属性， filter：alpha（opacity=80），取值范围是0~100。</p>
+<h2 id="4-IE各个版本hack"><a href="#4-IE各个版本hack" class="headerlink" title="4.IE各个版本hack"></a>4.IE各个版本hack</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*属性hack方式*/</span></div><div class="line"></div><div class="line"><span class="selector-class">.box</span> &#123;<span class="attribute">_width</span>:<span class="number">100px</span>;&#125;             <span class="comment">/* IE6专用*/</span></div><div class="line"></div><div class="line">.box &#123;*+width:100px;&#125;          /* IE7专用*/</div><div class="line"></div><div class="line">.box &#123;*width:100px;&#125;            /* IE6、IE7共用*/</div><div class="line"></div><div class="line"><span class="selector-class">.box</span> &#123;<span class="attribute">width</span>:<span class="number">100px</span>\<span class="number">0</span>;&#125;           <span class="comment">/* IE8、IE9共用*/</span></div><div class="line"></div><div class="line"><span class="selector-class">.box</span> &#123;<span class="attribute">width</span>:<span class="number">100px</span>\<span class="number">9</span>;&#125;           <span class="comment">/* IE6、IE7、IE8、IE9共用*/</span></div><div class="line"></div><div class="line"><span class="selector-class">.box</span> &#123;<span class="attribute">width</span>:<span class="number">330px</span>\<span class="number">9</span>\<span class="number">0</span>;&#125;        <span class="comment">/* IE9专用*/</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">/*选择器hack*/</span></div><div class="line"></div><div class="line">*<span class="selector-tag">html</span> <span class="selector-class">.box</span>&#123;<span class="attribute">width</span>:<span class="number">100px</span>;&#125;       <span class="comment">/*IE6*/</span></div><div class="line"></div><div class="line">*+<span class="selector-tag">html</span> <span class="selector-class">.box</span>&#123;<span class="attribute">width</span>:<span class="number">100px</span>;&#125;     <span class="comment">/*IE7*/</span></div></pre></td></tr></table></figure>
+<hr>
+<h1 id="CSS3与CSS2-1的区别"><a href="#CSS3与CSS2-1的区别" class="headerlink" title="CSS3与CSS2.1的区别"></a>CSS3与CSS2.1的区别</h1><h2 id="什么是CSS3"><a href="#什么是CSS3" class="headerlink" title="什么是CSS3"></a>什么是CSS3</h2><p>CSS3是CSS2的一个升级版本，CSS3提供了非常多新途径去改善您的设计工作，且做了不少重要的变化，大部分的CSS3规范都重复了CSS2.1的内容，但也在它的基础上进行了很多增补和修订。</p>
+<h2 id="CSS3新特性"><a href="#CSS3新特性" class="headerlink" title="CSS3新特性"></a>CSS3新特性</h2><p>总的来说CSS3主要拥有以下几个新的亮点：高级选择器，圆角，多背景，自定义字体，动画与过渡，渐变色，box阴影，rgba颜色表示，文字阴影，图形化边界等。</p>
+<h3 id="网页细节更易操作"><a href="#网页细节更易操作" class="headerlink" title="网页细节更易操作"></a>网页细节更易操作</h3><p>在CSS3之前，如果想要在页面上添加圆角或阴影，只能通过图片的方式才能实现想要表达的效果，但是CSS3添加了“背景和边框”模块，比如常见的圆角、阴影、边框、背景都是该模块的，还有一个模块是”色彩和图像”，比如新增的rgba(0,0,0,0.5)增加了透明色。</p>
+<h3 id="字体多样化"><a href="#字体多样化" class="headerlink" title="字体多样化"></a>字体多样化</h3><p>CSS3之前，Web设计师必须使用已在用户计算机上安装好的字体。通过CSS3，Web设计师可以使用他们喜欢的任意字体。当您找到或购买到希望使用的字体时，可将该字体文件存放到Web服务器上，它会在需要时被自动下载到用户的计算机上。</p>
+<h3 id="种类多样的选择器"><a href="#种类多样的选择器" class="headerlink" title="种类多样的选择器"></a>种类多样的选择器</h3><p>CSS3新增了非常多的高级选择器，可用它们选取HTML结构中的特定片段而无需增加特定的ID或类，在CSS3之前想要选择特定的区块只能通过JS来选择，CSS3增加的这些选择器，能够很好的满足我们的需求，并且使用CSS3选择器代码更加简洁且不容易出错。</p>
+<h3 id="2D-3D转换"><a href="#2D-3D转换" class="headerlink" title="2D-3D转换"></a>2D-3D转换</h3><p>在CSS3中可以为任意元素添加2D的变形，我们能够对元素进行移动、缩放、转动、拉长或拉伸。转换是使元素改变形状、尺寸和位置的一种效果。3D转换是基于二维变换的相同属性，如果熟悉二维变换，会发现3D变形的功能和2D变换的功能类似。CSS3中的3D变换主要包括以下几种，如： 3D位移、 3D旋转、3D缩放、3D矩阵。</p>
+<h3 id="过渡和动画"><a href="#过渡和动画" class="headerlink" title="过渡和动画"></a>过渡和动画</h3><p>CSS3中的过渡（transition）和动画（animation），都可以让页面增加动效，提高页面的视觉效果，但是这两种是有区分的，过渡（transition）是一种简单的动画，可以理解为从一种状态到另一种状态具有非常平滑的过渡效果，但是过渡需要有某些事件进行触发才可以进行动画，动画（animation）是无需事件触发就能完成特定的动画，现在页面上常见的动态效果基本都是CSS3的animation动画可以完成的。</p>
+<h3 id="媒体查询"><a href="#媒体查询" class="headerlink" title="媒体查询"></a>媒体查询</h3><p>用户浏览网页的设备越来越复杂，大屏幕电脑、平板、智能手机，以前做设计只针对大屏幕电脑分辨率，现在已经不太适合，因为移动端智能设备的普及。我们应该让我们的设计在不同的设备做出不同的响应，让用户不管使用什么样的设备访问网站都有一个不错的用户体验，完成这种网站的制作就需要使用CSS3的媒体查询，适应不同的设备显示。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/14/project-for-Ruby-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Katherine Chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tKfTcly1fj5edaynjzj30hs0hsglv.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="时间的朋友">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/14/project-for-Ruby-1/" itemprop="url">project for Ruby 1</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-14T09:58:56+08:00">
+                2017-09-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/09/14/project-for-Ruby-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/09/14/project-for-Ruby-1/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="Introduction-to-Ruby-（变换字体的大小写）"><a href="#Introduction-to-Ruby-（变换字体的大小写）" class="headerlink" title="Introduction to Ruby （变换字体的大小写）"></a>Introduction to Ruby （变换字体的大小写）</h2><blockquote>
+<p>PUTTING THE FORM IN FORMATTER<br>Read a user’s input and correct his or her capitalization.</p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">print <span class="string">"What is your name? "</span>    </div><div class="line">name = gets.chomp</div><div class="line">name.capitalize!</div><div class="line"></div><div class="line">print <span class="string">"What city are you from? "</span>				</div><div class="line">city = gets.chomp</div><div class="line">city.upcase!</div><div class="line"></div><div class="line">puts <span class="string">"Your name is <span class="subst">#&#123;name&#125;</span> and you are from <span class="subst">#&#123;city&#125;</span>!"</span></div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">What is your name?                    <span class="comment"># $ katherine</span></div><div class="line">What city are you from?               <span class="comment"># $ guangzhou</span></div><div class="line"></div><div class="line"><span class="comment"># =&gt;Your name is Katherine and you are from GUANGZHOU!</span></div></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/14/project-for-Ruby-1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/13/ruby/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Katherine Chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tKfTcly1fj5edaynjzj30hs0hsglv.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="时间的朋友">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/13/ruby/" itemprop="url">ruby</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-13T11:53:00+08:00">
+                2017-09-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ruby/" itemprop="url" rel="index">
+                    <span itemprop="name">Ruby</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/09/13/ruby/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/09/13/ruby/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          Ruby 是用于快捷易用物件导向程式设计的直译式脚本语言
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/13/ruby/">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/08/terminal/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Katherine Chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tKfTcly1fj5edaynjzj30hs0hsglv.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="时间的朋友">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/08/terminal/" itemprop="url">Terminal Cheatsheet for Mac</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-08T20:20:50+08:00">
+                2017-09-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/09/08/terminal/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/09/08/terminal/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="Terminal-macOS-简介"><a href="#Terminal-macOS-简介" class="headerlink" title="Terminal(macOS)简介"></a>Terminal(macOS)简介</h2><p>终端（Terminal，文件名称 Terminal.app），透过这个程式来输入程序指令这里是输入所有指令的地方。在鼠标和图形操作系统诞生前，这种操作方式就存在了。<br>Terminal 是使用者直接跟「Mac 内核」用「文字沟通」的介面。以往平常作为一个一般用户，我们都是以图形化介面，指挥 Mac 应该要怎么做做事。而开发者，往往更直接高效的，使用文字指令可以复杂的与 Mac 用文字指令沟通更多事。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/08/terminal/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/06/git/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Katherine Chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tKfTcly1fj5edaynjzj30hs0hsglv.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="时间的朋友">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/06/git/" itemprop="url">Git-Recipes</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-06T09:44:41+08:00">
+                2017-09-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/09/06/git/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/09/06/git/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><blockquote>
+<p> 三种方式</p>
+</blockquote>
+<p><strong>系统（System）配置：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git config --system --list                                 # 列出系统配置</div></pre></td></tr></table></figure>
+<p>文件路径：<code>/etc/gitconfig</code>（系统中对所有用户都普遍适用的配置）</p>
+<p><strong>全局（Global）配置：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.name xxx                           # 设置用户名</div><div class="line">$ git config --global user.email xxx@xxx.com                  # 设置用户邮箱</div><div class="line">$ git config --global --list                                  # 列出全局配置</div></pre></td></tr></table></figure>
+<p>文件路径：<code>~/.gitconfig</code>（用户目录下的配置文件只适用于该用户）</p>
+<p><strong>项目（Repository）配置：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git config user.name &quot;xxx&quot;                                  # 设置用户名</div><div class="line">$ git config user.email xxxx@xxx.com                          # 设置用户邮箱</div><div class="line">$ git config --local --list                                   # 列出项目配置</div></pre></td></tr></table></figure>
+<p>文件路径：<code>&lt;工作目录&gt;/.git/config</code>（这里的配置仅仅针对当前项目有效）</p>
+<p><strong>列出已有的配置：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git config --list</div></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/06/git/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/05/markdown/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Katherine Chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tKfTcly1fj5edaynjzj30hs0hsglv.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="时间的朋友">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/05/markdown/" itemprop="url">Markdown</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-05T19:09:47+08:00">
+                2017-09-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/09/05/markdown/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/09/05/markdown/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="Headers"><a href="#Headers" class="headerlink" title="Headers"></a>Headers</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="section"># H1</span></div><div class="line"><span class="section">### H3  </span></div><div class="line"><span class="section">###### H6</span></div><div class="line">Header 1</div><div class="line">========</div><div class="line"></div><div class="line">Header 2</div><div class="line">--------</div></pre></td></tr></table></figure>
+<h2 id="Emphasis"><a href="#Emphasis" class="headerlink" title="Emphasis"></a>Emphasis</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="emphasis">*Italics*</span> / <span class="emphasis">_Italics_</span>                       # 斜体：command + i</div><div class="line"></div><div class="line"><span class="strong">**Bold**</span> / <span class="strong">__Bold__</span>                         # 粗体：command + b</div><div class="line"></div><div class="line">~~Strikethrough~~                           #  删除线</div></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/09/05/markdown/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/05/环境建置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -801,7 +2419,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">20</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

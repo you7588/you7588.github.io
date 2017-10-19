@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="JS," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="Operator TypesUnary（一元） A unary operator requires a single operand, either before or after the operator, following this format:  a++, ++,+,-,-- 12operand operatoroperator operand  作用于一个单独的操作数，并产生一个新值">
+<meta name="keywords" content="JS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Arithmetic Operators（算术运算符）">
+<meta property="og:url" content="http://yoursite.com/2017/10/09/operators/index.html">
+<meta property="og:site_name" content="时间的朋友">
+<meta property="og:description" content="Operator TypesUnary（一元） A unary operator requires a single operand, either before or after the operator, following this format:  a++, ++,+,-,-- 12operand operatoroperator operand  作用于一个单独的操作数，并产生一个新值">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-10-10T06:57:01.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Arithmetic Operators（算术运算符）">
+<meta name="twitter:description" content="Operator TypesUnary（一元） A unary operator requires a single operand, either before or after the operator, following this format:  a++, ++,+,-,-- 12operand operatoroperator operand  作用于一个单独的操作数，并产生一个新值">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/10/09/operators/"/>
+
+
+
+
+
+  <title>Arithmetic Operators（算术运算符） | 时间的朋友</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '105782654', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">时间的朋友</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">把琐碎的时间堆砌成一个伟大的生命。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            时间线
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-word">
+          <a href="/word/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            博物馆
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-cheatsheet">
+          <a href="/cheatsheet/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            速查卡
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-feedback">
+          <a href="/feedback/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-users"></i> <br />
+            
+            反馈
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/09/operators/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Katherine Chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tKfTcly1fj5edaynjzj30hs0hsglv.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="时间的朋友">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Arithmetic Operators（算术运算符）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-09T15:34:42+08:00">
+                2017-10-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/10/09/operators/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/10/09/operators/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Operator-Types"><a href="#Operator-Types" class="headerlink" title="Operator Types"></a>Operator Types</h1><h2 id="Unary（一元）"><a href="#Unary（一元）" class="headerlink" title="Unary（一元）"></a>Unary（一元）</h2><blockquote>
+<p>A <em>unary</em> operator requires a single operand, either before or after the operator, following this format:</p>
+</blockquote>
+<p><code>a++</code>, <code>++</code>,<code>+</code>,<code>-</code>,<code>--</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">operand operator</div><div class="line">operator operand</div></pre></td></tr></table></figure>
+<ul>
+<li>作用于一个单独的操作数，并产生一个新值</li>
+<li>有很高的优先级，而且都是右结合（right-associative）</li>
+</ul>
+<p>=</p>
+<h2 id="Binary（二进制）"><a href="#Binary（二进制）" class="headerlink" title="Binary（二进制）"></a>Binary（二进制）</h2><blockquote>
+<p>A <em>binary</em> operator requires two operands, one before the operator and one after the operator, following this format:</p>
+</blockquote>
+<p><code>+</code>,<code>-</code>,<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">operand1 operator operand2</div></pre></td></tr></table></figure></p>
+<p>For example, in the expression <code>a + b = c</code>, <code>+</code> is a binary operator.</p>
+<h2 id="Ternary（三元）"><a href="#Ternary（三元）" class="headerlink" title="Ternary（三元）"></a>Ternary（三元）</h2><p>There is one <em>ternary</em> operator, the conditional operator. For example, in the expression <code>a ? b : c</code>, the use of <code>?</code> and <code>:</code> in this manner constitutes the ternary operator. We’ll discuss this operator more in the <em>Conditional Statements</em> tutorial.</p>
+<hr>
+<h1 id="Arithmetic-Operators（算术运算符）"><a href="#Arithmetic-Operators（算术运算符）" class="headerlink" title="Arithmetic Operators（算术运算符）"></a>Arithmetic Operators（算术运算符）</h1><blockquote>
+<p>An arithmetic operator takes numeric values (either literals or variables) as its operands and returns a single numeric value.</p>
+</blockquote>
+<p>给定 <code>y=5</code>，下面的表格解释了这些算术运算符：</p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>描述</th>
+<th>例子</th>
+<th>结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+</td>
+<td>加</td>
+<td>x=y+2</td>
+<td>x=7</td>
+</tr>
+<tr>
+<td>-</td>
+<td>减</td>
+<td>x=y-2</td>
+<td>x=3</td>
+</tr>
+<tr>
+<td>*</td>
+<td>乘</td>
+<td>x=y*2</td>
+<td>x=10</td>
+</tr>
+<tr>
+<td>/</td>
+<td>除</td>
+<td>x=y/2</td>
+<td>x=2.5</td>
+</tr>
+<tr>
+<td>%</td>
+<td>求余数 (保留整数)</td>
+<td>x=y%2</td>
+<td>x=1</td>
+</tr>
+<tr>
+<td>++</td>
+<td>累加</td>
+<td>x=++y</td>
+<td>x=6</td>
+</tr>
+<tr>
+<td>- -</td>
+<td>递减</td>
+<td>x=- -y</td>
+<td>x=4</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>所有无法转换为数字的操作数都转换为<code>NaN</code>值。如果操作数（或转换结果）是<code>NaN</code>值，算术运算的结果也是<code>NaN</code>。</li>
+<li>运算符的行为依赖于类型转换的结果。</li>
+</ul>
+<h2 id="1-Addition"><a href="#1-Addition" class="headerlink" title="1. Addition (+)"></a>1. Addition (<code>+</code>)</h2><blockquote>
+<p><code>operand1 + operand2</code></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="number">2</span> + <span class="number">3</span>                     <span class="comment">// ==&gt; 5</span></div><div class="line"><span class="string">"hello"</span> + <span class="string">" "</span> + <span class="string">"there"</span>   <span class="comment">// ==&gt; "hello there"</span></div><div class="line"><span class="number">1</span> + <span class="number">2</span>                     <span class="comment">// ==&gt; 3</span></div><div class="line"><span class="string">"1"</span> + <span class="string">"2"</span>                 <span class="comment">// ==&gt; 12   都是字符串</span></div><div class="line"><span class="string">"1"</span> + <span class="number">2</span>                   <span class="comment">// ==&gt; 12   优先考虑字符串连接</span></div><div class="line"><span class="number">1</span> + &#123;&#125;                    <span class="comment">// ==&gt; "1[object Object]"</span></div><div class="line"><span class="literal">true</span> + <span class="literal">true</span>               <span class="comment">// ==&gt; 2</span></div><div class="line"><span class="number">2</span> + <span class="literal">null</span>                  <span class="comment">// ==&gt; 2</span></div><div class="line"><span class="number">2</span> + <span class="literal">undefined</span>             <span class="comment">// ==&gt; NaN</span></div><div class="line"></div><div class="line"><span class="number">1</span> + <span class="number">2</span> + <span class="string">"blind mice"</span>;      <span class="comment">// ==&gt; "3 blind mice"</span></div><div class="line"><span class="number">1</span> + (<span class="number">2</span> + <span class="string">"blind mice"</span>);    <span class="comment">// ==&gt; "12 blind mice"</span></div></pre></td></tr></table></figure>
+<h2 id="用于字符串的-运算符"><a href="#用于字符串的-运算符" class="headerlink" title="用于字符串的 + 运算符"></a>用于字符串的 + 运算符</h2><p>+ 运算符用于把文本值或字符串变量加起来（连接起来）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">txt1=&quot;What a very &quot;;</div><div class="line">txt2=&quot;nice day&quot;;</div><div class="line">txt3=txt1+txt2;</div><div class="line"></div><div class="line">// 或者把空格插入表达式中：</div><div class="line">txt1=&quot;What a very&quot;;</div><div class="line">txt2=&quot;nice day&quot;;</div><div class="line">txt3=txt1+&quot; &quot;+txt2;</div><div class="line">// ==&gt; &quot;What a very nice day&quot;</div></pre></td></tr></table></figure>
+<p>要想在两个字符串之间增加空格，需要把空格插入一个字符串之中：</p>
+<h2 id="对字符串和数字进行加法运算："><a href="#对字符串和数字进行加法运算：" class="headerlink" title="对字符串和数字进行加法运算："></a>对字符串和数字进行加法运算：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">x=5+5;</div><div class="line">document.write(x);</div><div class="line"></div><div class="line">x=&quot;5&quot;+&quot;5&quot;;</div><div class="line">document.write(x);</div><div class="line"></div><div class="line">x=5+&quot;5&quot;;</div><div class="line">document.write(x);</div><div class="line"></div><div class="line">x=&quot;5&quot;+5;</div><div class="line">document.write(x);</div></pre></td></tr></table></figure>
+<p>加号的转换规则：优先考虑字符串连接</p>
+<ul>
+<li>若其中一个操作数是字符串或者转换为字符串的对象，另外一个操作数将会转换为字符串。</li>
+<li>若两个操作数都不是类字符串，那么都将进行算术加法运算。</li>
+<li>如果把数字与字符串相加，结果将成为字符串。</li>
+</ul>
+<h2 id="2-Subtraction"><a href="#2-Subtraction" class="headerlink" title="2. Subtraction (-)"></a>2. Subtraction (<code>-</code>)</h2><blockquote>
+<p><code>operand1 - operand2</code></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="number">3</span> - <span class="number">2</span> <span class="comment">// ==&gt; 1</span></div><div class="line"><span class="number">4</span> - <span class="number">10</span> <span class="comment">// ==&gt; -6</span></div></pre></td></tr></table></figure>
+<h2 id="3-Multiplication"><a href="#3-Multiplication" class="headerlink" title="3. Multiplication (*)"></a>3. Multiplication (<code>*</code>)</h2><blockquote>
+<p><code>operand1 * operand2</code></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="number">3</span> * <span class="number">2</span> <span class="comment">// ==&gt; 6</span></div><div class="line"><span class="number">4</span> * <span class="number">10</span> <span class="comment">// ==&gt; 40</span></div></pre></td></tr></table></figure>
+<h2 id="4-Division"><a href="#4-Division" class="headerlink" title="4. Division (/)"></a>4. Division (<code>/</code>)</h2><blockquote>
+<p><code>operand1 / operand2</code></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="number">6</span> / <span class="number">3</span> <span class="comment">// ==&gt; 2</span></div><div class="line"><span class="number">3</span> / <span class="number">2</span> <span class="comment">// ==&gt; 1.5</span></div><div class="line"><span class="number">4</span> / <span class="number">10</span> <span class="comment">// ==&gt; 0.4</span></div><div class="line"><span class="number">0</span> / <span class="number">0</span>  <span class="comment">// ==&gt; NaN</span></div></pre></td></tr></table></figure>
+<h2 id="5-Remainder"><a href="#5-Remainder" class="headerlink" title="5. Remainder (%)"></a>5. Remainder (<code>%</code>)</h2><blockquote>
+<p><code>operand1 % operand2</code></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="number">6</span> % <span class="number">3</span> <span class="comment">// ==&gt; 0</span></div><div class="line"><span class="number">3</span> % <span class="number">2</span> <span class="comment">// ==&gt; 1</span></div><div class="line"><span class="number">4</span> % <span class="number">10</span> <span class="comment">// ==&gt; 4</span></div><div class="line"><span class="number">-5</span> % <span class="number">2</span>  <span class="comment">// ==&gt; -1</span></div><div class="line"><span class="number">5</span> % <span class="number">2</span>  <span class="comment">// ==&gt; 1</span></div><div class="line"><span class="number">6.5</span> % <span class="number">2.1</span>  <span class="comment">// ==&gt; 0.2</span></div></pre></td></tr></table></figure>
+<h2 id="6-Exponentiation"><a href="#6-Exponentiation" class="headerlink" title="6. Exponentiation (**)"></a>6. Exponentiation (<code>**</code>)</h2><blockquote>
+<p><code>operand1 ** operand2</code>. This operator is a part of ECMAScript2016 feature set</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="number">2</span> ** <span class="number">3</span> <span class="comment">// ==&gt; 8</span></div><div class="line"><span class="number">3</span> ** <span class="number">2</span> <span class="comment">// ==&gt; 9</span></div><div class="line"><span class="number">5</span> ** <span class="number">4</span> <span class="comment">// ==&gt; 625</span></div></pre></td></tr></table></figure>
+<h2 id="7-Unary-Negation"><a href="#7-Unary-Negation" class="headerlink" title="7. Unary Negation (-)"></a>7. Unary Negation (<code>-</code>)</h2><blockquote>
+<p><code>-operand</code></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="number">-4</span> <span class="comment">// ==&gt; -4</span></div><div class="line">-(<span class="number">-5</span>) <span class="comment">// ==&gt; 5 (not --5)</span></div></pre></td></tr></table></figure>
+<h2 id="8-Unary-Plus"><a href="#8-Unary-Plus" class="headerlink" title="8. Unary Plus (+)"></a>8. Unary Plus (<code>+</code>)</h2><blockquote>
+<p><code>+operand</code></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">+<span class="number">4</span> <span class="comment">// ==&gt; 4</span></div><div class="line">+(<span class="number">-4</span>) <span class="comment">// ==&gt; -4</span></div></pre></td></tr></table></figure>
+<h2 id="9-Increment-递增"><a href="#9-Increment-递增" class="headerlink" title="9. Increment 递增 (++)"></a>9. Increment 递增 (<code>++</code>)</h2><p>We use this operator in the 前增量prefix and 后增量postfix forms, forms <code>++operand</code> and <code>operand++</code>.</p>
+<ul>
+<li><code>++operand</code>, increments the operand by  and then returns the value of the operand.</li>
+<li><code>operand++</code>, returns the value of the operand and <em>then</em> increments the operand’s value by .</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function main(input) &#123;</div><div class="line">    var a = input;</div><div class="line">    // Print the value of &apos;a&apos; and the preincremented value of &apos;a&apos;:</div><div class="line">    console.log(&quot;a(&quot; + a + &quot;), ++a(&quot; + ++a + &quot;)&quot;);</div><div class="line">    // Assign the current value of &apos;a&apos; to &apos;b&apos; and then postincrement &apos;a&apos;:</div><div class="line">    var b = a++;</div><div class="line">    // Print the values of &apos;a&apos; once and &apos;b&apos; twice, then postincrement the 2nd &apos;b&apos;:</div><div class="line">    console.log(&quot;a(&quot; + a + &quot;), b(&quot; + b + &quot;), b++(&quot; + b++ + &quot;)&quot;);</div><div class="line">    // Print the final values of &apos;a&apos; and &apos;b&apos;:</div><div class="line">    console.log(&quot;a(&quot; + a + &quot;), b(&quot; + b + &quot;)&quot;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">// input  ==&gt; 4</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a(<span class="number">4</span>), ++a(<span class="number">5</span>)</div><div class="line">a(<span class="number">6</span>), b(<span class="number">5</span>), b++(<span class="number">5</span>)</div><div class="line">a(<span class="number">6</span>), b(<span class="number">6</span>)</div></pre></td></tr></table></figure>
+<h2 id="10-Decrement-递减"><a href="#10-Decrement-递减" class="headerlink" title="10. Decrement 递减 (--)"></a>10. Decrement 递减 (<code>--</code>)</h2><p>We use this operator in the prefix and postfix forms, forms <code>--operand</code> and <code>operand--</code>.</p>
+<ul>
+<li><code>--operand</code>, decrements the operand by  and then returns the value of the operand.</li>
+<li><code>operand--</code>, returns the value of the operand and <em>then</em> decrements the operand’s value by .</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">main</span>(<span class="params">input</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> a = input;</div><div class="line">    <span class="comment">// Print the value of 'a' and the predecremented value of 'a':</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"a("</span> + a + <span class="string">"), --a("</span> + --a + <span class="string">")"</span>);</div><div class="line">    <span class="comment">// Assign the current value of 'a' to 'b' and then postdecrement 'a':</span></div><div class="line">    <span class="keyword">var</span> b = a--;</div><div class="line">    <span class="comment">// Print the values of 'a' once and 'b' twice, then postdecrement the 2nd 'b':</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"a("</span> + a + <span class="string">"), b("</span> + b + <span class="string">"), b--("</span> + b-- + <span class="string">")"</span>);</div><div class="line">    <span class="comment">// Print the final values of 'a' and 'b':</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"a("</span> + a + <span class="string">"), b("</span> + b + <span class="string">")"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// input  ==&gt; 4</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a(<span class="number">4</span>), --a(<span class="number">3</span>)</div><div class="line">a(<span class="number">2</span>), b(<span class="number">3</span>), b--(<span class="number">3</span>)</div><div class="line">a(<span class="number">2</span>), b(<span class="number">2</span>)</div></pre></td></tr></table></figure>
+<h1 id="Task——Area-and-perimeter-of-rectangle"><a href="#Task——Area-and-perimeter-of-rectangle" class="headerlink" title="Task——Area and perimeter of rectangle"></a>Task——Area and perimeter of rectangle</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment">*   Calculate the area of a rectangle.</span></div><div class="line"><span class="comment">*</span></div><div class="line"><span class="comment">*   length: The length of the rectangle.</span></div><div class="line"><span class="comment">*   width: The width of the rectangle.</span></div><div class="line"><span class="comment">*   </span></div><div class="line"><span class="comment">*	Return a number denoting the rectangle's area.</span></div><div class="line"><span class="comment">**/</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getArea</span>(<span class="params">length, width</span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> area;</div><div class="line">    <span class="comment">// Write your code here</span></div><div class="line"></div><div class="line">    <span class="keyword">return</span> area;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment">*   Calculate the perimeter of a rectangle.</span></div><div class="line"><span class="comment">*</span></div><div class="line"><span class="comment">*	length: The length of the rectangle.</span></div><div class="line"><span class="comment">*   width: The width of the rectangle.</span></div><div class="line"><span class="comment">*   </span></div><div class="line"><span class="comment">*	Return a number denoting the perimeter of a rectangle.</span></div><div class="line"><span class="comment">**/</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getPerimeter</span>(<span class="params">length, width</span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> perimeter;</div><div class="line">    <span class="comment">// Write your code here</span></div><div class="line"></div><div class="line">    <span class="keyword">return</span> perimeter;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">main</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">const</span> length = +(readLine());</div><div class="line">    <span class="keyword">const</span> width = +(readLine());</div><div class="line"></div><div class="line">    <span class="built_in">console</span>.log(getArea(length, width));</div><div class="line">    <span class="built_in">console</span>.log(getPerimeter(length, width));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>Input</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="number">3</span></div><div class="line"><span class="number">4.5</span></div></pre></td></tr></table></figure></p>
+<p><strong>Output</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="number">13.5</span></div><div class="line"><span class="number">15</span></div></pre></td></tr></table></figure></p>
+<p><strong>answer</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getArea</span>(<span class="params">length, width</span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> area;</div><div class="line">    area = length * width;</div><div class="line">    <span class="keyword">return</span> area;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getPerimeter</span>(<span class="params">length, width</span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> perimeter;</div><div class="line">    perimeter = (length + width) * <span class="number">2</span>;</div><div class="line">    <span class="keyword">return</span> perimeter;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JS/" rel="tag"># JS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/09/Basics/" rel="next" title="Javascript Basics （语言核心）">
+                <i class="fa fa-chevron-left"></i> Javascript Basics （语言核心）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/09/function/" rel="prev" title="Functions in JavaScript（函数）">
+                Functions in JavaScript（函数） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="https://ws2.sinaimg.cn/large/006tKfTcly1fj5edaynjzj30hs0hsglv.jpg"
+              alt="Katherine Chen" />
+          
+            <p class="site-author-name" itemprop="name">Katherine Chen</p>
+            <p class="site-description motion-element" itemprop="description">尽量只写对别人有用的文章……</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/about/index.html">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/you7588" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:you7588@gmail.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                    
+                      E-Mail
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Operator-Types"><span class="nav-number">1.</span> <span class="nav-text">Operator Types</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Unary（一元）"><span class="nav-number">1.1.</span> <span class="nav-text">Unary（一元）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Binary（二进制）"><span class="nav-number">1.2.</span> <span class="nav-text">Binary（二进制）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ternary（三元）"><span class="nav-number">1.3.</span> <span class="nav-text">Ternary（三元）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Arithmetic-Operators（算术运算符）"><span class="nav-number">2.</span> <span class="nav-text">Arithmetic Operators（算术运算符）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Addition"><span class="nav-number">2.1.</span> <span class="nav-text">1. Addition (+)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用于字符串的-运算符"><span class="nav-number">2.2.</span> <span class="nav-text">用于字符串的 + 运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对字符串和数字进行加法运算："><span class="nav-number">2.3.</span> <span class="nav-text">对字符串和数字进行加法运算：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Subtraction"><span class="nav-number">2.4.</span> <span class="nav-text">2. Subtraction (-)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Multiplication"><span class="nav-number">2.5.</span> <span class="nav-text">3. Multiplication (*)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Division"><span class="nav-number">2.6.</span> <span class="nav-text">4. Division (/)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Remainder"><span class="nav-number">2.7.</span> <span class="nav-text">5. Remainder (%)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-Exponentiation"><span class="nav-number">2.8.</span> <span class="nav-text">6. Exponentiation (**)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-Unary-Negation"><span class="nav-number">2.9.</span> <span class="nav-text">7. Unary Negation (-)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-Unary-Plus"><span class="nav-number">2.10.</span> <span class="nav-text">8. Unary Plus (+)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-Increment-递增"><span class="nav-number">2.11.</span> <span class="nav-text">9. Increment 递增 (++)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-Decrement-递减"><span class="nav-number">2.12.</span> <span class="nav-text">10. Decrement 递减 (--)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Task——Area-and-perimeter-of-rectangle"><span class="nav-number">3.</span> <span class="nav-text">Task——Area and perimeter of rectangle</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Katherine Chen</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://chen-lingmin.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2017/10/09/operators/';
+          this.page.identifier = '2017/10/09/operators/';
+          this.page.title = 'Arithmetic Operators（算术运算符）';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://chen-lingmin.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

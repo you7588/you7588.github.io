@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="CSS3选择器CSS3属性选择器使属性选择器有了通配符的概念：  [att*=val]  [att^=val]  [att$=val] 123456789101112131415161718192021222324252627&amp;lt;head&amp;gt;&amp;lt;style&amp;gt;    [id*=div]&amp;#123;      color: lime;    &amp;#125;    /*首字符*/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css3">
+<meta property="og:url" content="http://yoursite.com/2017/10/19/css3/index.html">
+<meta property="og:site_name" content="时间的朋友">
+<meta property="og:description" content="CSS3选择器CSS3属性选择器使属性选择器有了通配符的概念：  [att*=val]  [att^=val]  [att$=val] 123456789101112131415161718192021222324252627&amp;lt;head&amp;gt;&amp;lt;style&amp;gt;    [id*=div]&amp;#123;      color: lime;    &amp;#125;    /*首字符*/">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcgy1fknk57dn55j30fp0g5ae3.jpg">
+<meta property="og:updated_time" content="2017-10-19T07:00:24.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="css3">
+<meta name="twitter:description" content="CSS3选择器CSS3属性选择器使属性选择器有了通配符的概念：  [att*=val]  [att^=val]  [att$=val] 123456789101112131415161718192021222324252627&amp;lt;head&amp;gt;&amp;lt;style&amp;gt;    [id*=div]&amp;#123;      color: lime;    &amp;#125;    /*首字符*/">
+<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tKfTcgy1fknk57dn55j30fp0g5ae3.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/10/19/css3/"/>
+
+
+
+
+
+  <title>css3 | 时间的朋友</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '105782654', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">时间的朋友</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">把琐碎的时间堆砌成一个伟大的生命。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            时间线
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-word">
+          <a href="/word/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            博物馆
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-cheatsheet">
+          <a href="/cheatsheet/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            速查卡
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-feedback">
+          <a href="/feedback/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-users"></i> <br />
+            
+            反馈
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/19/css3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Katherine Chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tKfTcly1fj5edaynjzj30hs0hsglv.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="时间的朋友">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">css3</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-19T14:57:58+08:00">
+                2017-10-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/10/19/css3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/10/19/css3/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="CSS3选择器"><a href="#CSS3选择器" class="headerlink" title="CSS3选择器"></a>CSS3选择器</h1><h2 id="CSS3属性选择器"><a href="#CSS3属性选择器" class="headerlink" title="CSS3属性选择器"></a>CSS3属性选择器</h2><p>使属性选择器有了通配符的概念：</p>
+<ul>
+<li><p><code>[att*=val]</code></p>
+</li>
+<li><p><code>[att^=val]</code></p>
+</li>
+<li><p><code>[att$=val]</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">&lt;style&gt;</div><div class="line">    [id*=div]&#123;</div><div class="line">      color: lime;</div><div class="line">    &#125;</div><div class="line">    /*首字符*/</div><div class="line">    [id^=div]&#123;</div><div class="line">      color: red;</div><div class="line">    &#125;</div><div class="line">    /*结束字符*/</div><div class="line">    [id$=div]&#123;</div><div class="line">      color:blue;</div><div class="line">    &#125;</div><div class="line">    /*数字的写法，但是没有任何显示*/</div><div class="line">    [id$=/3]&#123;</div><div class="line">      color:yellow;</div><div class="line">    &#125;</div><div class="line">  &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">  &lt;div id=&quot;mydiv1&quot;&gt;示例文本1&lt;/div&gt;</div><div class="line">  &lt;div id=&quot;div2&quot;&gt;示例文本2&lt;/div&gt;</div><div class="line">  &lt;div id=&quot;div3&quot;&gt;示例文本3&lt;/div&gt;</div><div class="line">  &lt;div id=&quot;div4&quot;&gt;示例文本4&lt;/div&gt;</div><div class="line">  &lt;div id=&quot;div&quot;&gt;示例文本5&lt;/div&gt;</div><div class="line">  &lt;div id=&quot;my&quot;&gt;my示例文本&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ul>
+<h2 id="CSS3结构性伪类选择器"><a href="#CSS3结构性伪类选择器" class="headerlink" title="CSS3结构性伪类选择器"></a>CSS3结构性伪类选择器</h2><ul>
+<li>伪类选择器</li>
+<li><strong>伪元素选择器</strong>:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">&lt;style&gt;</div><div class="line">  /*first-line*/</div><div class="line">    p:first-line&#123;</div><div class="line">      color: red;</div><div class="line">    &#125;</div><div class="line">    /*first-letter*/</div><div class="line">    p:first-letter&#123;</div><div class="line">      color:darkblue;</div><div class="line">    &#125;</div><div class="line">    /*before*/</div><div class="line">    li:before&#123;</div><div class="line">      content: &quot;--&quot;;</div><div class="line">    &#125;</div><div class="line">    /*after*/</div><div class="line">    li:after&#123;</div><div class="line">      content: &quot;哈哈&quot;;</div><div class="line">      font-size: 20px;</div><div class="line">      color: red;</div><div class="line">    &#125;</div><div class="line">  &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">  &lt;p&gt;这是第一行的内容&lt;br&gt;这里则是第二行的内容&lt;/p&gt;</div><div class="line">  &lt;ul&gt;</div><div class="line">    &lt;li&gt;列表1&lt;/li&gt;</div><div class="line">    &lt;li&gt;列表2&lt;/li&gt;</div><div class="line">    &lt;li&gt;列表3&lt;/li&gt;</div><div class="line">    &lt;li&gt;列表4&lt;/li&gt;</div><div class="line">    &lt;li&gt;列表5&lt;/li&gt;</div><div class="line">    &lt;li&gt;列表6&lt;/li&gt;</div><div class="line">    &lt;li&gt;列表7&lt;/li&gt;</div><div class="line">  &lt;/ul&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<h2 id="选择器root、not、empty和target"><a href="#选择器root、not、empty和target" class="headerlink" title="选择器root、not、empty和target"></a>选择器root、not、empty和target</h2><p>结构性伪类选择器的共同特征是允许开发者根据文档中的结构来指定元素的样式。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">&lt;style&gt;</div><div class="line">    /*root*/</div><div class="line">    :root&#123;</div><div class="line">      background-color: #666;</div><div class="line">    &#125;</div><div class="line">    /*root 与 body的区别*/</div><div class="line">    body&#123;       </div><div class="line">      background-color: #ededed;</div><div class="line">    &#125;</div><div class="line">    /*not*/</div><div class="line">    div *:not(h1)&#123;</div><div class="line">      color: red;</div><div class="line">    &#125;</div><div class="line">    /*empty*/</div><div class="line">    :empty&#123;</div><div class="line">      background-color: blue;</div><div class="line">    &#125;</div><div class="line">    /*target*/</div><div class="line">    :target&#123;</div><div class="line">      background-color: darksalmon;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">  &lt;/style&gt;</div><div class="line"></div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">  &lt;div&gt;</div><div class="line">    &lt;h2&gt;你好吗？&lt;/h2&gt;</div><div class="line">    &lt;h1&gt;这里是标题&lt;/h1&gt;</div><div class="line">    &lt;p&gt;这里是P标签&lt;/p&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line"></div><div class="line">  &lt;table border=&quot;1&quot;&gt;</div><div class="line">    &lt;tr&gt;</div><div class="line">      &lt;td&gt;内容1&lt;/td&gt;</div><div class="line">      &lt;td&gt;内容2&lt;/td&gt;</div><div class="line">    &lt;/tr&gt;</div><div class="line">    &lt;tr&gt;</div><div class="line">      &lt;td&gt;内容3&lt;/td&gt;</div><div class="line">      &lt;td&gt;&lt;/td&gt;</div><div class="line">    &lt;/tr&gt;    </div><div class="line">    &lt;tr&gt;</div><div class="line">      &lt;td&gt;&lt;/td&gt;</div><div class="line">      &lt;td&gt;内容4&lt;/td&gt;</div><div class="line">    &lt;/tr&gt;       </div><div class="line">  &lt;/table&gt;</div><div class="line">  &lt;br&gt;</div><div class="line">  &lt;a href=&quot;#a1&quot;&gt;菜单1&lt;/a&gt;</div><div class="line">  &lt;a href=&quot;#a2&quot;&gt;菜单2&lt;/a&gt;</div><div class="line">  &lt;a href=&quot;#a31&quot;&gt;菜单3&lt;/a&gt;</div><div class="line">  &lt;a href=&quot;#a4&quot;&gt;菜单4&lt;/a&gt;</div><div class="line"></div><div class="line">  &lt;div id=&quot;a1&quot;&gt;</div><div class="line">    &lt;h1&gt;菜单1&lt;/h1&gt;</div><div class="line">    &lt;p&gt;菜单内容1&lt;/p&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">  &lt;div id=&quot;a2&quot;&gt;</div><div class="line">    &lt;h1&gt;菜单2&lt;/h1&gt;</div><div class="line">    &lt;p&gt;菜单内容2&lt;/p&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">  &lt;div id=&quot;a3&quot;&gt;</div><div class="line">    &lt;h1&gt;菜单3&lt;/h1&gt;</div><div class="line">    &lt;p&gt;菜单内容3&lt;/p&gt;</div><div class="line">  &lt;/div&gt;</div></pre></td></tr></table></figure>
+<h2 id="选择器：first-child、last-child、nth-child和nth-last-child"><a href="#选择器：first-child、last-child、nth-child和nth-last-child" class="headerlink" title="选择器：first-child、last-child、nth-child和nth-last-child"></a>选择器：first-child、last-child、nth-child和nth-last-child</h2><p>特别针对一个父元素中的第一个子元素、最后一个元素、指定序号的子元素，第偶数个或奇数个子元素进行样式的指定。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">&lt;style&gt;</div><div class="line">    li:first-child&#123;</div><div class="line">      background-color: yellow;</div><div class="line">    &#125;</div><div class="line">    li:last-child&#123;</div><div class="line">      background-color: blue;</div><div class="line">    &#125;</div><div class="line">    /*nth-child(position)*/</div><div class="line">    li:nth-child(3)&#123;</div><div class="line">      background-color: grey;</div><div class="line">    &#125;</div><div class="line">    li:nth-last-child(2)&#123;</div><div class="line">      background-color: red;</div><div class="line">    &#125;</div><div class="line">    li:nth-child(odd)&#123;</div><div class="line">      background-color: pink;</div><div class="line">    &#125;</div><div class="line">    li:nth-child(even)&#123;</div><div class="line">      background-color: green;</div><div class="line">    &#125;</div><div class="line">  &lt;/style&gt;</div><div class="line"></div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">  &lt;h2&gt;列表&lt;/h2&gt;</div><div class="line">  &lt;ul&gt;</div><div class="line">    &lt;li&gt;列表1&lt;/li&gt;</div><div class="line">    &lt;li&gt;列表2&lt;/li&gt;</div><div class="line">    &lt;li&gt;列表3&lt;/li&gt;</div><div class="line">    &lt;li&gt;列表4&lt;/li&gt;</div><div class="line">    &lt;li&gt;列表5&lt;/li&gt;</div><div class="line">    &lt;li&gt;列表6&lt;/li&gt;</div><div class="line">    &lt;li&gt;列表7&lt;/li&gt;</div><div class="line">  &lt;/ul&gt;</div><div class="line"></div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<h2 id="选择器：nth-of-type和nth-last-of-type"><a href="#选择器：nth-of-type和nth-last-of-type" class="headerlink" title="选择器：nth-of-type和nth-last-of-type"></a>选择器：nth-of-type和nth-last-of-type</h2><ul>
+<li>避免这类问题的发生。</li>
+<li>计算子元素是第奇数个子元素还是第偶数个子元素时，就只针对同类型的子元素进行计算</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">&lt;style&gt;</div><div class="line">    /*把父元素和子元素计算在内*/</div><div class="line">    h2:nth-child(odd)&#123;</div><div class="line">      background-color: red;</div><div class="line">    &#125;</div><div class="line">    h2:nth-last-of-type(odd)&#123;</div><div class="line">      background-color: red;</div><div class="line">    &#125;</div><div class="line">    /*只算父元素*/</div><div class="line">    h2:nth-of-type(odd)&#123;</div><div class="line">      background-color: red;</div><div class="line">    &#125;</div><div class="line">    h2:nth-of-type(even)&#123;</div><div class="line">      background-color: red;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">  &lt;/style&gt;</div><div class="line"></div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">  &lt;h2&gt;文章标题&lt;/h2&gt;</div><div class="line">  &lt;p&gt;文章正文&lt;/p&gt;</div><div class="line">  &lt;h2&gt;文章标题&lt;/h2&gt;</div><div class="line">  &lt;p&gt;文章正文&lt;/p&gt;</div><div class="line">  &lt;h2&gt;文章标题&lt;/h2&gt;</div><div class="line">  &lt;p&gt;文章正文&lt;/p&gt;</div><div class="line">  &lt;h2&gt;文章标题&lt;/h2&gt;</div><div class="line">  &lt;p&gt;文章正文&lt;/p&gt;</div><div class="line">  &lt;h2&gt;文章标题&lt;/h2&gt;</div><div class="line">  &lt;p&gt;文章正文&lt;/p&gt;</div><div class="line">  &lt;h2&gt;文章标题&lt;/h2&gt;</div><div class="line">  &lt;p&gt;文章正文&lt;/p&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">nth-child(n)</div><div class="line">n=αn+β</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">  &lt;style&gt;</div><div class="line">    li:nth-child(4n+1)&#123;</div><div class="line">      background-color: red;</div><div class="line">    &#125;</div><div class="line">    li:nth-child(4n+2)&#123;</div><div class="line">      background-color: green;</div><div class="line">    &#125;</div><div class="line">    li:nth-child(4n+3)&#123;</div><div class="line">      background-color: blue;</div><div class="line">    &#125;</div><div class="line">    li:nth-child(4n)&#123;</div><div class="line">      background-color: yellow;</div><div class="line">    &#125;</div><div class="line">  &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">  &lt;h2&gt;列表&lt;/h2&gt;</div><div class="line">  &lt;ul&gt;</div><div class="line">    &lt;li&gt;列表1&lt;/li&gt;</div><div class="line">    &lt;li&gt;列表2&lt;/li&gt;</div><div class="line">    &lt;li&gt;列表3&lt;/li&gt;</div><div class="line">    &lt;li&gt;列表4&lt;/li&gt;</div><div class="line">    &lt;li&gt;列表1&lt;/li&gt;</div><div class="line">    &lt;li&gt;列表2&lt;/li&gt;</div><div class="line">    &lt;li&gt;列表3&lt;/li&gt;</div><div class="line">    &lt;li&gt;列表4&lt;/li&gt;</div><div class="line">    &lt;li&gt;列表1&lt;/li&gt;</div><div class="line">    &lt;li&gt;列表2&lt;/li&gt;</div><div class="line">    &lt;li&gt;列表3&lt;/li&gt;</div><div class="line">    &lt;li&gt;列表4&lt;/li&gt;</div><div class="line">    &lt;li&gt;列表1&lt;/li&gt;</div><div class="line">    &lt;li&gt;列表2&lt;/li&gt;</div><div class="line">    &lt;li&gt;列表3&lt;/li&gt;</div><div class="line">    &lt;li&gt;列表4&lt;/li&gt;</div><div class="line">  &lt;/ul&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<h2 id="only-child选择器"><a href="#only-child选择器" class="headerlink" title="only-child选择器"></a>only-child选择器</h2><ul>
+<li>可以来代替使用<code>nth-child</code>和<code>nth-last-child</code>的实现方法。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">  &lt;style&gt;</div><div class="line">    li:nth-child(1)&#123;</div><div class="line">      background-color: red;</div><div class="line">    &#125;</div><div class="line">    /*只有一个列表项的时候*/</div><div class="line">    li:only-child&#123;</div><div class="line">      background-color: yellow;</div><div class="line">    &#125;</div><div class="line">  &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">  &lt;h2&gt;列表&lt;/h2&gt;</div><div class="line">  &lt;ul&gt;</div><div class="line">    &lt;li&gt;列表1&lt;/li&gt;</div><div class="line">  &lt;/ul&gt;</div><div class="line">  &lt;ul&gt;</div><div class="line">    &lt;li&gt;列表1&lt;/li&gt;</div><div class="line">  &lt;/ul&gt;  </div><div class="line">  &lt;ul&gt;</div><div class="line">    &lt;li&gt;列表1&lt;/li&gt;</div><div class="line">    &lt;li&gt;列表1&lt;/li&gt;</div><div class="line">    &lt;li&gt;列表1&lt;/li&gt;</div><div class="line">    &lt;li&gt;列表1&lt;/li&gt;</div><div class="line">  &lt;/ul&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<h2 id="选择器种类"><a href="#选择器种类" class="headerlink" title="选择器种类"></a>选择器种类</h2><ul>
+<li>UI元素状态伪类选择器（17种）<ul>
+<li>E:hover</li>
+<li>E:active</li>
+<li>E:focus</li>
+<li>E:disabled</li>
+<li>E:read-only</li>
+<li>E:checked</li>
+<li>E:default</li>
+<li>E:indeterminate</li>
+<li>E::selection</li>
+<li>E:invalid</li>
+<li>E:valid</li>
+<li>E:required</li>
+<li>E:optional</li>
+<li>E:in-range</li>
+</ul>
+</li>
+<li>通用兄弟元素选择器</li>
+</ul>
+<p>共同特征是：指定的样式只有当元素处于某种状态下时才起作用，在默认状态下不起作用。</p>
+<h2 id="hover、focus、active-和-checked"><a href="#hover、focus、active-和-checked" class="headerlink" title="hover、focus、active 和 checked"></a>hover、focus、active 和 checked</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">&lt;style&gt;</div><div class="line">    input[type=&quot;text&quot;]:hover&#123;</div><div class="line">      background-color: yellow;</div><div class="line">    &#125;</div><div class="line">    input[type=&quot;text&quot;]:focus&#123;</div><div class="line">      background-color: aqua;</div><div class="line">    &#125;</div><div class="line">    input[type=&quot;text&quot;]:active&#123;</div><div class="line">      background-color: red;</div><div class="line">    &#125;</div><div class="line">  &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">  &lt;input type=&quot;text&quot;name=&quot;name&quot;&gt;</div><div class="line">  &lt;input type=&quot;text&quot; name=&quot;age&quot;&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">  &lt;style&gt;</div><div class="line">    input[type=&quot;checkbox&quot;]:checked&#123;</div><div class="line">      outline: 2px solid red;</div><div class="line">    &#125;</div><div class="line">  &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">  &lt;input type=&quot;checkbox&quot;&gt;阅读</div><div class="line">  &lt;input type=&quot;checkbox&quot;&gt;旅游</div><div class="line">  &lt;input type=&quot;checkbox&quot;&gt;看电影</div><div class="line">  &lt;input type=&quot;checkbox&quot;&gt;上网</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<h2 id="enabled和disabled"><a href="#enabled和disabled" class="headerlink" title="enabled和disabled"></a>enabled和disabled</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">  &lt;style&gt;</div><div class="line">    input[type=&quot;text&quot;]:enabled&#123;</div><div class="line">      background-color: yellow;</div><div class="line">    &#125;</div><div class="line">    input[type=&quot;text&quot;]:disabled&#123;</div><div class="line">      background-color: grey;</div><div class="line">    &#125;</div><div class="line">  &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">  &lt;script&gt;</div><div class="line">    function radio_change()&#123;</div><div class="line">      var radio1 = document.getElementById(&quot;radio1&quot;);</div><div class="line">      var radio2 = document.getElementById(&quot;radio2&quot;);</div><div class="line">      var text = document.getElementById(&quot;text&quot;);</div><div class="line">      if(radio1.checked)&#123;</div><div class="line">        text.disabled=&quot;&quot;;</div><div class="line">      &#125;else&#123;</div><div class="line">        text.value = &quot;&quot;;</div><div class="line">        text.disabled = &quot;disabled&quot;;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">  &lt;/script&gt;</div><div class="line">  &lt;input type=&quot;radio&quot; id=&quot;radio1&quot; name=&quot;radio&quot; onchange=&quot;radio_change()&quot;&gt;可用</div><div class="line">  &lt;input type=&quot;radio&quot; id=&quot;radio2&quot; name=&quot;radio&quot; onchange=&quot;radio_change()&quot;&gt;不可用</div><div class="line">  &lt;input type=&quot;text&quot; id=&quot;text&quot; disabled&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<h2 id="通用兄弟元素选择器"><a href="#通用兄弟元素选择器" class="headerlink" title="通用兄弟元素选择器"></a>通用兄弟元素选择器</h2><ul>
+<li>用来指定位于同一个父元素之中的某个元素之后的所有其他某个种类的兄弟元素所使用样式。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">  &lt;style&gt;</div><div class="line">    div ~ p&#123;</div><div class="line">      background-color: yellow;</div><div class="line">    &#125;</div><div class="line">  &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">  &lt;div&gt;</div><div class="line">    &lt;div&gt;</div><div class="line">      &lt;p&gt;P元素为div的子元素&lt;/p&gt;</div><div class="line">      &lt;p&gt;P元素为div的子元素&lt;/p&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">    &lt;p&gt;P元素为div的子元素&lt;/p&gt;</div><div class="line">    &lt;p&gt;P元素为div的子元素&lt;/p&gt;</div><div class="line">    &lt;p&gt;P元素为div的子元素&lt;/p&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<h1 id="CSS3-文字与字体相关样式"><a href="#CSS3-文字与字体相关样式" class="headerlink" title="CSS3 文字与字体相关样式"></a>CSS3 文字与字体相关样式</h1><h2 id="给文字添加阴影"><a href="#给文字添加阴影" class="headerlink" title="给文字添加阴影"></a>给文字添加阴影</h2><p><code>text-shadow:length length length color</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">  &lt;style&gt;</div><div class="line">    div&#123;</div><div class="line">      text-shadow: -5px -5px 5px red,</div><div class="line">                   5px 5px 10px blue,</div><div class="line">                   10px 10px 15px green;</div><div class="line">      font-size: 40px;</div><div class="line">      color: yellow;</div><div class="line">      font-weight: bold;</div><div class="line">      background-color: grey;</div><div class="line">      height:200px;</div><div class="line">      width:100px;</div><div class="line">      padding: 30px 0;</div><div class="line">      text-align: center;</div><div class="line">    &#125;</div><div class="line">  &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">  &lt;div&gt;</div><div class="line">    你好</div><div class="line">  &lt;/div&gt;</div></pre></td></tr></table></figure>
+<h2 id="使用服务器端字体"><a href="#使用服务器端字体" class="headerlink" title="使用服务器端字体"></a>使用服务器端字体</h2><p><code>word-break:normal,keep-all,break</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">&lt;style&gt;</div><div class="line">    @font-face&#123;</div><div class="line">      font-family: WebFont;</div><div class="line">      /*ttf:o otf:t*/</div><div class="line">      src: url(&apos;&apos;)format(&quot;truetype&quot;);</div><div class="line">      font-weight: nromal;</div><div class="line">    &#125;</div><div class="line">    div&#123;</div><div class="line">      font-family: WebFont;</div><div class="line">    &#125;</div><div class="line">  &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">  &lt;div&gt;</div><div class="line">    This is my page web;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">  &lt;style&gt;</div><div class="line">    @font-face&#123;</div><div class="line">      font-family: MyArial;</div><div class="line">      src: local(&quot;Arial&quot;),</div><div class="line">            url(&quot;NotoSansCJKsc-Thin.otf&quot;);</div><div class="line">    &#125;</div><div class="line">    div&#123;</div><div class="line">      font-family: MyArial;</div><div class="line">    &#125;</div><div class="line">  &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">  &lt;div&gt;</div><div class="line">    This is my page web;</div><div class="line">  &lt;/div&gt;</div></pre></td></tr></table></figure>
+<h2 id="修改字体种类而保持字体尺寸不变"><a href="#修改字体种类而保持字体尺寸不变" class="headerlink" title="修改字体种类而保持字体尺寸不变"></a>修改字体种类而保持字体尺寸不变</h2><p><code>font-size-adjust:</code></p>
+<p><code>x-height:58 font-size:100 px; aspect:0.58</code></p>
+<p><code>c = (a/b)/s</code></p>
+<p>不成功：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">  &lt;style&gt;</div><div class="line">    #div1&#123;</div><div class="line">      font-family: Menlo;</div><div class="line">      font-size: 16px;</div><div class="line">      font-size-adjust: 0.60;</div><div class="line">    &#125;</div><div class="line">    #div2&#123;</div><div class="line">      font-family: Cursive;</div><div class="line">      font-size: 16px;</div><div class="line">      font-size-adjust: 0.9;</div><div class="line">    &#125;</div><div class="line">    #div3&#123;</div><div class="line">      font-family: &quot;Lantinghei SC&quot;;</div><div class="line">      font-size: 16px;</div><div class="line">      font-size-adjust: 0.3;</div><div class="line">    &#125;</div><div class="line">  &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">  &lt;div id=&quot;div1&quot;&gt;Text sample&lt;/div&gt;</div><div class="line">  &lt;div id=&quot;div2&quot;&gt;Text sample&lt;/div&gt;</div><div class="line">  &lt;div id=&quot;div3&quot;&gt;Text sample&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<h1 id="盒子相关样式"><a href="#盒子相关样式" class="headerlink" title="盒子相关样式"></a>盒子相关样式</h1><h2 id="盒子的类型"><a href="#盒子的类型" class="headerlink" title="盒子的类型"></a>盒子的类型</h2><ul>
+<li><code>block</code></li>
+<li><code>inline-block</code> —— 可设置宽度</li>
+<li><code>inline</code>  —— 无法设置宽度</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">  &lt;style&gt;</div><div class="line">    div&#123;</div><div class="line">      background-color: aqua;</div><div class="line">      display: inline-block;</div><div class="line">      width: 300px;</div><div class="line">    &#125;</div><div class="line">    span&#123;</div><div class="line">      background-color: brown;</div><div class="line">      display: inline;</div><div class="line">      width: 300px;</div><div class="line">    &#125;</div><div class="line">  &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">  &lt;div&gt;div元素&lt;/div&gt;</div><div class="line">  &lt;div&gt;div元素&lt;/div&gt;</div><div class="line">  &lt;br&gt;</div><div class="line">  &lt;span&gt;span元素&lt;/span&gt;</div><div class="line">  &lt;span&gt;span元素&lt;/span&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">  &lt;style&gt;</div><div class="line">    table&#123;</div><div class="line">      display: inline-table;</div><div class="line">      border: solid 3px #00aaff;</div><div class="line">    &#125;</div><div class="line">    td&#123;</div><div class="line">      border: solid 1px #ff00ff;</div><div class="line">    &#125;</div><div class="line">  &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">  你好上</div><div class="line">  &lt;table&gt;</div><div class="line">    &lt;tr&gt;</div><div class="line">      &lt;td&gt;A&lt;/td&gt;&lt;td&gt;A&lt;/td&gt;&lt;td&gt;A&lt;/td&gt;&lt;td&gt;A&lt;/td&gt;</div><div class="line">    &lt;/tr&gt;</div><div class="line">    &lt;tr&gt;</div><div class="line">      &lt;td&gt;A&lt;/td&gt;&lt;td&gt;A&lt;/td&gt;&lt;td&gt;A&lt;/td&gt;&lt;td&gt;A&lt;/td&gt;</div><div class="line">    &lt;/tr&gt;</div><div class="line">    &lt;tr&gt;</div><div class="line">      &lt;td&gt;A&lt;/td&gt;&lt;td&gt;A&lt;/td&gt;&lt;td&gt;A&lt;/td&gt;&lt;td&gt;A&lt;/td&gt;</div><div class="line">    &lt;/tr&gt;</div><div class="line">    &lt;tr&gt;</div><div class="line">      &lt;td&gt;A&lt;/td&gt;&lt;td&gt;A&lt;/td&gt;&lt;td&gt;A&lt;/td&gt;&lt;td&gt;A&lt;/td&gt;</div><div class="line">    &lt;/tr&gt;</div><div class="line">  &lt;/table&gt;</div><div class="line">  你好下</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">  &lt;style&gt;</div><div class="line">    div&#123;</div><div class="line">      display: list-item;</div><div class="line">      list-style-type: circle;</div><div class="line">      margin-left: 30px;</div><div class="line">    &#125;</div><div class="line">  &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">  &lt;div&gt;示例1&lt;/div&gt;</div><div class="line">  &lt;div&gt;示例2&lt;/div&gt;</div><div class="line">  &lt;div&gt;示例3&lt;/div&gt;</div><div class="line">  &lt;div&gt;示例4&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<h2 id="对盒子中容纳不下的内容的显示"><a href="#对盒子中容纳不下的内容的显示" class="headerlink" title="对盒子中容纳不下的内容的显示"></a>对盒子中容纳不下的内容的显示</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">  &lt;style&gt;</div><div class="line">    div&#123;</div><div class="line">      width: 300px;</div><div class="line">      height: 150px;</div><div class="line">      border: solid 1px orange;</div><div class="line">      /*overflow: visible;*/</div><div class="line">      overflow-y: hidden;</div><div class="line">      overflow-x: scroll;</div><div class="line">      white-space: nowrap;</div><div class="line">    &#125;</div><div class="line">  &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">  &lt;div&gt;</div><div class="line">    &lt;h1&gt;标题文字&lt;/h1&gt;</div><div class="line">    &lt;p&gt;文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例&lt;/p&gt;</div><div class="line">    &lt;p&gt;文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例文字实例&lt;/p&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<h2 id="盒子的阴影和大小计算方式"><a href="#盒子的阴影和大小计算方式" class="headerlink" title="盒子的阴影和大小计算方式"></a>盒子的阴影和大小计算方式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">  &lt;style&gt;</div><div class="line">    div&#123;</div><div class="line">      margin-left: 100px;</div><div class="line">      margin-top: 100px;</div><div class="line">      background-color: #ffaa00;</div><div class="line">      box-shadow: 0px 0px 20px grey;</div><div class="line">      width: 200px;</div><div class="line">      height: 100px;</div><div class="line">    &#125;</div><div class="line">  &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">  &lt;div&gt;&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">  &lt;style&gt;</div><div class="line"></div><div class="line">    #div1&#123;</div><div class="line">      box-sizing: border-box;</div><div class="line">      width: 100px;</div><div class="line">      height: 100px;</div><div class="line">      padding: 10px;</div><div class="line">      background-color: #00aaff;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    #div2&#123;</div><div class="line">      box-sizing: content-box;</div><div class="line">      width: 100px;</div><div class="line">      height: 100px;</div><div class="line">      padding: 10px;</div><div class="line">      background-color: #00ffaa;</div><div class="line">    &#125;</div><div class="line">  &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">  &lt;div id=&quot;div1&quot;&gt;&lt;/div&gt;</div><div class="line">  &lt;div id=&quot;div2&quot;&gt;&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<h1 id="背景与边框相关样式"><a href="#背景与边框相关样式" class="headerlink" title="背景与边框相关样式"></a>背景与边框相关样式</h1><h2 id="与背景相关的新增属性"><a href="#与背景相关的新增属性" class="headerlink" title="与背景相关的新增属性"></a>与背景相关的新增属性</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">  &lt;style&gt;</div><div class="line">    div&#123;</div><div class="line">      background-color: black;</div><div class="line">      border: dashed 15px green;</div><div class="line">      padding: 30px;</div><div class="line">      color: white;</div><div class="line">      font-size: 30px;</div><div class="line">      font-weight: bold;</div><div class="line">      background-image: url(&quot;https://ws2.sinaimg.cn/large/006tNc79gy1fkjd7u3wvjj30lo0xlqax.jpg&quot;);</div><div class="line">      background-repeat: no-repeat;</div><div class="line">    &#125;</div><div class="line">    .div1&#123;</div><div class="line">      background-origin: border-box;</div><div class="line">      background-clip: border-box;</div><div class="line">    &#125;</div><div class="line">    .div2&#123;</div><div class="line">      background-origin: padding-box;</div><div class="line">      background-clip: padding-box;</div><div class="line">    &#125;</div><div class="line">    .div3&#123;</div><div class="line">      background-origin: content-box;</div><div class="line">      background-clip: content-box;</div><div class="line">    &#125;</div><div class="line">  &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">  &lt;div class=&quot;div1&quot;&gt;示例1&lt;/div&gt;</div><div class="line">  &lt;br&gt;</div><div class="line">  &lt;div class=&quot;div2&quot;&gt;示例2&lt;/div&gt;</div><div class="line">  &lt;br&gt;</div><div class="line">  &lt;div class=&quot;div3&quot;&gt;示例3&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<h2 id="一个元素中显示多个背景图片"><a href="#一个元素中显示多个背景图片" class="headerlink" title="一个元素中显示多个背景图片"></a>一个元素中显示多个背景图片</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">  &lt;style&gt;</div><div class="line">    div&#123;</div><div class="line">      background-image: url(&quot;https://ws1.sinaimg.cn/large/006tKfTcgy1fkngt8dizwj308s05swf6.jpg&quot;),url(&quot;https://ws2.sinaimg.cn/large/006tKfTcgy1fkngtawg3cj30cg08940j.jpg&quot;);</div><div class="line">      background-repeat: repeat-x,no-repeat;</div><div class="line">      background-position: 100%,100%,center,center;</div><div class="line">      width: 1000px;</div><div class="line">      height:800px;</div><div class="line">    &#125;</div><div class="line">  &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">  &lt;div&gt;&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<h2 id="圆角边框"><a href="#圆角边框" class="headerlink" title="圆角边框"></a>圆角边框</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">  &lt;style&gt;</div><div class="line">  /*左上，右上、右下、左下。顺时针*/</div><div class="line">    div&#123;</div><div class="line">      background-color: grey;</div><div class="line">      border: 3px solid #000;</div><div class="line">      width: 300px;</div><div class="line">      height: 200px;</div><div class="line">      padding: 20px;</div><div class="line">      border-radius: 20px 30px 10px 50px;</div><div class="line">    &#125;</div><div class="line">  &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">  &lt;div&gt;</div><div class="line">    示例文字示例文字示例文字示例文字示例文字示例文字示例文字示例文字</div><div class="line">    示例文字示例文字</div><div class="line">    示例文字示例文字示例文字示例文字示例文字示例文字示例文字示例文字</div><div class="line">  示例文字示例文字示例文字示例文字示例文字示例文字示例文字示例文字</div><div class="line">  示例文字示例文字</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<h2 id="使用图像边框"><a href="#使用图像边框" class="headerlink" title="使用图像边框"></a>使用图像边框</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">  &lt;style&gt;</div><div class="line">    div&#123;</div><div class="line">      -webkit-border-image: url(&quot;https://ws2.sinaimg.cn/large/006tKfTcgy1fknhb8z28aj306y062dgw.jpg&quot;) 50 70 50 40;</div><div class="line">      /*background-image: url(&quot;https://ws2.sinaimg.cn/large/006tKfTcgy1fknhb8z28aj306y062dgw.jpg&quot;);*/</div><div class="line">      width: 200px;</div><div class="line">    &#125;</div><div class="line">  &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">  &lt;div&gt;</div><div class="line">    示例文字</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fknk57dn55j30fp0g5ae3.jpg" alt=""></p>
+<h1 id="变形处理"><a href="#变形处理" class="headerlink" title="变形处理"></a>变形处理</h1><h2 id="transform-功能的基础知识"><a href="#transform-功能的基础知识" class="headerlink" title="transform 功能的基础知识"></a>transform 功能的基础知识</h2><ul>
+<li>旋转</li>
+<li>缩放</li>
+<li>移动</li>
+<li>倾斜</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">  &lt;style&gt;</div><div class="line">    div&#123;</div><div class="line">      width: 300px;</div><div class="line">      margin: 150px auto;</div><div class="line">      background-color: aqua;</div><div class="line">      text-align: center;</div><div class="line">      transform: rotate(45deg);</div><div class="line">      -webkit-transform:rotate(45deg);</div><div class="line">      transform: scale(3.5);</div><div class="line">      transform: skew(30deg,30deg);</div><div class="line">      transform: translate(250px, 250px);</div><div class="line">    &#125;</div><div class="line">  &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">  &lt;div&gt;</div><div class="line">    示例文字</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<h2 id="对一个元素使用多种变形的方法"><a href="#对一个元素使用多种变形的方法" class="headerlink" title="对一个元素使用多种变形的方法"></a>对一个元素使用多种变形的方法</h2><ul>
+<li>前后顺序一定不要颠倒</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">  &lt;style&gt;</div><div class="line">    div&#123;</div><div class="line">      width: 300px;</div><div class="line">      margin: 150px auto;</div><div class="line">      background-color: aqua;</div><div class="line">      text-align: center;</div><div class="line">      transform: translate(250px, 250px) rotate(45deg) scale(3.5);</div><div class="line">    &#125;</div><div class="line">  &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">  &lt;div&gt;</div><div class="line">    示例文字</div><div class="line">  &lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<h2 id="指定变形的基准点"><a href="#指定变形的基准点" class="headerlink" title="指定变形的基准点"></a>指定变形的基准点</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">  &lt;style&gt;</div><div class="line">    div&#123;</div><div class="line">      width: 300px;</div><div class="line">      height: 200px;</div><div class="line">      background-color: aqua;</div><div class="line">    &#125;</div><div class="line">    .div2&#123;</div><div class="line">      transform-origin: top right;</div><div class="line">      transform: rotate(45deg);</div><div class="line">      transform: scale(1.5);</div><div class="line">    &#125;</div><div class="line">  &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">  &lt;div class=&quot;div1&quot;&gt;示例文字&lt;/div&gt;</div><div class="line">  &lt;div class=&quot;div2&quot;&gt;示例文字&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<h1 id="动画功能"><a href="#动画功能" class="headerlink" title="动画功能"></a>动画功能</h1><h2 id="Transitions-功能"><a href="#Transitions-功能" class="headerlink" title="Transitions 功能"></a>Transitions 功能</h2><ul>
+<li><code>progerty</code></li>
+<li><code>dration</code></li>
+<li><code>timing-function</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">  &lt;style&gt;</div><div class="line">    div&#123;</div><div class="line">      background-color: #ffff00;</div><div class="line">      width: 100px;</div><div class="line">      color: #000000;</div><div class="line">      /*transition: background-color 5s linear;*/</div><div class="line">      /*transition-property: background-color;</div><div class="line">      transition-duration: 3s;</div><div class="line">      transition-timing-function: linear;*/</div><div class="line">      /*transition: background-color 1s linear, color 1s linear, width 1s linear;*/</div><div class="line">      transition: transform 1s linear, color 1s linear, width 1s linear;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">    div:hover&#123;</div><div class="line">      background-color: #ff00ff;</div><div class="line">      color: #ffffff;</div><div class="line">      width: 200px;</div><div class="line">      transform: rotate(360deg);</div><div class="line">    &#125;</div><div class="line">  &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">    &lt;div&gt;示例文字&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<h2 id="Animations功能"><a href="#Animations功能" class="headerlink" title="Animations功能"></a>Animations功能</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">  &lt;style&gt;</div><div class="line">    div&#123;</div><div class="line">      background-color: red;</div><div class="line">    &#125;</div><div class="line">    @-webkit-keyframes mycolor&#123;</div><div class="line">      /*开始帧*/</div><div class="line">      0%&#123;</div><div class="line">        background-color: red;</div><div class="line">      &#125;</div><div class="line">      /*背景颜色变化帧*/</div><div class="line">      40%&#123;</div><div class="line">        background-color: #ffff00;</div><div class="line">      &#125;</div><div class="line">      70%&#123;</div><div class="line">        background-color: aqua;</div><div class="line">      &#125;</div><div class="line">      /*结束帧*/</div><div class="line">      100%&#123;</div><div class="line">        background-color: red;</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    div:hover&#123;</div><div class="line">      -webkit-animation: mycolor 5s linear;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">  &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">    &lt;div&gt;示例文字&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<h2 id="实现动画的方法"><a href="#实现动画的方法" class="headerlink" title="实现动画的方法"></a>实现动画的方法</h2><ul>
+<li><code>linear ease-in ease-out ease ease-in-out</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">  &lt;style&gt;</div><div class="line">    div&#123;</div><div class="line">      position: absolute;</div><div class="line">      background-color: #ffff00;</div><div class="line">      top: 100px;</div><div class="line">      width: 500px;</div><div class="line">    &#125;</div><div class="line">    @-webkit-keyframes mycolor&#123;</div><div class="line"></div><div class="line">      0%&#123;</div><div class="line">        background-color: red;</div><div class="line">        transform: rotate(0deg);</div><div class="line">      &#125;</div><div class="line">      30%&#123;</div><div class="line">        background-color: aqua;</div><div class="line">        transform: rotate(30deg);</div><div class="line">      &#125;</div><div class="line">      60%&#123;</div><div class="line">        background-color: lightskyblue;</div><div class="line">        transform: rotate(-30deg);</div><div class="line">      &#125;</div><div class="line">      100%&#123;</div><div class="line">        background-color: red;</div><div class="line">        transform: rotate(0deg);</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    div:hover&#123;</div><div class="line">      -webkit-animation-name: mycolor;</div><div class="line">      -webkit-animation-duration: 5s;</div><div class="line">      -webkit-animation-timing-function: linear;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">  &lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">    &lt;div&gt;示例文字&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/19/HTML/" rel="next" title="HTML5">
+                <i class="fa fa-chevron-left"></i> HTML5
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="https://ws2.sinaimg.cn/large/006tKfTcly1fj5edaynjzj30hs0hsglv.jpg"
+              alt="Katherine Chen" />
+          
+            <p class="site-author-name" itemprop="name">Katherine Chen</p>
+            <p class="site-description motion-element" itemprop="description">尽量只写对别人有用的文章……</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/about/index.html">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/you7588" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:you7588@gmail.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                    
+                      E-Mail
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS3选择器"><span class="nav-number">1.</span> <span class="nav-text">CSS3选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS3属性选择器"><span class="nav-number">1.1.</span> <span class="nav-text">CSS3属性选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS3结构性伪类选择器"><span class="nav-number">1.2.</span> <span class="nav-text">CSS3结构性伪类选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择器root、not、empty和target"><span class="nav-number">1.3.</span> <span class="nav-text">选择器root、not、empty和target</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择器：first-child、last-child、nth-child和nth-last-child"><span class="nav-number">1.4.</span> <span class="nav-text">选择器：first-child、last-child、nth-child和nth-last-child</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择器：nth-of-type和nth-last-of-type"><span class="nav-number">1.5.</span> <span class="nav-text">选择器：nth-of-type和nth-last-of-type</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#only-child选择器"><span class="nav-number">1.6.</span> <span class="nav-text">only-child选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择器种类"><span class="nav-number">1.7.</span> <span class="nav-text">选择器种类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hover、focus、active-和-checked"><span class="nav-number">1.8.</span> <span class="nav-text">hover、focus、active 和 checked</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#enabled和disabled"><span class="nav-number">1.9.</span> <span class="nav-text">enabled和disabled</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通用兄弟元素选择器"><span class="nav-number">1.10.</span> <span class="nav-text">通用兄弟元素选择器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CSS3-文字与字体相关样式"><span class="nav-number">2.</span> <span class="nav-text">CSS3 文字与字体相关样式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#给文字添加阴影"><span class="nav-number">2.1.</span> <span class="nav-text">给文字添加阴影</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用服务器端字体"><span class="nav-number">2.2.</span> <span class="nav-text">使用服务器端字体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改字体种类而保持字体尺寸不变"><span class="nav-number">2.3.</span> <span class="nav-text">修改字体种类而保持字体尺寸不变</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#盒子相关样式"><span class="nav-number">3.</span> <span class="nav-text">盒子相关样式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#盒子的类型"><span class="nav-number">3.1.</span> <span class="nav-text">盒子的类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对盒子中容纳不下的内容的显示"><span class="nav-number">3.2.</span> <span class="nav-text">对盒子中容纳不下的内容的显示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#盒子的阴影和大小计算方式"><span class="nav-number">3.3.</span> <span class="nav-text">盒子的阴影和大小计算方式</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#背景与边框相关样式"><span class="nav-number">4.</span> <span class="nav-text">背景与边框相关样式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#与背景相关的新增属性"><span class="nav-number">4.1.</span> <span class="nav-text">与背景相关的新增属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一个元素中显示多个背景图片"><span class="nav-number">4.2.</span> <span class="nav-text">一个元素中显示多个背景图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#圆角边框"><span class="nav-number">4.3.</span> <span class="nav-text">圆角边框</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用图像边框"><span class="nav-number">4.4.</span> <span class="nav-text">使用图像边框</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#变形处理"><span class="nav-number">5.</span> <span class="nav-text">变形处理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#transform-功能的基础知识"><span class="nav-number">5.1.</span> <span class="nav-text">transform 功能的基础知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对一个元素使用多种变形的方法"><span class="nav-number">5.2.</span> <span class="nav-text">对一个元素使用多种变形的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指定变形的基准点"><span class="nav-number">5.3.</span> <span class="nav-text">指定变形的基准点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#动画功能"><span class="nav-number">6.</span> <span class="nav-text">动画功能</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Transitions-功能"><span class="nav-number">6.1.</span> <span class="nav-text">Transitions 功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Animations功能"><span class="nav-number">6.2.</span> <span class="nav-text">Animations功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现动画的方法"><span class="nav-number">6.3.</span> <span class="nav-text">实现动画的方法</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Katherine Chen</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://chen-lingmin.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2017/10/19/css3/';
+          this.page.identifier = '2017/10/19/css3/';
+          this.page.title = 'css3';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://chen-lingmin.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

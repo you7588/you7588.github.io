@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="JS," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="var We use the var keyword to declare variables.The scope of a variable declared using this keyword is within the context wherever it was declared. It defines a variable globally or locally to an enti">
+<meta name="keywords" content="JS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Variable Declaration Keywords">
+<meta property="og:url" content="http://yoursite.com/2017/10/09/declaration/index.html">
+<meta property="og:site_name" content="时间的朋友">
+<meta property="og:description" content="var We use the var keyword to declare variables.The scope of a variable declared using this keyword is within the context wherever it was declared. It defines a variable globally or locally to an enti">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-10-10T10:33:31.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Variable Declaration Keywords">
+<meta name="twitter:description" content="var We use the var keyword to declare variables.The scope of a variable declared using this keyword is within the context wherever it was declared. It defines a variable globally or locally to an enti">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/10/09/declaration/"/>
+
+
+
+
+
+  <title>Variable Declaration Keywords | 时间的朋友</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', '105782654', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">时间的朋友</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">把琐碎的时间堆砌成一个伟大的生命。</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            时间线
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-word">
+          <a href="/word/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            博物馆
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-cheatsheet">
+          <a href="/cheatsheet/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            速查卡
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-feedback">
+          <a href="/feedback/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-users"></i> <br />
+            
+            反馈
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/09/declaration/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Katherine Chen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tKfTcly1fj5edaynjzj30hs0hsglv.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="时间的朋友">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Variable Declaration Keywords</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-09T22:19:44+08:00">
+                2017-10-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/10/09/declaration/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/10/09/declaration/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="var"><a href="#var" class="headerlink" title="var"></a>var</h1><blockquote>
+<p>We use the <em>var</em> keyword to declare variables.The scope of a variable declared using this keyword is within the context wherever it was declared. It defines a variable globally or locally to an entire function regardless of block scope.</p>
+</blockquote>
+<ul>
+<li>如果在顶层代码中使用<code>var</code>语句，它声明的是全局变量，在整个JavaScript中都是可见的。<br>For variables declared outside any function, this means they are globally available throughout the program.</li>
+<li>如果<code>var</code>语句出现在函数体内，那么它定义的是一个局部变量，其作用域就是这个函数。<br>For variables declared within a function, this means they are only available within the function itself.</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">main</span>(<span class="params">input</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> a = input;</div><div class="line"></div><div class="line">    <span class="comment">// If 'a' is odd:</span></div><div class="line">    <span class="keyword">if</span> (a % <span class="number">2</span> == <span class="number">1</span>) &#123;</div><div class="line">        <span class="keyword">var</span> a = input + <span class="number">1</span>;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">"if(a): "</span> + a);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"main(a): "</span> + a);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//input   11</span></div><div class="line"><span class="comment">//output  ==&gt; if(a): 12  /  main(a): 12</span></div></pre></td></tr></table></figure>
+<ol>
+<li>Variable  is declared in the <em>main</em> function using the <em>var</em> keyword and initialized with the given value, <code>11</code>.</li>
+<li><code>a% 1</code> evaluates to <em>true</em> because <code>11</code> is odd, so we enter the <em>if</em> block.</li>
+<li>Variable <code>a</code> is declared a second time inside the <em>if</em> block (still using the <em>var</em> keyword) and initialized with a value of <code>11 + 1 = 12</code>. We print the value of <code>a = 12</code>.</li>
+<li>We exit the <em>if</em> block and print the value of <code>a</code> in <em>main</em>. This value is <code>12</code> because the scope of the initial declaration of  in <em>main</em> includes the <em>if</em> block.</li>
+</ol>
+<h2 id="使用一个变量之前应当先声明"><a href="#使用一个变量之前应当先声明" class="headerlink" title="使用一个变量之前应当先声明"></a>使用一个变量之前应当先声明</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//声明1个变量</span></div><div class="line"><span class="keyword">var</span> i;</div><div class="line"><span class="keyword">var</span> sum;</div><div class="line"></div><div class="line"><span class="comment">//声明多个变量</span></div><div class="line"><span class="keyword">var</span> i,sum;</div><div class="line"></div><div class="line"><span class="comment">//将变量的初始赋值和变量声明合写在一起（即带有初始化表达式，用于指定它的初始值）</span></div><div class="line"><span class="keyword">var</span> message = <span class="string">"hello"</span>;</div><div class="line"><span class="keyword">var</span> i = <span class="number">0</span>, j = <span class="number">0</span>, k = <span class="number">0</span>;</div><div class="line"><span class="keyword">var</span> x = <span class="number">2</span>, y = x * x;                <span class="comment">//第二个变量使用了第一个变量</span></div><div class="line"></div><div class="line"><span class="comment">//更多变量</span></div><div class="line"><span class="keyword">var</span> x = <span class="number">2</span>,</div><div class="line">    f = <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123;<span class="keyword">return</span> x * x&#125;,</div><div class="line">    y = f(x);                         <span class="comment">//每个变量都独占一行</span></div><div class="line"></div><div class="line"><span class="comment">//循环变量</span></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>;i &lt; <span class="number">10</span>; i++,j--) <span class="built_in">console</span>.log(i);</div><div class="line"></div><div class="line"><span class="comment">//声明后，再赋值</span></div><div class="line"><span class="keyword">var</span> i = <span class="number">10</span>;</div><div class="line">i = <span class="string">"ten"</span>;</div></pre></td></tr></table></figure>
+<ul>
+<li>如果未在<code>var</code>声明语句中给变量指定初始值，那么虽然声明了这个变量，但在给它存入一个值之前，它的初始值就是<code>undefinded</code>。</li>
+<li>若试图读取一个没有声明的变量的值，会报错。EM5规定，一个没有声明的变量赋值也会报错。</li>
+<li><code>var</code>声明的变量是无法通过<code>delete</code>删除的。</li>
+<li>多次声明一个变量是无所谓的。</li>
+<li>变量在声明它们的脚本或函数中都是有定义的，变量声明语句会被“提前”至脚本或者函数的顶部。</li>
+</ul>
+<hr>
+<h1 id="let"><a href="#let" class="headerlink" title="let"></a>let</h1><blockquote>
+<p>Declare variables that are limited in scope to the block, statement, or expression in which they are used.</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">main</span>(<span class="params">input</span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> a = input;</div><div class="line"></div><div class="line">    <span class="keyword">if</span> (a % <span class="number">2</span> == <span class="number">1</span>) &#123;</div><div class="line">        <span class="keyword">let</span> a = input + <span class="number">1</span>;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">"if(a): "</span> + a);</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"main(a): "</span> + a);</div><div class="line">&#125;</div><div class="line"><span class="comment">//input    &lt;== 11</span></div><div class="line"><span class="comment">//output   ==&gt;  if(a): 12  /  main(a): 11</span></div></pre></td></tr></table></figure>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ol>
+<li>Variable  is declared in the <em>main</em> function using the <em>let</em> keyword and initialized with the given value, <code>11</code>.</li>
+<li><code>a % 1</code> evaluates to <em>true</em> because <code>a = 11</code> is odd, so we enter the <em>if</em> block.</li>
+<li>Variable  is declared a second time inside the <em>if</em> block (again using the <em>let</em> keyword) and initialized with a value of <code>11 + 1 = 12</code>. We print the value of <code>a = 12</code>.</li>
+<li>We exit the <em>if</em> block and print the value of  in <em>main</em>. Because we used the <em>let</em> keyword for both declarations and the scope of the second declaration of  was limited to the <em>if</em> block, the value of  in <em>main</em> is still <code>11</code>.</li>
+</ol>
+<p>It’s important to note that you cannot redeclare a variable declared using the <em>let</em> keyword within the same scope as the original variable. An attempt to do this raises an <em>Error</em>, as demonstrated by the code below.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">main</span>(<span class="params">input</span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> a = input;</div><div class="line"></div><div class="line">    <span class="comment">// This will throw "SyntaxError: Identifier 'a' has already been declared"</span></div><div class="line">    <span class="keyword">let</span> a = input + <span class="number">1</span>;</div><div class="line">    <span class="built_in">console</span>.log(a);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//input   &lt;== 11</span></div><div class="line"><span class="comment">//output  ==&gt; SyntaxError: Identifier 'a' has already been declared</span></div></pre></td></tr></table></figure>
+<hr>
+<h1 id="const"><a href="#const" class="headerlink" title="const"></a>const</h1><blockquote>
+<p>To create a <em>read-only</em> reference to a value, meaning the value referenced by this variable cannot be reassigned.<br>Because the value referenced by a constant variable cannot be reassigned, JavaScript <em>requires</em> that constant variables always be initialized.</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">main</span>(<span class="params">input</span>) </span>&#123;</div><div class="line">    <span class="keyword">const</span> a = input;</div><div class="line"></div><div class="line">    <span class="comment">// This will throw "SyntaxError: Missing initializer in const declaration"</span></div><div class="line">    <span class="keyword">const</span> b;</div><div class="line"></div><div class="line">    <span class="built_in">console</span>.log(a);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//input   &lt;== 11</span></div><div class="line"><span class="comment">//output  ==&gt; SyntaxError: Identifier 'a' has already been declared</span></div></pre></td></tr></table></figure>
+<hr>
+<h1 id="Task——变量提前声明的特点"><a href="#Task——变量提前声明的特点" class="headerlink" title="Task——变量提前声明的特点"></a>Task——变量提前声明的特点</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(name);</div><div class="line"><span class="keyword">var</span> name = <span class="string">'xiaoming'</span>;</div><div class="line"><span class="built_in">console</span>.log(name);</div></pre></td></tr></table></figure>
+<p>以上两个输出分别是什么？为什么？</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(name);</div><div class="line"><span class="keyword">let</span> name = <span class="string">'xiaoming'</span>;</div><div class="line"><span class="built_in">console</span>.log(name);</div></pre></td></tr></table></figure>
+<p>以上两个输出分别是什么？为什么？</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(name);</div><div class="line"><span class="keyword">const</span> name = <span class="string">'xiaoming'</span>;</div><div class="line"><span class="built_in">console</span>.log(name);</div></pre></td></tr></table></figure>
+<p>以上两个输出分别是什么？为什么？</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(name);      <span class="comment">//undefined;</span></div><div class="line"><span class="keyword">var</span> name = <span class="string">'xiaoming'</span>;</div><div class="line"><span class="built_in">console</span>.log(name);      <span class="comment">//xiaoming;</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(name);      <span class="comment">//ReferenceError: name is not defined;</span></div><div class="line"><span class="keyword">let</span> name = <span class="string">'xiaoming'</span>;</div><div class="line"><span class="built_in">console</span>.log(name);      <span class="comment">//xiaoming (it will not console.log when run line1);</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(name);      <span class="comment">//ReferenceError: name is not defined;</span></div><div class="line"><span class="keyword">const</span> name = <span class="string">'xiaoming'</span>;</div><div class="line"><span class="built_in">console</span>.log(name);      <span class="comment">//xiaoming (it will not console.log when run line1);</span></div></pre></td></tr></table></figure>
+<p><strong>解答：</strong><br>[首先，var是js的大大坑，为了填补var的坑，es6引入了let。<br>想要了解var，就要先掌握代码在处理过程是对变量的查找过程。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(name);</div><div class="line"><span class="keyword">var</span> name = <span class="string">'xiaoming'</span>;</div><div class="line"><span class="built_in">console</span>.log(name);</div></pre></td></tr></table></figure>
+<p>从上面的代码，很直观的看出第一行输出name时，name这个变量并没有声明。如果变量没有声明，代码肯定执行会抛出异常。但上面代码并没有抛出异常，反而输出了一个‘undefined’。这是为什么？</p>
+<p>事实上，上面的代码等价于</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> name;</div><div class="line"><span class="built_in">console</span>.log(name);</div><div class="line">name = <span class="string">'xiaoming'</span>;</div><div class="line"><span class="built_in">console</span>.log(name);</div></pre></td></tr></table></figure>
+<p>通过等价代码能看出，最先声明了一个变量name，并没有赋值，没有赋值的变量默认值是’undefined’。<br>通过这样的等价转换是不是就明白了结果。<br>JS编译器在处理代码分为两个过程：编译期和执行期。<br>再来看源代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(name);</div><div class="line"><span class="keyword">var</span> name = <span class="string">'xiaoming'</span>;</div><div class="line"><span class="built_in">console</span>.log(name);</div></pre></td></tr></table></figure>
+<p>重点看第一行代码，在编译期中，第一行需要输出name，name在哪里呢？后面有一个var name，所以编译会把var name提前，紧接着是执行期，name只是声明提前了，但并没有赋值，所以输出了默认的undefined。<br>所以，是编译器在编译期做了一些手脚，把var变量的声明提前了。<br>从上面这件事我们可以引申到函数表达式定义的理解。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">fun();</div><div class="line"><span class="keyword">var</span> fun = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'hello, js'</span>);</div><div class="line">&#125;</div><div class="line">fun();</div></pre></td></tr></table></figure>
+<p>以上代码在执行第一行fun()时会抛出一个错误。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">TypeError</span>: fun is not a <span class="function"><span class="keyword">function</span></span></div><div class="line"><span class="function">    <span class="title">at</span> <span class="title">Object</span>.&lt;<span class="title">anonymous</span>&gt; (<span class="params"><span class="regexp">/Users/y</span>oungxu<span class="regexp">/Desktop/</span>sample.js:<span class="number">1</span>:<span class="number">63</span></span>)</span></div><div class="line"><span class="function">    <span class="title">at</span> <span class="title">Module</span>.<span class="title">_compile</span> (<span class="params">module.js:<span class="number">569</span>:<span class="number">30</span></span>)</span></div><div class="line"><span class="function">    <span class="title">at</span> <span class="title">Object</span>.<span class="title">Module</span>.<span class="title">_extensions</span>..<span class="title">js</span> (<span class="params">module.js:<span class="number">580</span>:<span class="number">10</span></span>)</span></div><div class="line"><span class="function">    <span class="title">at</span> <span class="title">Module</span>.<span class="title">load</span> (<span class="params">module.js:<span class="number">503</span>:<span class="number">32</span></span>)</span></div><div class="line"><span class="function">    <span class="title">at</span> <span class="title">tryModuleLoad</span> (<span class="params">module.js:<span class="number">466</span>:<span class="number">12</span></span>)</span></div><div class="line"><span class="function">    <span class="title">at</span> <span class="title">Function</span>.<span class="title">Module</span>.<span class="title">_load</span> (<span class="params">module.js:<span class="number">458</span>:<span class="number">3</span></span>)</span></div><div class="line"><span class="function">    <span class="title">at</span> <span class="title">Function</span>.<span class="title">Module</span>.<span class="title">runMain</span> (<span class="params">module.js:<span class="number">605</span>:<span class="number">10</span></span>)</span></div><div class="line"><span class="function">    <span class="title">at</span> <span class="title">startup</span> (<span class="params">bootstrap_node.js:<span class="number">158</span>:<span class="number">16</span></span>)</span></div><div class="line"><span class="function">    <span class="title">at</span> <span class="title">bootstrap_node</span>.<span class="title">js</span>:575:3</span></div></pre></td></tr></table></figure>
+<p>虽然fun声明被提前了，但fun的定义并没有提前，fun只是被默认赋值了一个undefined值。这又不是一个函数，此时执行fun()时就会抛出错误，编译器很明白发生了什么。为什么？因为编译器抛出的是TypeError错误呀，好好体会一些。<br>事实上，js对var在编译器的处理过程会带来很多问题，最好的处理原则就是先明确声明，再明确定义。所以，js在后面引入了let，let的变量并不会提前声明，没有声明的变量会明确抛出(ReferenceError: name is not defined)。所以建议以后在写js代码时，能用let就不要用var。<br>至于const，const是用来定义不能修改的常量的，只能有一次赋值，不能提前声明。</p>
+<hr>
+<h2 id="Task-——-计算圆的面积和周长"><a href="#Task-——-计算圆的面积和周长" class="headerlink" title="Task —— 计算圆的面积和周长"></a>Task —— 计算圆的面积和周长</h2><ol>
+<li>Declare a <em>constant variable</em>,<code>PI</code> , and assign it the value <em>Math.PI</em>. You will not pass this challenge unless the variable is declared as a constant and named <code>PI</code> (uppercase).</li>
+<li>Read a number, <code>r</code>, denoting the radius of a circle from stdin.</li>
+<li>Use <code>PI</code> and <code>r</code> to calculate the  <code>area</code> and  <code>perimeter</code>of a circle having radius<code>r</code> .</li>
+<li>Print <code>area</code> as the first line of output and print <code>perimeter</code> as the second line of output.</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">   <span class="function"><span class="keyword">function</span> <span class="title">main</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="comment">// Write your code here. Read input using 'readLine()' and print output using 'console.log()'.</span></div><div class="line"></div><div class="line">    <span class="comment">// Print the area of the circle:</span></div><div class="line"></div><div class="line">    <span class="comment">// Print the perimeter of the circle:</span></div><div class="line"></div><div class="line">   <span class="keyword">try</span> &#123;    </div><div class="line">        <span class="comment">// Attempt to redefine the value of constant variable PI</span></div><div class="line">        PI = <span class="number">0</span>;</div><div class="line">        <span class="comment">// Attempt to print the value of PI</span></div><div class="line">        <span class="built_in">console</span>.log(PI);</div><div class="line">    &#125; <span class="keyword">catch</span>(error) &#123;</div><div class="line">        <span class="built_in">console</span>.error(<span class="string">"You correctly declared 'PI' as a constant."</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>Input</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">2.6</span></div></pre></td></tr></table></figure></p>
+<p><strong>Output</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="number">21.237166338267002</span></div><div class="line"><span class="number">16.336281798666924</span></div></pre></td></tr></table></figure></p>
+<p><strong>answer</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">main</span>(<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line"> <span class="keyword">const</span> PI = <span class="built_in">Math</span>.PI;</div><div class="line"> <span class="keyword">let</span> r = readLine()</div><div class="line"></div><div class="line"> <span class="keyword">let</span> area = PI * r * r</div><div class="line"> <span class="built_in">console</span>.log(area)</div><div class="line"></div><div class="line"> <span class="keyword">let</span> perimeter = <span class="number">2</span>* PI * r</div><div class="line"> <span class="built_in">console</span>.log(perimeter)</div></pre></td></tr></table></figure></p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://www.hackerrank.com/challenges/js10-let-and-const/problem" target="_blank" rel="external">hackerrank</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JS/" rel="tag"># JS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/09/function/" rel="next" title="Functions in JavaScript（函数）">
+                <i class="fa fa-chevron-left"></i> Functions in JavaScript（函数）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/19/HTML/" rel="prev" title="HTML5">
+                HTML5 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="https://ws2.sinaimg.cn/large/006tKfTcly1fj5edaynjzj30hs0hsglv.jpg"
+              alt="Katherine Chen" />
+          
+            <p class="site-author-name" itemprop="name">Katherine Chen</p>
+            <p class="site-description motion-element" itemprop="description">尽量只写对别人有用的文章……</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/about/index.html">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/you7588" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="mailto:you7588@gmail.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                    
+                      E-Mail
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#var"><span class="nav-number">1.</span> <span class="nav-text">var</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用一个变量之前应当先声明"><span class="nav-number">1.1.</span> <span class="nav-text">使用一个变量之前应当先声明</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#let"><span class="nav-number">2.</span> <span class="nav-text">let</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">2.1.</span> <span class="nav-text">Solution</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#const"><span class="nav-number">3.</span> <span class="nav-text">const</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Task——变量提前声明的特点"><span class="nav-number">4.</span> <span class="nav-text">Task——变量提前声明的特点</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Task-——-计算圆的面积和周长"><span class="nav-number">4.1.</span> <span class="nav-text">Task —— 计算圆的面积和周长</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Katherine Chen</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://chen-lingmin.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://yoursite.com/2017/10/09/declaration/';
+          this.page.identifier = '2017/10/09/declaration/';
+          this.page.title = 'Variable Declaration Keywords';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://chen-lingmin.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
