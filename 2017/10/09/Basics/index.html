@@ -95,18 +95,18 @@
 
 
 
-<meta name="description" content="JavaScript的主要内容 写入HTML输出 对事件作出反应 改变HTML内容 改变HTML图像 改变HTML样式 验证输入  JavaScript 使用 HTML 中的脚本必须位于 &amp;lt;script&amp;gt; 与 &amp;lt;/script&amp;gt; 标签之间。 脚本可被放置在 HTML 页面的 &amp;lt;body&amp;gt; 和 &amp;lt;head&amp;gt; 部分中。 那些老旧的实例可能会在 &amp;lt;s">
+<meta name="description" content="JavaScript简介 JavaScript 是 Web 的编程语言。 所有现代的 HTML 页面都使用 JavaScript。 JavaScript 是互联网上最流行的脚本语言，这门语言可用于 HTML 和 web，更可广泛用于服务器、PC、笔记本电脑、平板电脑和智能手机等设备。 JavaScript 是一种轻量级的编程语言。 JavaScript 是可插入 HTML 页面的编程代码。 Jav">
 <meta name="keywords" content="JS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Javascript Basics （语言核心）">
 <meta property="og:url" content="http://yoursite.com/2017/10/09/Basics/index.html">
 <meta property="og:site_name" content="时间的朋友">
-<meta property="og:description" content="JavaScript的主要内容 写入HTML输出 对事件作出反应 改变HTML内容 改变HTML图像 改变HTML样式 验证输入  JavaScript 使用 HTML 中的脚本必须位于 &amp;lt;script&amp;gt; 与 &amp;lt;/script&amp;gt; 标签之间。 脚本可被放置在 HTML 页面的 &amp;lt;body&amp;gt; 和 &amp;lt;head&amp;gt; 部分中。 那些老旧的实例可能会在 &amp;lt;s">
+<meta property="og:description" content="JavaScript简介 JavaScript 是 Web 的编程语言。 所有现代的 HTML 页面都使用 JavaScript。 JavaScript 是互联网上最流行的脚本语言，这门语言可用于 HTML 和 web，更可广泛用于服务器、PC、笔记本电脑、平板电脑和智能手机等设备。 JavaScript 是一种轻量级的编程语言。 JavaScript 是可插入 HTML 页面的编程代码。 Jav">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-01T02:52:09.000Z">
+<meta property="og:updated_time" content="2017-11-10T03:05:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript Basics （语言核心）">
-<meta name="twitter:description" content="JavaScript的主要内容 写入HTML输出 对事件作出反应 改变HTML内容 改变HTML图像 改变HTML样式 验证输入  JavaScript 使用 HTML 中的脚本必须位于 &amp;lt;script&amp;gt; 与 &amp;lt;/script&amp;gt; 标签之间。 脚本可被放置在 HTML 页面的 &amp;lt;body&amp;gt; 和 &amp;lt;head&amp;gt; 部分中。 那些老旧的实例可能会在 &amp;lt;s">
+<meta name="twitter:description" content="JavaScript简介 JavaScript 是 Web 的编程语言。 所有现代的 HTML 页面都使用 JavaScript。 JavaScript 是互联网上最流行的脚本语言，这门语言可用于 HTML 和 web，更可广泛用于服务器、PC、笔记本电脑、平板电脑和智能手机等设备。 JavaScript 是一种轻量级的编程语言。 JavaScript 是可插入 HTML 页面的编程代码。 Jav">
 
 
 
@@ -285,16 +285,6 @@
           </a>
         </li>
       
-        
-        <li class="menu-item menu-item-resume">
-          <a href="/resume/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            resume
-          </a>
-        </li>
-      
 
       
     </ul>
@@ -406,75 +396,835 @@
       
 
       
-        <h1 id="JavaScript的主要内容"><a href="#JavaScript的主要内容" class="headerlink" title="JavaScript的主要内容"></a>JavaScript的主要内容</h1><ol>
-<li>写入HTML输出</li>
-<li>对事件作出反应</li>
-<li>改变HTML内容</li>
-<li>改变HTML图像</li>
-<li>改变HTML样式</li>
-<li>验证输入</li>
-</ol>
-<h1 id="JavaScript-使用"><a href="#JavaScript-使用" class="headerlink" title="JavaScript 使用"></a>JavaScript 使用</h1><ol>
+        <h1 id="JavaScript简介"><a href="#JavaScript简介" class="headerlink" title="JavaScript简介"></a>JavaScript简介</h1><ul>
+<li>JavaScript 是 Web 的编程语言。</li>
+<li>所有现代的 HTML 页面都使用 JavaScript。</li>
+<li>JavaScript 是互联网上最流行的脚本语言，这门语言可用于 HTML 和 web，更可广泛用于服务器、PC、笔记本电脑、平板电脑和智能手机等设备。</li>
+<li>JavaScript 是一种轻量级的编程语言。</li>
+<li>JavaScript 是可插入 HTML 页面的编程代码。</li>
+<li>JavaScript 插入 HTML 页面后，可由所有的现代浏览器执行。</li>
+<li>JavaScript 很容易学习。</li>
+<li>JavaScript 是脚本语言。浏览器会在读取代码时，逐行地执行脚本代码。而对于传统编程来说，会在执行前对所有代码进行编译。</li>
+</ul>
+<hr>
+<h1 id="JavaScript-用法"><a href="#JavaScript-用法" class="headerlink" title="JavaScript 用法"></a>JavaScript 用法</h1><ol>
 <li>HTML 中的脚本必须位于 <code>&lt;script&gt;</code> 与 <code>&lt;/script&gt;</code> 标签之间。</li>
-<li>脚本可被放置在 HTML 页面的 <code>&lt;body&gt;</code> 和 <code>&lt;head&gt;</code> 部分中。</li>
+<li>脚本可被放置在 HTML 页面的 <code>&lt;body&gt;</code> 和 <code>&lt;head&gt;</code> 部分中，或者同时存在于两个部分中。通常的做法是把函数放入 <code>&lt;head&gt;</code> 部分中，或者放在页面底部。这样就可以把它们安置到同一处位置，不会干扰页面的内容。</li>
 <li>那些老旧的实例可能会在 <code>&lt;script&gt;</code> 标签中使用 <code>type=&quot;text/javascript&quot;</code>。现在已经不必这样做了。JavaScript 是所有现代浏览器以及 HTML5 中的默认脚本语言。</li>
 <li>可以在 HTML 文档中放入不限数量的脚本。</li>
-<li>脚本可位于 HTML 的 <code>&lt;body&gt;</code> 或 <code>&lt;head&gt;</code> 部分中，或者同时存在于两个部分中。通常的做法是把函数放入 <code>&lt;head&gt;</code> 部分中，或者放在页面底部。这样就可以把它们安置到同一处位置，不会干扰页面的内容。</li>
-<li>把脚本保存到外部文件中。外部文件通常包含被多个网页使用的代码，其扩展名是 <code>.js</code>。如需使用外部文件，请在 <code>&lt;script&gt;</code> 标签的 <code>&quot;src&quot;</code> 属性中设置该 <code>.js</code> 文件：</li>
-<li>在 <code>&lt;head&gt;</code> 或 <code>&lt;body&gt;</code> 中引用脚本文件都是可以的。实际运行效果与您在 <code>&lt;script&gt;</code> 标签中编写脚本完全一致。</li>
+<li>把脚本保存到外部文件中。外部文件通常包含被多个网页使用的代码：<code>&lt;script src=&quot;myScript.js&quot;&gt;&lt;/script&gt;</code></li>
 <li>外部脚本不能包含<code>&lt;script&gt;</code> 标签。</li>
 </ol>
 <hr>
-<h1 id="JavaScript-输出"><a href="#JavaScript-输出" class="headerlink" title="JavaScript 输出"></a>JavaScript 输出</h1><h2 id="操作-HTML-元素"><a href="#操作-HTML-元素" class="headerlink" title="操作 HTML 元素"></a>操作 HTML 元素</h2><p>从 JavaScript 访问某个 HTML 元素，可以使用 <code>document.getElementById(*id*)</code>方法。<br>（<code>&quot;id&quot;</code> 属性来标识 HTML 元素）通过指定的 <code>id</code> 来访问 HTML 元素，并改变其内容：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>我的第一张网页<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"demo"</span>&gt;</span>我的第一个段落<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="undefined">document.getElementById("demo").innerHTML="我的第一段 JavaScript";</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure>
-<h2 id="写到文档输出"><a href="#写到文档输出" class="headerlink" title="写到文档输出"></a>写到文档输出</h2><p>下面的例子直接把 <code>&lt;p&gt;</code> 元素写到 HTML 文档输出中：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">&lt;h1&gt;我的第一张网页&lt;<span class="regexp">/h1&gt;</span></div><div class="line"><span class="regexp"></span></div><div class="line"><span class="regexp">&lt;script&gt;</span></div><div class="line"><span class="regexp">document.write("&lt;p&gt;我的第一段 JavaScript&lt;/</span>p&gt;<span class="string">");</span></div><div class="line"><span class="string">&lt;/script&gt;</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">&lt;/body&gt;</span></div></pre></td></tr></table></figure>
-<h2 id="警告"><a href="#警告" class="headerlink" title="警告"></a>警告</h2><p>请使用 <code>document.write()</code> 仅仅向文档输出写内容。<br>如果在文档已完成加载后执行 <code>document.write</code>，整个 HTML 页面将被覆盖：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>我的第一张网页<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>我的第一个段落。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"myFunction()"</span>&gt;</span>点击这里<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>)</span></span></div><div class="line"><span class="undefined">&#123;</span></div><div class="line"><span class="javascript"><span class="built_in">document</span>.write(<span class="string">"糟糕！文档消失了。"</span>);</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure>
+<h1 id="JavaScript-输出"><a href="#JavaScript-输出" class="headerlink" title="JavaScript 输出"></a>JavaScript 输出</h1><p>JavaScript 没有任何打印或者输出的函数。JavaScript 可以通过不同的方式来输出数据：</p>
+<ul>
+<li>使用 <strong>window.alert()</strong> 弹出警告框。</li>
+<li>使用 <strong>document.write()</strong> 方法将内容写到 HTML 文档中。</li>
+<li>使用 <strong>innerHTML</strong> 写入到 HTML 元素。</li>
+<li>使用 <strong>console.log()</strong> 写入到浏览器的控制台。</li>
+</ul>
+<h2 id="写到-HTML-文档"><a href="#写到-HTML-文档" class="headerlink" title="写到 HTML 文档"></a>写到 HTML 文档</h2><p>下面的例子直接把 <code>&lt;p&gt;</code> 元素写到 HTML 文档输出中：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>我的第一个 Web 页面<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="undefined">document.write(Date());</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>请使用 <code>document.write()</code> 仅仅向文档输出写内容。如果在文档已完成加载后执行 <code>document.write</code>，整个 HTML 页面将被覆盖：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>我的第一张网页<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>我的第一个段落。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"myFunction()"</span>&gt;</span>点击这里<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="undefined">function myFunction()</span></div><div class="line"><span class="undefined">&#123;</span></div><div class="line"><span class="undefined">document.write("糟糕！文档消失了。");</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="改变-HTML-内容"><a href="#改变-HTML-内容" class="headerlink" title="改变 HTML 内容"></a>改变 HTML 内容</h2><blockquote>
+<p> 访问某个 HTML 元素： <code>document.getElementById(id)</code> 方法</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>我的第一段 JavaScript<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"demo"</span>&gt;</span>JavaScript 能改变 HTML 元素的内容。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="undefined">function myFunction()</span></div><div class="line"><span class="undefined">&#123;</span></div><div class="line"><span class="undefined">	x=document.getElementById("demo");  // 找到元素</span></div><div class="line"><span class="undefined">	x.innerHTML="Hello JavaScript!";    // 改变内容</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">onclick</span>=<span class="string">"myFunction()"</span>&gt;</span>点击这里<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><code>&quot;id&quot;</code> 属性来标识 HTML 元素，通过指定的 <code>id</code> 来访问 HTML 元素，并改变其内容。</p>
+<p>这个方法是 HTML DOM 中定义的。</p>
+<p>DOM (<strong>D</strong>ocument <strong>O</strong>bject <strong>M</strong>odel)（文档对象模型）是用于访问 HTML 元素的正式 W3C 标准。</p>
+<h2 id="Console（写到控制台）"><a href="#Console（写到控制台）" class="headerlink" title="Console（写到控制台）"></a>Console（写到控制台）</h2><blockquote>
+<p> 如果您的浏览器支持调试，你可以使用 <strong>console.log()</strong> 方法在浏览器中显示 JavaScript 值。</p>
+<p> The <code>console.log()</code> command is used to print, or log, text to the console.</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>我的第一个 Web 页面<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></div><div class="line">浏览器中(Chrome, IE, Firefox) 使用 F12 来启用调试模式， 在调试窗口中点击 "Console" 菜单。</div><div class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="undefined">a = 5;</span></div><div class="line"><span class="undefined">b = 6;</span></div><div class="line"><span class="undefined">c = a + b;</span></div><div class="line"><span class="undefined">console.log(c);</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">main</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"You entered the following text in the Input box:"</span>);</div><div class="line"></div><div class="line">    <span class="keyword">const</span> input = readLine();</div><div class="line">    <span class="built_in">console</span>.log(input);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># input</span></div><div class="line">I<span class="string">'m using JavaScript to print to stdout.</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string"># output</span></div><div class="line"><span class="string">You entered the following text in the Input box:</span></div><div class="line"><span class="string">I'</span>m using JavaScript to <span class="built_in">print</span> to stdout.</div></pre></td></tr></table></figure>
 <hr>
-<h1 id="Character-Set（字符集）"><a href="#Character-Set（字符集）" class="headerlink" title="Character Set（字符集）"></a>Character Set（字符集）</h1><ul>
+<h2 id="Alert（对事件的反应）"><a href="#Alert（对事件的反应）" class="headerlink" title="Alert（对事件的反应）"></a>Alert（对事件的反应）</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">onclick</span>=<span class="string">"alert('欢迎!')"</span>&gt;</span>点我!<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><code>alert()</code>函数在 JavaScript 中并不常用，但它对于代码测试非常方便。</p>
+<h2 id="改变-HTML-图像"><a href="#改变-HTML-图像" class="headerlink" title="改变 HTML 图像"></a>改变 HTML 图像</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">changeImage</span>(<span class="params"></span>)</span></span></div><div class="line"><span class="undefined">&#123;</span></div><div class="line"><span class="javascript">	element=<span class="built_in">document</span>.getElementById(<span class="string">'myimage'</span>)</span></div><div class="line"><span class="javascript">	<span class="keyword">if</span> (element.src.match(<span class="string">"bulbon"</span>))</span></div><div class="line"><span class="undefined"> 	&#123;</span></div><div class="line"><span class="javascript">  		element.src=<span class="string">"/statics/images/course/pic_bulboff.gif"</span>;</span></div><div class="line"><span class="undefined">  	&#125;</span></div><div class="line"><span class="javascript">	<span class="keyword">else</span></span></div><div class="line"><span class="undefined">   &#123;</span></div><div class="line"><span class="javascript">  		element.src=<span class="string">"/statics/images/course/pic_bulbon.gif"</span>;</span></div><div class="line"><span class="undefined">   &#125;</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">"myimage"</span> <span class="attr">onclick</span>=<span class="string">"changeImage()"</span></span></div><div class="line"><span class="tag"><span class="attr">src</span>=<span class="string">"/statics/images/course/pic_bulboff.gif"</span> <span class="attr">width</span>=<span class="string">"100"</span> <span class="attr">height</span>=<span class="string">"180"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>点击灯泡就可以打开或关闭这盏灯<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="改变-HTML-样式"><a href="#改变-HTML-样式" class="headerlink" title="改变 HTML 样式"></a>改变 HTML 样式</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">	<span class="tag">&lt;<span class="name">h1</span>&gt;</span>我的第一段 JavaScript<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"demo"</span>&gt;</span></div><div class="line">JavaScript 能改变 HTML 元素的样式。</div><div class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>)</span></span></div><div class="line"><span class="undefined">&#123;</span></div><div class="line"><span class="javascript">	x=<span class="built_in">document</span>.getElementById(<span class="string">"demo"</span>) <span class="comment">// 找到元素</span></span></div><div class="line"><span class="javascript">	x.style.color=<span class="string">"#ff0000"</span>;          <span class="comment">// 改变样式</span></span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">onclick</span>=<span class="string">"myFunction()"</span>&gt;</span>点击这里<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="验证输入"><a href="#验证输入" class="headerlink" title="验证输入"></a>验证输入</h2><p>JavaScript 常用于验证用户的输入。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>我的第一段 JavaScript<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>请输入数字。如果输入值不是数字，浏览器会弹出提示框。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">"demo"</span> <span class="attr">type</span>=<span class="string">"text"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>)</span></span></div><div class="line"><span class="undefined">&#123;</span></div><div class="line"><span class="javascript">	<span class="keyword">var</span> x=<span class="built_in">document</span>.getElementById(<span class="string">"demo"</span>).value;</span></div><div class="line"><span class="javascript">	<span class="keyword">if</span>(x==<span class="string">""</span>||<span class="built_in">isNaN</span>(x))</span></div><div class="line"><span class="undefined">	&#123;</span></div><div class="line"><span class="javascript">		alert(<span class="string">"不是数字"</span>);</span></div><div class="line"><span class="undefined">	&#125;</span></div><div class="line"><span class="undefined">&#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">onclick</span>=<span class="string">"myFunction()"</span>&gt;</span>点击这里<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div></pre></td></tr></table></figure>
+<hr>
+<h1 id="语句、代码、代码块"><a href="#语句、代码、代码块" class="headerlink" title="语句、代码、代码块"></a>语句、代码、代码块</h1><h2 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h2><blockquote>
+<p> JavaScript 语句向浏览器发出的命令。语句的作用是告诉浏览器该做什么。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">"demo"</span>).innerHTML=<span class="string">"Hello World"</span>;</div></pre></td></tr></table></figure>
+<p>Optional Semicolon（可选的分号）—— 像许多编程语言一样，JavaScript使用分号（<code>;</code>）来分隔语句。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><blockquote>
+<p> JavaScript 代码是 JavaScript 语句的序列。浏览器会按照编写顺序来执行每条语句。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">"demo"</span>).innerHTML=<span class="string">"Hello World"</span>;</div><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">"myDIV"</span>).innerHTML=<span class="string">"How are you?"</span>;</div></pre></td></tr></table></figure>
+<h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><blockquote>
+<p>  JavaScript 可以分批地组合起来。代码块以左花括号开始，以右花括号结束。</p>
+<p>  代码块的作用是一并地执行语句序列。JavaScript 函数是将语句组合在块中的典型例子。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>)</span></div><div class="line"><span class="function"></span>&#123;</div><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">"demo"</span>).innerHTML=<span class="string">"Hello World"</span>;</div><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">"myDIV"</span>).innerHTML=<span class="string">"How are you?"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<h1 id="操作符"><a href="#操作符" class="headerlink" title="操作符"></a>操作符</h1><h2 id="Arithmetic-Operators（算术运算符）"><a href="#Arithmetic-Operators（算术运算符）" class="headerlink" title="Arithmetic Operators（算术运算符）"></a>Arithmetic Operators（算术运算符）</h2><blockquote>
+<p> An arithmetic operator takes numeric values (either literals or variables) as its operands and returns a single numeric value.</p>
+</blockquote>
+<p>给定 <code>y=5</code>，下面的表格解释了这些算术运算符：</p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>描述</th>
+<th>例子</th>
+<th>x 运算结果</th>
+<th>y 运算结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+</td>
+<td>加法</td>
+<td>x=y+2</td>
+<td>7</td>
+<td>5</td>
+</tr>
+<tr>
+<td>-</td>
+<td>减法</td>
+<td>x=y-2</td>
+<td>3</td>
+<td>5</td>
+</tr>
+<tr>
+<td>*</td>
+<td>乘法</td>
+<td>x=y*2</td>
+<td>10</td>
+<td>5</td>
+</tr>
+<tr>
+<td>/</td>
+<td>除法</td>
+<td>x=y/2</td>
+<td>2.5</td>
+<td>5</td>
+</tr>
+<tr>
+<td>%</td>
+<td>取模（余数）</td>
+<td>x=y%2</td>
+<td>1</td>
+<td>5</td>
+</tr>
+<tr>
+<td>++</td>
+<td>自增（累加）</td>
+<td>x=++y</td>
+<td>6</td>
+<td>6</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>x=y++</td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr>
+<td>–</td>
+<td>自减</td>
+<td>x=–y</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>x=y–</td>
+<td>5</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>所有无法转换为数字的操作数都转换为<code>NaN</code>值。如果操作数（或转换结果）是<code>NaN</code>值，算术运算的结果也是<code>NaN</code>。</li>
+<li>运算符的行为依赖于类型转换的结果。</li>
+</ul>
+<h3 id="1-Addition"><a href="#1-Addition" class="headerlink" title="1. Addition (+)"></a>1. Addition (<code>+</code>)</h3><blockquote>
+<p> <code>operand1 + operand2</code></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="number">2</span> + <span class="number">3</span>                     <span class="comment">// ==&gt; 5</span></div><div class="line"><span class="string">"hello"</span> + <span class="string">" "</span> + <span class="string">"there"</span>   <span class="comment">// ==&gt; "hello there"</span></div><div class="line"><span class="number">1</span> + <span class="number">2</span>                     <span class="comment">// ==&gt; 3</span></div><div class="line"><span class="string">"1"</span> + <span class="string">"2"</span>                 <span class="comment">// ==&gt; 12   都是字符串</span></div><div class="line"><span class="string">"1"</span> + <span class="number">2</span>                   <span class="comment">// ==&gt; 12   优先考虑字符串连接</span></div><div class="line"><span class="number">1</span> + &#123;&#125;                    <span class="comment">// ==&gt; "1[object Object]"</span></div><div class="line"><span class="literal">true</span> + <span class="literal">true</span>               <span class="comment">// ==&gt; 2</span></div><div class="line"><span class="number">2</span> + <span class="literal">null</span>                  <span class="comment">// ==&gt; 2</span></div><div class="line"><span class="number">2</span> + <span class="literal">undefined</span>             <span class="comment">// ==&gt; NaN</span></div><div class="line"></div><div class="line"><span class="number">1</span> + <span class="number">2</span> + <span class="string">"blind mice"</span>;      <span class="comment">// ==&gt; "3 blind mice"</span></div><div class="line"><span class="number">1</span> + (<span class="number">2</span> + <span class="string">"blind mice"</span>);    <span class="comment">// ==&gt; "12 blind mice"</span></div></pre></td></tr></table></figure>
+<h4 id="用于字符串的-运算符"><a href="#用于字符串的-运算符" class="headerlink" title="用于字符串的 + 运算符"></a>用于字符串的 + 运算符</h4><blockquote>
+<p> + 运算符用于把文本值或字符串变量加起来（连接起来）。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">txt1=&quot;What a very &quot;;</div><div class="line">txt2=&quot;nice day&quot;;</div><div class="line">txt3=txt1+txt2;</div><div class="line">// ==&gt; &quot;What a very nice day&quot;</div><div class="line"></div><div class="line"> // 或者把空格插入表达式中：</div><div class="line">txt1=&quot;What a very&quot;;</div><div class="line">txt2=&quot;nice day&quot;;</div><div class="line">txt3=txt1+&quot; &quot;+txt2;          </div><div class="line">// ==&gt; &quot;What a very nice day&quot;</div></pre></td></tr></table></figure>
+<p>要想在两个字符串之间增加空格，需要把空格插入一个字符串之中：</p>
+<h4 id="对字符串和数字进行加法运算："><a href="#对字符串和数字进行加法运算：" class="headerlink" title="对字符串和数字进行加法运算："></a>对字符串和数字进行加法运算：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">x=5+5;			  // ==&gt; 10</div><div class="line">x=&quot;5&quot;+&quot;5&quot;;		// ==&gt; 55</div><div class="line">x=5+&quot;5&quot;;			// ==&gt; 55</div><div class="line">x=&quot;5&quot;+5;			// ==&gt; 55</div></pre></td></tr></table></figure>
+<p>加号的转换规则：优先考虑字符串连接</p>
+<ul>
+<li>若其中一个操作数是字符串或者转换为字符串的对象，另外一个操作数将会转换为字符串。</li>
+<li>若两个操作数都不是类字符串，那么都将进行算术加法运算。</li>
+<li>如果把数字与字符串相加，结果将成为字符串!</li>
+</ul>
+<h3 id="2-Subtraction"><a href="#2-Subtraction" class="headerlink" title="2. Subtraction (-)"></a>2. Subtraction (<code>-</code>)</h3><blockquote>
+<p> <code>operand1 - operand2</code></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="number">3</span> - <span class="number">2</span> <span class="comment">// ==&gt; 1</span></div><div class="line"><span class="number">4</span> - <span class="number">10</span> <span class="comment">// ==&gt; -6</span></div></pre></td></tr></table></figure>
+<h3 id="3-Multiplication"><a href="#3-Multiplication" class="headerlink" title="3. Multiplication (*)"></a>3. Multiplication (<code>*</code>)</h3><blockquote>
+<p> <code>operand1 * operand2</code></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="number">3</span> * <span class="number">2</span> <span class="comment">// ==&gt; 6</span></div><div class="line"><span class="number">4</span> * <span class="number">10</span> <span class="comment">// ==&gt; 40</span></div></pre></td></tr></table></figure>
+<h3 id="4-Division"><a href="#4-Division" class="headerlink" title="4. Division (/)"></a>4. Division (<code>/</code>)</h3><blockquote>
+<p> <code>operand1 / operand2</code></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="number">6</span> / <span class="number">3</span> <span class="comment">// ==&gt; 2</span></div><div class="line"><span class="number">3</span> / <span class="number">2</span> <span class="comment">// ==&gt; 1.5</span></div><div class="line"><span class="number">4</span> / <span class="number">10</span> <span class="comment">// ==&gt; 0.4</span></div><div class="line"><span class="number">0</span> / <span class="number">0</span>  <span class="comment">// ==&gt; NaN</span></div></pre></td></tr></table></figure>
+<h3 id="5-Remainder"><a href="#5-Remainder" class="headerlink" title="5. Remainder (%)"></a>5. Remainder (<code>%</code>)</h3><blockquote>
+<p> <code>operand1 % operand2</code></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="number">6</span> % <span class="number">3</span> <span class="comment">// ==&gt; 0</span></div><div class="line"><span class="number">3</span> % <span class="number">2</span> <span class="comment">// ==&gt; 1</span></div><div class="line"><span class="number">4</span> % <span class="number">10</span> <span class="comment">// ==&gt; 4</span></div><div class="line"><span class="number">-5</span> % <span class="number">2</span>  <span class="comment">// ==&gt; -1</span></div><div class="line"><span class="number">5</span> % <span class="number">2</span>  <span class="comment">// ==&gt; 1</span></div><div class="line"><span class="number">6.5</span> % <span class="number">2.1</span>  <span class="comment">// ==&gt; 0.2</span></div></pre></td></tr></table></figure>
+<h3 id="6-Exponentiation"><a href="#6-Exponentiation" class="headerlink" title="6. Exponentiation (**)"></a>6. Exponentiation (<code>**</code>)</h3><blockquote>
+<p> <code>operand1 ** operand2</code>. This operator is a part of ECMAScript2016 feature set</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="number">2</span> ** <span class="number">3</span> <span class="comment">// ==&gt; 8</span></div><div class="line"><span class="number">3</span> ** <span class="number">2</span> <span class="comment">// ==&gt; 9</span></div><div class="line"><span class="number">5</span> ** <span class="number">4</span> <span class="comment">// ==&gt; 625</span></div></pre></td></tr></table></figure>
+<h3 id="7-Unary-Negation"><a href="#7-Unary-Negation" class="headerlink" title="7. Unary Negation (-)"></a>7. Unary Negation (<code>-</code>)</h3><blockquote>
+<p> <code>-operand</code></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="number">-4</span> <span class="comment">// ==&gt; -4</span></div><div class="line">-(<span class="number">-5</span>) <span class="comment">// ==&gt; 5 (not --5)</span></div></pre></td></tr></table></figure>
+<h3 id="8-Unary-Plus"><a href="#8-Unary-Plus" class="headerlink" title="8. Unary Plus (+)"></a>8. Unary Plus (<code>+</code>)</h3><blockquote>
+<p> <code>+operand</code></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">+<span class="number">4</span> <span class="comment">// ==&gt; 4</span></div><div class="line">+(<span class="number">-4</span>) <span class="comment">// ==&gt; -4</span></div></pre></td></tr></table></figure>
+<h3 id="9-Increment-递增"><a href="#9-Increment-递增" class="headerlink" title="9. Increment 递增 (++)"></a>9. Increment 递增 (<code>++</code>)</h3><p>We use this operator in the 前增量prefix and 后增量postfix forms, forms <code>++operand</code> and <code>operand++</code>.</p>
+<ul>
+<li><code>++operand</code>, increments the operand by  and then returns the value of the operand.</li>
+<li><code>operand++</code>, returns the value of the operand and <em>then</em> increments the operand’s value by .</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function main(input) &#123;</div><div class="line">    var a = input;</div><div class="line">    // Print the value of &apos;a&apos; and the preincremented value of &apos;a&apos;:</div><div class="line">    console.log(&quot;a(&quot; + a + &quot;), ++a(&quot; + ++a + &quot;)&quot;);</div><div class="line">    // Assign the current value of &apos;a&apos; to &apos;b&apos; and then postincrement &apos;a&apos;:</div><div class="line">    var b = a++;</div><div class="line">    // Print the values of &apos;a&apos; once and &apos;b&apos; twice, then postincrement the 2nd &apos;b&apos;:</div><div class="line">    console.log(&quot;a(&quot; + a + &quot;), b(&quot; + b + &quot;), b++(&quot; + b++ + &quot;)&quot;);</div><div class="line">    // Print the final values of &apos;a&apos; and &apos;b&apos;:</div><div class="line">    console.log(&quot;a(&quot; + a + &quot;), b(&quot; + b + &quot;)&quot;);</div><div class="line">&#125;</div><div class="line"></div><div class="line">// input  ==&gt; 4</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a(<span class="number">4</span>), ++a(<span class="number">5</span>)</div><div class="line">a(<span class="number">6</span>), b(<span class="number">5</span>), b++(<span class="number">5</span>)</div><div class="line">a(<span class="number">6</span>), b(<span class="number">6</span>)</div></pre></td></tr></table></figure>
+<h3 id="10-Decrement-递减"><a href="#10-Decrement-递减" class="headerlink" title="10. Decrement 递减 (--)"></a>10. Decrement 递减 (<code>--</code>)</h3><p>We use this operator in the prefix and postfix forms, forms <code>--operand</code> and <code>operand--</code>.</p>
+<ul>
+<li><code>--operand</code>, decrements the operand by  and then returns the value of the operand.</li>
+<li><code>operand--</code>, returns the value of the operand and <em>then</em> decrements the operand’s value by .</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">main</span>(<span class="params">input</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> a = input;</div><div class="line">    <span class="comment">// Print the value of 'a' and the predecremented value of 'a':</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"a("</span> + a + <span class="string">"), --a("</span> + --a + <span class="string">")"</span>);</div><div class="line">    <span class="comment">// Assign the current value of 'a' to 'b' and then postdecrement 'a':</span></div><div class="line">    <span class="keyword">var</span> b = a--;</div><div class="line">    <span class="comment">// Print the values of 'a' once and 'b' twice, then postdecrement the 2nd 'b':</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"a("</span> + a + <span class="string">"), b("</span> + b + <span class="string">"), b--("</span> + b-- + <span class="string">")"</span>);</div><div class="line">    <span class="comment">// Print the final values of 'a' and 'b':</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"a("</span> + a + <span class="string">"), b("</span> + b + <span class="string">")"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// input  ==&gt; 4</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a(<span class="number">4</span>), --a(<span class="number">3</span>)</div><div class="line">a(<span class="number">2</span>), b(<span class="number">3</span>), b--(<span class="number">3</span>)</div><div class="line">a(<span class="number">2</span>), b(<span class="number">2</span>)</div></pre></td></tr></table></figure>
+<h3 id="Task——Area-and-perimeter-of-rectangle"><a href="#Task——Area-and-perimeter-of-rectangle" class="headerlink" title="Task——Area and perimeter of rectangle"></a>Task——Area and perimeter of rectangle</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment">*   Calculate the area of a rectangle.</span></div><div class="line"><span class="comment">*</span></div><div class="line"><span class="comment">*   length: The length of the rectangle.</span></div><div class="line"><span class="comment">*   width: The width of the rectangle.</span></div><div class="line"><span class="comment">*   </span></div><div class="line"><span class="comment">*	Return a number denoting the rectangle's area.</span></div><div class="line"><span class="comment">**/</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getArea</span>(<span class="params">length, width</span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> area;</div><div class="line">    <span class="comment">// Write your code here</span></div><div class="line"></div><div class="line">    <span class="keyword">return</span> area;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment">*   Calculate the perimeter of a rectangle.</span></div><div class="line"><span class="comment">*</span></div><div class="line"><span class="comment">*	length: The length of the rectangle.</span></div><div class="line"><span class="comment">*   width: The width of the rectangle.</span></div><div class="line"><span class="comment">*   </span></div><div class="line"><span class="comment">*	Return a number denoting the perimeter of a rectangle.</span></div><div class="line"><span class="comment">**/</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getPerimeter</span>(<span class="params">length, width</span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> perimeter;</div><div class="line">    <span class="comment">// Write your code here</span></div><div class="line"></div><div class="line">    <span class="keyword">return</span> perimeter;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">main</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">const</span> length = +(readLine());</div><div class="line">    <span class="keyword">const</span> width = +(readLine());</div><div class="line"></div><div class="line">    <span class="built_in">console</span>.log(getArea(length, width));</div><div class="line">    <span class="built_in">console</span>.log(getPerimeter(length, width));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>Input</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="number">3</span></div><div class="line"><span class="number">4.5</span></div></pre></td></tr></table></figure>
+<p><strong>Output</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="number">13.5</span></div><div class="line"><span class="number">15</span></div></pre></td></tr></table></figure>
+<p><strong>answer</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getArea</span>(<span class="params">length, width</span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> area;</div><div class="line">    area = length * width;</div><div class="line">    <span class="keyword">return</span> area;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getPerimeter</span>(<span class="params">length, width</span>) </span>&#123;</div><div class="line">    <span class="keyword">let</span> perimeter;</div><div class="line">    perimeter = (length + width) * <span class="number">2</span>;</div><div class="line">    <span class="keyword">return</span> perimeter;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Operator-Types"><a href="#Operator-Types" class="headerlink" title="Operator Types"></a>Operator Types</h2><h3 id="Unary（一元）"><a href="#Unary（一元）" class="headerlink" title="Unary（一元）"></a>Unary（一元）</h3><blockquote>
+<p> A <em>unary</em> operator requires a single operand, either before or after the operator, following this format:</p>
+</blockquote>
+<p><code>a++</code>, <code>++</code>,<code>+</code>,<code>-</code>,<code>--</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">operand operator</div><div class="line">operator operand</div></pre></td></tr></table></figure>
+<ul>
+<li>作用于一个单独的操作数，并产生一个新值</li>
+<li>有很高的优先级，而且都是右结合（right-associative）</li>
+</ul>
+<h3 id="Binary（二进制）"><a href="#Binary（二进制）" class="headerlink" title="Binary（二进制）"></a>Binary（二进制）</h3><blockquote>
+<p> A <em>binary</em> operator requires two operands, one before the operator and one after the operator, following this format:</p>
+</blockquote>
+<p><code>+</code>,<code>-</code>,</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">operand1 operator operand2</div></pre></td></tr></table></figure>
+<p>For example, in the expression <code>a + b = c</code>, <code>+</code> is a binary operator.</p>
+<h3 id="Ternary（三元）（条件运算符）"><a href="#Ternary（三元）（条件运算符）" class="headerlink" title="Ternary（三元）（条件运算符）"></a>Ternary（三元）（条件运算符）</h3><blockquote>
+<p> 基于某些条件对变量进行赋值的条件运算符。</p>
+<p> There is one <em>ternary</em> operator, the conditional operator. </p>
+<p> the use of <code>?</code> and <code>:</code> in this manner constitutes the ternary operator. </p>
+</blockquote>
+<p><code>*variablename*=(*condition*)?*value1*:*value2*</code>即 <code>a ? b : c</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">voteable=(age&lt;<span class="number">18</span>)?<span class="string">"年龄太小"</span>:<span class="string">"年龄已达到"</span>;</div></pre></td></tr></table></figure>
+<h2 id="Comparison-Operators（比较运算符）"><a href="#Comparison-Operators（比较运算符）" class="headerlink" title="Comparison Operators（比较运算符）"></a>Comparison Operators（比较运算符）</h2><blockquote>
+<p> 比较运算符在逻辑语句中使用，以测定变量或值是否相等。</p>
+</blockquote>
+<p>给定 x=5，下面的表格解释了比较运算符：</p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th style="text-align:left">描述</th>
+<th style="text-align:left">比较</th>
+<th>返回值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>==</td>
+<td style="text-align:left">等于</td>
+<td style="text-align:left">x==8</td>
+<td><em>false</em></td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">x==5</td>
+<td>true</td>
+</tr>
+<tr>
+<td>===</td>
+<td style="text-align:left">绝对等于（值和类型均相等）</td>
+<td style="text-align:left">x===”5”</td>
+<td><em>false</em></td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">x===5</td>
+<td>true</td>
+</tr>
+<tr>
+<td>!=</td>
+<td style="text-align:left">不等于</td>
+<td style="text-align:left">x!=8</td>
+<td><em>true</em></td>
+</tr>
+<tr>
+<td>!==</td>
+<td style="text-align:left">绝对不等于（值或类型不相等）</td>
+<td style="text-align:left">x!==”5”</td>
+<td><em>true</em></td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">x!==5</td>
+<td>false</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td style="text-align:left">大于</td>
+<td style="text-align:left">x&gt;8</td>
+<td><em>false</em></td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td style="text-align:left">小于</td>
+<td style="text-align:left">x&lt;8</td>
+<td><em>true</em></td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td style="text-align:left">大于或等于</td>
+<td style="text-align:left">x&gt;=8</td>
+<td><em>false</em></td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td style="text-align:left">小于或等于</td>
+<td style="text-align:left">x&lt;=8</td>
+<td><em>true</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="Logical-Operators（逻辑运算符）"><a href="#Logical-Operators（逻辑运算符）" class="headerlink" title="Logical Operators（逻辑运算符）"></a>Logical Operators（逻辑运算符）</h2><blockquote>
+<p> 逻辑运算符用于测定变量或值之间的逻辑。</p>
+</blockquote>
+<p>给定 x=6 以及 y=3，下表解释了逻辑运算符：</p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>描述</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&amp;&amp;</td>
+<td>and(both must be true)</td>
+<td>(x &lt; 10 &amp;&amp; y &gt; 1) 为 true</td>
+</tr>
+<tr>
+<td>\</td>
+<td>\</td>
+<td></td>
+<td>or(either can be true)</td>
+<td>(x==5 \</td>
+<td>\</td>
+<td>y==5) 为 false</td>
+</tr>
+<tr>
+<td>!</td>
+<td>not</td>
+<td>!(x==y) 为 true</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (stopLight === <span class="string">'green'</span> &amp;&amp; pedestrians === <span class="literal">false</span>) &#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'Go!'</span>);</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'Stop'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Mathematical-Assignment-Operators（赋值运算符）"><a href="#Mathematical-Assignment-Operators（赋值运算符）" class="headerlink" title="Mathematical Assignment Operators（赋值运算符）"></a>Mathematical Assignment Operators（赋值运算符）</h2><p>赋值运算符用于给 JavaScript 变量赋值。</p>
+<p>给定 <strong>x=10 </strong>和 <strong>y=5</strong> ，下面的表格解释了赋值运算符：</p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>例子</th>
+<th>等同于</th>
+<th>运算结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>=</td>
+<td>x=y</td>
+<td></td>
+<td>x=5</td>
+</tr>
+<tr>
+<td>+=</td>
+<td>x+=y</td>
+<td>x=x+y</td>
+<td>x=15</td>
+</tr>
+<tr>
+<td>-=</td>
+<td>x-=y</td>
+<td>x=x-y</td>
+<td>x=5</td>
+</tr>
+<tr>
+<td>*=</td>
+<td>x*=y</td>
+<td>x=x*y</td>
+<td>x=50</td>
+</tr>
+<tr>
+<td>/=</td>
+<td>x/=y</td>
+<td>x=x/y</td>
+<td>x=2</td>
+</tr>
+<tr>
+<td>%=</td>
+<td>x%=y</td>
+<td>x=x%y</td>
+<td>x=0</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> x = <span class="number">4</span>;</div><div class="line">x = x + <span class="number">1</span>;                  <span class="comment">// ==&gt; 5</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> x = <span class="number">4</span>;</div><div class="line">x += <span class="number">2</span>;                     <span class="comment">// ==&gt; 6</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> y = <span class="number">4</span>;</div><div class="line">y -= <span class="number">2</span>;                     <span class="comment">// ==&gt; 2</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> z = <span class="number">4</span>;</div><div class="line">z *= <span class="number">2</span>;                     <span class="comment">// ==&gt; 8</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> r = <span class="number">4</span>;</div><div class="line">r++;                        <span class="comment">// ==&gt; 5</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> t = <span class="number">4</span>;</div><div class="line">t--;                        <span class="comment">// ==&gt; 3</span></div></pre></td></tr></table></figure>
+<ol>
+<li><code>+=</code>, <code>-=</code>, and <code>*=</code> perform the mathematical operation of the first operator (<code>+</code>, <code>-</code>, or <code>*</code>) using the number on the right, then assign the new value to the variable.</li>
+<li>The increment (<code>++</code>) and decrement (<code>--</code>) operators are responsible for increasing and decreasing a number variable by one, respectively.</li>
+</ol>
+<h1 id="Character-Set（字符集）"><a href="#Character-Set（字符集）" class="headerlink" title="Character Set（字符集）"></a><a href="https://www.w3cschool.cn/charsets/ref-html-utf8.html" target="_blank" rel="external">Character Set（字符集）</a></h1><ul>
 <li>JavaScript程序使用<em>Unicode</em>字符集编写。Unicode是<em>ASCII</em>和<em>Latin-1</em>的超集，并支持地球上几乎所有在用的语言。</li>
 <li>JavaScript是区分大小写的语言（case-sensitive language）。HTML并不区分大小写（尽管XHTML区分大小写）。</li>
 <li>JavaScript忽略程序中标记之间出现的空格。在大多数情况下，JavaScript也会忽略换行符。</li>
 <li>对代码行进行折行。可在文本字符串中使用反斜杠（“\”)对代码行进行换行。</li>
 </ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//正确</span></div><div class="line"><span class="built_in">document</span>.write(<span class="string">"你好 \</span></div><div class="line"><span class="string"> 世界!"</span>);</div><div class="line"></div><div class="line"><span class="comment">//错误</span></div><div class="line"> <span class="built_in">document</span>.write \</div><div class="line"> (<span class="string">"你好世界!"</span>);</div></pre></td></tr></table></figure>
 <hr>
-<h1 id="Printing-Output"><a href="#Printing-Output" class="headerlink" title="Printing Output"></a>Printing Output</h1><blockquote>
-<p>We use the <em>console.log</em> method to write data to <a href="https://en.wikipedia.org/wiki/Standard_streams#Standard_output_.28stdout.29" target="_blank" rel="external">standard output</a> in JavaScript.</p>
+<h1 id="Comments（注释）"><a href="#Comments（注释）" class="headerlink" title="Comments（注释）"></a>Comments（注释）</h1><blockquote>
+<p> JavaScript supports two styles of comments, as demonstrated below.</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">main</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"You entered the following text in the Input box:"</span>);</div><div class="line"></div><div class="line">    <span class="keyword">const</span> input = readLine();</div><div class="line">    <span class="built_in">console</span>.log(input);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#input</span></div><div class="line">I<span class="string">'m using JavaScript to print to stdout.</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">#output</span></div><div class="line"><span class="string">You entered the following text in the Input box:</span></div><div class="line"><span class="string">I'</span>m using JavaScript to <span class="built_in">print</span> to stdout.</div></pre></td></tr></table></figure>
-<hr>
-<h1 id="JavaScript-语句"><a href="#JavaScript-语句" class="headerlink" title="JavaScript 语句"></a>JavaScript 语句</h1><p>JavaScript 语句向浏览器发出的命令。语句的作用是告诉浏览器该做什么。</p>
-<p>下面的 JavaScript 语句向 id=”demo” 的 HTML 元素输出文本 “Hello World”：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">"demo"</span>).innerHTML=<span class="string">"Hello World"</span>;</div></pre></td></tr></table></figure>
 <ol>
-<li>Optional Semicolon（可选的分号）—— 像许多编程语言一样，JavaScript使用分号（<code>;</code>）来分隔语句。</li>
-<li>JavaScript 代码（或者只有 JavaScript）是 JavaScript 语句的序列。浏览器会按照编写顺序来执行每条语句。</li>
-<li>JavaScript 代码块</li>
+<li><p>Inline Comments (single line comment)（单行注释）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// The first 5 decimals of pi</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'Pi is equal to '</span> + <span class="number">3.14159</span>);</div></pre></td></tr></table></figure>
+</li>
+<li><p>Block Comments (multi-line comment)（多行注释）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*</span></div><div class="line"><span class="comment">console.log('All of this code');</span></div><div class="line"><span class="comment">console.log('Is commented out');</span></div><div class="line"><span class="comment">console.log('And will not be executed);</span></div><div class="line"><span class="comment">*/</span></div></pre></td></tr></table></figure>
+</li>
 </ol>
-<p>组合JavaScript 语句，{起始和结束}，作用：使语句序列一起执行。<br>JavaScript 函数是将语句组合在块中的典型例子。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>)</span></div><div class="line"><span class="function"></span>&#123;</div><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">"demo"</span>).innerHTML=<span class="string">"Hello World"</span>;</div><div class="line"><span class="built_in">document</span>.getElementById(<span class="string">"myDIV"</span>).innerHTML=<span class="string">"How are you?"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <hr>
-<h1 id="Literals（直接量）"><a href="#Literals（直接量）" class="headerlink" title="Literals（直接量）"></a>Literals（直接量）</h1><blockquote>
-<p> 程序中直接使用的数据值。</p>
+<h1 id="Identifiers（标识符）"><a href="#Identifiers（标识符）" class="headerlink" title="Identifiers（标识符）"></a>Identifiers（标识符）</h1><blockquote>
+<p> 标识符只是一个名称，用来对变量和函数进行命名，以及为某些代码循环语句中的跳转位置的标记。</p>
+<p> 和其他任何编程语言一样，JavaScript 保留了一些标识符为自己所用。这些关键字在当前的语言版本中并没有使用，但在以后 JavaScript 扩展中会用到。</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// The integer number twelve:</span></div><div class="line"><span class="number">12</span></div><div class="line"></div><div class="line"><span class="comment">// The floating-point number one-point-two:</span></div><div class="line"><span class="number">1.2</span></div><div class="line"></div><div class="line"><span class="comment">// A string of text:</span></div><div class="line"><span class="string">"Hello, World."</span></div><div class="line"></div><div class="line"><span class="comment">// Another string:</span></div><div class="line"><span class="string">'Hi!'</span></div><div class="line"></div><div class="line"><span class="comment">// A boolean value:</span></div><div class="line"><span class="literal">true</span></div><div class="line"></div><div class="line"><span class="comment">// The absence of an object:</span></div><div class="line"><span class="literal">null</span></div><div class="line"></div><div class="line"><span class="comment">//正则表达式直接量（用作模式匹配）</span></div><div class="line">/javascript/gi</div><div class="line"></div><div class="line"><span class="comment">// An object initializer:</span></div><div class="line">&#123;<span class="attr">x</span>: <span class="number">1</span>, <span class="attr">y</span>: <span class="number">2</span>&#125;</div><div class="line"></div><div class="line"><span class="comment">// An array initializer:</span></div><div class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</div></pre></td></tr></table></figure>
-<hr>
-<h1 id="Identifiers（标识符和保留字）"><a href="#Identifiers（标识符和保留字）" class="headerlink" title="Identifiers（标识符和保留字）"></a>Identifiers（标识符和保留字）</h1><p><strong>标识符</strong></p>
-<p>标识符只是一个名称，用来对变量和函数进行命名，以及为某些代码循环语句中的跳转位置的标记。</p>
 <ul>
 <li>JavaScript标识符必须以字母、下划线（<code>_</code>）或美元符号（<code>$</code>）开头。</li>
 <li>后续字符可以是字母，下划线，美元符号或数字。</li>
-<li>JavaScript不允许将数字作为标识符的第一个字符。</li>
+<li>不允许将数字作为标识符的第一个字符。（以便 JavaScript 可以轻易区分开标识符和数字）</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Some valid identifiers are:</span></div><div class="line">x</div><div class="line">variable_name</div><div class="line">sum13</div><div class="line">_variable</div><div class="line">$variable</div></pre></td></tr></table></figure>
-<p><strong>保留字 reserved words 和 关键字 keywords</strong><br>许多标识符是<em>保留字</em>或<em>关键字</em>，这意味着它们是一组在语言本身具有特殊意义的预定义单词的一部分。您不能在程序中使用这些单词作为标识符。</p>
-<p><strong>关键字</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">break</span></div><div class="line"><span class="keyword">delete</span> <span class="function"><span class="keyword">function</span></span></div><div class="line"><span class="function"><span class="title">return</span></span></div><div class="line"><span class="function"><span class="title">typeof</span></span></div><div class="line"><span class="function"><span class="title">case</span></span></div><div class="line"><span class="function"><span class="title">og</span></span></div><div class="line"><span class="function"><span class="title">if</span></span></div><div class="line"><span class="function"><span class="title">switch</span></span></div><div class="line"><span class="function"><span class="title">var</span></span></div><div class="line"><span class="function"><span class="title">catch</span></span></div><div class="line"><span class="function"><span class="title">else</span></span></div><div class="line"><span class="function"><span class="title">in</span></span></div><div class="line"><span class="function"><span class="title">this</span></span></div><div class="line"><span class="function"><span class="title">void</span></span></div><div class="line"><span class="function"><span class="title">continue</span></span></div><div class="line"><span class="function"><span class="title">false</span></span></div><div class="line"><span class="function"><span class="title">instanceof</span></span></div><div class="line"><span class="function"><span class="title">throw</span></span></div><div class="line"><span class="function"><span class="title">while</span></span></div><div class="line"><span class="function"><span class="title">debugger</span></span></div><div class="line"><span class="function"><span class="title">finally</span></span></div><div class="line"><span class="function"><span class="title">new</span></span></div><div class="line"><span class="function"><span class="title">true</span></span></div><div class="line"><span class="function"><span class="title">with</span></span></div><div class="line"><span class="function"><span class="title">default</span></span></div><div class="line"><span class="function"><span class="title">for</span></span></div><div class="line"><span class="function"><span class="title">null</span></span></div><div class="line"><span class="function"><span class="title">try</span></span></div></pre></td></tr></table></figure>
-<p><strong>保留的关键字</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span></span></div><div class="line"><span class="class"><span class="title">const</span></span></div><div class="line"><span class="class"><span class="title">enum</span></span></div><div class="line"><span class="class"><span class="title">export</span></span></div><div class="line"><span class="class"><span class="keyword">extends</span></span></div><div class="line"><span class="class"><span class="title">import</span></span></div><div class="line"><span class="class"><span class="title">super</span></span></div><div class="line"><span class="class"><span class="title">implements</span></span></div><div class="line"><span class="class"><span class="title">let</span></span></div><div class="line"><span class="class"><span class="title">private</span></span></div><div class="line"><span class="class"><span class="title">public</span></span></div><div class="line"><span class="class"><span class="title">yield</span></span></div><div class="line"><span class="class"><span class="title">interface</span></span></div><div class="line"><span class="class"><span class="title">package</span></span></div><div class="line"><span class="class"><span class="title">protected</span></span></div><div class="line"><span class="class"><span class="title">static</span></span></div></pre></td></tr></table></figure></p>
-<p><strong>不完全的保留字</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">arguments</span></div><div class="line"><span class="built_in">eval</span></div></pre></td></tr></table></figure></p>
-<p><strong>全局变量和函数</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">arguments</span></div><div class="line"><span class="built_in">encodeURI</span></div><div class="line"><span class="literal">Infinity</span></div><div class="line"><span class="built_in">Number</span></div><div class="line"><span class="built_in">RegExp</span></div><div class="line"><span class="built_in">Array</span></div><div class="line"><span class="built_in">encodeURIComponent</span></div><div class="line"><span class="built_in">isFinite</span></div><div class="line"><span class="built_in">Object</span></div><div class="line"><span class="built_in">String</span></div><div class="line"><span class="built_in">Boolean</span></div><div class="line"><span class="built_in">Error</span></div><div class="line"><span class="built_in">isNaN</span></div><div class="line"><span class="built_in">parseFloat</span></div><div class="line"><span class="built_in">SyntaxError</span></div><div class="line"><span class="built_in">Date</span></div><div class="line"><span class="built_in">eval</span></div><div class="line"><span class="built_in">JSON</span></div><div class="line"><span class="built_in">parseInt</span></div><div class="line"><span class="built_in">TypeError</span></div><div class="line"><span class="built_in">decodeURI</span></div><div class="line"><span class="built_in">EvalError</span></div><div class="line"><span class="built_in">Math</span></div><div class="line"><span class="built_in">RangeError</span></div><div class="line"><span class="literal">undefined</span></div><div class="line"><span class="built_in">decodeURIComponent</span></div><div class="line"><span class="built_in">Function</span></div><div class="line"><span class="literal">NaN</span></div><div class="line"><span class="built_in">ReferenceError</span></div><div class="line"><span class="built_in">URIError</span></div></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">x</div><div class="line">variable_name</div><div class="line">sum13</div><div class="line">_variable</div><div class="line">$variable</div></pre></td></tr></table></figure>
+<p>许多标识符是<strong>保留字</strong>或<strong>关键字</strong>，这意味着它们是一组在语言本身具有特殊意义的预定义单词的一部分。不能在程序中使用这些单词作为标识符。</p>
+<p>ECMAScript 5（ES5，2009 年发布），是 JavaScript 最新的官方版本。所有的现代浏览器已经完全支持 ES5。</p>
+<h2 id="Keywords（关键字）"><a href="#Keywords（关键字）" class="headerlink" title="Keywords（关键字）"></a>Keywords（关键字）</h2><blockquote>
+<p> JavaScript 语句通常以一个 <strong>语句标识符（关键词）</strong> 为开始，并执行该语句。语句标识符是保留关键字，不能作为变量名使用。</p>
+</blockquote>
+<p><strong>下表列出了 JavaScript 语句标识符 (关键字) ：</strong></p>
+<table>
+<thead>
+<tr>
+<th>语句</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>break</td>
+<td>用于跳出循环。</td>
+</tr>
+<tr>
+<td>catch</td>
+<td>语句块，在 try 语句块执行出错时执行 catch 语句块。</td>
+</tr>
+<tr>
+<td>continue</td>
+<td>跳过循环中的一个迭代。</td>
+</tr>
+<tr>
+<td>do … while</td>
+<td>执行一个语句块，在条件语句为 true 时继续执行该语句块。</td>
+</tr>
+<tr>
+<td>for</td>
+<td>在条件语句为 true 时，可以将代码块执行指定的次数。</td>
+</tr>
+<tr>
+<td>for … in</td>
+<td>用于遍历数组或者对象的属性（对数组或者对象的属性进行循环操作）。</td>
+</tr>
+<tr>
+<td>function</td>
+<td>定义一个函数</td>
+</tr>
+<tr>
+<td>if … else</td>
+<td>用于基于不同的条件来执行不同的动作。</td>
+</tr>
+<tr>
+<td>return</td>
+<td>退出函数</td>
+</tr>
+<tr>
+<td>switch</td>
+<td>用于基于不同的条件来执行不同的动作。</td>
+</tr>
+<tr>
+<td>throw</td>
+<td>抛出（生成）错误 。</td>
+</tr>
+<tr>
+<td>try</td>
+<td>实现错误处理，与 catch 一同使用。</td>
+</tr>
+<tr>
+<td>var</td>
+<td>声明一个变量。</td>
+</tr>
+<tr>
+<td>while</td>
+<td>当条件语句为 true 时，执行语句块。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Reserved-Words-（保留关键字）"><a href="#Reserved-Words-（保留关键字）" class="headerlink" title="Reserved Words （保留关键字）"></a>Reserved Words （保留关键字）</h2><p>Javascript 的保留关键字不可以用作变量、标签或者函数名。有些保留关键字是作为 Javascript 以后扩展使用。</p>
+<table>
+<thead>
+<tr>
+<th>abstract</th>
+<th>arguments</th>
+<th>boolean</th>
+<th>break</th>
+<th>byte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>case</td>
+<td>catch</td>
+<td>char</td>
+<td>class*</td>
+<td>const</td>
+</tr>
+<tr>
+<td>continue</td>
+<td>debugger</td>
+<td>default</td>
+<td>delete</td>
+<td>do</td>
+</tr>
+<tr>
+<td>double</td>
+<td>else</td>
+<td>enum*</td>
+<td>eval</td>
+<td>export*</td>
+</tr>
+<tr>
+<td>extends*</td>
+<td>false</td>
+<td>final</td>
+<td>finally</td>
+<td>float</td>
+</tr>
+<tr>
+<td>for</td>
+<td>function</td>
+<td>goto</td>
+<td>if</td>
+<td>implements</td>
+</tr>
+<tr>
+<td>import*</td>
+<td>in</td>
+<td>instanceof</td>
+<td>int</td>
+<td>interface</td>
+</tr>
+<tr>
+<td>let</td>
+<td>long</td>
+<td>native</td>
+<td>new</td>
+<td>null</td>
+</tr>
+<tr>
+<td>package</td>
+<td>private</td>
+<td>protected</td>
+<td>public</td>
+<td>return</td>
+</tr>
+<tr>
+<td>short</td>
+<td>static</td>
+<td>super*</td>
+<td>switch</td>
+<td>synchronized</td>
+</tr>
+<tr>
+<td>this</td>
+<td>throw</td>
+<td>throws</td>
+<td>transient</td>
+<td>true</td>
+</tr>
+<tr>
+<td>try</td>
+<td>typeof</td>
+<td>var</td>
+<td>void</td>
+<td>volatile</td>
+</tr>
+<tr>
+<td>while</td>
+<td>with</td>
+<td>yield</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>* 标记的关键字是 ECMAScript5 中新添加的。</p>
+<h2 id="JavaScript-对象、属性和方法"><a href="#JavaScript-对象、属性和方法" class="headerlink" title="JavaScript 对象、属性和方法"></a>JavaScript 对象、属性和方法</h2><p>您也应该避免使用 JavaScript 内置的对象、属性和方法的名称作为 Javascript 的变量或函数名：</p>
+<table>
+<thead>
+<tr>
+<th>Array</th>
+<th>Date</th>
+<th>eval</th>
+<th>function</th>
+<th>hasOwnProperty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Infinity</td>
+<td>isFinite</td>
+<td>isNaN</td>
+<td>isPrototypeOf</td>
+<td>length</td>
+</tr>
+<tr>
+<td>Math</td>
+<td>NaN</td>
+<td>name</td>
+<td>Number</td>
+<td>Object</td>
+</tr>
+<tr>
+<td>prototype</td>
+<td>String</td>
+<td>toString</td>
+<td>undefined</td>
+<td>valueOf</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Java-保留关键字"><a href="#Java-保留关键字" class="headerlink" title="Java 保留关键字"></a>Java 保留关键字</h2><p>JavaScript 经常与 Java 一起使用。您应该避免使用一些 Java 对象和属性作为 JavaScript 标识符：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>getClass</td>
+<td>java</td>
+<td>JavaArray</td>
+<td>javaClass</td>
+<td>JavaObject</td>
+<td>JavaPackage</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Windows-保留关键字"><a href="#Windows-保留关键字" class="headerlink" title="Windows 保留关键字"></a>Windows 保留关键字</h2><p>JavaScript 可以在 HTML 外部使用。它可在许多其他应用程序中作为编程语言使用。</p>
+<p>在 HTML 中，您必须（为了可移植性，您也应该这么做）避免使用 HTML 和 Windows 对象和属性的名称作为 Javascript 的变量及函数名：</p>
+<table>
+<thead>
+<tr>
+<th>alert</th>
+<th>all</th>
+<th>anchor</th>
+<th>anchors</th>
+<th>area</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>assign</td>
+<td>blur</td>
+<td>button</td>
+<td>checkbox</td>
+<td>clearInterval</td>
+</tr>
+<tr>
+<td>clearTimeout</td>
+<td>clientInformation</td>
+<td>close</td>
+<td>closed</td>
+<td>confirm</td>
+</tr>
+<tr>
+<td>constructor</td>
+<td>crypto</td>
+<td>decodeURI</td>
+<td>decodeURIComponent</td>
+<td>defaultStatus</td>
+</tr>
+<tr>
+<td>document</td>
+<td>element</td>
+<td>elements</td>
+<td>embed</td>
+<td>embeds</td>
+</tr>
+<tr>
+<td>encodeURI</td>
+<td>encodeURIComponent</td>
+<td>escape</td>
+<td>event</td>
+<td>fileUpload</td>
+</tr>
+<tr>
+<td>focus</td>
+<td>form</td>
+<td>forms</td>
+<td>frame</td>
+<td>innerHeight</td>
+</tr>
+<tr>
+<td>innerWidth</td>
+<td>layer</td>
+<td>layers</td>
+<td>link</td>
+<td>location</td>
+</tr>
+<tr>
+<td>mimeTypes</td>
+<td>navigate</td>
+<td>navigator</td>
+<td>frames</td>
+<td>frameRate</td>
+</tr>
+<tr>
+<td>hidden</td>
+<td>history</td>
+<td>image</td>
+<td>images</td>
+<td>offscreenBuffering</td>
+</tr>
+<tr>
+<td>open</td>
+<td>opener</td>
+<td>option</td>
+<td>outerHeight</td>
+<td>outerWidth</td>
+</tr>
+<tr>
+<td>packages</td>
+<td>pageXOffset</td>
+<td>pageYOffset</td>
+<td>parent</td>
+<td>parseFloat</td>
+</tr>
+<tr>
+<td>parseInt</td>
+<td>password</td>
+<td>pkcs11</td>
+<td>plugin</td>
+<td>prompt</td>
+</tr>
+<tr>
+<td>propertyIsEnum</td>
+<td>radio</td>
+<td>reset</td>
+<td>screenX</td>
+<td>screenY</td>
+</tr>
+<tr>
+<td>scroll</td>
+<td>secure</td>
+<td>select</td>
+<td>self</td>
+<td>setInterval</td>
+</tr>
+<tr>
+<td>setTimeout</td>
+<td>status</td>
+<td>submit</td>
+<td>taint</td>
+<td>text</td>
+</tr>
+<tr>
+<td>textarea</td>
+<td>top</td>
+<td>unescape</td>
+<td>untaint</td>
+<td>window</td>
+</tr>
+</tbody>
+</table>
+<h2 id="HTML-事件句柄"><a href="#HTML-事件句柄" class="headerlink" title="HTML 事件句柄"></a>HTML 事件句柄</h2><p>除此之外，您还应该避免使用 HTML 事件句柄的名称作为 Javascript 的变量及函数名。</p>
+<p>实例：</p>
+<table>
+<thead>
+<tr>
+<th>onblur</th>
+<th>onclick</th>
+<th>onerror</th>
+<th>onfocus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>onkeydown</td>
+<td>onkeypress</td>
+<td>onkeyup</td>
+<td>onmouseover</td>
+</tr>
+<tr>
+<td>onload</td>
+<td>onmouseup</td>
+<td>onmousedown</td>
+<td>onsubmit</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="非标准-JavaScript"><a href="#非标准-JavaScript" class="headerlink" title="非标准 JavaScript"></a>非标准 JavaScript</h2><p>除了保留关键字，在 JavaScript 实现中也有一些非标准的关键字。<br>一个实例是 <strong>const</strong> 关键字，用于定义变量。 一些 JavaScript 引擎把 const 当作 var 的同义词。另一些引擎则把 const 当作只读变量的定义。</p>
+<p>Const 是 JavaScript 的扩展。JavaScript 引擎支持它用在 Firefox 和 Chrome 中。但是它并不是 JavaScript 标准 ES3 或 ES5 的组成部分。<strong>建议：不要使用它</strong>。</p>
 <hr>
 <h1 id="Task——Hello-World"><a href="#Task——Hello-World" class="headerlink" title="Task——Hello, World!"></a>Task——Hello, World!</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">greeting</span>(<span class="params">parameterVariable</span>) </span>&#123;</div><div class="line">    <span class="comment">// This line prints 'Hello, World!' to the console:</span></div><div class="line"></div><div class="line">    <span class="comment">// Write a line of code that prints parameterVariable to stdout using console.log:</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">main</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">const</span> parameterVariable = readLine();</div><div class="line">    greeting(parameterVariable);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><strong>Input</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Welcome to 10 Days of JavaScript!</div></pre></td></tr></table></figure></p>
@@ -521,8 +1271,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/09/operators/" rel="prev" title="Arithmetic Operators（算术运算符）">
-                Arithmetic Operators（算术运算符） <i class="fa fa-chevron-right"></i>
+              <a href="/2017/10/09/function/" rel="prev" title="Functions in JavaScript（函数）">
+                Functions in JavaScript（函数） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -691,7 +1441,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript的主要内容"><span class="nav-number">1.</span> <span class="nav-text">JavaScript的主要内容</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript-使用"><span class="nav-number">2.</span> <span class="nav-text">JavaScript 使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript-输出"><span class="nav-number">3.</span> <span class="nav-text">JavaScript 输出</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#操作-HTML-元素"><span class="nav-number">3.1.</span> <span class="nav-text">操作 HTML 元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写到文档输出"><span class="nav-number">3.2.</span> <span class="nav-text">写到文档输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#警告"><span class="nav-number">3.3.</span> <span class="nav-text">警告</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Character-Set（字符集）"><span class="nav-number">4.</span> <span class="nav-text">Character Set（字符集）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Printing-Output"><span class="nav-number">5.</span> <span class="nav-text">Printing Output</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript-语句"><span class="nav-number">6.</span> <span class="nav-text">JavaScript 语句</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Literals（直接量）"><span class="nav-number">7.</span> <span class="nav-text">Literals（直接量）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Identifiers（标识符和保留字）"><span class="nav-number">8.</span> <span class="nav-text">Identifiers（标识符和保留字）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Task——Hello-World"><span class="nav-number">9.</span> <span class="nav-text">Task——Hello, World!</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">10.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript简介"><span class="nav-number">1.</span> <span class="nav-text">JavaScript简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript-用法"><span class="nav-number">2.</span> <span class="nav-text">JavaScript 用法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript-输出"><span class="nav-number">3.</span> <span class="nav-text">JavaScript 输出</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#写到-HTML-文档"><span class="nav-number">3.1.</span> <span class="nav-text">写到 HTML 文档</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#改变-HTML-内容"><span class="nav-number">3.2.</span> <span class="nav-text">改变 HTML 内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Console（写到控制台）"><span class="nav-number">3.3.</span> <span class="nav-text">Console（写到控制台）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Alert（对事件的反应）"><span class="nav-number">3.4.</span> <span class="nav-text">Alert（对事件的反应）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#改变-HTML-图像"><span class="nav-number">3.5.</span> <span class="nav-text">改变 HTML 图像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#改变-HTML-样式"><span class="nav-number">3.6.</span> <span class="nav-text">改变 HTML 样式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#验证输入"><span class="nav-number">3.7.</span> <span class="nav-text">验证输入</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#语句、代码、代码块"><span class="nav-number">4.</span> <span class="nav-text">语句、代码、代码块</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#语句"><span class="nav-number">4.1.</span> <span class="nav-text">语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">4.2.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码块"><span class="nav-number">4.3.</span> <span class="nav-text">代码块</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#操作符"><span class="nav-number">5.</span> <span class="nav-text">操作符</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Arithmetic-Operators（算术运算符）"><span class="nav-number">5.1.</span> <span class="nav-text">Arithmetic Operators（算术运算符）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Addition"><span class="nav-number">5.1.1.</span> <span class="nav-text">1. Addition (+)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#用于字符串的-运算符"><span class="nav-number">5.1.1.1.</span> <span class="nav-text">用于字符串的 + 运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对字符串和数字进行加法运算："><span class="nav-number">5.1.1.2.</span> <span class="nav-text">对字符串和数字进行加法运算：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Subtraction"><span class="nav-number">5.1.2.</span> <span class="nav-text">2. Subtraction (-)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Multiplication"><span class="nav-number">5.1.3.</span> <span class="nav-text">3. Multiplication (*)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Division"><span class="nav-number">5.1.4.</span> <span class="nav-text">4. Division (/)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Remainder"><span class="nav-number">5.1.5.</span> <span class="nav-text">5. Remainder (%)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-Exponentiation"><span class="nav-number">5.1.6.</span> <span class="nav-text">6. Exponentiation (**)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-Unary-Negation"><span class="nav-number">5.1.7.</span> <span class="nav-text">7. Unary Negation (-)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-Unary-Plus"><span class="nav-number">5.1.8.</span> <span class="nav-text">8. Unary Plus (+)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-Increment-递增"><span class="nav-number">5.1.9.</span> <span class="nav-text">9. Increment 递增 (++)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-Decrement-递减"><span class="nav-number">5.1.10.</span> <span class="nav-text">10. Decrement 递减 (--)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Task——Area-and-perimeter-of-rectangle"><span class="nav-number">5.1.11.</span> <span class="nav-text">Task——Area and perimeter of rectangle</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Operator-Types"><span class="nav-number">5.2.</span> <span class="nav-text">Operator Types</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Unary（一元）"><span class="nav-number">5.2.1.</span> <span class="nav-text">Unary（一元）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Binary（二进制）"><span class="nav-number">5.2.2.</span> <span class="nav-text">Binary（二进制）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ternary（三元）（条件运算符）"><span class="nav-number">5.2.3.</span> <span class="nav-text">Ternary（三元）（条件运算符）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Comparison-Operators（比较运算符）"><span class="nav-number">5.3.</span> <span class="nav-text">Comparison Operators（比较运算符）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Logical-Operators（逻辑运算符）"><span class="nav-number">5.4.</span> <span class="nav-text">Logical Operators（逻辑运算符）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mathematical-Assignment-Operators（赋值运算符）"><span class="nav-number">5.5.</span> <span class="nav-text">Mathematical Assignment Operators（赋值运算符）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Character-Set（字符集）"><span class="nav-number">6.</span> <span class="nav-text">Character Set（字符集）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Comments（注释）"><span class="nav-number">7.</span> <span class="nav-text">Comments（注释）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Identifiers（标识符）"><span class="nav-number">8.</span> <span class="nav-text">Identifiers（标识符）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Keywords（关键字）"><span class="nav-number">8.1.</span> <span class="nav-text">Keywords（关键字）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reserved-Words-（保留关键字）"><span class="nav-number">8.2.</span> <span class="nav-text">Reserved Words （保留关键字）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript-对象、属性和方法"><span class="nav-number">8.3.</span> <span class="nav-text">JavaScript 对象、属性和方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-保留关键字"><span class="nav-number">8.4.</span> <span class="nav-text">Java 保留关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Windows-保留关键字"><span class="nav-number">8.5.</span> <span class="nav-text">Windows 保留关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML-事件句柄"><span class="nav-number">8.6.</span> <span class="nav-text">HTML 事件句柄</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#非标准-JavaScript"><span class="nav-number">8.7.</span> <span class="nav-text">非标准 JavaScript</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Task——Hello-World"><span class="nav-number">9.</span> <span class="nav-text">Task——Hello, World!</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">10.</span> <span class="nav-text">Reference</span></a></li></ol></div>
             
 
           </div>
